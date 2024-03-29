@@ -131,7 +131,7 @@
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
         </building>
         <constructEffect>ConstructMetal</constructEffect>
-        <researchPrerequisites><li>BF_MechanicalStandardization</li></researchPrerequisites>
+        <researchPrerequisites><li>BF_MechanicalInsight</li></researchPrerequisites>
         <designationHotKey>Misc7</designationHotKey>
         <placeWorkers>
             <li>PlaceWorker_ShowFacilitiesConnections</li>

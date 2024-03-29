@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ResearchProjectDef>
+    <!--<ResearchProjectDef>
         <defName>BF_MechanicalOptimization</defName>
         <label>Mechanical optimization</label>
 		<tab>BF_MechResearch</tab>
@@ -201,6 +201,6 @@
             <li>BF_NetworkedIntelligence</li>
             <li>MultiAnalyzer</li>
         </requiredResearchFacilities>
-    </ResearchProjectDef>
+    </ResearchProjectDef>-->
 
 </Defs>

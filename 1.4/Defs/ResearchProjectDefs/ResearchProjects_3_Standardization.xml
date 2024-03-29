@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ResearchProjectDef>
+    <!--<ResearchProjectDef>
         <defName>BF_MechanicalStandardization</defName>
         <label>Mechanical standardization</label>
         <tab>BF_MechResearch</tab>
@@ -165,6 +165,6 @@
         </requiredResearchFacilities>
         <discoveredLetterTitle>About: Surrogates</discoveredLetterTitle>
         <discoveredLetterText>With network communication controls in place, core-less androids may now be turned into surrogates by installing a receiver core. Other pawns connected to the SkyMind network can activate surrogate controls to remotely pilot the body, sharing all skills (including learning) between the controller and surrogate. Controllers not contained within a SkyMind Core can only control so many surrogates before the stress of split attention begins to take a severe toll on learning and consciousness. Controllers are otherwise unaffected by this process.</discoveredLetterText>
-    </ResearchProjectDef>
+    </ResearchProjectDef>-->
 
 </Defs>
