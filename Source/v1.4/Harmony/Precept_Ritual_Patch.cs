@@ -2,7 +2,7 @@
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class RitualObligationTrigger_MemberDied_Patch
     {

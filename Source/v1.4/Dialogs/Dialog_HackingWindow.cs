@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Dialog_HackingWindow : Window
     {
@@ -59,7 +59,7 @@ namespace ATReforged
             Listing_Standard prelist = new Listing_Standard();
             prelist.Begin(headerRect);
 
-            prelist.Label("ATR_HackInterfaceTitle".Translate());
+            prelist.Label("BF_HackInterfaceTitle".Translate());
             prelist.GapLine();
 
             prelist.End();
@@ -85,7 +85,7 @@ namespace ATReforged
             availableHackingPoints = Utils.gameComp.GetPoints(ServerType.HackingServer);
 
             // Guidance Hack operation
-            HackSelector(listingStandard, maxWidth, "ATR_GuidanceHack".Translate(), ref guidanceCostModifier, guidanceCostBase, OperationSuccessChance(guidanceSuccessChanceBase, guidanceCostBase, guidanceCostModifier), "ATR_GuidanceHackDesc".Translate(), delegate
+            HackSelector(listingStandard, maxWidth, "BF_GuidanceHack".Translate(), ref guidanceCostModifier, guidanceCostBase, OperationSuccessChance(guidanceSuccessChanceBase, guidanceCostBase, guidanceCostModifier), "BF_GuidanceHackDesc".Translate(), delegate
             {
                 List<FloatMenuOption> opts = new List<FloatMenuOption>();
 
@@ -94,7 +94,7 @@ namespace ATReforged
                 {
                     opts.Add(new FloatMenuOption(targetFaction.Name, delegate
                     {
-                        Find.WindowStack.Add(new Dialog_MessageBox("ATR_GuidanceHackDesc".Translate(), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "ATR_GuidanceHack".Translate(), buttonAAction: delegate
+                        Find.WindowStack.Add(new Dialog_MessageBox("BF_GuidanceHackDesc".Translate(), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "BF_GuidanceHack".Translate(), buttonAAction: delegate
                         {
                             // A faction has been selected for targetting. Check if the hack was successful. Handle failure and success separately.
                             if (!Rand.Chance(OperationSuccessChance(guidanceSuccessChanceBase, guidanceCostBase, guidanceCostModifier)))
@@ -111,7 +111,7 @@ namespace ATReforged
                                 {
                                     incident = new FiringIncident
                                     {
-                                        def = ATR_IncidentDefOf.ResourcePodCrash,
+                                        def = BF_IncidentDefOf.ResourcePodCrash,
                                         parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, Find.CurrentMap)
                                     };
                                 }
@@ -129,7 +129,7 @@ namespace ATReforged
                                 {
                                     incident = new FiringIncident
                                     {
-                                        def = ATR_IncidentDefOf.RefugeePodCrash,
+                                        def = BF_IncidentDefOf.RefugeePodCrash,
                                         parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.Misc, Find.CurrentMap)
                                     };
                                 }
@@ -169,7 +169,7 @@ namespace ATReforged
                                 {
                                     incident = new FiringIncident
                                     {
-                                        def = ATR_IncidentDefOf.PsychicEmanatorShipPartCrash,
+                                        def = BF_IncidentDefOf.PsychicEmanatorShipPartCrash,
                                         parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, Find.CurrentMap)
                                     };
                                     incident.parms.points /= 2;
@@ -179,7 +179,7 @@ namespace ATReforged
                                 {
                                     incident = new FiringIncident
                                     {
-                                        def = ATR_IncidentDefOf.DefoliatorShipPartCrash,
+                                        def = BF_IncidentDefOf.DefoliatorShipPartCrash,
                                         parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatBig, Find.CurrentMap)
                                     };
                                     incident.parms.points /= 2;
@@ -189,7 +189,7 @@ namespace ATReforged
                                 incident.parms.forced = true;
                                 if (!Find.Storyteller.TryFire(incident))
                                 {
-                                    Messages.Message("ATR_NoArrival".Translate(), MessageTypeDefOf.NeutralEvent, false);
+                                    Messages.Message("BF_NoArrival".Translate(), MessageTypeDefOf.NeutralEvent, false);
                                 }
                             }
                             cachedHackPenalty += (int)guidanceCostBase;
@@ -202,17 +202,17 @@ namespace ATReforged
 
                     if (opts.Count == 0)
                     {
-                        opts.Add(new FloatMenuOption("ATR_NoAvailableTarget".Translate(), null));
+                        opts.Add(new FloatMenuOption("BF_NoAvailableTarget".Translate(), null));
                         Find.WindowStack.Add(new FloatMenu(opts));
                         return;
                     }
 
-                    Find.WindowStack.Add(new FloatMenu(opts, "ATR_ViableTargets".Translate()));
+                    Find.WindowStack.Add(new FloatMenu(opts, "BF_ViableTargets".Translate()));
                 }
             });
 
             // Propaganda Hack operation
-            HackSelector(listingStandard, maxWidth, "ATR_PropagandaHack".Translate(), ref propagandaCostModifier, propagandaCostBase, OperationSuccessChance(propagandaSuccessChanceBase, propagandaCostBase, propagandaCostModifier), "ATR_PropagandaHackDesc".Translate(), delegate
+            HackSelector(listingStandard, maxWidth, "BF_PropagandaHack".Translate(), ref propagandaCostModifier, propagandaCostBase, OperationSuccessChance(propagandaSuccessChanceBase, propagandaCostBase, propagandaCostModifier), "BF_PropagandaHackDesc".Translate(), delegate
             {
                 List<FloatMenuOption> opts = new List<FloatMenuOption>();
 
@@ -221,7 +221,7 @@ namespace ATReforged
                 {
                     opts.Add(new FloatMenuOption(targetFaction.Name, delegate
                     {
-                        Find.WindowStack.Add(new Dialog_MessageBox("ATR_PropagandaHackDesc".Translate(), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "ATR_PropagandaHack".Translate(), buttonAAction: delegate
+                        Find.WindowStack.Add(new Dialog_MessageBox("BF_PropagandaHackDesc".Translate(), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "BF_PropagandaHack".Translate(), buttonAAction: delegate
                         {
                             // A faction has been selected for targetting. Check if the hack was successful. Handle failure and success separately.
                             if (!Rand.Chance(OperationSuccessChance(propagandaSuccessChanceBase, propagandaCostBase, propagandaCostModifier)))
@@ -243,17 +243,17 @@ namespace ATReforged
 
                     if (opts.Count == 0)
                     {
-                        opts.Add(new FloatMenuOption("ATR_NoAvailableTarget".Translate(), null));
+                        opts.Add(new FloatMenuOption("BF_NoAvailableTarget".Translate(), null));
                         Find.WindowStack.Add(new FloatMenu(opts));
                         return;
                     }
 
-                    Find.WindowStack.Add(new FloatMenu(opts, "ATR_ViableTargets".Translate()));
+                    Find.WindowStack.Add(new FloatMenu(opts, "BF_ViableTargets".Translate()));
                 }
             });
 
             // Espionage Hack operation
-            HackSelector(listingStandard, maxWidth, "ATR_EspionageHack".Translate(), ref espionageCostModifier, espionageCostBase, OperationSuccessChance(espionageSuccessChanceBase, espionageCostBase, espionageCostModifier), "ATR_EspionageHackDesc".Translate(), delegate
+            HackSelector(listingStandard, maxWidth, "BF_EspionageHack".Translate(), ref espionageCostModifier, espionageCostBase, OperationSuccessChance(espionageSuccessChanceBase, espionageCostBase, espionageCostModifier), "BF_EspionageHackDesc".Translate(), delegate
             {
                 List<FloatMenuOption> opts = new List<FloatMenuOption>();
 
@@ -262,7 +262,7 @@ namespace ATReforged
                 {
                     opts.Add(new FloatMenuOption(targetFaction.Name, delegate
                     {
-                        Find.WindowStack.Add(new Dialog_MessageBox("ATR_EspionageHackDesc".Translate(), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "ATR_EspionageHack".Translate(), buttonAAction: delegate
+                        Find.WindowStack.Add(new Dialog_MessageBox("BF_EspionageHackDesc".Translate(), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "BF_EspionageHack".Translate(), buttonAAction: delegate
                         {
                             // A faction has been selected for targetting. Check if the hack was successful. Handle failure and success separately.
                             if (!Rand.Chance(OperationSuccessChance(espionageSuccessChanceBase, espionageCostBase, espionageCostModifier)))
@@ -313,17 +313,17 @@ namespace ATReforged
 
                     if (opts.Count == 0)
                     {
-                        opts.Add(new FloatMenuOption("ATR_NoAvailableTarget".Translate(), null));
+                        opts.Add(new FloatMenuOption("BF_NoAvailableTarget".Translate(), null));
                         Find.WindowStack.Add(new FloatMenu(opts));
                         return;
                     }
 
-                    Find.WindowStack.Add(new FloatMenu(opts, "ATR_ViableTargets".Translate()));
+                    Find.WindowStack.Add(new FloatMenu(opts, "BF_ViableTargets".Translate()));
                 }
             });
 
             // Disruptor Hack operation
-            HackSelector(listingStandard, maxWidth, "ATR_DisruptorHack".Translate(), ref disruptorCostModifier, disruptorCostBase, OperationSuccessChance(disruptorSuccessChanceBase, disruptorCostBase, disruptorCostModifier), "ATR_DisruptorHackDesc".Translate(), delegate
+            HackSelector(listingStandard, maxWidth, "BF_DisruptorHack".Translate(), ref disruptorCostModifier, disruptorCostBase, OperationSuccessChance(disruptorSuccessChanceBase, disruptorCostBase, disruptorCostModifier), "BF_DisruptorHackDesc".Translate(), delegate
             {
                 List<FloatMenuOption> opts = new List<FloatMenuOption>();
 
@@ -335,7 +335,7 @@ namespace ATReforged
                     {
                         opts.Add(new FloatMenuOption(targetFaction.Name, delegate
                         {
-                            Find.WindowStack.Add(new Dialog_MessageBox("ATR_DisruptorHackDesc".Translate(), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "ATR_DisruptorHack".Translate(), buttonAAction: delegate
+                            Find.WindowStack.Add(new Dialog_MessageBox("BF_DisruptorHackDesc".Translate(), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "BF_DisruptorHack".Translate(), buttonAAction: delegate
                             {
                                 // A faction has been selected for targetting. Check if the hack was successful. Handle failure and success separately.
                                 if (!Rand.Chance(OperationSuccessChance(disruptorSuccessChanceBase, disruptorCostBase, disruptorCostModifier)))
@@ -347,12 +347,12 @@ namespace ATReforged
                                     // Apply the DDOS hediff to all hostile SkyMind-capable pawns of this faction.
                                     foreach (Pawn pawn in targetPawns)
                                     {
-                                        Hediff ddosHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_RecoveringFromDDOS, pawn, pawn.health.hediffSet.GetBrain());
+                                        Hediff ddosHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_RecoveringFromDDOS, pawn, pawn.health.hediffSet.GetBrain());
                                         ddosHediff.Severity = 1;
                                         pawn.health.AddHediff(ddosHediff, pawn.health.hediffSet.GetBrain());
                                     }
 
-                                    Messages.Message("ATR_DisruptorHackSuccess".Translate(), MessageTypeDefOf.PositiveEvent, false);
+                                    Messages.Message("BF_DisruptorHackSuccess".Translate(), MessageTypeDefOf.PositiveEvent, false);
                                 }
                                 cachedHackPenalty += (int)disruptorCostBase;
                                 Utils.gameComp.hackCostTimePenalty += (int)disruptorCostBase;
@@ -364,12 +364,12 @@ namespace ATReforged
 
                         if (opts.Count == 0)
                         {
-                            opts.Add(new FloatMenuOption("ATR_NoAvailableTarget".Translate(), null));
+                            opts.Add(new FloatMenuOption("BF_NoAvailableTarget".Translate(), null));
                             Find.WindowStack.Add(new FloatMenu(opts));
                             return;
                         }
 
-                        Find.WindowStack.Add(new FloatMenu(opts, "ATR_ViableTargets".Translate()));
+                        Find.WindowStack.Add(new FloatMenu(opts, "BF_ViableTargets".Translate()));
                     }
                 }
             });
@@ -387,8 +387,8 @@ namespace ATReforged
             Listing_Standard postlist = new Listing_Standard();
             postlist.Begin(footerRect);
 
-            postlist.Label("ATR_AvailableHackingPoints".Translate(availableHackingPoints, cachedHackPenalty));
-            postlist.Label("ATR_AvailableHackingPointsDesc".Translate());
+            postlist.Label("BF_AvailableHackingPoints".Translate(availableHackingPoints, cachedHackPenalty));
+            postlist.Label("BF_AvailableHackingPointsDesc".Translate());
 
             postlist.End();
 
@@ -405,14 +405,14 @@ namespace ATReforged
                 listingStandard.SliderLabeled(title, ref costModifier, baseCost + cachedHackPenalty, availableHackingPoints);
 
                 // Activation button displaying success chance.
-                if (listingStandard.ButtonText("ATR_SuccessChance".Translate(successChance * 100), operationDescription))
+                if (listingStandard.ButtonText("BF_SuccessChance".Translate(successChance * 100), operationDescription))
                 {
                     operation.Invoke();
                 }
 
             }
             else
-                listingStandard.Label("ATR_InsufficientPoints".Translate(baseCost + cachedHackPenalty));
+                listingStandard.Label("BF_InsufficientPoints".Translate(baseCost + cachedHackPenalty));
 
             listingStandard.GapLine();
         }
@@ -421,7 +421,7 @@ namespace ATReforged
         protected void HandleOperationFailure(Faction faction)
         {
             // Retaliation events come in several flavors and range from inconvenient to dangerous.
-            if (Rand.Chance(ATReforged_Settings.retaliationChanceOnFailure))
+            if (Rand.Chance(BotFactory_Settings.retaliationChanceOnFailure))
             {
                 float retaliationPick = Rand.Range(0.0f, 1.0f);
                 // Raid
@@ -438,7 +438,7 @@ namespace ATReforged
                         // Incident was unable to fire, try a counterhack instead. If none can fire, then try to affect goodwill instead.
                         incident = new FiringIncident
                         {
-                            def = ATR_IncidentDefOf.ATR_HackingIncident,
+                            def = BF_IncidentDefOf.BF_HackingIncident,
                             parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatSmall, Find.CurrentMap)
                         };
                         if (!Find.Storyteller.TryFire(incident))
@@ -451,8 +451,8 @@ namespace ATReforged
                 // Problem Causer site
                 else if (retaliationPick < 0.75f && faction.HostileTo(Faction.OfPlayer) && ModLister.RoyaltyInstalled)
                 {
-                    Quest quest = QuestUtility.GenerateQuestAndMakeAvailable(ATR_QuestScriptDefOf.ProblemCauser, StorytellerUtility.DefaultThreatPointsNow(Find.CurrentMap));
-                    if (ATR_QuestScriptDefOf.ProblemCauser.sendAvailableLetter)
+                    Quest quest = QuestUtility.GenerateQuestAndMakeAvailable(BF_QuestScriptDefOf.ProblemCauser, StorytellerUtility.DefaultThreatPointsNow(Find.CurrentMap));
+                    if (BF_QuestScriptDefOf.ProblemCauser.sendAvailableLetter)
                     {
                         QuestUtility.SendLetterQuestAvailable(quest);
                     }
@@ -461,7 +461,7 @@ namespace ATReforged
                         // Quest was unable to fire, try a counterhack instead. If none can fire, then try to affect goodwill instead.
                         FiringIncident incident = new FiringIncident
                         {
-                            def = ATR_IncidentDefOf.ATR_HackingIncident,
+                            def = BF_IncidentDefOf.BF_HackingIncident,
                             parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatSmall, Find.CurrentMap)
                         };
                         if (!Find.Storyteller.TryFire(incident))
@@ -477,7 +477,7 @@ namespace ATReforged
                     // Try to execute a random hack incident. If none can fire, then try to affect goodwill instead.
                     FiringIncident incident = new FiringIncident
                     {
-                        def = ATR_IncidentDefOf.ATR_HackingIncident,
+                        def = BF_IncidentDefOf.BF_HackingIncident,
                         parms = StorytellerUtility.DefaultParmsNow(IncidentCategoryDefOf.ThreatSmall, Find.CurrentMap)
                     };
                     if (!Find.Storyteller.TryFire(incident))
@@ -496,7 +496,7 @@ namespace ATReforged
             // Minor failures send a message notifying the player the operation failed without a major incident.
             else
             {
-                Messages.Message("ATR_HackOperationFailed".Translate(), MessageTypeDefOf.NegativeEvent, false);
+                Messages.Message("BF_HackOperationFailed".Translate(), MessageTypeDefOf.NegativeEvent, false);
             }
         }
 
@@ -516,14 +516,14 @@ namespace ATReforged
             int goodwillImpact = Rand.Range(-5, -15);
             if (faction.TryAffectGoodwillWith(Faction.OfPlayer, goodwillImpact))
             {
-                Find.LetterStack.ReceiveLetter("ATR_RelationshipRetaliation".Translate(), "ATR_RelationshipRetaliationDesc".Translate(goodwillImpact), LetterDefOf.NegativeEvent);
+                Find.LetterStack.ReceiveLetter("BF_RelationshipRetaliation".Translate(), "BF_RelationshipRetaliationDesc".Translate(goodwillImpact), LetterDefOf.NegativeEvent);
             }
         }
         
         // Generate and return the success chance of an operation.
         protected float OperationSuccessChance(float baseSuccessChance, float baseCost, float costModifier)
         {
-            return Mathf.Clamp(baseSuccessChance * (costModifier / (baseCost + cachedHackPenalty)) * RecentHackSuccessPenalty.Evaluate(cachedHackPenalty), ATReforged_Settings.minHackSuccessChance, ATReforged_Settings.maxHackSuccessChance);
+            return Mathf.Clamp(baseSuccessChance * (costModifier / (baseCost + cachedHackPenalty)) * RecentHackSuccessPenalty.Evaluate(cachedHackPenalty), BotFactory_Settings.minHackSuccessChance, BotFactory_Settings.maxHackSuccessChance);
         }
 
         // Recent successes in hacking decreases the likelihood of hacking success as other factions raise short-term security measures.

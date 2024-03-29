@@ -2,7 +2,7 @@
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class Pawn_StyleTracker_Patch
     {

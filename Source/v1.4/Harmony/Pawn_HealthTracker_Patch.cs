@@ -4,7 +4,7 @@ using RimWorld;
 using System;
 using RimWorld.Planet;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class Pawn_HealthTracker_Patch
     {
@@ -17,7 +17,7 @@ namespace ATReforged
             public static bool Listener(ref Pawn ___pawn, ref Hediff hediff, BodyPartRecord part)
             {
                 // If this is a mechanical pawn and this particular hediff is forbidden for mechanicals to have, then abort trying to add it.
-                if (Utils.IsConsideredMechanical(___pawn) && ATReforged_Settings.blacklistedMechanicalHediffs.Contains(hediff.def.defName))
+                if (Utils.IsConsideredMechanical(___pawn) && BotFactory_Settings.blacklistedMechanicalHediffs.Contains(hediff.def.defName))
                 {
                     return false;
                 }
@@ -43,7 +43,7 @@ namespace ATReforged
                     }
                 }
 
-                if (___pawn.kindDef == ATR_PawnKindDefOf.ATR_MicroScyther || ___pawn.kindDef == ATR_PawnKindDefOf.ATR_FractalAbomination)
+                if (___pawn.kindDef == BF_PawnKindDefOf.BF_MicroScyther || ___pawn.kindDef == BF_PawnKindDefOf.BF_FractalAbomination)
                 {
                     ___pawn.Kill(dinfo, hediff);
                     return false;
@@ -82,7 +82,7 @@ namespace ATReforged
             public static bool Listener(ref DamageInfo? dinfo, ref Hediff hediff, ref Caravan caravan, Pawn ___pawn)
             {
                 // If the pawn is a surrogate and wasn't just turned into one, then abort.
-                if (Utils.IsSurrogate(___pawn) && hediff != null && hediff.def != ATR_HediffDefOf.ATR_SkyMindReceiver)
+                if (Utils.IsSurrogate(___pawn) && hediff != null && hediff.def != BF_HediffDefOf.BF_SkyMindReceiver)
                 {
                     return false;
                 }

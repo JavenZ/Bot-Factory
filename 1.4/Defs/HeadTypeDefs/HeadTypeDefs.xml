@@ -5,7 +5,7 @@
     <!-- Male -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier1_Male</defName>
+        <defName>BF_Tier1_Male</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier1/head/Male_Average_Normal</graphicPath>
         <gender>Male</gender>
     </HeadTypeDef>
@@ -13,7 +13,7 @@
     <!-- Female -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier1_Female</defName>
+        <defName>BF_Tier1_Female</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier1/head/Female_Average_Normal</graphicPath>
         <gender>Female</gender>
     </HeadTypeDef>
@@ -21,7 +21,7 @@
     <!-- None -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier1_None</defName>
+        <defName>BF_Tier1_None</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier1/head/None_Average_Normal</graphicPath>
         <gender>None</gender>
     </HeadTypeDef>
@@ -31,7 +31,7 @@
     <!-- Male -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier2_Male</defName>
+        <defName>BF_Tier2_Male</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier2/head/Male_Average_Normal</graphicPath>
         <gender>Male</gender>
     </HeadTypeDef>
@@ -39,7 +39,7 @@
     <!-- Female -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier2_Female</defName>
+        <defName>BF_Tier2_Female</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier2/head/Female_Average_Normal</graphicPath>
         <gender>Female</gender>
     </HeadTypeDef>
@@ -47,7 +47,7 @@
     <!-- None -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier2_None</defName>
+        <defName>BF_Tier2_None</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier2/head/None_Average_Normal</graphicPath>
         <gender>None</gender>
     </HeadTypeDef>
@@ -57,7 +57,7 @@
     <!-- Male -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier3_Male</defName>
+        <defName>BF_Tier3_Male</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier3/head/Male_Average_Normal</graphicPath>
         <gender>Male</gender>
     </HeadTypeDef>
@@ -65,7 +65,7 @@
     <!-- Female -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier3_Female</defName>
+        <defName>BF_Tier3_Female</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier3/head/Female_Average_Normal</graphicPath>
         <gender>Female</gender>
     </HeadTypeDef>
@@ -73,7 +73,7 @@
     <!-- None -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier3_None</defName>
+        <defName>BF_Tier3_None</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier3/head/None_Average_Normal</graphicPath>
         <gender>None</gender>
     </HeadTypeDef>
@@ -83,7 +83,7 @@
     <!-- Male -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier4_Male</defName>
+        <defName>BF_Tier4_Male</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier4/head/Male_Average_Normal</graphicPath>
         <gender>Male</gender>
     </HeadTypeDef>
@@ -91,7 +91,7 @@
     <!-- Female -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier4_Female</defName>
+        <defName>BF_Tier4_Female</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier4/head/Female_Average_Normal</graphicPath>
         <gender>Female</gender>
     </HeadTypeDef>
@@ -99,7 +99,7 @@
     <!-- None -->
 
     <HeadTypeDef>
-        <defName>ATR_Tier4_None</defName>
+        <defName>BF_Tier4_None</defName>
         <graphicPath>Things/Pawns/Humanlikes/Tier4/head/None_Average_Normal</graphicPath>
         <gender>None</gender>
     </HeadTypeDef>

@@ -5,7 +5,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class WorkGiver_DoBill_Patch
     {
@@ -19,7 +19,7 @@ namespace ATReforged
                 try
                 {
                     // If all medicines may be used for any operation, then no reason to remove any medicines from any operation.
-                    if (!ATReforged_Settings.medicinesAreInterchangeable && billGiver is Pawn)
+                    if (!BotFactory_Settings.medicinesAreInterchangeable && billGiver is Pawn)
                     {
                         // If the patient is a mechanical unit, make sure to use a mechanical-compatible medicine (Reserved Repair Stims or additionally by settings)
                         if (Utils.IsConsideredMechanical(billGiver.def))
@@ -55,7 +55,7 @@ namespace ATReforged
                 {
                     __result = null;
                 }
-                else if (__instance.def.workType == ATR_WorkTypeDefOf.ATR_Mechanic && thing is Pawn unit && !Utils.IsConsideredMechanical(unit))
+                else if (__instance.def.workType == BF_WorkTypeDefOf.BF_Mechanic && thing is Pawn unit && !Utils.IsConsideredMechanical(unit))
                 {
                     __result = null;
                 }

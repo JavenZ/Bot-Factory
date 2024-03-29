@@ -2,7 +2,7 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>ATR_PersonalityShiftAllowed</defName>
+        <defName>BF_PersonalityShiftAllowed</defName>
         <durationDays>20</durationDays>
         <stages>
             <li>
@@ -14,7 +14,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ATR_PersonalityShiftDenied</defName>
+        <defName>BF_PersonalityShiftDenied</defName>
         <durationDays>20</durationDays>
         <stages>
             <li>
@@ -26,7 +26,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ATR_SurrogateMentalBreak</defName>
+        <defName>BF_SurrogateMentalBreak</defName>
         <durationDays>15</durationDays>
         <stackLimit>5</stackLimit>
         <stackedEffectMultiplier>0.6</stackedEffectMultiplier>

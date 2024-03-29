@@ -4,7 +4,7 @@ using RimWorld;
 using Verse.AI;
 using System.Collections.Generic;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Surrogates that have mental states triggered on them will trigger it on their controller. Controllers will disconnect from their surrogates.
     internal class MentalStateHandler_Patch
@@ -43,9 +43,9 @@ namespace ATReforged
                     // Less than extreme mental states simply apply a mood debuff to their controller and reboots this particular surrogate.
                     if (!stateDef.IsExtreme)
                     {
-                        controller.needs.mood?.thoughts?.memories?.TryGainMemoryFast(ATR_ThoughtDefOf.ATR_SurrogateMentalBreak);
-                        ___pawn.health.AddHediff(ATR_HediffDefOf.ATR_LongReboot);
-                        Find.LetterStack.ReceiveLetter("ATR_SurrogateSufferedMentalState".Translate(), "ATR_SurrogateSufferedMentalStateDesc".Translate(), LetterDefOf.NegativeEvent);
+                        controller.needs.mood?.thoughts?.memories?.TryGainMemoryFast(BF_ThoughtDefOf.BF_SurrogateMentalBreak);
+                        ___pawn.health.AddHediff(BF_HediffDefOf.BF_LongReboot);
+                        Find.LetterStack.ReceiveLetter("BF_SurrogateSufferedMentalState".Translate(), "BF_SurrogateSufferedMentalStateDesc".Translate(), LetterDefOf.NegativeEvent);
 
                     }
                     // Extreme mental states are applied to the controller directly.
@@ -59,7 +59,7 @@ namespace ATReforged
                         // Surrogates of a SkyMind Core intelligence simply reboot upon suffering a mental break, regardless of extremity.
                         else
                         {
-                            ___pawn.health.AddHediff(ATR_HediffDefOf.ATR_LongReboot);
+                            ___pawn.health.AddHediff(BF_HediffDefOf.BF_LongReboot);
                         }
                     }
                 }
@@ -69,10 +69,10 @@ namespace ATReforged
                     IEnumerable<Pawn> surrogates = compSkyMindLink.GetSurrogates();
                     foreach (Pawn surrogate in surrogates)
                     {
-                        surrogate.health.AddHediff(ATR_HediffDefOf.ATR_LongReboot);
+                        surrogate.health.AddHediff(BF_HediffDefOf.BF_LongReboot);
                     }
                     compSkyMindLink.DisconnectSurrogates();
-                    Find.LetterStack.ReceiveLetter("ATR_ControllerSufferedMentalState".Translate(), "ATR_ControllerSufferedMentalStateDesc".Translate(), LetterDefOf.NegativeEvent);
+                    Find.LetterStack.ReceiveLetter("BF_ControllerSufferedMentalState".Translate(), "BF_ControllerSufferedMentalStateDesc".Translate(), LetterDefOf.NegativeEvent);
                 }
             }
         }

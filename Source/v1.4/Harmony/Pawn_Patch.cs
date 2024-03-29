@@ -2,7 +2,7 @@
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Pawn_Patch
     {
@@ -13,7 +13,7 @@ namespace ATReforged
             [HarmonyPrefix]
             public static bool Listener(ref Pawn __instance, DamageInfo? dinfo, Hediff exactCulprit = null)
             {
-                if (__instance.kindDef == ATR_PawnKindDefOf.ATR_MicroScyther)
+                if (__instance.kindDef == BF_PawnKindDefOf.BF_MicroScyther)
                 {
                     // Save details and destroy before doing the explosion to avoid the damage hitting the pawn, killing them again.
                     if (!__instance.Destroyed)
@@ -25,7 +25,7 @@ namespace ATReforged
                     }
                     return false;
                 }
-                else if (__instance.kindDef == ATR_PawnKindDefOf.ATR_FractalAbomination)
+                else if (__instance.kindDef == BF_PawnKindDefOf.BF_FractalAbomination)
                 {
                     // Save details and destroy before doing the explosion to avoid the damage hitting the pawn, killing them again.
                     if (!__instance.Destroyed)
@@ -34,7 +34,7 @@ namespace ATReforged
                         Map tempMap = __instance.Map;
                         __instance.Destroy();
                         GenExplosion.DoExplosion(tempPos, tempMap, 2, DamageDefOf.Flame, __instance, 10);
-                        GenExplosion.DoExplosion(tempPos, tempMap, 0.5f, DamageDefOf.Bomb, __instance, 10, postExplosionSpawnThingDef: ATR_ThingDefOf.ATR_FractalPill, postExplosionSpawnChance: 1f, postExplosionSpawnThingCount: 1);
+                        GenExplosion.DoExplosion(tempPos, tempMap, 0.5f, DamageDefOf.Bomb, __instance, 10, postExplosionSpawnThingDef: BF_ThingDefOf.BF_FractalPill, postExplosionSpawnChance: 1f, postExplosionSpawnThingCount: 1);
                     }
                     return false;
                 }

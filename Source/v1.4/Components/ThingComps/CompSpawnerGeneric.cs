@@ -2,7 +2,7 @@
 using RimWorld;
 using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompSpawnerGeneric : ThingComp
     {
@@ -45,21 +45,21 @@ namespace ATReforged
                 if (Utils.IsConsideredMechanicalAndroid(pawn))
                 {
                     // Androids that need a Core to be functional are spawned blank and dormant.
-                    if (pawn.def.GetModExtension<ATR_MechTweaker>()?.needsCoreAsAndroid == true)
+                    if (pawn.def.GetModExtension<BF_MechTweaker>()?.needsCoreAsAndroid == true)
                     {
                         Utils.Duplicate(Utils.GetBlank(), pawn, false, false);
-                        pawn.health.AddHediff(ATR_HediffDefOf.ATR_IsolatedCore, pawn.health.hediffSet.GetBrain());
-                        Hediff target = pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_AutonomousCore);
+                        pawn.health.AddHediff(BF_HediffDefOf.BF_IsolatedCore, pawn.health.hediffSet.GetBrain());
+                        Hediff target = pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_AutonomousCore);
                         if (target != null)
                             pawn.health.RemoveHediff(target);
                         pawn.playerSettings.medCare = MedicalCareCategory.NormalOrWorse;
                         pawn.guest.SetGuestStatus(Faction.OfPlayer);
-                        Messages.Message("ATR_NewbootAndroidCreated".Translate(), MessageTypeDefOf.PositiveEvent);
+                        Messages.Message("BF_NewbootAndroidCreated".Translate(), MessageTypeDefOf.PositiveEvent);
 
                         // If this is the player's first constructed android, send a letter in case they don't understand how they work.
                         if (!Utils.gameComp.hasBuiltAndroid)
                         {
-                            Find.LetterStack.ReceiveLetter("ATR_FirstBlankAndroidCreated".Translate(), "ATR_FirstBlankAndroidCreatedDesc".Translate(), LetterDefOf.NeutralEvent);
+                            Find.LetterStack.ReceiveLetter("BF_FirstBlankAndroidCreated".Translate(), "BF_FirstBlankAndroidCreatedDesc".Translate(), LetterDefOf.NeutralEvent);
                             Utils.gameComp.hasBuiltAndroid = true;
                         }
                     }
@@ -69,14 +69,14 @@ namespace ATReforged
                         PawnGenerationRequest selfInitialized = new PawnGenerationRequest(Spawnprops.pawnKind, Faction.OfPlayer, forceGenerateNewPawn: true, canGeneratePawnRelations: false, allowAddictions: false, fixedBiologicalAge: 30, forceNoIdeo: true, colonistRelationChanceFactor: 0, forceBaselinerChance: 1f);
                         Pawn newPawn = PawnGenerator.GeneratePawn(selfInitialized);
                         Utils.Duplicate(newPawn, pawn, false, false);
-                        Hediff rebootHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_LongReboot, pawn, null);
+                        Hediff rebootHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_LongReboot, pawn, null);
                         rebootHediff.Severity = 1;
                         pawn.health.AddHediff(rebootHediff);
                     }
                 }
                 else if (Utils.IsConsideredMechanicalDrone(pawn) && !Utils.gameComp.hasBuiltDrone)
                 {
-                    Find.LetterStack.ReceiveLetter("ATR_FirstDroneCreated".Translate(), "ATR_FirstDroneCreatedDesc".Translate(), LetterDefOf.NeutralEvent);
+                    Find.LetterStack.ReceiveLetter("BF_FirstDroneCreated".Translate(), "BF_FirstDroneCreatedDesc".Translate(), LetterDefOf.NeutralEvent);
                     Utils.gameComp.hasBuiltDrone = true;
                 }
 

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-	<ThingDef Name="ATR_MechanicalAnimalThingBase" ParentName="AnimalThingBase" Abstract="True">
+	<ThingDef Name="BF_MechanicalAnimalThingBase" ParentName="AnimalThingBase" Abstract="True">
 		<statBases>
 			<Flammability>0</Flammability>
             <ToxicResistance>1</ToxicResistance>
@@ -11,12 +11,12 @@
             <PainShockThreshold>1</PainShockThreshold>
 			<ComfyTemperatureMin>-40</ComfyTemperatureMin>
 			<ComfyTemperatureMax>120</ComfyTemperatureMax>
-            <ATR_MaintenanceRetention>4</ATR_MaintenanceRetention>
+            <BF_MaintenanceRetention>4</BF_MaintenanceRetention>
 		</statBases>
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<race>
-			<fleshType>ATR_AndroidTier</fleshType>
-			<bloodDef>ATR_CoolantAndroidTier</bloodDef>
+			<fleshType>BF_AndroidTier</fleshType>
+			<bloodDef>BF_CoolantAndroidTier</bloodDef>
 			<hasGenders>false</hasGenders>
             <packAnimal>false</packAnimal>
 			<herdAnimal>false</herdAnimal>
@@ -34,7 +34,7 @@
 			<leatherDef>Leather_Human</leatherDef>
             <lifeExpectancy>40</lifeExpectancy>
 			<hediffGiverSets>
-				<li>ATR_MechanicalStandard</li>
+				<li>BF_MechanicalStandard</li>
 			</hediffGiverSets>
             <ageGenerationCurve>
                 <points>
@@ -46,15 +46,15 @@
             </ageGenerationCurve>
 		</race>
 		<tradeTags>
-            <li>ATR_MechanicalAnimal</li>
+            <li>BF_MechanicalAnimal</li>
 		</tradeTags>
 		<modExtensions>
-			<li Class="ATReforged.ATR_MechTweaker">
+			<li Class="BotFactory.BF_MechTweaker">
 			</li>
 		</modExtensions>
 	</ThingDef>
 
-	<PawnKindDef Name="ATR_MechanicalAnimalKindBase" ParentName="AnimalKindBase" Abstract="True">
+	<PawnKindDef Name="BF_MechanicalAnimalKindBase" ParentName="AnimalKindBase" Abstract="True">
 		<canArriveManhunter>false</canArriveManhunter>
 		<ecoSystemWeight>0.8</ecoSystemWeight>
 	</PawnKindDef>

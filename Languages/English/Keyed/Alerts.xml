@@ -1,19 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<ATR_AlertServerHeatCritical>Heat Sensitive Device Critical</ATR_AlertServerHeatCritical>
-	<ATR_AlertServerHeatCriticalDesc>At least one heat sensitive device is in danger of combusting due to surpassing its maximum safety heat threshold! Action is required to retain network integrity!</ATR_AlertServerHeatCriticalDesc>
+	<BF_AlertServerHeatCritical>Heat Sensitive Device Critical</BF_AlertServerHeatCritical>
+	<BF_AlertServerHeatCriticalDesc>At least one heat sensitive device is in danger of combusting due to surpassing its maximum safety heat threshold! Action is required to retain network integrity!</BF_AlertServerHeatCriticalDesc>
 
-	<ATR_AlertFullSkillServers>Full Skill Servers</ATR_AlertFullSkillServers>
-    <ATR_AlertFullSkillServersDesc>There is no more capacity for skill points. Consider using them, or expanding capacity.</ATR_AlertFullSkillServersDesc>
+	<BF_AlertFullSkillServers>Full Skill Servers</BF_AlertFullSkillServers>
+    <BF_AlertFullSkillServersDesc>There is no more capacity for skill points. Consider using them, or expanding capacity.</BF_AlertFullSkillServersDesc>
 
-	<ATR_AlertFullHackingServers>Full Hacking Servers</ATR_AlertFullHackingServers>
-    <ATR_AlertFullHackingServersDesc>There is no more capacity for hacking points and there is no current time penalty. Consider using them, or expanding capacity.</ATR_AlertFullHackingServersDesc>
+	<BF_AlertFullHackingServers>Full Hacking Servers</BF_AlertFullHackingServers>
+    <BF_AlertFullHackingServersDesc>There is no more capacity for hacking points and there is no current time penalty. Consider using them, or expanding capacity.</BF_AlertFullHackingServersDesc>
 
-    <ATR_AlertLowSecurity>Network At Risk</ATR_AlertLowSecurity>
-	<ATR_AlertLowSecurityDesc>The number of available security points is exceedingly unlikely to successfully defend against any attempted hacks! Additional security servers and points are required - extreme caution should be practiced around network use at this time.</ATR_AlertLowSecurityDesc>
+    <BF_AlertLowSecurity>Network At Risk</BF_AlertLowSecurity>
+	<BF_AlertLowSecurityDesc>The number of available security points is exceedingly unlikely to successfully defend against any attempted hacks! Additional security servers and points are required - extreme caution should be practiced around network use at this time.</BF_AlertLowSecurityDesc>
 
-	<ATR_NeedMechanic>Need mechanic</ATR_NeedMechanic>
-	<ATR_NeedMechanicDesc>These mechanical units need repairs, but you have no healthy colonists assigned as mechanics.\n\n{0}\nAssign a healthy colonist to the Mechanic work type. While most damage will naturally be mitigated over time, mechanics will significantly increase recovery speed and reduce the chance of side-effects.</ATR_NeedMechanicDesc>
+	<BF_NeedMechanic>Need mechanic</BF_NeedMechanic>
+	<BF_NeedMechanicDesc>These mechanical units need repairs, but you have no healthy colonists assigned as mechanics.\n\n{0}\nAssign a healthy colonist to the Mechanic work type. While most damage will naturally be mitigated over time, mechanics will significantly increase recovery speed and reduce the chance of side-effects.</BF_NeedMechanicDesc>
 
 </LanguageData>

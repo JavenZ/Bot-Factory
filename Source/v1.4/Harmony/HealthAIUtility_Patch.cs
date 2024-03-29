@@ -5,7 +5,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class HealthAIUtility_Patch
     {
@@ -16,7 +16,7 @@ namespace ATReforged
             [HarmonyPostfix]
             public static void Listener(Pawn healer, Pawn patient, ref Thing __result)
             {
-                if (ATReforged_Settings.medicinesAreInterchangeable)
+                if (BotFactory_Settings.medicinesAreInterchangeable)
                     return;
 
                 if (patient.playerSettings == null || patient.playerSettings.medCare <= MedicalCareCategory.NoMeds)

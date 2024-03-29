@@ -2,10 +2,10 @@
 <Defs>
 
     <BodyDef>
-        <defName>ATR_MechAirborne</defName>
+        <defName>BF_MechAirborne</defName>
         <label>Aerial Drone</label>
         <corePart>
-            <def>ATR_MechanicalThorax</def>
+            <def>BF_MechanicalThorax</def>
             <height>Middle</height>
             <depth>Outside</depth>
             <groups>
@@ -13,7 +13,7 @@
             </groups>
             <parts>
                 <li>
-                    <def>ATR_Framework</def>
+                    <def>BF_Framework</def>
                     <coverage>0.2</coverage>
                     <depth>Outside</depth>
                     <groups>
@@ -21,7 +21,7 @@
                     </groups>
                 </li>
                 <li>
-                    <def>ATR_InternalCorePump</def>
+                    <def>BF_InternalCorePump</def>
                     <coverage>0.023</coverage>
                     <depth>Inside</depth>
                     <groups>
@@ -29,7 +29,7 @@
                     </groups>
                 </li>
                 <li>
-                    <def>ATR_MechanicalHeatsink</def>
+                    <def>BF_MechanicalHeatsink</def>
                     <customLabel>left heatsink</customLabel>
                     <coverage>0.025</coverage>
                     <depth>Inside</depth>
@@ -38,7 +38,7 @@
                     </groups>
                 </li>
                 <li>
-                    <def>ATR_MechanicalHeatsink</def>
+                    <def>BF_MechanicalHeatsink</def>
                     <customLabel>right heatsink</customLabel>
                     <coverage>0.025</coverage>
                     <depth>Inside</depth>
@@ -47,7 +47,7 @@
                     </groups>
                 </li>
                 <li>
-                    <def>ATR_MechanicalNeck</def>
+                    <def>BF_MechanicalNeck</def>
                     <coverage>0.10</coverage>
                     <height>Top</height>
                     <groups>
@@ -55,7 +55,7 @@
                     </groups>
                     <parts>
                         <li>
-                            <def>ATR_MechanicalHead</def>
+                            <def>BF_MechanicalHead</def>
                             <coverage>0.72</coverage>
                             <groups>
                                 <li>UpperHead</li>
@@ -64,7 +64,7 @@
                             </groups>
                             <parts>
                                 <li>
-                                    <def>ATR_ArtificialBrain</def>
+                                    <def>BF_ArtificialBrain</def>
                                     <coverage>0.10</coverage>
                                     <depth>Inside</depth>
                                     <groups>
@@ -73,7 +73,7 @@
                                     </groups>
                                 </li>
                                 <li>
-                                    <def>ATR_MechanicalVisualSensor</def>
+                                    <def>BF_MechanicalVisualSensor</def>
                                     <customLabel>left visual sensor</customLabel>
                                     <coverage>0.13</coverage>
                                     <groups>
@@ -82,7 +82,7 @@
                                     </groups>
                                 </li>
                                 <li>
-                                    <def>ATR_MechanicalVisualSensor</def>
+                                    <def>BF_MechanicalVisualSensor</def>
                                     <customLabel>right visual sensor</customLabel>
                                     <coverage>0.13</coverage>
                                     <groups>
@@ -95,25 +95,25 @@
                     </parts>
                 </li>
                 <li>
-                    <def>ATR_MechanicalWing</def>
+                    <def>BF_MechanicalWing</def>
                     <customLabel>left wing</customLabel>
                     <coverage>0.17</coverage>
                     <groups>
                         <li>Arms</li>
-                        <li>ATR_MechanicalLeftWing</li>
+                        <li>BF_MechanicalLeftWing</li>
                     </groups>
                 </li>
                 <li>
-                    <def>ATR_MechanicalWing</def>
+                    <def>BF_MechanicalWing</def>
                     <customLabel>right wing</customLabel>
                     <coverage>0.17</coverage>
                     <groups>
                         <li>Arms</li>
-                        <li>ATR_MechanicalRightWing</li>
+                        <li>BF_MechanicalRightWing</li>
                     </groups>
                 </li>
                 <li>
-                    <def>ATR_MechanicalPropeller</def>
+                    <def>BF_MechanicalPropeller</def>
                     <coverage>0.2</coverage>
                     <height>Bottom</height>
                     <groups>
@@ -121,7 +121,7 @@
                     </groups>
                     <parts>
                         <li>
-                            <def>ATR_CounterWeightTop</def>
+                            <def>BF_CounterWeightTop</def>
                             <coverage>0.2</coverage>
                             <groups>
                                 <li>Feet</li>

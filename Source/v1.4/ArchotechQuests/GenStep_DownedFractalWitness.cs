@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class GenStep_DownedFractalWitness : GenStep_DownedRefugee
     {
@@ -17,7 +17,7 @@ namespace ATReforged
                 DownedFractalWitnessComp component = map.Parent.GetComponent<DownedFractalWitnessComp>();
                 if (component == null || !component.pawn.Any)
                 {
-                    pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(ATR_PawnKindDefOf.ATR_FractalWitness, Faction.OfAncients, PawnGenerationContext.NonPlayer, map.Tile, forceGenerateNewPawn: true, canGeneratePawnRelations: false, mustBeCapableOfViolence: false, allowFood: false, allowAddictions: false));
+                    pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(BF_PawnKindDefOf.BF_FractalWitness, Faction.OfAncients, PawnGenerationContext.NonPlayer, map.Tile, forceGenerateNewPawn: true, canGeneratePawnRelations: false, mustBeCapableOfViolence: false, allowFood: false, allowAddictions: false));
                 }
                 else 
                 {
@@ -34,7 +34,7 @@ namespace ATReforged
             }
 
             // Give the witness the Fractal hediff in the gifted stage.
-            Hediff fractalHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_FractalPillOrganic, pawn);
+            Hediff fractalHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_FractalPillOrganic, pawn);
             fractalHediff.Severity = 0.15f;
             pawn.health.AddHediff(fractalHediff);
 

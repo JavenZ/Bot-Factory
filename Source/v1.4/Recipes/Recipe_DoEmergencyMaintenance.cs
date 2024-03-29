@@ -3,7 +3,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Recipe_DoEmergencyMaintenance : Recipe_SurgeryAndroids
     {

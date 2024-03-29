@@ -2,7 +2,7 @@
 using UnityEngine;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     // This HediffComp will create and manage a Mote to display over the related pawn's head as long as the Comp persists.
     public class HediffComp_TetheredMoteSustainer : HediffComp
@@ -12,7 +12,7 @@ namespace ATReforged
         public override void CompPostMake()
         {
             base.CompPostMake();
-            if (Pawn.Spawned && ATReforged_Settings.displaySurrogateControlIcon)
+            if (Pawn.Spawned && BotFactory_Settings.displaySurrogateControlIcon)
             {
                 AssignAttachedMote();
             }
@@ -21,7 +21,7 @@ namespace ATReforged
         public override void CompPostTick(ref float severityAdjustment)
         {
             base.CompPostTick(ref severityAdjustment);
-            if (attachedMote == null && Pawn.Spawned && ATReforged_Settings.displaySurrogateControlIcon)
+            if (attachedMote == null && Pawn.Spawned && BotFactory_Settings.displaySurrogateControlIcon)
             {
                 AssignAttachedMote();
             }

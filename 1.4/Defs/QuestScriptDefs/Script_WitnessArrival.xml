@@ -2,7 +2,7 @@
 <Defs>
 
     <QuestScriptDef>
-        <defName>ATR_OpportunitySite_WitnessArrival</defName>
+        <defName>BF_OpportunitySite_WitnessArrival</defName>
         <rootSelectionWeight>0.5</rootSelectionWeight>
         <rootMinPoints>1200</rootMinPoints>
         <rootIncreasesPopulation>true</rootIncreasesPopulation>
@@ -57,7 +57,7 @@
                     <storeFactionAs>siteFaction</storeFactionAs>
                     <sitePartsTags>
                         <li>
-                            <tag>ATR_WitnessArrival</tag>
+                            <tag>BF_WitnessArrival</tag>
                         </li>
                         <li>
                             <tag>DownedRefugeeQuestThreat</tag>

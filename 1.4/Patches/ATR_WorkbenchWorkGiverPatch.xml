@@ -5,8 +5,8 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/WorkGiverDef[defName="DoBillsMachiningTable"]/fixedBillGiverDefs</xpath>
 		<value>
-			<li>ATR_MechanicalAssemblyPod</li>
-			<li>ATR_MechPartWorkbench</li>
+			<li>BF_MechanicalAssemblyPod</li>
+			<li>BF_MechPartWorkbench</li>
 		</value>
 	</Operation>
 

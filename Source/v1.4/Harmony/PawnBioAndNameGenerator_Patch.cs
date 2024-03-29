@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class PawnBioAndNameGenerator_Patch
     {
@@ -34,16 +34,16 @@ namespace ATReforged
                         default:
                             if (pawn.RaceProps.hasGenders)
                             {
-                                __result = PawnBioAndNameGenerator.GenerateFullPawnName(pawn.def, ATR_RulePackDefOf.ATR_AndroidNoneNames, pawn.story, null, ATR_RulePackDefOf.ATR_AndroidNoneNames, pawn.Faction?.ideos?.PrimaryCulture, pawn.gender, pawn.RaceProps.nameCategory, forcedLastName);
+                                __result = PawnBioAndNameGenerator.GenerateFullPawnName(pawn.def, BF_RulePackDefOf.BF_AndroidNoneNames, pawn.story, null, BF_RulePackDefOf.BF_AndroidNoneNames, pawn.Faction?.ideos?.PrimaryCulture, pawn.gender, pawn.RaceProps.nameCategory, forcedLastName);
                             }
                             break;
                     }
                     return;
                 }
                 // Mechanical drones never have gender. Generate a new name with the None name maker, ignoring xml tags.
-                else if (Utils.IsConsideredMechanicalDrone(pawn) && pawn.def.GetModExtension<ATR_MechTweaker>()?.letPawnKindHandleDroneBackstories == false)
+                else if (Utils.IsConsideredMechanicalDrone(pawn) && pawn.def.GetModExtension<BF_MechTweaker>()?.letPawnKindHandleDroneBackstories == false)
                 {
-                    __result = PawnBioAndNameGenerator.GenerateFullPawnName(pawn.def, ATR_RulePackDefOf.ATR_DroneNoneNames, pawn.story, null, null, pawn.Faction?.ideos?.PrimaryCulture, pawn.gender, pawn.RaceProps.nameCategory, forcedLastName);
+                    __result = PawnBioAndNameGenerator.GenerateFullPawnName(pawn.def, BF_RulePackDefOf.BF_DroneNoneNames, pawn.story, null, null, pawn.Faction?.ideos?.PrimaryCulture, pawn.gender, pawn.RaceProps.nameCategory, forcedLastName);
                     
                 }
             }

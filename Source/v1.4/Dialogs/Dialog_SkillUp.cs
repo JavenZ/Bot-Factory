@@ -2,9 +2,9 @@
 using RimWorld;
 using UnityEngine;
 using System.Collections.Generic;
-using static ATReforged.ListingExtensions;
+using static BotFactory.ListingExtensions;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Dialog_SkillUp : Window
     {
@@ -88,7 +88,7 @@ namespace ATReforged
             Listing_Standard prelist = new Listing_Standard();
             prelist.Begin(headerRect);
 
-            prelist.Label("ATR_PawnBeingModified".Translate() + pawn.LabelShort + ", " + pawn.story.TitleShort);
+            prelist.Label("BF_PawnBeingModified".Translate() + pawn.LabelShort + ", " + pawn.story.TitleShort);
             prelist.GapLine();
 
             prelist.End();
@@ -122,24 +122,24 @@ namespace ATReforged
                     continue;
 
                 // Display the current skill, how many points the pawn has in it, and how much they've learned today.
-                listingStandard.Label(skillDefTranslationList[i] + ": " + skillRecord.levelInt + ". " + "ATR_CurrentXP".Translate() + skillRecord.xpSinceLastLevel + "/" + skillRecord.XpRequiredForLevelUp + "ATR_TodaysXP".Translate() + skillRecord.xpSinceMidnight);
+                listingStandard.Label(skillDefTranslationList[i] + ": " + skillRecord.levelInt + ". " + "BF_CurrentXP".Translate() + skillRecord.xpSinceLastLevel + "/" + skillRecord.XpRequiredForLevelUp + "BF_TodaysXP".Translate() + skillRecord.xpSinceMidnight);
                 
                 // Cut the current section in half to make space for adding points and passions to be side by side under their skill.
                 var subsection = listingStandard.BeginHiddenSection(out float subsectionHeight);
                 subsection.ColumnWidth = (maxWidth - ColumnGap) / 2;
 
                 // Section for purchasing raw xp, a number of skill points for that number of points * Settings modifier. Affected by vanilla (or patched by mod) learning speed effects.
-                if (subsection.ButtonText("ATR_AddSkillPoints".Translate(skillDefTranslationList[i])))
+                if (subsection.ButtonText("BF_AddSkillPoints".Translate(skillDefTranslationList[i])))
                 {
-                    int insertionRate = ATReforged_Settings.skillPointInsertionRate;
+                    int insertionRate = BotFactory_Settings.skillPointInsertionRate;
                     if (availableSkillPoints >= insertionRate)
                     { // Use vanilla stat learning to maximize compatibility. Remove skill points on complete.
-                        skillRecord.Learn(insertionRate * ATReforged_Settings.skillPointConversionRate);
+                        skillRecord.Learn(insertionRate * BotFactory_Settings.skillPointConversionRate);
                         Utils.gameComp.ChangeServerPoints(-insertionRate, ServerType.SkillServer);
                         availableSkillPoints -= insertionRate;
                     }
                     else
-                        Messages.Message("ATR_InsufficientPoints".Translate("100"), MessageTypeDefOf.NeutralEvent);
+                        Messages.Message("BF_InsufficientPoints".Translate("100"), MessageTypeDefOf.NeutralEvent);
                 }
 
                 // Section for passions, starting with getting the correct texture and then displaying the purchase button.
@@ -185,7 +185,7 @@ namespace ATReforged
                     }
                     else
                     { // Can't afford to increase, send a message to the player.
-                        Messages.Message("ATR_InsufficientPoints".Translate(pointsToIncreasePassion), MessageTypeDefOf.NeutralEvent);
+                        Messages.Message("BF_InsufficientPoints".Translate(pointsToIncreasePassion), MessageTypeDefOf.NeutralEvent);
                     }
                 }
                 listingStandard.EndHiddenSection(subsection, subsectionHeight);
@@ -203,8 +203,8 @@ namespace ATReforged
             Listing_Standard postlist = new Listing_Standard();
             postlist.Begin(footerRect);
 
-            postlist.Label("ATR_AvailableSkillPoints".Translate(availableSkillPoints));
-            postlist.Label("ATR_AvailableSkillPointsDesc".Translate());
+            postlist.Label("BF_AvailableSkillPoints".Translate(availableSkillPoints));
+            postlist.Label("BF_AvailableSkillPointsDesc".Translate());
 
             postlist.End();
 

@@ -2,7 +2,7 @@
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Deceased drones or surrogates don't get unburied notifications.
     internal class Alert_ColonistLeftUnburied_Patch

@@ -3,7 +3,7 @@ using UnityEngine;
 using Verse;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Recipe_SurgeryAndroids : RecipeWorker
     {
@@ -20,13 +20,13 @@ namespace ATReforged
             // Multiply success chance by skill of surgeon (usually crafting capacity)
             if (!patient.RaceProps.IsMechanoid)
             {
-                chanceSucceed *= surgeon.GetStatValue(ATR_StatDefOf.ATR_MechanicalSurgerySuccessChance);
+                chanceSucceed *= surgeon.GetStatValue(BF_StatDefOf.BF_MechanicalSurgerySuccessChance);
             }
 
             // Multiply success chance by quality of bed
             if (!recipe.surgeryIgnoreEnvironment && patient.InBed())
             {
-                chanceSucceed *= patient.CurrentBed().GetStatValue(ATR_StatDefOf.ATR_MechanicalSurgerySuccessChanceFactor);
+                chanceSucceed *= patient.CurrentBed().GetStatValue(BF_StatDefOf.BF_MechanicalSurgerySuccessChanceFactor);
             }
             else
             { // No bed? Reduce surgery success chance significantly.
@@ -50,10 +50,10 @@ namespace ATReforged
             }
 
             // Max chance of success is either the calculated surgery chance or the settings-prescribed max limit (default 1).
-            chanceSucceed = Mathf.Min(chanceSucceed, ATReforged_Settings.maxChanceMechanicOperationSuccess);
+            chanceSucceed = Mathf.Min(chanceSucceed, BotFactory_Settings.maxChanceMechanicOperationSuccess);
 
             // Check if the surgery is successful.
-            if (ATReforged_Settings.showMechanicalSurgerySuccessChance)
+            if (BotFactory_Settings.showMechanicalSurgerySuccessChance)
                 Messages.Message("[ATR Debug Utility] Surgery had " + chanceSucceed + " chance to succeed.", MessageTypeDefOf.NeutralEvent);
             if (!Rand.Chance(chanceSucceed))
             { // Surgery failed. Determine the extent of the failure.
@@ -67,7 +67,7 @@ namespace ATReforged
                     }
                     Messages.Message("MessageMedicalOperationFailureFatalAndroid".Translate(surgeon.LabelShort, patient.LabelShort, recipe.label), patient, MessageTypeDefOf.NegativeHealthEvent);
                 }
-                else if (Rand.Chance(ATReforged_Settings.chanceFailedOperationMinor))
+                else if (Rand.Chance(BotFactory_Settings.chanceFailedOperationMinor))
                 { // Patient suffered minor injuries.
                     Messages.Message("MessageMedicalOperationFailureMinorAndroid".Translate(surgeon.LabelShort, patient.LabelShort), patient, MessageTypeDefOf.NegativeHealthEvent);
                     HealthUtility.GiveRandomSurgeryInjuries(patient, 10, part);

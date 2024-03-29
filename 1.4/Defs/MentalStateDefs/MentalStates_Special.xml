@@ -2,8 +2,8 @@
 <Defs>
 
     <MentalStateDef ParentName="BaseMentalState">
-        <defName>ATR_MentalState_Exterminator</defName>
-        <stateClass>ATReforged.MentalState_Exterminator</stateClass>
+        <defName>BF_MentalState_Exterminator</defName>
+        <stateClass>BotFactory.MentalState_Exterminator</stateClass>
         <label>seeking targets</label>
         <category>Aggro</category>
         <nameColor>(0.7,0.5,0.5)</nameColor>

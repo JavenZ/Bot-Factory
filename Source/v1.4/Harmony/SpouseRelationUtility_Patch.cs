@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public static class SpouseRelationUtility_Patch
     {

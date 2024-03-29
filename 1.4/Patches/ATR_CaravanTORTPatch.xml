@@ -4,7 +4,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/BiomeDef/allowedPackAnimals</xpath>
 		<value>
-			<li>ATR_DroneTORT</li>
+			<li>BF_DroneTORT</li>
 		</value>
 	</Operation>
 </Patch>

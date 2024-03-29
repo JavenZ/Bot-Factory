@@ -1,21 +1,21 @@
 ﻿using Verse;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Alert_FullHackingServers : Alert
     {
         public Alert_FullHackingServers()
         {
-            defaultLabel = "ATR_AlertFullHackingServers".Translate();
-            defaultExplanation = "ATR_AlertFullHackingServersDesc".Translate();
+            defaultLabel = "BF_AlertFullHackingServers".Translate();
+            defaultExplanation = "BF_AlertFullHackingServersDesc".Translate();
             defaultPriority = AlertPriority.Medium;
         }
 
 
         public override AlertReport GetReport()
         {
-            if (!ATReforged_Settings.playerCanHack || !ATReforged_Settings.receiveHackingAlert || Utils.gameComp.GetPointCapacity(ServerType.HackingServer) <= 0)
+            if (!BotFactory_Settings.playerCanHack || !BotFactory_Settings.receiveHackingAlert || Utils.gameComp.GetPointCapacity(ServerType.HackingServer) <= 0)
                 return false;
 
             // Only display the hacking alert if it is near capacity and the hacking penalty is not so bad they can't afford an operation even with used capacity.

@@ -2,7 +2,7 @@
 using Verse;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Recipe_InstallAndroidInterface : Recipe_InstallAndroidPart
     {
@@ -11,7 +11,7 @@ namespace ATReforged
         { 
 
             BodyPartRecord targetBodyPart = pawn.health.hediffSet.GetBrain();
-            if (targetBodyPart != null && pawn.health.hediffSet.HasHediff(ATR_HediffDefOf.ATR_IsolatedCore))
+            if (targetBodyPart != null && pawn.health.hediffSet.HasHediff(BF_HediffDefOf.BF_IsolatedCore))
             {
                 yield return targetBodyPart;
             }
@@ -24,23 +24,23 @@ namespace ATReforged
             base.ApplyOnPawn(pawn, part, billDoer, ingredients, bill);
 
             // If the pawn still has an isolated core, the operation failed. Also failed if they're dead now.
-            if (pawn.Dead || pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_IsolatedCore) != null)
+            if (pawn.Dead || pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_IsolatedCore) != null)
                 return;
 
             // There are special considerations for adding the core (brain) itself. Adding a core makes a new intelligence. Receiver core initializes it as a surrogate. Adding any core removes the "Isolated Core" hediff.
             // Initializing a new android. Create the new intelligence.
-            if (recipe.addsHediff == ATR_HediffDefOf.ATR_AutonomousCore)
+            if (recipe.addsHediff == BF_HediffDefOf.BF_AutonomousCore)
             {
                 Find.WindowStack.Add(new Dialog_InitializeMind(pawn));
             }
             // Initializing a surrogate. Ensure surrogate details are initialized properly.
             else
             {
-                pawn.health.AddHediff(ATR_HediffDefOf.ATR_NoController);
+                pawn.health.AddHediff(BF_HediffDefOf.BF_NoController);
             }
 
             // Remove the isolated core hediff and the reboot hediff (Androids get Long Reboot and Surrogates get nothing). 
-            Hediff target = pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_IsolatedCore);
+            Hediff target = pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_IsolatedCore);
             if (target != null)
             {
                 pawn.health.RemoveHediff(target);

@@ -4,7 +4,7 @@
     <!-- Mechanical Surgery Success Chance Factor -->
 
 	<StatDef>
-		<defName>ATR_MechanicalSurgerySuccessChanceFactor</defName>
+		<defName>BF_MechanicalSurgerySuccessChanceFactor</defName>
 		<label>mechanical surgery success chance factor</label>
 		<description>A multiplier to the chance that a operation on a mechanical unit will succeed when performed here. Mechanical surgery success chances are also affected by many other factors, including the mechanic's ability.</description>
 		<workerClass>StatWorker_SurgerySuccessChanceFactor</workerClass>
@@ -43,7 +43,7 @@
     <!-- Mechanical Tend Quality Offset -->
   
     <StatDef>
-        <defName>ATR_MechanicalTendQualityOffset</defName>
+        <defName>BF_MechanicalTendQualityOffset</defName>
         <label>mechanical tend quality offset</label>
         <description>Mechanical tend quality is offset by this value.</description>
         <category>Building</category>

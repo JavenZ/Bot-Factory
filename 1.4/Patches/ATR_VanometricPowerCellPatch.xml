@@ -5,7 +5,7 @@
 	<Operation Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[defName="VanometricPowerCell"]/minifiedDef</xpath>
         <value>
-            <minifiedDef>ATR_VanometricPowerCellMinified</minifiedDef>
+            <minifiedDef>BF_VanometricPowerCellMinified</minifiedDef>
         </value>
 	</Operation>
     

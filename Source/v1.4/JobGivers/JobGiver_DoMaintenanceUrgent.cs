@@ -2,7 +2,7 @@
 using Verse;
 using Verse.AI;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Mechanical units should attempt maintenance if in poor maintenance and allowed to gain enough to escape it before doing other work.
     public class JobGiver_DoMaintenanceUrgent : ThinkNode_JobGiver
@@ -59,7 +59,7 @@ namespace ATReforged
             LocalTargetInfo maintenanceSpot = MaintenanceUtility.FindMaintenanceSpot(pawn);
             if (maintenanceSpot.IsValid)
             {
-                return JobMaker.MakeJob(ATR_JobDefOf.ATR_DoMaintenanceUrgent, maintenanceSpot.Cell, pawn.InBed() ? ((LocalTargetInfo)pawn.CurrentBed()) : new LocalTargetInfo(pawn.Position));
+                return JobMaker.MakeJob(BF_JobDefOf.BF_DoMaintenanceUrgent, maintenanceSpot.Cell, pawn.InBed() ? ((LocalTargetInfo)pawn.CurrentBed()) : new LocalTargetInfo(pawn.Position));
             }
             return null;
         }

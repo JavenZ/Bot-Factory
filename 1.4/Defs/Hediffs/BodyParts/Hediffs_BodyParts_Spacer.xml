@@ -3,7 +3,7 @@
 
     <!-- Base Spacer -->
 
-    <HediffDef Name="ATR_AddedATR_BodyPartSpacerBase" ParentName="ATR_MechAddedBodyPartBase" Abstract="True">
+    <HediffDef Name="BF_AddedBF_BodyPartSpacerBase" ParentName="BF_MechAddedBodyPartBase" Abstract="True">
         <addedPartProps>
             <solid>true</solid>
             <partEfficiency>1.25</partEfficiency>
@@ -11,7 +11,7 @@
         </addedPartProps>
     </HediffDef>
 
-    <ThingDef Name="ATR_BodyPartSpacerBase" ParentName="ATR_MechBodyPartBase" Abstract="True">
+    <ThingDef Name="BF_BodyPartSpacerBase" ParentName="BF_MechBodyPartBase" Abstract="True">
         <techLevel>Spacer</techLevel>
         <graphicData>
             <texPath>Things/Items/BodyParts/OrganWhite</texPath>
@@ -32,15 +32,15 @@
             <skillRequirements>
                 <Crafting>8</Crafting>
             </skillRequirements>
-            <researchPrerequisite>ATR_AdvancedMechParts</researchPrerequisite>
+            <researchPrerequisite>BF_AdvancedMechParts</researchPrerequisite>
             <recipeUsers>
-                <li>ATR_MechPartWorkbench</li>
+                <li>BF_MechPartWorkbench</li>
             </recipeUsers>
         </recipeMaker>
         <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     </ThingDef>
 
-	<RecipeDef Name="ATR_SurgeryMechanicalSpacer" ParentName="ATR_MechanicalSurgeryInstallBodyPartBase" Abstract="True">
+	<RecipeDef Name="BF_SurgeryMechanicalSpacer" ParentName="BF_MechanicalSurgeryInstallBodyPartBase" Abstract="True">
 		<jobString>Implanting advanced component.</jobString>
         <skillRequirements>
             <Crafting>8</Crafting>
@@ -52,11 +52,11 @@
 
     <!-- Advanced Arm -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedArm</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_AdvancedArm</defName>
         <label>Advanced arm</label>
         <description>Higher plasteel temperance with higher efficiency components grants this arm a significant advantage over standard issue parts.</description>
-        <descriptionHyperlinks><ThingDef>ATR_AdvancedArm</ThingDef></descriptionHyperlinks>
+        <descriptionHyperlinks><ThingDef>BF_AdvancedArm</ThingDef></descriptionHyperlinks>
 	    <comps>
             <li Class="HediffCompProperties_VerbGiver">
                 <tools>
@@ -71,11 +71,11 @@
                 </tools>
             </li>
         </comps>
-        <spawnThingOnRemoved>ATR_AdvancedArm</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_AdvancedArm</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedArm</defName>
+    <ThingDef ParentName="BF_BodyPartSpacerBase">
+        <defName>BF_AdvancedArm</defName>
         <label>Advanced arm</label>
         <description>Higher plasteel temperance with higher efficiency components grants this arm a significant advantage over standard issue parts.</description>
         <costList>
@@ -89,8 +89,8 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalSpacer">
-		<defName>ATR_Install_AdvancedArm</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalSpacer">
+		<defName>BF_Install_AdvancedArm</defName>
 		<label>Install advanced arm</label>
 		<description>Installs an advanced arm.</description>
 		<jobString>Installing advanced arm.</jobString>
@@ -98,7 +98,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_AdvancedArm</li>
+						<li>BF_AdvancedArm</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -106,27 +106,27 @@
 		</ingredients>
 		<fixedIngredientFilter>
             <thingDefs>
-				<li>ATR_AdvancedArm</li>
+				<li>BF_AdvancedArm</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalArm</li>
+			<li>BF_MechanicalArm</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AdvancedArm</addsHediff>
+		<addsHediff>BF_AdvancedArm</addsHediff>
 	</RecipeDef>
 
     <!-- Advanced Leg -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedLeg</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_AdvancedLeg</defName>
         <label>Advanced leg</label>
         <description>Higher plasteel temperance with higher efficiency components grants this leg a significant advantage over standard issue parts.</description>
-        <descriptionHyperlinks><ThingDef>ATR_AdvancedLeg</ThingDef></descriptionHyperlinks>
-        <spawnThingOnRemoved>ATR_AdvancedLeg</spawnThingOnRemoved>
+        <descriptionHyperlinks><ThingDef>BF_AdvancedLeg</ThingDef></descriptionHyperlinks>
+        <spawnThingOnRemoved>BF_AdvancedLeg</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedLeg</defName>
+    <ThingDef ParentName="BF_BodyPartSpacerBase">
+        <defName>BF_AdvancedLeg</defName>
         <label>Advanced leg</label>
         <description>Higher plasteel temperance with higher efficiency components grants this leg a significant advantage over standard issue parts.</description>
         <costList>
@@ -140,8 +140,8 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalSpacer">
-		<defName>ATR_Install_AdvancedLeg</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalSpacer">
+		<defName>BF_Install_AdvancedLeg</defName>
 		<label>Install advanced leg</label>
         <description>Higher plasteel temperance with higher efficiency components grants this leg a significant advantage over standard issue parts.</description>
 		<jobString>Installing high power leg.</jobString>
@@ -149,7 +149,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_AdvancedLeg</li>
+						<li>BF_AdvancedLeg</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -157,27 +157,27 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_AdvancedLeg</li>
+				<li>BF_AdvancedLeg</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalLeg</li>
+			<li>BF_MechanicalLeg</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AdvancedLeg</addsHediff>
+		<addsHediff>BF_AdvancedLeg</addsHediff>
 	</RecipeDef>
 
     <!-- Advanced Visual Sensor -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedVisualSensor</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_AdvancedVisualSensor</defName>
         <label>Advanced visual sensor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this visual sensor a significant advantage over standard issue parts.</description>
-        <descriptionHyperlinks><ThingDef>ATR_AdvancedVisualSensor</ThingDef></descriptionHyperlinks>
-        <spawnThingOnRemoved>ATR_AdvancedVisualSensor</spawnThingOnRemoved>
+        <descriptionHyperlinks><ThingDef>BF_AdvancedVisualSensor</ThingDef></descriptionHyperlinks>
+        <spawnThingOnRemoved>BF_AdvancedVisualSensor</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedVisualSensor</defName>
+    <ThingDef ParentName="BF_BodyPartSpacerBase">
+        <defName>BF_AdvancedVisualSensor</defName>
         <label>Advanced visual sensor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this visual sensor a significant advantage over standard issue parts.</description>
         <costList>
@@ -191,8 +191,8 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalSpacer">
-		<defName>ATR_Install_AdvancedVisualSensor</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalSpacer">
+		<defName>BF_Install_AdvancedVisualSensor</defName>
 		<label>Install advanced visual sensor</label>
 		<description>Installs an advanced visual sensor.</description>
 		<jobString>Installing advanced visual sensor.</jobString>
@@ -200,7 +200,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_AdvancedVisualSensor</li>
+						<li>BF_AdvancedVisualSensor</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -208,27 +208,27 @@
 		</ingredients>
 		<fixedIngredientFilter>
             <thingDefs>
-				<li>ATR_AdvancedVisualSensor</li>
+				<li>BF_AdvancedVisualSensor</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalVisualSensor</li>
+			<li>BF_MechanicalVisualSensor</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AdvancedVisualSensor</addsHediff>
+		<addsHediff>BF_AdvancedVisualSensor</addsHediff>
 	</RecipeDef>
 
     <!-- Advanced Audio Sensor -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedAudioSensor</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_AdvancedAudioSensor</defName>
         <label>Advanced audio sensor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this audio sensor a significant advantage over standard issue parts.</description>
-        <descriptionHyperlinks><ThingDef>ATR_AdvancedAudioSensor</ThingDef></descriptionHyperlinks>
-        <spawnThingOnRemoved>ATR_AdvancedAudioSensor</spawnThingOnRemoved>
+        <descriptionHyperlinks><ThingDef>BF_AdvancedAudioSensor</ThingDef></descriptionHyperlinks>
+        <spawnThingOnRemoved>BF_AdvancedAudioSensor</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedAudioSensor</defName>
+    <ThingDef ParentName="BF_BodyPartSpacerBase">
+        <defName>BF_AdvancedAudioSensor</defName>
         <label>Advanced audio sensor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this audio sensor a significant advantage over standard issue parts.</description>
         <costList>
@@ -242,8 +242,8 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalSpacer">
-		<defName>ATR_Install_AdvancedAudioSensor</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalSpacer">
+		<defName>BF_Install_AdvancedAudioSensor</defName>
 		<label>Install advanced audio sensor</label>
 		<description>Installs an advanced audio sensor.</description>
 		<jobString>Installing advanced hearing sensor.</jobString>
@@ -251,7 +251,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_AdvancedAudioSensor</li>
+						<li>BF_AdvancedAudioSensor</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -259,23 +259,23 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_AdvancedAudioSensor</li>
+				<li>BF_AdvancedAudioSensor</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalAudioSensor</li>
+			<li>BF_MechanicalAudioSensor</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AdvancedAudioSensor</addsHediff>
+		<addsHediff>BF_AdvancedAudioSensor</addsHediff>
 	</RecipeDef>
 
     <!-- Advanced Heatsink -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedHeatsink</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_AdvancedHeatsink</defName>
         <label>Advanced heatsink</label>
         <description>Higher plasteel temperance with higher efficiency components grants this heatsink a significant advantage over standard issue parts.</description>
-        <descriptionHyperlinks><ThingDef>ATR_AdvancedHeatsink</ThingDef></descriptionHyperlinks>
-        <spawnThingOnRemoved>ATR_AdvancedHeatsink</spawnThingOnRemoved>
+        <descriptionHyperlinks><ThingDef>BF_AdvancedHeatsink</ThingDef></descriptionHyperlinks>
+        <spawnThingOnRemoved>BF_AdvancedHeatsink</spawnThingOnRemoved>
         <stages>
             <li>
                 <statOffsets>
@@ -286,8 +286,8 @@
         </stages>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedHeatsink</defName>
+    <ThingDef ParentName="BF_BodyPartSpacerBase">
+        <defName>BF_AdvancedHeatsink</defName>
         <label>Advanced heatsink</label>
         <description>Higher plasteel temperance with higher efficiency components grants this heatsink a significant advantage over standard issue parts.</description>
         <costList>
@@ -301,8 +301,8 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalSpacer">
-		<defName>ATR_Install_AdvancedHeatsink</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalSpacer">
+		<defName>BF_Install_AdvancedHeatsink</defName>
 		<label>Install advanced heatsink</label>
 		<description>Installs an advanced heatsink.</description>
 		<jobString>Installing advanced heatsink.</jobString>
@@ -310,7 +310,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_AdvancedHeatsink</li>
+						<li>BF_AdvancedHeatsink</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -318,22 +318,22 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_AdvancedHeatsink</li>
+				<li>BF_AdvancedHeatsink</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalHeatsink</li>
+			<li>BF_MechanicalHeatsink</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AdvancedHeatsink</addsHediff>
+		<addsHediff>BF_AdvancedHeatsink</addsHediff>
 	</RecipeDef>
 
     <!-- Advanced Coolant Pump -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedCoolantPump</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_AdvancedCoolantPump</defName>
         <label>Advanced coolant pump</label>
         <description>Higher plasteel temperance with higher efficiency components grants this coolant pump a significant advantage over standard issue parts.</description>
-        <descriptionHyperlinks><ThingDef>ATR_AdvancedCoolantPump</ThingDef></descriptionHyperlinks>
+        <descriptionHyperlinks><ThingDef>BF_AdvancedCoolantPump</ThingDef></descriptionHyperlinks>
         <stages>
 			<li>
 		        <statOffsets>
@@ -343,11 +343,11 @@
 		        </statOffsets>
 			</li>
 		</stages>
-        <spawnThingOnRemoved>ATR_AdvancedCoolantPump</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_AdvancedCoolantPump</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedCoolantPump</defName>
+    <ThingDef ParentName="BF_BodyPartSpacerBase">
+        <defName>BF_AdvancedCoolantPump</defName>
         <label>Advanced coolant pump</label>
         <description>Higher plasteel temperance with higher efficiency components grants this coolant pump a significant advantage over standard issue parts.</description>
         <costList>
@@ -361,8 +361,8 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalSpacer">
-		<defName>ATR_Install_AdvancedCoolantPump</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalSpacer">
+		<defName>BF_Install_AdvancedCoolantPump</defName>
 		<label>Install advanced coolant pump</label>
 		<description>Installs an advanced coolant pump.</description>
 		<jobString>Installing advanced coolant pump.</jobString>
@@ -370,7 +370,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_AdvancedCoolantPump</li>
+						<li>BF_AdvancedCoolantPump</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -378,32 +378,32 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_AdvancedCoolantPump</li>
+				<li>BF_AdvancedCoolantPump</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_InternalCorePump</li>
+			<li>BF_InternalCorePump</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AdvancedCoolantPump</addsHediff>
+		<addsHediff>BF_AdvancedCoolantPump</addsHediff>
 	</RecipeDef>
 
     <!-- Advanced Battery -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedBattery</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_AdvancedBattery</defName>
         <label>Advanced battery pack</label>
         <description>Higher plasteel temperance with higher efficiency components grants this battery a significant advantage over standard issue parts.</description>
-        <descriptionHyperlinks><ThingDef>ATR_AdvancedBattery</ThingDef></descriptionHyperlinks>
+        <descriptionHyperlinks><ThingDef>BF_AdvancedBattery</ThingDef></descriptionHyperlinks>
         <stages>
 			<li>
                 <hungerRateFactor>0.8</hungerRateFactor>
 			</li>
 		</stages>
-        <spawnThingOnRemoved>ATR_AdvancedBattery</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_AdvancedBattery</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedBattery</defName>
+    <ThingDef ParentName="BF_BodyPartSpacerBase">
+        <defName>BF_AdvancedBattery</defName>
         <label>Advanced battery pack</label>
         <description>Higher plasteel temperance with higher efficiency components grants this battery a significant advantage over standard issue parts.</description>
         <costList>
@@ -417,8 +417,8 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalSpacer">
-		<defName>ATR_Install_AdvancedBattery</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalSpacer">
+		<defName>BF_Install_AdvancedBattery</defName>
 		<label>Install advanced battery pack</label>
 		<description>Installs an advanced battery pack.</description>
 		<jobString>Installing advanced battery pack.</jobString>
@@ -426,7 +426,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_AdvancedBattery</li>
+						<li>BF_AdvancedBattery</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -434,22 +434,22 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_AdvancedBattery</li>
+				<li>BF_AdvancedBattery</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_InternalBattery</li>
+			<li>BF_InternalBattery</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AdvancedBattery</addsHediff>
+		<addsHediff>BF_AdvancedBattery</addsHediff>
 	</RecipeDef>
 
     <!-- Advanced Mechanite Storage -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedMechaniteStorage</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_AdvancedMechaniteStorage</defName>
         <label>Advanced mechanite storage</label>
         <description>Higher plasteel temperance with higher efficiency components grants this mechanite storage a significant advantage over standard issue parts. Higher quality mechanites means injuries will be repaired quicker.</description>
-        <descriptionHyperlinks><ThingDef>ATR_AdvancedMechaniteStorage</ThingDef></descriptionHyperlinks>
+        <descriptionHyperlinks><ThingDef>BF_AdvancedMechaniteStorage</ThingDef></descriptionHyperlinks>
 		<stages>
 			<li>
                 <statOffsets>
@@ -457,11 +457,11 @@
                 </statOffsets>
 			</li>
 		</stages>
-        <spawnThingOnRemoved>ATR_AdvancedMechaniteStorage</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_AdvancedMechaniteStorage</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedMechaniteStorage</defName>
+    <ThingDef ParentName="BF_BodyPartSpacerBase">
+        <defName>BF_AdvancedMechaniteStorage</defName>
         <label>Advanced mechanite storage</label>
         <description>Higher plasteel temperance with higher efficiency components grants this mechanite storage a significant advantage over standard issue parts. Higher quality mechanites means injuries will be repaired quicker.</description>
         <costList>
@@ -475,8 +475,8 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalSpacer">
-		<defName>ATR_Install_AdvancedMechaniteStorage</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalSpacer">
+		<defName>BF_Install_AdvancedMechaniteStorage</defName>
 		<label>Install advanced mechanite storage</label>
 		<description>Installs an advanced mechanite storage.</description>
 		<jobString>Installing advanced mechanite storage.</jobString>
@@ -484,7 +484,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_AdvancedMechaniteStorage</li>
+						<li>BF_AdvancedMechaniteStorage</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -492,32 +492,32 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_AdvancedMechaniteStorage</li>
+				<li>BF_AdvancedMechaniteStorage</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechaniteStorage</li>
+			<li>BF_MechaniteStorage</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AdvancedMechaniteStorage</addsHediff>
+		<addsHediff>BF_AdvancedMechaniteStorage</addsHediff>
 	</RecipeDef>
 
     <!-- Advanced Reactor -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedReactor</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_AdvancedReactor</defName>
         <label>Advanced reactor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this reactor a significant advantage over standard issue parts.</description>
-        <descriptionHyperlinks><ThingDef>ATR_AdvancedReactor</ThingDef></descriptionHyperlinks>
+        <descriptionHyperlinks><ThingDef>BF_AdvancedReactor</ThingDef></descriptionHyperlinks>
 		<stages>
 			<li>
                 <hungerRateFactor>0.8</hungerRateFactor>
 			</li>
 		</stages>
-        <spawnThingOnRemoved>ATR_AdvancedReactor</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_AdvancedReactor</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartSpacerBase">
-        <defName>ATR_AdvancedReactor</defName>
+    <ThingDef ParentName="BF_BodyPartSpacerBase">
+        <defName>BF_AdvancedReactor</defName>
         <label>Advanced reactor</label>
         <description>Higher plasteel temperance with higher efficiency components grants this reactor a significant advantage over standard issue parts.</description>
         <costList>
@@ -531,8 +531,8 @@
         </statBases>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalSpacer">
-		<defName>ATR_Install_AdvancedReactor</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalSpacer">
+		<defName>BF_Install_AdvancedReactor</defName>
 		<label>install advanced reactor</label>
 		<description>Installs an advanced reactor.</description>
 		<jobString>Installing advanced reactor.</jobString>
@@ -540,7 +540,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_AdvancedReactor</li>
+						<li>BF_AdvancedReactor</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -548,25 +548,25 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_AdvancedReactor</li>
+				<li>BF_AdvancedReactor</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_InternalGenerator</li>
+			<li>BF_InternalGenerator</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AdvancedReactor</addsHediff>
+		<addsHediff>BF_AdvancedReactor</addsHediff>
 	</RecipeDef>
 
     <!-- Organic Charger -->
 
     <HediffDef ParentName="AddedBodyPartBase">
-        <defName>ATR_OrganicCharger</defName>
+        <defName>BF_OrganicCharger</defName>
         <label>organic charger</label>
         <description>An advanced bionic part that allows organics that have this installed to charge. It does not interfere with food consumption, but does require considerable energy itself, leading to faster consumption.</description>
-		<descriptionHyperlinks><ThingDef>ATR_OrganicCharger</ThingDef></descriptionHyperlinks>
+		<descriptionHyperlinks><ThingDef>BF_OrganicCharger</ThingDef></descriptionHyperlinks>
         <comps>
             <li>
-                <compClass>ATReforged.HediffComp_ChargeCapable</compClass>
+                <compClass>BotFactory.HediffComp_ChargeCapable</compClass>
             </li>
         </comps>
         <stages>
@@ -574,7 +574,7 @@
                 <hungerRateFactor>1.2</hungerRateFactor>
 			</li>
 		</stages>
-        <spawnThingOnRemoved>ATR_OrganicCharger</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_OrganicCharger</spawnThingOnRemoved>
         <addedPartProps>
             <solid>true</solid>
             <partEfficiency>1.25</partEfficiency>
@@ -583,7 +583,7 @@
     </HediffDef>
 
     <ThingDef ParentName="BodyPartBionicBase">
-        <defName>ATR_OrganicCharger</defName>
+        <defName>BF_OrganicCharger</defName>
         <label>organic charger</label>
         <description>An advanced bionic part that allows organics that have this installed to charge. It does not interfere with food consumption, but does consume considerable energy itself, increasing the pawn's energy need.\n\nDue to the inherently uncomfortable process of charging, pawns do not gain rest while charging.</description>
         <costList>
@@ -596,15 +596,15 @@
             <Mass>4</Mass>
         </statBases>
         <recipeMaker>
-            <researchPrerequisite>ATR_AdvancedMechParts</researchPrerequisite>
+            <researchPrerequisite>BF_AdvancedMechParts</researchPrerequisite>
             <recipeUsers>
-                <li>ATR_MechPartWorkbench</li>
+                <li>BF_MechPartWorkbench</li>
             </recipeUsers>
         </recipeMaker>
     </ThingDef>
 
     <RecipeDef ParentName="SurgeryInstallBodyPartArtificialBase">
-		<defName>ATR_Install_OrganicCharger</defName>
+		<defName>BF_Install_OrganicCharger</defName>
 		<label>install organic charger</label>
 		<description>Installs an organic charger.</description>
 		<jobString>Installing organic charger.</jobString>
@@ -612,7 +612,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_OrganicCharger</li>
+						<li>BF_OrganicCharger</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -620,13 +620,13 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_OrganicCharger</li>
+				<li>BF_OrganicCharger</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
 			<li>Stomach</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_OrganicCharger</addsHediff>
+		<addsHediff>BF_OrganicCharger</addsHediff>
 	</RecipeDef>
 
 </Defs>

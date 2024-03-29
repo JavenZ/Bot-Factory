@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingDef Name="ATR_ServerBase" ParentName="BuildingBase" Abstract="True">
+    <ThingDef Name="BF_ServerBase" ParentName="BuildingBase" Abstract="True">
         <thingClass>Building</thingClass>
         <canOverlapZones>false</canOverlapZones>
         <altitudeLayer>Building</altitudeLayer>
@@ -14,7 +14,7 @@
         <comps>
             <li Class="CompProperties_Breakdownable"/>
             <li Class="CompProperties_Flickable"/>
-            <li Class="ATReforged.CompProperties_HeatSensitive">
+            <li Class="BotFactory.CompProperties_HeatSensitive">
                 <safeHeat>20</safeHeat>
                 <warningHeat>30</warningHeat>
                 <dangerHeat>40</dangerHeat>
@@ -22,15 +22,15 @@
         </comps>
         <rotatable>false</rotatable>
         <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-        <designationCategory>ATR_AndroidTiersDesignation</designationCategory>
+        <designationCategory>BF_AndroidTiersDesignation</designationCategory>
         <staticSunShadowHeight>0.2</staticSunShadowHeight>
         <constructEffect>ConstructMetal</constructEffect>
         <designationHotKey>Misc4</designationHotKey>
     </ThingDef>
 
     <!-- SkyMind Core -->
-    <ThingDef ParentName="ATR_ServerBase">
-        <defName>ATR_SkyMindCore</defName>
+    <ThingDef ParentName="BF_ServerBase">
+        <defName>BF_SkyMindCore</defName>
         <label>SkyMind Core</label>
         <description>A network of persona intelligences collectively forming a single supercomputer capable of processing, storing, and manipulating vast quantities of information - that which ultimately defines a consciousness. This device is capable of providing digital immortality, consciousness operations, and remote controls to properly outfitted organic and mechanical individuals alike. Its existence is proof of strength, willpower, and wealth.\n\nInternalized vanometric power cells support the whole structure, and are judiciously managed by the networked personas to prevent any power disruption of any kind at an immense heat output cost.\n\nShould the device be destroyed or lost, all consciousnesses which can't be stored by other Cores will perish - immortality is not risk-free.</description>
         <statBases>
@@ -59,7 +59,7 @@
             <ComponentIndustrial>48</ComponentIndustrial>
             <ComponentSpacer>24</ComponentSpacer>
             <AIPersonaCore>4</AIPersonaCore>
-            <ATR_VanometricPowerCellMinified>2</ATR_VanometricPowerCellMinified>
+            <BF_VanometricPowerCellMinified>2</BF_VanometricPowerCellMinified>
         </costList>
         <comps Inherit="False">
             <li Class="CompProperties_Glower">
@@ -70,30 +70,30 @@
                 <compClass>CompHeatPusherPowered</compClass>
                 <heatPerSecond>100</heatPerSecond>
             </li>
-            <li Class="ATReforged.CompProperties_SkyMindCore">
+            <li Class="BotFactory.CompProperties_SkyMindCore">
                 <cloudPawnCapacityProvided>20</cloudPawnCapacityProvided>
             </li>
-            <li Class="ATReforged.CompProperties_SuperComputer">
+            <li Class="BotFactory.CompProperties_SuperComputer">
                 <passivePointGeneration>30</passivePointGeneration>
                 <pointStorage>10000</pointStorage>
             </li>
-            <li Class="ATReforged.CompProperties_SkyMindTower">
+            <li Class="BotFactory.CompProperties_SkyMindTower">
                 <SkyMindSlotsProvided>10</SkyMindSlotsProvided>
             </li>
-            <li Class="ATReforged.CompProperties_HeatSensitive">
+            <li Class="BotFactory.CompProperties_HeatSensitive">
                 <safeHeat>30</safeHeat>
                 <warningHeat>40</warningHeat>
                 <dangerHeat>50</dangerHeat>
             </li>
         </comps>
         <researchPrerequisites>
-            <li>ATR_SkyMindCore</li>
+            <li>BF_SkyMindCore</li>
         </researchPrerequisites>
     </ThingDef>
 
     <!-- Networked Database -->
-    <ThingDef ParentName="ATR_ServerBase">
-        <defName>ATR_NetworkedDatabase</defName>
+    <ThingDef ParentName="BF_ServerBase">
+        <defName>BF_NetworkedDatabase</defName>
         <label>Networked Database</label>
         <description>A basic server for data tabulation, storage, and calculations. It is incapable of generating insights, but greatly enhances the workflow of those who wish to spend less time doing math and more time analyzing. It generates a small amount of heat, and may be damaged if the heat exceeds its safety threshold.\n\nDatabases store server points generated from other sources for use when powered and connected to the SkyMind, but does not generate points itself.</description>
         <statBases>
@@ -125,7 +125,7 @@
                 <glowRadius>4</glowRadius>
                 <glowColor>(46,204,113,0)</glowColor>
             </li>
-            <li Class="ATReforged.CompProperties_Computer">
+            <li Class="BotFactory.CompProperties_Computer">
                 <serverMode>SkillServer</serverMode>
                 <passivePointGeneration>0</passivePointGeneration>
                 <pointStorage>1000</pointStorage>
@@ -142,7 +142,7 @@
         </comps>
         <minifiedDef>MinifiedThing</minifiedDef>
         <researchPrerequisites>
-            <li>ATR_StandardizedCommunications</li>
+            <li>BF_StandardizedCommunications</li>
         </researchPrerequisites>
         <thingCategories>
             <li>BuildingsMisc</li>
@@ -150,8 +150,8 @@
     </ThingDef>
 
     <!-- Networked Analyst -->
-    <ThingDef ParentName="ATR_ServerBase">
-        <defName>ATR_NetworkedAnalyst</defName>
+    <ThingDef ParentName="BF_ServerBase">
+        <defName>BF_NetworkedAnalyst</defName>
         <label>Networked Analyst</label>
         <description>A basic server for analyzing data and generating insights into the chosen task focus using rudimentary machine learning algorithms. Due to its small size and number of calculations, it relies on data servers for storage and generates significant heat. It may be damaged if the heat exceeds its safety threshold.\n\nAnalysts generate server points in a chosen category when powered and connected to the SkyMind, but can not store points.</description>
         <statBases>
@@ -188,7 +188,7 @@
                 <compClass>CompHeatPusherPowered</compClass>
                 <heatPerSecond>8</heatPerSecond>
             </li>
-            <li Class="ATReforged.CompProperties_Computer">
+            <li Class="BotFactory.CompProperties_Computer">
                 <serverMode>SkillServer</serverMode>
                 <passivePointGeneration>4</passivePointGeneration>
                 <pointStorage>0</pointStorage>
@@ -201,7 +201,7 @@
         </comps>
         <minifiedDef>MinifiedThing</minifiedDef>
         <researchPrerequisites>
-            <li>ATR_StandardizedCommunications</li>
+            <li>BF_StandardizedCommunications</li>
         </researchPrerequisites>
         <thingCategories>
             <li>BuildingsMisc</li>
@@ -209,8 +209,8 @@
     </ThingDef>
 
     <!-- Networked Intelligence -->
-    <ThingDef ParentName="ATR_ServerBase">
-        <defName>ATR_NetworkedIntelligence</defName>
+    <ThingDef ParentName="BF_ServerBase">
+        <defName>BF_NetworkedIntelligence</defName>
         <label>Networked Intelligence</label>
         <description>An advanced server for data analysis, tabulation, storage, and insight generation in a chosen task focus using an autonomous AI persona. While it theoretically makes other servers obsolete, the space efficiency and use cases come at a high cost of power and heat generation. It is very susceptible to overheating and may become damaged if it overheats.\n\nIntelligences store and produce server points in a chosen field when powered and connected to the SkyMind, but requires a persona core.</description>
         <statBases>
@@ -248,7 +248,7 @@
                 <compClass>CompHeatPusherPowered</compClass>
                 <heatPerSecond>16</heatPerSecond>
             </li>
-            <li Class="ATReforged.CompProperties_Computer">
+            <li Class="BotFactory.CompProperties_Computer">
                 <serverMode>SkillServer</serverMode>
                 <passivePointGeneration>20</passivePointGeneration>
                 <pointStorage>5000</pointStorage>
@@ -267,7 +267,7 @@
         </comps>
         <minifiedDef>MinifiedThing</minifiedDef>
         <researchPrerequisites>
-        <li>ATR_ServerOptimization</li>
+        <li>BF_ServerOptimization</li>
         </researchPrerequisites>
         <thingCategories>
             <li>BuildingsMisc</li>

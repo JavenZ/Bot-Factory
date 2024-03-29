@@ -2,7 +2,7 @@
 <Defs>
 
     <TraderKindDef>
-        <defName>ATR_Visitor_AndroidCollective_Standard</defName>
+        <defName>BF_Visitor_AndroidCollective_Standard</defName>
         <label>trader</label>
         <stockGenerators>
             <li Class="StockGenerator_SingleDef">
@@ -27,7 +27,7 @@
                 </countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
-                <thingDef>ATR_PartPack</thingDef>
+                <thingDef>BF_PartPack</thingDef>
                 <countRange>
                 <min>1</min>
                 <max>2</max>

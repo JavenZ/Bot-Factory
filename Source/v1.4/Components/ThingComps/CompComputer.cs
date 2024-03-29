@@ -3,7 +3,7 @@ using Verse;
 using RimWorld;
 using System.Collections.Generic;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompComputer : ThingComp
     {
@@ -19,7 +19,7 @@ namespace ATReforged
         {
             base.PostExposeData();
 
-            Scribe_Values.Look(ref serverMode, "ATR_serverMode", ServerType.SkillServer);
+            Scribe_Values.Look(ref serverMode, "BF_serverMode", ServerType.SkillServer);
         }
 
         // There are two possible spawn states: created, in which case it sets its serverMode from Props and waits to turn on; post load spawn, in which case it already has a mode and state.
@@ -67,8 +67,8 @@ namespace ATReforged
                     yield return new Command_Action
                     {
                         icon = Tex.SkillIcon,
-                        defaultLabel = "ATR_SkillMode".Translate(),
-                        defaultDesc = "ATR_SkillModeDesc".Translate(),
+                        defaultLabel = "BF_SkillMode".Translate(),
+                        defaultDesc = "BF_SkillModeDesc".Translate(),
                         action = delegate ()
                         {
                             ChangeServerMode(ServerType.SecurityServer);
@@ -80,8 +80,8 @@ namespace ATReforged
                     yield return new Command_Action
                     {
                         icon = Tex.SecurityIcon,
-                        defaultLabel = "ATR_SecurityMode".Translate(),
-                        defaultDesc = "ATR_SecurityModeDesc".Translate(),
+                        defaultLabel = "BF_SecurityMode".Translate(),
+                        defaultDesc = "BF_SecurityModeDesc".Translate(),
                         action = delegate ()
                         {
                             ChangeServerMode(ServerType.HackingServer);
@@ -93,8 +93,8 @@ namespace ATReforged
                     yield return new Command_Action
                     {
                         icon = Tex.HackingIcon,
-                        defaultLabel = "ATR_HackingMode".Translate(),
-                        defaultDesc = "ATR_HackingModeDesc".Translate(),
+                        defaultLabel = "BF_HackingMode".Translate(),
+                        defaultDesc = "BF_HackingModeDesc".Translate(),
                         action = delegate ()
                         {
                             ChangeServerMode(ServerType.SkillServer);
@@ -102,13 +102,13 @@ namespace ATReforged
                     };
 
                     // Servers in hacking mode allow access to the hacking menu for deploying a hack.
-                    if (ATReforged_Settings.playerCanHack)
+                    if (BotFactory_Settings.playerCanHack)
                     {
                         yield return new Command_Action
                         {
                             icon = Tex.HackingWindowIcon,
-                            defaultLabel = "ATR_HackingWindow".Translate(),
-                            defaultDesc = "ATR_HackingWindowDesc".Translate(),
+                            defaultLabel = "BF_HackingWindow".Translate(),
+                            defaultDesc = "BF_HackingWindowDesc".Translate(),
                             action = delegate ()
                             {
                                 Find.WindowStack.Add(new Dialog_HackingWindow());
@@ -121,8 +121,8 @@ namespace ATReforged
                     yield return new Command_Action
                     { 
                         icon = Tex.SkillIcon,
-                        defaultLabel = "ATR_SwitchToSkillMode".Translate(),
-                        defaultDesc = "ATR_SwitchToSkillModeDesc".Translate(),
+                        defaultLabel = "BF_SwitchToSkillMode".Translate(),
+                        defaultDesc = "BF_SwitchToSkillModeDesc".Translate(),
                         action = delegate ()
                         {
                             serverMode = ServerType.SkillServer;
@@ -141,27 +141,27 @@ namespace ATReforged
 
             if (networkConnection?.connected == false)
             {
-                ret.Append("ATR_ServerNetworkConnectionNeeded".Translate());
+                ret.Append("BF_ServerNetworkConnectionNeeded".Translate());
                 return ret.Append(base.CompInspectStringExtra()).ToString();
             }
 
             if (serverMode == ServerType.SkillServer)
             {
-                ret.AppendLine("ATR_SkillServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.SkillServer), Utils.gameComp.GetPointCapacity(ServerType.SkillServer)))
-                   .AppendLine("ATR_SkillProducedPoints".Translate(Props.passivePointGeneration))
-                   .Append("ATR_SkillSlotsAdded".Translate(Props.pointStorage));
+                ret.AppendLine("BF_SkillServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.SkillServer), Utils.gameComp.GetPointCapacity(ServerType.SkillServer)))
+                   .AppendLine("BF_SkillProducedPoints".Translate(Props.passivePointGeneration))
+                   .Append("BF_SkillSlotsAdded".Translate(Props.pointStorage));
             }
             else if (serverMode == ServerType.SecurityServer)
             {
-                ret.AppendLine("ATR_SecurityServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.SecurityServer), Utils.gameComp.GetPointCapacity(ServerType.SecurityServer)))
-                   .AppendLine("ATR_SecurityProducedPoints".Translate(Props.passivePointGeneration))
-                   .Append("ATR_SecuritySlotsAdded".Translate(Props.pointStorage));
+                ret.AppendLine("BF_SecurityServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.SecurityServer), Utils.gameComp.GetPointCapacity(ServerType.SecurityServer)))
+                   .AppendLine("BF_SecurityProducedPoints".Translate(Props.passivePointGeneration))
+                   .Append("BF_SecuritySlotsAdded".Translate(Props.pointStorage));
             }
             else if (serverMode == ServerType.HackingServer)
             {
-                ret.AppendLine("ATR_HackingServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.HackingServer), Utils.gameComp.GetPointCapacity(ServerType.HackingServer)))
-                   .AppendLine("ATR_HackingProducedPoints".Translate(Props.passivePointGeneration))
-                   .Append("ATR_HackingSlotsAdded".Translate(Props.pointStorage));
+                ret.AppendLine("BF_HackingServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.HackingServer), Utils.gameComp.GetPointCapacity(ServerType.HackingServer)))
+                   .AppendLine("BF_HackingProducedPoints".Translate(Props.passivePointGeneration))
+                   .Append("BF_HackingSlotsAdded".Translate(Props.pointStorage));
             }
             return ret.Append(base.CompInspectStringExtra()).ToString();
         }

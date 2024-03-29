@@ -2,7 +2,7 @@
 <Defs>
 
     <BodyPartDef>
-        <defName>ATR_Framework</defName>
+        <defName>BF_Framework</defName>
         <label>framework</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -12,7 +12,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalThorax</defName>
+        <defName>BF_MechanicalThorax</defName>
         <label>thorax</label>
         <hitPoints>40</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -22,7 +22,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalNeck</defName>
+        <defName>BF_MechanicalNeck</defName>
         <label>neck</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -37,7 +37,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalHead</defName>
+        <defName>BF_MechanicalHead</defName>
         <label>head</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -47,7 +47,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_VoiceSynthesizer</defName>
+        <defName>BF_VoiceSynthesizer</defName>
         <label>Voice synthesizer</label>
         <hitPoints>15</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -60,7 +60,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalVisualSensor</defName>
+        <defName>BF_MechanicalVisualSensor</defName>
         <label>visual sensor</label>
         <hitPoints>10</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -73,7 +73,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalAudioSensor</defName>
+        <defName>BF_MechanicalAudioSensor</defName>
         <label>audio sensor</label>
         <hitPoints>10</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -86,7 +86,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_SmellSensor</defName>
+        <defName>BF_SmellSensor</defName>
         <label>smell sensor</label>
         <hitPoints>10</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -96,7 +96,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalShoulder</defName>
+        <defName>BF_MechanicalShoulder</defName>
         <label>shoulder</label>
         <hitPoints>25</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -109,7 +109,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalArm</defName>
+        <defName>BF_MechanicalArm</defName>
         <label>arm</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -122,7 +122,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalHand</defName>
+        <defName>BF_MechanicalHand</defName>
         <label>hand</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -135,7 +135,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalFinger</defName>
+        <defName>BF_MechanicalFinger</defName>
         <label>finger</label>
         <hitPoints>8</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -149,7 +149,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalWaist</defName>
+        <defName>BF_MechanicalWaist</defName>
         <label>utility slot</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -161,7 +161,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalLeg</defName>
+        <defName>BF_MechanicalLeg</defName>
         <label>leg</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -174,7 +174,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalFoot</defName>
+        <defName>BF_MechanicalFoot</defName>
         <label>foot</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -188,7 +188,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_ArtificialBrain</defName>
+        <defName>BF_ArtificialBrain</defName>
         <label>artificial brain</label>
         <hitPoints>30</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -201,7 +201,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_CoreAssistant</defName>
+        <defName>BF_CoreAssistant</defName>
         <label>core assistant</label>
         <hitPoints>10</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -211,7 +211,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_CounterWeightTail</defName>
+        <defName>BF_CounterWeightTail</defName>
         <label>counterweight</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -225,7 +225,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalJaw</defName>
+        <defName>BF_MechanicalJaw</defName>
         <label>jaw</label>
         <hitPoints>15</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -237,7 +237,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalWing</defName>
+        <defName>BF_MechanicalWing</defName>
         <label>wing</label>
         <hitPoints>20</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -249,7 +249,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_MechanicalPropeller</defName>
+        <defName>BF_MechanicalPropeller</defName>
         <label>propeller</label>
         <hitPoints>10</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>
@@ -263,7 +263,7 @@
     </BodyPartDef>
 
     <BodyPartDef>
-        <defName>ATR_CounterWeightTop</defName>
+        <defName>BF_CounterWeightTop</defName>
         <label>small counterweight</label>
         <hitPoints>5</hitPoints>
         <permanentInjuryChanceFactor>0</permanentInjuryChanceFactor>

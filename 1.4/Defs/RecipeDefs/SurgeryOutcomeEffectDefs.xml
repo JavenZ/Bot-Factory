@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <SurgeryOutcomeEffectDef Name="ATR_MechanicalSurgeryOutcomeBase">
-        <defName>ATR_MechanicalSurgeryOutcomeBase</defName>
+    <SurgeryOutcomeEffectDef Name="BF_MechanicalSurgeryOutcomeBase">
+        <defName>BF_MechanicalSurgeryOutcomeBase</defName>
         <outcomes>
         <li Class="SurgeryOutcomeSuccess" />
         <li Class="SurgeryOutcome_Death">
@@ -38,7 +38,7 @@
         </outcomes>
         <comps>
         <li Class="SurgeryOutcomeComp_SurgeonSuccessChance"/>
-        <li Class="ATReforged.SurgeryOutcomeComp_BedAndRoomMechQuality"/>
+        <li Class="BotFactory.SurgeryOutcomeComp_BedAndRoomMechQuality"/>
         <li Class="SurgeryOutcomeComp_MedicineQuality">
             <curve>
             <points>

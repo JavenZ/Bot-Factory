@@ -2,7 +2,7 @@
 using HarmonyLib;
 using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class ImmunityHandler_Patch
     {

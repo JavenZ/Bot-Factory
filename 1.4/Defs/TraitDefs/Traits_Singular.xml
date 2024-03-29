@@ -2,7 +2,7 @@
 <Defs>
 
     <TraitDef>
-        <defName>ATR_FeelingsTowardOrganics</defName>
+        <defName>BF_FeelingsTowardOrganics</defName>
         <commonality>2</commonality>
         <degreeDatas>
             <li>

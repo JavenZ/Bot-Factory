@@ -5,7 +5,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/ThingDef[defName="HiTechResearchBench"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
 		<value>
-			<li>ATR_NetworkedIntelligence</li>
+			<li>BF_NetworkedIntelligence</li>
 		</value>
 	</Operation>
 

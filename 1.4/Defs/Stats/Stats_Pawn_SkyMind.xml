@@ -3,7 +3,7 @@
 
     <!-- Surrogate Limit Bonus -->
     <StatDef>
-        <defName>ATR_SurrogateLimitBonus</defName>
+        <defName>BF_SurrogateLimitBonus</defName>
         <label>surrogate limit bonus</label>
         <description>How many additional surrogates this pawn may control at once without suffering a consciousness or learning rate penalty.</description>
         <category>BasicsPawn</category>

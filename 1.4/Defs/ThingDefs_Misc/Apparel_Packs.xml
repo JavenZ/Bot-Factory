@@ -2,7 +2,7 @@
 <Defs>
 
     <ThingDef ParentName="ApparelNoQualityBase">
-        <defName>ATR_Apparel_ScorchPack</defName>
+        <defName>BF_Apparel_ScorchPack</defName>
         <label>Scorch pack</label>
         <description>A reusable backpack containing a highly flammable chemical mixture with the mechanics necessary to trigger an explosive release of the otherwise inert mixture. When the wearer activates the pack, it will violently expel flame.\n\nOnce used, it must be reloaded with chemfuel before it can be used again.\n\nScorch packs are often used by android martyrs who despise organic life, or by squads of flameproof android troopers to clear insect hives.</description>
         <techLevel>Industrial</techLevel>
@@ -30,7 +30,7 @@
                 <destroyThingOnExplosionSize>9999</destroyThingOnExplosionSize><!--hack to not destroy on explosion-->
             </li>
             <li Class="CompProperties_AIUSablePack">
-                <compClass>ATReforged.CompScorchPack</compClass>
+                <compClass>BotFactory.CompScorchPack</compClass>
                 <checkInterval>60</checkInterval>
             </li>
         </comps>

@@ -2,7 +2,7 @@
 <Defs>
 
     <!-- Mechanical Android Base-->
-	<AlienRace.ThingDef_AlienRace Name="ATR_BaseMechanicalPawn" ParentName="BasePawn" Abstract="True">
+	<AlienRace.ThingDef_AlienRace Name="BF_BaseMechanicalPawn" ParentName="BasePawn" Abstract="True">
 		<soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
 		<statBases>
 			<Mass>70</Mass>
@@ -18,7 +18,7 @@
         <alienRace>
 			<raceRestriction>
 				<traitList>
-					<li>ATR_FeelingsTowardOrganics</li>
+					<li>BF_FeelingsTowardOrganics</li>
 				</traitList>
                 <onlyHaveRaceRestrictedGenes>true</onlyHaveRaceRestrictedGenes>
 			</raceRestriction>
@@ -27,13 +27,13 @@
 				<maxDamageForSocialfight>20</maxDamageForSocialfight>
 				<immuneToAge>false</immuneToAge>
                 <notXenophobistTowards>
-                    <li>ATR_Tier1Android</li>
-                    <li>ATR_Tier2Android</li>
-                    <li>ATR_Tier3Android</li>
-                    <li>ATR_Tier4Android</li>
+                    <li>BF_Tier1Android</li>
+                    <li>BF_Tier2Android</li>
+                    <li>BF_Tier3Android</li>
+                    <li>BF_Tier4Android</li>
                 </notXenophobistTowards>
 				<alienPartGenerator>
-					<headBodyPartDef>ATR_MechanicalHead</headBodyPartDef>
+					<headBodyPartDef>BF_MechanicalHead</headBodyPartDef>
                     <bodyTypes>
                         <li>Male</li>
                         <li>Female</li>
@@ -163,12 +163,12 @@
 			<makesFootprints>true</makesFootprints>
 			<lifeExpectancy>100</lifeExpectancy>
 			<leatherDef>Leather_Human</leatherDef>
-			<nameGenerator>ATR_AndroidMaleNames</nameGenerator>
-            <nameGeneratorFemale>ATR_AndroidFemaleNames</nameGeneratorFemale>
+			<nameGenerator>BF_AndroidMaleNames</nameGenerator>
+            <nameGeneratorFemale>BF_AndroidFemaleNames</nameGeneratorFemale>
 			<needsRest>false</needsRest>
 			<foodType>OmnivoreHuman</foodType>
-			<fleshType>ATR_AndroidTier</fleshType>
-			<bloodDef>ATR_CoolantAndroidTier</bloodDef>
+			<fleshType>BF_AndroidTier</fleshType>
+			<bloodDef>BF_CoolantAndroidTier</bloodDef>
             <specificMeatDef>Steel</specificMeatDef>
 			<canBePredatorPrey>false</canBePredatorPrey>
 			<lifeStageAges>
@@ -208,7 +208,7 @@
 				</points>
 			</ageGenerationCurve>
 			<hediffGiverSets>
-				<li>ATR_MechanicalStandard</li>
+				<li>BF_MechanicalStandard</li>
 			</hediffGiverSets>
 		</race>
     </AlienRace.ThingDef_AlienRace>

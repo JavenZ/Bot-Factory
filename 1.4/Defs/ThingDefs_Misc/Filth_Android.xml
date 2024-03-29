@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="BaseFilth">
-		<defName>ATR_CoolantAndroidTier</defName>
+		<defName>BF_CoolantAndroidTier</defName>
 		<label>coolant</label>
 		<statBases>
             <Cleanliness>-5</Cleanliness>

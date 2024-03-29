@@ -4,7 +4,7 @@ using RimWorld;
 using UnityEngine;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Dialog_PersonalityShiftChoices : Dialog_GrowthMomentChoices
     {

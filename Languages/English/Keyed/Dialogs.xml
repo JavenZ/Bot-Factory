@@ -1,78 +1,78 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
 
-	<ATR_SkyMindDisconnectionRisk>Disconnection from the SkyMind network while the operation is in progress will result in severe consequences. Memory corruption of varying degree is guaranteed if improper disconnection occurs.</ATR_SkyMindDisconnectionRisk>
+	<BF_SkyMindDisconnectionRisk>Disconnection from the SkyMind network while the operation is in progress will result in severe consequences. Memory corruption of varying degree is guaranteed if improper disconnection occurs.</BF_SkyMindDisconnectionRisk>
 
-	<ATR_ResurrectionSuccessful>Mechanical unit {0} was successfully reactivated to minimal capacity. The unit must reboot before returning to full functionality.</ATR_ResurrectionSuccessful>
-	<ATR_ResurrectionFailedInvalidPawn>The target, {0}, was not reactivated as it is not a valid target for resurrection in this manner. Targets must be mechanical (AT Reforged settings).</ATR_ResurrectionFailedInvalidPawn>
-	<ATR_ResurrectionFailedDroneOnly>The drone resurrection kit may only be used on drones or animals, and {0} is considered a fully autonomous mechanical unit!</ATR_ResurrectionFailedDroneOnly>
+	<BF_ResurrectionSuccessful>Mechanical unit {0} was successfully reactivated to minimal capacity. The unit must reboot before returning to full functionality.</BF_ResurrectionSuccessful>
+	<BF_ResurrectionFailedInvalidPawn>The target, {0}, was not reactivated as it is not a valid target for resurrection in this manner. Targets must be mechanical (AT Reforged settings).</BF_ResurrectionFailedInvalidPawn>
+	<BF_ResurrectionFailedDroneOnly>The drone resurrection kit may only be used on drones or animals, and {0} is considered a fully autonomous mechanical unit!</BF_ResurrectionFailedDroneOnly>
 
-    <ATR_InsufficientPoints>At least {0} points are required for this operation.</ATR_InsufficientPoints>
+    <BF_InsufficientPoints>At least {0} points are required for this operation.</BF_InsufficientPoints>
 
 	<!-- Skill Upgrades -->
-	<ATR_PawnBeingModified>Skills and passions for: </ATR_PawnBeingModified>
-	<ATR_CurrentXP> XP required for next level: </ATR_CurrentXP>
-	<ATR_TodaysXP> XP today: </ATR_TodaysXP>
+	<BF_PawnBeingModified>Skills and passions for: </BF_PawnBeingModified>
+	<BF_CurrentXP> XP required for next level: </BF_CurrentXP>
+	<BF_TodaysXP> XP today: </BF_TodaysXP>
 
-	<ATR_AddSkillPoints>Inject points into {0}</ATR_AddSkillPoints>
-	<ATR_AvailableSkillPoints>Available points : {0}</ATR_AvailableSkillPoints>
-	<ATR_AvailableSkillPointsDesc>Note: Insight injection is subject to an individual's learning capabilities as well as daily comprehension limits. Passion injection is subject to individual learning capability as well as pre-existing passions. Overstimulation is inefficient.</ATR_AvailableSkillPointsDesc>
+	<BF_AddSkillPoints>Inject points into {0}</BF_AddSkillPoints>
+	<BF_AvailableSkillPoints>Available points : {0}</BF_AvailableSkillPoints>
+	<BF_AvailableSkillPointsDesc>Note: Insight injection is subject to an individual's learning capabilities as well as daily comprehension limits. Passion injection is subject to individual learning capability as well as pre-existing passions. Overstimulation is inefficient.</BF_AvailableSkillPointsDesc>
 
     <!-- Hacking Interface -->
-    <ATR_HackInterfaceTitle>Awaiting cyberwarfare directive.</ATR_HackInterfaceTitle>
-    <ATR_ConfirmHack>Authorize target operation?</ATR_ConfirmHack>
-    <ATR_ConfirmhackDesc>All hacks have inherent risks. Failure could mean diplomatic damage, an automatic countermeasure activation, or some form of retaliation.</ATR_ConfirmhackDesc>
+    <BF_HackInterfaceTitle>Awaiting cyberwarfare directive.</BF_HackInterfaceTitle>
+    <BF_ConfirmHack>Authorize target operation?</BF_ConfirmHack>
+    <BF_ConfirmhackDesc>All hacks have inherent risks. Failure could mean diplomatic damage, an automatic countermeasure activation, or some form of retaliation.</BF_ConfirmhackDesc>
 
-    <ATR_HackOpCost>Cost: {0}</ATR_HackOpCost>
-    <ATR_SuccessChance>Estimated success chance: {0}%</ATR_SuccessChance>
+    <BF_HackOpCost>Cost: {0}</BF_HackOpCost>
+    <BF_SuccessChance>Estimated success chance: {0}%</BF_SuccessChance>
 
-    <ATR_AvailableHackingPoints>Available points: {0}. Time penalty: {1}.</ATR_AvailableHackingPoints>
-    <ATR_AvailableHackingPointsDesc>Note: The cost of initiating hacks is a function of base operation cost multiplied by time since the last hack (penalty for frequent usage).\nDedicating more points increases success likelihood.</ATR_AvailableHackingPointsDesc>
+    <BF_AvailableHackingPoints>Available points: {0}. Time penalty: {1}.</BF_AvailableHackingPoints>
+    <BF_AvailableHackingPointsDesc>Note: The cost of initiating hacks is a function of base operation cost multiplied by time since the last hack (penalty for frequent usage).\nDedicating more points increases success likelihood.</BF_AvailableHackingPointsDesc>
 
         <!-- Guidance Hack -->
-    <ATR_GuidanceHack>Force a redirect of a faction's guidance system</ATR_GuidanceHack>
-    <ATR_GuidanceHackDesc>Attempt a hack of a faction's guidance system in an attempt to redirect something to this map. There is no guarantee what the contents of what will be sent. It could be supplies, a trade ship, a prisoner - or an enemy garrison transfer.</ATR_GuidanceHackDesc>
+    <BF_GuidanceHack>Force a redirect of a faction's guidance system</BF_GuidanceHack>
+    <BF_GuidanceHackDesc>Attempt a hack of a faction's guidance system in an attempt to redirect something to this map. There is no guarantee what the contents of what will be sent. It could be supplies, a trade ship, a prisoner - or an enemy garrison transfer.</BF_GuidanceHackDesc>
 
         <!-- Propaganda Hack -->
-    <ATR_PropagandaHack>Deploy a targetted positive-propaganda campaign</ATR_PropagandaHack>
-    <ATR_PropagandaHackDesc>Attempt a dedicated and specifically targetted campaign to influence key members of a target faction in favor of the colony. Due to the opaque nature of political influence, the exact outcome is unknown.</ATR_PropagandaHackDesc>
+    <BF_PropagandaHack>Deploy a targetted positive-propaganda campaign</BF_PropagandaHack>
+    <BF_PropagandaHackDesc>Attempt a dedicated and specifically targetted campaign to influence key members of a target faction in favor of the colony. Due to the opaque nature of political influence, the exact outcome is unknown.</BF_PropagandaHackDesc>
 
         <!-- Espionage Hack -->
-    <ATR_EspionageHack>Initiate an espionage campaign to acquire a quest</ATR_EspionageHack>
-    <ATR_EspionageHackDesc>Attempt to use acquired intelligence insight to identify a promising quest from the background intelligence from a faction. It is guaranteed to produce insight into some form of a stash, but not from a particular faction or group.</ATR_EspionageHackDesc>
+    <BF_EspionageHack>Initiate an espionage campaign to acquire a quest</BF_EspionageHack>
+    <BF_EspionageHackDesc>Attempt to use acquired intelligence insight to identify a promising quest from the background intelligence from a faction. It is guaranteed to produce insight into some form of a stash, but not from a particular faction or group.</BF_EspionageHackDesc>
 
         <!-- Disruptor Hack -->
-    <ATR_DisruptorHack>Launch a map-wide DDOS attack on local hostile units</ATR_DisruptorHack>
-    <ATR_DisruptorHackDesc>Attempt a localized DDOS attack on SkyMind-capable pawns of a particular faction that are present on this map.</ATR_DisruptorHackDesc>
+    <BF_DisruptorHack>Launch a map-wide DDOS attack on local hostile units</BF_DisruptorHack>
+    <BF_DisruptorHackDesc>Attempt a localized DDOS attack on SkyMind-capable pawns of a particular faction that are present on this map.</BF_DisruptorHackDesc>
 
     <!-- Initialize Mind Dialog/Keys -->
-	<ATR_InitializeMindTitle>Mechanical unit needs initialization</ATR_InitializeMindTitle>
-	<ATR_InitializeMindDesc>The newly connected core interface is ready to contain an intelligence, but has not yet initialized one. An intelligence may be transferred from any SkyMind-linked pawns if available or it may be permitted to form a personality on its own.</ATR_InitializeMindDesc>
+	<BF_InitializeMindTitle>Mechanical unit needs initialization</BF_InitializeMindTitle>
+	<BF_InitializeMindDesc>The newly connected core interface is ready to contain an intelligence, but has not yet initialized one. An intelligence may be transferred from any SkyMind-linked pawns if available or it may be permitted to form a personality on its own.</BF_InitializeMindDesc>
 
-	<ATR_SkyMindInitialization>Initialize from SkyMind</ATR_SkyMindInitialization>
-	<ATR_AutomaticInitialization>Initialize automatically</ATR_AutomaticInitialization>
+	<BF_SkyMindInitialization>Initialize from SkyMind</BF_SkyMindInitialization>
+	<BF_AutomaticInitialization>Initialize automatically</BF_AutomaticInitialization>
 
     <!-- PawnType Restriction Dialog -->
-    <ATR_RestrictedPawnTypes>Restriction settings</ATR_RestrictedPawnTypes>
+    <BF_RestrictedPawnTypes>Restriction settings</BF_RestrictedPawnTypes>
 
-    <ATR_PawnTypeNone>None</ATR_PawnTypeNone>
-    <ATR_PawnTypeNoneTooltip>No pawns can use this</ATR_PawnTypeNoneTooltip>
-    <ATR_PawnTypeDrone>Drone</ATR_PawnTypeDrone>
-    <ATR_PawnTypeDroneTooltip>Only drones can use this</ATR_PawnTypeDroneTooltip>
-    <ATR_PawnTypeAndroid>Android</ATR_PawnTypeAndroid>
-    <ATR_PawnTypeAndroidTooltip>Only androids can use this</ATR_PawnTypeAndroidTooltip>
-    <ATR_PawnTypeMechanical>Mechanical</ATR_PawnTypeMechanical>
-    <ATR_PawnTypeMechanicalTooltip>Only androids and drones can use this</ATR_PawnTypeMechanicalTooltip>
-    <ATR_PawnTypeOrganic>Organic</ATR_PawnTypeOrganic>
-    <ATR_PawnTypeOrganicTooltip>Only organics can use this</ATR_PawnTypeOrganicTooltip>
-    <ATR_PawnTypeNonAI>Non-AI</ATR_PawnTypeNonAI>
-    <ATR_PawnTypeNonAITooltip>Only organics and drones can use this</ATR_PawnTypeNonAITooltip>
-    <ATR_PawnTypeAutonomous>Autonomous</ATR_PawnTypeAutonomous>
-    <ATR_PawnTypeAutonomousTooltip>Only androids and organics can use this</ATR_PawnTypeAutonomousTooltip>
-    <ATR_PawnTypeAll>All</ATR_PawnTypeAll>
-    <ATR_PawnTypeAllTooltip>All pawns can use this</ATR_PawnTypeAllTooltip>
+    <BF_PawnTypeNone>None</BF_PawnTypeNone>
+    <BF_PawnTypeNoneTooltip>No pawns can use this</BF_PawnTypeNoneTooltip>
+    <BF_PawnTypeDrone>Drone</BF_PawnTypeDrone>
+    <BF_PawnTypeDroneTooltip>Only drones can use this</BF_PawnTypeDroneTooltip>
+    <BF_PawnTypeAndroid>Android</BF_PawnTypeAndroid>
+    <BF_PawnTypeAndroidTooltip>Only androids can use this</BF_PawnTypeAndroidTooltip>
+    <BF_PawnTypeMechanical>Mechanical</BF_PawnTypeMechanical>
+    <BF_PawnTypeMechanicalTooltip>Only androids and drones can use this</BF_PawnTypeMechanicalTooltip>
+    <BF_PawnTypeOrganic>Organic</BF_PawnTypeOrganic>
+    <BF_PawnTypeOrganicTooltip>Only organics can use this</BF_PawnTypeOrganicTooltip>
+    <BF_PawnTypeNonAI>Non-AI</BF_PawnTypeNonAI>
+    <BF_PawnTypeNonAITooltip>Only organics and drones can use this</BF_PawnTypeNonAITooltip>
+    <BF_PawnTypeAutonomous>Autonomous</BF_PawnTypeAutonomous>
+    <BF_PawnTypeAutonomousTooltip>Only androids and organics can use this</BF_PawnTypeAutonomousTooltip>
+    <BF_PawnTypeAll>All</BF_PawnTypeAll>
+    <BF_PawnTypeAllTooltip>All pawns can use this</BF_PawnTypeAllTooltip>
 
     <!-- Maintenance Level Setter Dialog -->
-    <ATR_SetTargetMaintenanceLevel>Desired maintenance level: {0}%</ATR_SetTargetMaintenanceLevel>
+    <BF_SetTargetMaintenanceLevel>Desired maintenance level: {0}%</BF_SetTargetMaintenanceLevel>
 
 </LanguageData>

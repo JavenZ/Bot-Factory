@@ -3,7 +3,7 @@
 
     <!-- Base Cybertech -->
 
-    <HediffDef Name="ATR_AddedBodyPartCybertechBase" ParentName="ATR_MechAddedBodyPartBase" Abstract="True">
+    <HediffDef Name="BF_AddedBodyPartCybertechBase" ParentName="BF_MechAddedBodyPartBase" Abstract="True">
         <addedPartProps>
             <solid>true</solid>
             <partEfficiency>1.5</partEfficiency>
@@ -12,8 +12,8 @@
     </HediffDef>
 
     <!-- Cybertech Replacement Part -->
-    <ThingDef ParentName="ATR_MechBodyPartBase">
-        <defName>ATR_CybertechReplacementPart</defName>
+    <ThingDef ParentName="BF_MechBodyPartBase">
+        <defName>BF_CybertechReplacementPart</defName>
         <label>cybertech part replacer</label>
         <description>A small archotech device - with no known proper purpose - that can be inserted into various places of an android to replace the original part there. Batteries, coolant pumps, mechanite storages, even audio sensors and reactors can all be replaced by a vastly higher functioning part. The fact that it can be removed from the android's frame and then become a different part afterwards is nothing short of miraculous.</description>
         <techLevel>Archotech</techLevel>
@@ -35,7 +35,7 @@
         </thingSetMakerTags>
     </ThingDef>
 
-	<RecipeDef Name="ATR_SurgeryMechanicalCybertech" ParentName="ATR_MechanicalSurgeryInstallBodyPartBase" Abstract="True">
+	<RecipeDef Name="BF_SurgeryMechanicalCybertech" ParentName="BF_MechanicalSurgeryInstallBodyPartBase" Abstract="True">
 		<jobString>Implanting Cybertech component.</jobString>
         <skillRequirements>
             <Crafting>16</Crafting>
@@ -46,8 +46,8 @@
 	</RecipeDef>
 
     <!-- Archotech Arm -->
-    <RecipeDef ParentName="ATR_SurgeryMechanicalCybertech">
-		<defName>ATR_Install_MechanicalArchotechArm</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalCybertech">
+		<defName>BF_Install_MechanicalArchotechArm</defName>
 		<label>install archotech arm</label>
 		<description>Install an archotech arm.</description>
         <descriptionHyperlinks>
@@ -71,14 +71,14 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalArm</li>
+			<li>BF_MechanicalArm</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>ArchotechArm</addsHediff>
 	</RecipeDef>
 
     <!-- Archotech Leg -->
-    <RecipeDef ParentName="ATR_SurgeryMechanicalCybertech">
-		<defName>ATR_Install_MechanicalArchotechLeg</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalCybertech">
+		<defName>BF_Install_MechanicalArchotechLeg</defName>
 		<label>install archotech leg</label>
 		<description>Install an archotech leg.</description>
         <descriptionHyperlinks>
@@ -102,34 +102,34 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalLeg</li>
+			<li>BF_MechanicalLeg</li>
 		</appliedOnFixedBodyParts>
 		<addsHediff>ArchotechLeg</addsHediff>
 	</RecipeDef>
 
     <!-- Archotech Visual Sensor -->
-    <HediffDef ParentName="ATR_AddedBodyPartCybertechBase">
-        <defName>ATR_ArchotechVisualSensor</defName>
+    <HediffDef ParentName="BF_AddedBodyPartCybertechBase">
+        <defName>BF_ArchotechVisualSensor</defName>
         <label>archotech visual sensor</label>
         <labelNoun>an archotech visual sensor</labelNoun>
         <description>An installed archotech eye.</description>
-        <spawnThingOnRemoved>ATR_CybertechReplacementPart</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_CybertechReplacementPart</spawnThingOnRemoved>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalCybertech">
-		<defName>ATR_Install_MechanicalArchotechVisualSensor</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalCybertech">
+		<defName>BF_Install_MechanicalArchotechVisualSensor</defName>
         <label>install archotech eye</label>
         <description>Install an archotech eye.</description>
         <descriptionHyperlinks>
-            <ThingDef>ATR_CybertechReplacementPart</ThingDef>
-            <HediffDef>ATR_ArchotechVisualSensor</HediffDef>
+            <ThingDef>BF_CybertechReplacementPart</ThingDef>
+            <HediffDef>BF_ArchotechVisualSensor</HediffDef>
         </descriptionHyperlinks>
         <jobString>Installing archotech eye.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_CybertechReplacementPart</li>
+						<li>BF_CybertechReplacementPart</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -137,37 +137,37 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_CybertechReplacementPart</li>
+				<li>BF_CybertechReplacementPart</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalVisualSensor</li>
+			<li>BF_MechanicalVisualSensor</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_ArchotechVisualSensor</addsHediff>
+		<addsHediff>BF_ArchotechVisualSensor</addsHediff>
 	</RecipeDef>
 
     <!-- Cybertech Audio Sensor -->
-    <HediffDef ParentName="ATR_AddedBodyPartCybertechBase">
-        <defName>ATR_CybertechAudioSensor</defName>
+    <HediffDef ParentName="BF_AddedBodyPartCybertechBase">
+        <defName>BF_CybertechAudioSensor</defName>
         <label>Cybertech audio sensor</label>
         <description>An archotech device in the form of a cybernetic ear. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
-        <spawnThingOnRemoved>ATR_CybertechReplacementPart</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_CybertechReplacementPart</spawnThingOnRemoved>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalCybertech">
-        <defName>ATR_Install_CybertechAudioSensor</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalCybertech">
+        <defName>BF_Install_CybertechAudioSensor</defName>
 		<label>install Cybertech hearing sensor</label>
 		<description>Install a Cybertech audio sensor.</description>
         <descriptionHyperlinks>
-            <ThingDef>ATR_CybertechReplacementPart</ThingDef>
-            <HediffDef>ATR_CybertechAudioSensor</HediffDef>
+            <ThingDef>BF_CybertechReplacementPart</ThingDef>
+            <HediffDef>BF_CybertechAudioSensor</HediffDef>
         </descriptionHyperlinks>
 		<jobString>Installing Cybertech audio sensor.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_CybertechReplacementPart</li>
+						<li>BF_CybertechReplacementPart</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -175,21 +175,21 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_CybertechReplacementPart</li>
+				<li>BF_CybertechReplacementPart</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalAudioSensor</li>
+			<li>BF_MechanicalAudioSensor</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_CybertechAudioSensor</addsHediff>
+		<addsHediff>BF_CybertechAudioSensor</addsHediff>
 	</RecipeDef>
 
     <!-- Cybertech Heatsink -->
-    <HediffDef ParentName="ATR_AddedBodyPartCybertechBase">
-        <defName>ATR_CybertechHeatsink</defName>
+    <HediffDef ParentName="BF_AddedBodyPartCybertechBase">
+        <defName>BF_CybertechHeatsink</defName>
         <label>Cybertech heatsink</label>
         <description>An archotech device in the form of a cybernetic heatsink. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
-        <spawnThingOnRemoved>ATR_CybertechReplacementPart</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_CybertechReplacementPart</spawnThingOnRemoved>
         <stages>
 			<li>
 		        <statOffsets>
@@ -200,20 +200,20 @@
 		</stages>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalCybertech">
-		<defName>ATR_Install_CybertechHeatsink</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalCybertech">
+		<defName>BF_Install_CybertechHeatsink</defName>
 		<label>Install Cybertech heatsink</label>
 		<description>Install a Cybertech heatsink.</description>
         <descriptionHyperlinks>
-            <ThingDef>ATR_CybertechReplacementPart</ThingDef>
-            <HediffDef>ATR_CybertechHeatsink</HediffDef>
+            <ThingDef>BF_CybertechReplacementPart</ThingDef>
+            <HediffDef>BF_CybertechHeatsink</HediffDef>
         </descriptionHyperlinks>
 		<jobString>Installing Cybertech heatsink.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_CybertechReplacementPart</li>
+						<li>BF_CybertechReplacementPart</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -221,21 +221,21 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_CybertechReplacementPart</li>
+				<li>BF_CybertechReplacementPart</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalHeatsink</li>
+			<li>BF_MechanicalHeatsink</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_CybertechHeatsink</addsHediff>
+		<addsHediff>BF_CybertechHeatsink</addsHediff>
 	</RecipeDef>
 
     <!-- Cybertech Coolant Pump -->
-    <HediffDef ParentName="ATR_AddedBodyPartCybertechBase">
-        <defName>ATR_CybertechCoolantPump</defName>
+    <HediffDef ParentName="BF_AddedBodyPartCybertechBase">
+        <defName>BF_CybertechCoolantPump</defName>
         <label>Cybertech coolant pump</label>
         <description>An archotech device in the form of a cybernetic coolant pump. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
-        <spawnThingOnRemoved>ATR_CybertechReplacementPart</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_CybertechReplacementPart</spawnThingOnRemoved>
         <stages>
 			<li>
 		        <statOffsets>
@@ -246,20 +246,20 @@
 		</stages>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalCybertech">
-		<defName>ATR_Install_CybertechCoolantPump</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalCybertech">
+		<defName>BF_Install_CybertechCoolantPump</defName>
 		<label>Install Cybertech coolant pump</label>
 		<description>Install a Cybertech coolant pump.</description>
         <descriptionHyperlinks>
-            <ThingDef>ATR_CybertechReplacementPart</ThingDef>
-            <HediffDef>ATR_CybertechCoolantPump</HediffDef>
+            <ThingDef>BF_CybertechReplacementPart</ThingDef>
+            <HediffDef>BF_CybertechCoolantPump</HediffDef>
         </descriptionHyperlinks>
 		<jobString>Installing Cybertech coolant pump.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_CybertechReplacementPart</li>
+						<li>BF_CybertechReplacementPart</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -267,18 +267,18 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_CybertechReplacementPart</li>
+				<li>BF_CybertechReplacementPart</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_InternalCorePump</li>
+			<li>BF_InternalCorePump</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_CybertechCoolantPump</addsHediff>
+		<addsHediff>BF_CybertechCoolantPump</addsHediff>
 	</RecipeDef>
 
     <!-- Cybertech Battery -->
-    <HediffDef ParentName="ATR_AddedBodyPartCybertechBase">
-        <defName>ATR_CybertechBattery</defName>
+    <HediffDef ParentName="BF_AddedBodyPartCybertechBase">
+        <defName>BF_CybertechBattery</defName>
         <label>Cybertech battery pack</label>
         <description>An archotech device in the form of a cybernetic battery. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
         <stages>
@@ -286,23 +286,23 @@
                 <hungerRateFactor>0.5</hungerRateFactor>
 			</li>
 		</stages>
-        <spawnThingOnRemoved>ATR_CybertechReplacementPart</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_CybertechReplacementPart</spawnThingOnRemoved>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalCybertech">
-		<defName>ATR_Install_CybertechBattery</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalCybertech">
+		<defName>BF_Install_CybertechBattery</defName>
 		<label>Install Cybertech battery</label>
 		<description>Install a Cybertech battery.</description>
         <descriptionHyperlinks>
-            <ThingDef>ATR_CybertechReplacementPart</ThingDef>
-            <HediffDef>ATR_CybertechBattery</HediffDef>
+            <ThingDef>BF_CybertechReplacementPart</ThingDef>
+            <HediffDef>BF_CybertechBattery</HediffDef>
         </descriptionHyperlinks>
 		<jobString>Installing Cybertech battery.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_CybertechReplacementPart</li>
+						<li>BF_CybertechReplacementPart</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -310,18 +310,18 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_CybertechReplacementPart</li>
+				<li>BF_CybertechReplacementPart</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_InternalBattery</li>
+			<li>BF_InternalBattery</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_CybertechBattery</addsHediff>
+		<addsHediff>BF_CybertechBattery</addsHediff>
 	</RecipeDef>
 
     <!-- Cybertech Mechanite Storage -->
-    <HediffDef ParentName="ATR_AddedBodyPartCybertechBase">
-        <defName>ATR_CybertechMechaniteStorage</defName>
+    <HediffDef ParentName="BF_AddedBodyPartCybertechBase">
+        <defName>BF_CybertechMechaniteStorage</defName>
         <label>Cybertech mechanite storage</label>
         <description>An archotech device in the form of a cybernetic foundry of nanites with storage for them. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
 		<stages>
@@ -331,23 +331,23 @@
                 </statOffsets>
 			</li>
 		</stages>
-        <spawnThingOnRemoved>ATR_CybertechReplacementPart</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_CybertechReplacementPart</spawnThingOnRemoved>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalCybertech">
-		<defName>ATR_Install_CybertechMechaniteStorage</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalCybertech">
+		<defName>BF_Install_CybertechMechaniteStorage</defName>
 		<label>Install Cybertech mechanite storage</label>
 		<description>Install a Cybertech mechanite storage.</description>
         <descriptionHyperlinks>
-            <ThingDef>ATR_CybertechReplacementPart</ThingDef>
-            <HediffDef>ATR_CybertechMechaniteStorage</HediffDef>
+            <ThingDef>BF_CybertechReplacementPart</ThingDef>
+            <HediffDef>BF_CybertechMechaniteStorage</HediffDef>
         </descriptionHyperlinks>
 		<jobString>Installing Cybertech mechanite storage.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_CybertechReplacementPart</li>
+						<li>BF_CybertechReplacementPart</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -355,18 +355,18 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_CybertechReplacementPart</li>
+				<li>BF_CybertechReplacementPart</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechaniteStorage</li>
+			<li>BF_MechaniteStorage</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_CybertechMechaniteStorage</addsHediff>
+		<addsHediff>BF_CybertechMechaniteStorage</addsHediff>
 	</RecipeDef>
 
     <!-- Cybertech Reactor -->
-    <HediffDef ParentName="ATR_AddedBodyPartCybertechBase">
-        <defName>ATR_CybertechReactor</defName>
+    <HediffDef ParentName="BF_AddedBodyPartCybertechBase">
+        <defName>BF_CybertechReactor</defName>
         <label>Cybertech bio-reactor</label>
         <description>An archotech device in the form of a bio-reactor - but it seems to reduce power consumption as well. Significantly more powerful than even glitterworld advanced parts, the esoteric knowledge and skill necessary to produce one is worth nothing without the explicit blessing of an archotech. Perhaps that is the secret to its strength?</description>
 		<stages>
@@ -374,23 +374,23 @@
 			    <hungerRateFactor>0.5</hungerRateFactor>
 			</li>
 		</stages>
-        <spawnThingOnRemoved>ATR_CybertechReplacementPart</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_CybertechReplacementPart</spawnThingOnRemoved>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalCybertech">
-		<defName>ATR_Install_CybertechReactor</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalCybertech">
+		<defName>BF_Install_CybertechReactor</defName>
 		<label>install Cybertech bio-reactor</label>
 		<description>Install a Cybertech bio-reactor.</description>
         <descriptionHyperlinks>
-            <ThingDef>ATR_CybertechReplacementPart</ThingDef>
-            <HediffDef>ATR_CybertechReactor</HediffDef>
+            <ThingDef>BF_CybertechReplacementPart</ThingDef>
+            <HediffDef>BF_CybertechReactor</HediffDef>
         </descriptionHyperlinks>
 		<jobString>Installing Cybertech bio-reactor.</jobString>
 		<ingredients>
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_CybertechReplacementPart</li>
+						<li>BF_CybertechReplacementPart</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -398,13 +398,13 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_CybertechReplacementPart</li>
+				<li>BF_CybertechReplacementPart</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_InternalGenerator</li>
+			<li>BF_InternalGenerator</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_CybertechReactor</addsHediff>
+		<addsHediff>BF_CybertechReactor</addsHediff>
 	</RecipeDef>
 
 </Defs>

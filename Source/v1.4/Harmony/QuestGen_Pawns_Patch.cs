@@ -5,7 +5,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class QuestGen_Pawns_Patch
     {

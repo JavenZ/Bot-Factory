@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     [StaticConstructorOnStartup]
     public class CompMaintenanceNeed : ThingComp
@@ -130,7 +130,7 @@ namespace ATReforged
 
         public float MaintenanceFallPerDay()
         {
-            return Mathf.Clamp(DailyFallPerStage(Stage) * ATReforged_Settings.maintenanceFallRateFactor / Pawn.GetStatValue(ATR_StatDefOf.ATR_MaintenanceRetention, cacheStaleAfterTicks: 2000), 0.005f, 2f);
+            return Mathf.Clamp(DailyFallPerStage(Stage) * BotFactory_Settings.maintenanceFallRateFactor / Pawn.GetStatValue(BF_StatDefOf.BF_MaintenanceRetention, cacheStaleAfterTicks: 2000), 0.005f, 2f);
         }
 
         public override void PostPostMake()
@@ -149,16 +149,16 @@ namespace ATReforged
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref maintenanceLevel, "ATR_maintenanceLevel", -1);
-            Scribe_Values.Look(ref targetLevel, "ATR_targetLevel", -1);
-            Scribe_Values.Look(ref cachedFallRatePerDay, "ATR_cachedFallRatePerDay", -1);
-            Scribe_Values.Look(ref maintenanceEffectTicks, "ATR_maintenanceEffectTicks", TicksPerDay);
+            Scribe_Values.Look(ref maintenanceLevel, "BF_maintenanceLevel", -1);
+            Scribe_Values.Look(ref targetLevel, "BF_targetLevel", -1);
+            Scribe_Values.Look(ref cachedFallRatePerDay, "BF_cachedFallRatePerDay", -1);
+            Scribe_Values.Look(ref maintenanceEffectTicks, "BF_maintenanceEffectTicks", TicksPerDay);
         }
 
         public override void CompTickRare()
         {
             base.CompTickRare();
-            if (!Pawn.Spawned || !ATReforged_Settings.maintenanceNeedExists || Find.TickManager.TicksGame % 2000 != 0)
+            if (!Pawn.Spawned || !BotFactory_Settings.maintenanceNeedExists || Find.TickManager.TicksGame % 2000 != 0)
             {
                 return;
             }
@@ -170,7 +170,7 @@ namespace ATReforged
             }
 
             // If maintenance has been low for at least 3 days (modified by settings), issues can begin manifesting.
-            if (maintenanceEffectTicks < (-180000 * ATReforged_Settings.maintenancePartFailureRateFactor))
+            if (maintenanceEffectTicks < (-180000 * BotFactory_Settings.maintenancePartFailureRateFactor))
             {
                 TryPoorMaintenanceCheck();
             }
@@ -191,15 +191,15 @@ namespace ATReforged
                 switch (Stage)
                 {
                     case MaintenanceStage.Critical:
-                        Hediff criticalHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_MaintenanceCritical, Pawn);
+                        Hediff criticalHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_MaintenanceCritical, Pawn);
                         Pawn.health.AddHediff(criticalHediff);
                         break;
                     case MaintenanceStage.Poor:
-                        Hediff poorHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_MaintenancePoor, Pawn);
+                        Hediff poorHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_MaintenancePoor, Pawn);
                         Pawn.health.AddHediff(poorHediff);
                         break;
                     case MaintenanceStage.Satisfactory:
-                        Hediff satisfactoryHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_MaintenanceSatisfactory, Pawn);
+                        Hediff satisfactoryHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_MaintenanceSatisfactory, Pawn);
                         Pawn.health.AddHediff(satisfactoryHediff);
                         break;
                 }
@@ -241,16 +241,16 @@ namespace ATReforged
 
         public void SendPartFailureLetter(Pawn pawn, Hediff cause)
         {
-            if (PawnUtility.ShouldSendNotificationAbout(pawn) && ATReforged_Settings.receiveMaintenanceFailureLetters)
+            if (PawnUtility.ShouldSendNotificationAbout(pawn) && BotFactory_Settings.receiveMaintenanceFailureLetters)
             {
-                Find.LetterStack.ReceiveLetter("LetterHealthComplicationsLabel".Translate(pawn.LabelShort, cause.LabelCap, pawn.Named("PAWN")).CapitalizeFirst(), "LetterHealthComplications".Translate(pawn.LabelShortCap, cause.LabelCap, "ATR_PoorMaintenanceLetter".Translate(), pawn.Named("PAWN")).CapitalizeFirst(), LetterDefOf.NegativeEvent, pawn);
+                Find.LetterStack.ReceiveLetter("LetterHealthComplicationsLabel".Translate(pawn.LabelShort, cause.LabelCap, pawn.Named("PAWN")).CapitalizeFirst(), "LetterHealthComplications".Translate(pawn.LabelShortCap, cause.LabelCap, "BF_PoorMaintenanceLetter".Translate(), pawn.Named("PAWN")).CapitalizeFirst(), LetterDefOf.NegativeEvent, pawn);
             }
         }
 
         // Maintenance need has associated gizmos for displaying and controlling the maintenance level of pawns.
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
-            if (!ATReforged_Settings.maintenanceNeedExists)
+            if (!BotFactory_Settings.maintenanceNeedExists)
             {
                 yield break;
             }
@@ -318,17 +318,17 @@ namespace ATReforged
             {
                 for (int stageInt = 0; stageInt < MaintenanceThresholdBandPercentages.Count - 1; stageInt++)
                 {
-                    maintenanceLevelInfoCached += "ATR_MaintenanceLevelInfoRange".Translate((MaintenanceThresholdBandPercentages[stageInt] * 100f).ToStringDecimalIfSmall(), (MaintenanceThresholdBandPercentages[stageInt + 1] * 100f).ToStringDecimalIfSmall()) + ": " + "ATR_MaintenanceLevelInfoFallRate".Translate(DailyFallPerStage((MaintenanceStage)stageInt).ToStringPercent()) + "\n";
+                    maintenanceLevelInfoCached += "BF_MaintenanceLevelInfoRange".Translate((MaintenanceThresholdBandPercentages[stageInt] * 100f).ToStringDecimalIfSmall(), (MaintenanceThresholdBandPercentages[stageInt + 1] * 100f).ToStringDecimalIfSmall()) + ": " + "BF_MaintenanceLevelInfoFallRate".Translate(DailyFallPerStage((MaintenanceStage)stageInt).ToStringPercent()) + "\n";
                 }
             }
-            return (("ATR_MaintenanceGizmoLabel".Translate() + ": ").Colorize(ColoredText.TipSectionTitleColor) + MaintenanceLevel.ToStringPercent("0.#") + "\n" + "ATR_MaintenanceTargetLabel".Translate() + ": " + TargetMaintenanceLevel.ToStringPercent("0.#") + "\n\n" + "ATR_MaintenanceTargetLabelDesc".Translate() + "\n\n" + "ATR_MaintenanceDesc".Translate() + ":\n\n" + maintenanceLevelInfoCached).Resolve();
+            return (("BF_MaintenanceGizmoLabel".Translate() + ": ").Colorize(ColoredText.TipSectionTitleColor) + MaintenanceLevel.ToStringPercent("0.#") + "\n" + "BF_MaintenanceTargetLabel".Translate() + ": " + TargetMaintenanceLevel.ToStringPercent("0.#") + "\n\n" + "BF_MaintenanceTargetLabelDesc".Translate() + "\n\n" + "BF_MaintenanceDesc".Translate() + ":\n\n" + maintenanceLevelInfoCached).Resolve();
         }
 
         // Randomly applies health defects based on random chances from the ticksSincePoorMaintenance level.
         public void TryPoorMaintenanceCheck()
         {
             Pawn_HealthTracker healthTracker = Pawn.health;
-            float modifiedFailureTicks = Mathf.Abs(maintenanceEffectTicks) / ATReforged_Settings.maintenancePartFailureRateFactor;
+            float modifiedFailureTicks = Mathf.Abs(maintenanceEffectTicks) / BotFactory_Settings.maintenancePartFailureRateFactor;
             // Attempt to apply part decay.
             if (Rand.MTBEventOccurs(PartDecayContractChance.Evaluate(modifiedFailureTicks), TicksPerDay, 60f))
             {
@@ -339,7 +339,7 @@ namespace ATReforged
                 }
                 else
                 {
-                    Hediff decayHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_PartDecay, Pawn, bodyPart);
+                    Hediff decayHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_PartDecay, Pawn, bodyPart);
                     healthTracker.AddHediff(decayHediff);
                     SendPartFailureLetter(Pawn, decayHediff);
                 }
@@ -354,7 +354,7 @@ namespace ATReforged
                 }
                 else
                 {
-                    Hediff rustHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_RustedPart, Pawn, bodyPart);
+                    Hediff rustHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_RustedPart, Pawn, bodyPart);
                     healthTracker.AddHediff(rustHediff);
                     SendPartFailureLetter(Pawn, rustHediff);
                 }
@@ -369,7 +369,7 @@ namespace ATReforged
                 }
                 else
                 {
-                    Hediff powerLossHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_PowerLoss, Pawn, bodyPart);
+                    Hediff powerLossHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_PowerLoss, Pawn, bodyPart);
                     healthTracker.AddHediff(powerLossHediff);
                     SendPartFailureLetter(Pawn, powerLossHediff);
                 }
@@ -383,7 +383,7 @@ namespace ATReforged
                     BodyPartRecord bodyPart = healthTracker.hediffSet.GetBrain();
                     if (bodyPart != null && healthTracker.capacities.GetLevel(PawnCapacityDefOf.Consciousness) > 0.3f)
                     {
-                        Hediff coreDamageHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_DamagedCore, Pawn, bodyPart);
+                        Hediff coreDamageHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_DamagedCore, Pawn, bodyPart);
                         healthTracker.AddHediff(coreDamageHediff);
                         SendPartFailureLetter(Pawn, coreDamageHediff);
                     }
@@ -391,14 +391,14 @@ namespace ATReforged
                 // Attempt to apply failing valves.
                 if (Rand.MTBEventOccurs(FailingValvesContractChance.Evaluate(modifiedFailureTicks), TicksPerDay, 60f))
                 {
-                    BodyPartRecord bodyPart = Pawn.RaceProps.body.GetPartsWithDef(ATR_BodyPartDefOf.ATR_InternalCorePump)?.RandomElement();
+                    BodyPartRecord bodyPart = Pawn.RaceProps.body.GetPartsWithDef(BF_BodyPartDefOf.BF_InternalCorePump)?.RandomElement();
                     if (bodyPart == null)
                     {
                         Log.Warning("[ATR] Attempted to apply failing valves to " + Pawn + " but no viable body parts were found.");
                     }
                     else
                     {
-                        Hediff failingValvesHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_FailingCoolantValves, Pawn, bodyPart);
+                        Hediff failingValvesHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_FailingCoolantValves, Pawn, bodyPart);
                         healthTracker.AddHediff(failingValvesHediff);
                         SendPartFailureLetter(Pawn, failingValvesHediff);
                     }
@@ -406,14 +406,14 @@ namespace ATReforged
                 // Attempt to apply rogue mechanites.
                 if (Rand.MTBEventOccurs(RogueMechanitesContractChance.Evaluate(modifiedFailureTicks), TicksPerDay, 60f))
                 {
-                    BodyPartRecord bodyPart = Pawn.RaceProps.body.GetPartsWithDef(ATR_BodyPartDefOf.ATR_MechaniteStorage)?.RandomElement();
+                    BodyPartRecord bodyPart = Pawn.RaceProps.body.GetPartsWithDef(BF_BodyPartDefOf.BF_MechaniteStorage)?.RandomElement();
                     if (bodyPart == null)
                     {
                         Log.Warning("[ATR] Attempted to apply rogue mechanites to " + Pawn + " but no viable body parts were found.");
                     }
                     else
                     {
-                        Hediff rogueMechanitesHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_RogueMechanites, Pawn, bodyPart);
+                        Hediff rogueMechanitesHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_RogueMechanites, Pawn, bodyPart);
                         healthTracker.AddHediff(rogueMechanitesHediff);
                         SendPartFailureLetter(Pawn, rogueMechanitesHediff);
                     }

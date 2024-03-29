@@ -1,7 +1,7 @@
 ﻿using Verse;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompSpawnerMicroScyther : ThingComp
     {
@@ -14,12 +14,12 @@ namespace ATReforged
 
         public void SpawnPawn()
         {
-            PawnGenerationRequest request = new PawnGenerationRequest(ATR_PawnKindDefOf.ATR_MicroScyther, Faction.OfAncientsHostile, PawnGenerationContext.NonPlayer);
+            PawnGenerationRequest request = new PawnGenerationRequest(BF_PawnKindDefOf.BF_MicroScyther, Faction.OfAncientsHostile, PawnGenerationContext.NonPlayer);
             Pawn pawn = PawnGenerator.GeneratePawn(request);
             GenSpawn.Spawn(pawn, parent.Position, parent.Map);
-            pawn.mindState.mentalStateHandler.TryStartMentalState(ATR_MentalStateDefOf.ATR_MentalState_Exterminator, transitionSilently: true);
+            pawn.mindState.mentalStateHandler.TryStartMentalState(BF_MentalStateDefOf.BF_MentalState_Exterminator, transitionSilently: true);
             
-            Hediff hediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_RemainingCharge, pawn, null);
+            Hediff hediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_RemainingCharge, pawn, null);
             hediff.Severity = 0.5f;
             pawn.health.AddHediff(hediff, null, null);
         }

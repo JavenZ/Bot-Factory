@@ -3,14 +3,14 @@
 
     <!-- Base Industrial -->
 
-    <HediffDef Name="ATR_AddedBodyPartIndustrialBase" ParentName="ATR_MechAddedBodyPartBase" Abstract="True">
+    <HediffDef Name="BF_AddedBodyPartIndustrialBase" ParentName="BF_MechAddedBodyPartBase" Abstract="True">
         <hediffClass>Hediff_AddedPart</hediffClass>
         <addedPartProps>
             <solid>true</solid>
         </addedPartProps>
     </HediffDef>
 
-    <ThingDef Name="ATR_BodyPartIndustrialBase" ParentName="ATR_MechBodyPartBase" Abstract="True">
+    <ThingDef Name="BF_BodyPartIndustrialBase" ParentName="BF_MechBodyPartBase" Abstract="True">
         <techLevel>Industrial</techLevel>
         <graphicData>
             <texPath>Things/Items/BodyParts/OrganOrange</texPath>
@@ -33,13 +33,13 @@
                 <Crafting>4</Crafting>
             </skillRequirements>
             <recipeUsers>
-                <li>ATR_MechPartWorkbench</li>
+                <li>BF_MechPartWorkbench</li>
             </recipeUsers>
         </recipeMaker>
         <thingSetMakerTags><li>RewardStandardMidFreq</li></thingSetMakerTags>
     </ThingDef>
 
-	<RecipeDef Name="ATR_SurgeryMechanicalIndustrial" ParentName="ATR_MechanicalSurgeryInstallBodyPartBase" Abstract="True">
+	<RecipeDef Name="BF_SurgeryMechanicalIndustrial" ParentName="BF_MechanicalSurgeryInstallBodyPartBase" Abstract="True">
 		<jobString>Replacing component.</jobString>
         <skillRequirements>
             <Crafting>4</Crafting>
@@ -50,8 +50,8 @@
 
     <!-- Mining Utility Arm -->
 
-    <HediffDef ParentName="ATR_AddedBodyPartIndustrialBase">
-        <defName>ATR_MiningArm</defName>
+    <HediffDef ParentName="BF_AddedBodyPartIndustrialBase">
+        <defName>BF_MiningArm</defName>
         <label>Mining arm</label>
 	    <description>A simple mechanical arm designed with the extraction and processing of minerals in mind. The arm prominently features a plasteel drill which feeds contents into an internal processor, separating minerals efficiently and swiftly discarding waste to ensure maximal drilling and minimal sorting time.</description>
         <stages>
@@ -77,11 +77,11 @@
                 </tools>
             </li>
         </comps>
-        <spawnThingOnRemoved>ATR_MiningArm</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_MiningArm</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartIndustrialBase">
-        <defName>ATR_MiningArm</defName>
+    <ThingDef ParentName="BF_BodyPartIndustrialBase">
+        <defName>BF_MiningArm</defName>
         <label>Mining arm</label>
 	    <description>A simple mechanical arm designed with the extraction and processing of minerals in mind. The arm prominently features a plasteel drill which feeds contents into an internal processor, separating minerals efficiently and swiftly discarding waste to ensure maximal drilling and minimal sorting time.</description>
         <costList>
@@ -90,12 +90,12 @@
             <ComponentIndustrial>6</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ATR_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>BF_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalIndustrial">
-		<defName>ATR_Install_MiningArm</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalIndustrial">
+		<defName>BF_Install_MiningArm</defName>
 		<label>Install mining arm</label>
 		<description>Installs a mining arm.</description>
 		<jobString>Installing mining arm.</jobString>
@@ -103,7 +103,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_MiningArm</li>
+						<li>BF_MiningArm</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -111,19 +111,19 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_MiningArm</li>
+				<li>BF_MiningArm</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalArm</li>
+			<li>BF_MechanicalArm</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_MiningArm</addsHediff>
+		<addsHediff>BF_MiningArm</addsHediff>
 	</RecipeDef>
 
     <!-- Agriculture Utility Arm -->
 
-    <HediffDef ParentName="ATR_AddedBodyPartIndustrialBase">
-        <defName>ATR_AgriArm</defName>
+    <HediffDef ParentName="BF_AddedBodyPartIndustrialBase">
+        <defName>BF_AgriArm</defName>
         <label>Agri arm</label>
 	    <description>A simple mechanical arm designed with agriculture and horticulture in mind. The arm features several internal multi-tools that appropriately harvest products and feeds contents into an internal processor, discarding waste products to ensure optimal harvest and minimal sorting time. Ejecting products out of specialized elbow ports is efficient, if rather odd to observe.</description>
 		<stages>
@@ -150,11 +150,11 @@
                 </tools>
             </li>
         </comps>
-        <spawnThingOnRemoved>ATR_AgriArm</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_AgriArm</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartIndustrialBase">
-        <defName>ATR_AgriArm</defName>
+    <ThingDef ParentName="BF_BodyPartIndustrialBase">
+        <defName>BF_AgriArm</defName>
         <label>Agri arm</label>
 	    <description>A simple mechanical arm designed with agriculture and horticulture in mind. The arm features several internal multi-tools that appropriately harvest products and feeds contents into an internal processor, discarding waste products to ensure optimal harvest and minimal sorting time. Ejecting products out of specialized elbow ports is efficient, if rather odd to observe.</description>
         <costList>
@@ -163,12 +163,12 @@
             <ComponentIndustrial>6</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ATR_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>BF_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalIndustrial">
-		<defName>ATR_Install_AgriArm</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalIndustrial">
+		<defName>BF_Install_AgriArm</defName>
 		<label>Install agri arm</label>
 		<description>Installs an agri arm.</description>
 		<jobString>Installing agri arm.</jobString>
@@ -176,7 +176,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_AgriArm</li>
+						<li>BF_AgriArm</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -184,19 +184,19 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_AgriArm</li>
+				<li>BF_AgriArm</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalArm</li>
+			<li>BF_MechanicalArm</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AgriArm</addsHediff>
+		<addsHediff>BF_AgriArm</addsHediff>
 	</RecipeDef>
 
     <!-- Pacification Utility Arm -->
 
-    <HediffDef ParentName="ATR_AddedBodyPartIndustrialBase">
-        <defName>ATR_PacificationArm</defName>
+    <HediffDef ParentName="BF_AddedBodyPartIndustrialBase">
+        <defName>BF_PacificationArm</defName>
         <label>Pacification arm</label>
 	    <description>A simple mechanical arm with built-in energy absorbers and generators. The fists are capable of reaching dangerously high temperatures and are able to vent heat upon impacting something - effectively scorching a target - and applying an overloading amount of energy - an EMP in all but name. They are often used by riot police to impart highly painful but non-lethal burns and disable vehicles.\n\nEccentric chefs appreciate the consistent and rapid heat transfer.</description>
 		<stages>
@@ -230,11 +230,11 @@
                 </tools>
             </li>
         </comps>
-        <spawnThingOnRemoved>ATR_PacificationArm</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_PacificationArm</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartIndustrialBase">
-        <defName>ATR_PacificationArm</defName>
+    <ThingDef ParentName="BF_BodyPartIndustrialBase">
+        <defName>BF_PacificationArm</defName>
         <label>Pacification arm</label>
 	    <description>A simple mechanical arm with built-in energy absorbers and generators. The fists are capable of reaching dangerously high temperatures and are able to vent heat upon impacting something - effectively scorching a target - and applying an overloading amount of energy - an EMP in all but name. They are often used by riot police to impart highly painful but non-lethal burns and disable vehicles.\n\nEccentric chefs appreciate the consistent and rapid heat transfer.</description>
         <costList>
@@ -243,12 +243,12 @@
             <ComponentIndustrial>8</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ATR_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>BF_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalIndustrial">
-		<defName>ATR_Install_PacificationArm</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalIndustrial">
+		<defName>BF_Install_PacificationArm</defName>
 		<label>Install pacification arm</label>
 		<description>Installs a pacification arm.</description>
 		<jobString>Installing pacification arm.</jobString>
@@ -256,7 +256,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_PacificationArm</li>
+						<li>BF_PacificationArm</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -264,19 +264,19 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_PacificationArm</li>
+				<li>BF_PacificationArm</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalArm</li>
+			<li>BF_MechanicalArm</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_PacificationArm</addsHediff>
+		<addsHediff>BF_PacificationArm</addsHediff>
 	</RecipeDef>
 
     <!-- Scalpel Utility Arm -->
 
-    <HediffDef ParentName="ATR_AddedBodyPartIndustrialBase">
-        <defName>ATR_ScalpelArm</defName>
+    <HediffDef ParentName="BF_AddedBodyPartIndustrialBase">
+        <defName>BF_ScalpelArm</defName>
         <label>Scalpel arm</label>
 	    <description>A mechanical arm with a very modified structure designed for precision and perfectly smooth movement. A number of integrated counterbalances, unique parts, and multi-tools provide this arm with much finer - but delicate - control. While unsuited for general work tasks, this arm is an incredible boon to surgeons and mechanics alike. The delicate structure combined with minor changes to the the larger chassis leave the user more vulnerable to damage, but the scalpel can be used as a very dangerous piercing weapon if needed.</description>
 		<stages>
@@ -287,10 +287,10 @@
                     <MedicalOperationSpeed>0.45</MedicalOperationSpeed>
                     <MedicalTendQuality>0.15</MedicalTendQuality>
                     <MedicalSurgerySuccessChance>0.05</MedicalSurgerySuccessChance>
-                    <ATR_MechanicalTendSpeed>0.45</ATR_MechanicalTendSpeed>
-                    <ATR_MechanicalOperationSpeed>0.45</ATR_MechanicalOperationSpeed>
-                    <ATR_MechanicalTendQuality>0.15</ATR_MechanicalTendQuality>
-                    <ATR_MechanicalSurgerySuccessChance>0.05</ATR_MechanicalSurgerySuccessChance>
+                    <BF_MechanicalTendSpeed>0.45</BF_MechanicalTendSpeed>
+                    <BF_MechanicalOperationSpeed>0.45</BF_MechanicalOperationSpeed>
+                    <BF_MechanicalTendQuality>0.15</BF_MechanicalTendQuality>
+                    <BF_MechanicalSurgerySuccessChance>0.05</BF_MechanicalSurgerySuccessChance>
 				</statOffsets>
                 <statFactors>
                     <IncomingDamageFactor>1.05</IncomingDamageFactor>
@@ -312,11 +312,11 @@
                 </tools>
             </li>
         </comps>
-        <spawnThingOnRemoved>ATR_ScalpelArm</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_ScalpelArm</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartIndustrialBase">
-        <defName>ATR_ScalpelArm</defName>
+    <ThingDef ParentName="BF_BodyPartIndustrialBase">
+        <defName>BF_ScalpelArm</defName>
         <label>Scalpel arm</label>
 	    <description>A mechanical arm with a very modified structure designed for precision and perfectly smooth movement. A number of integrated counterbalances, unique parts, and multi-tools provide this arm with much finer - but delicate - control. While unsuited for general work tasks, this arm is an incredible boon to surgeons and mechanics alike. The delicate structure combined with minor changes to the the larger chassis leave the user more vulnerable to damage, but the scalpel can be used as a very dangerous piercing weapon if needed.</description>
         <costList>
@@ -325,12 +325,12 @@
             <ComponentIndustrial>8</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ATR_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>BF_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalIndustrial">
-		<defName>ATR_Install_ScalpelArm</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalIndustrial">
+		<defName>BF_Install_ScalpelArm</defName>
 		<label>Install scalpel arm</label>
 		<description>Installs a scalpel arm.</description>
 		<jobString>Installing scalpel arm.</jobString>
@@ -338,7 +338,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_ScalpelArm</li>
+						<li>BF_ScalpelArm</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -346,19 +346,19 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_ScalpelArm</li>
+				<li>BF_ScalpelArm</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalArm</li>
+			<li>BF_MechanicalArm</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_ScalpelArm</addsHediff>
+		<addsHediff>BF_ScalpelArm</addsHediff>
 	</RecipeDef>
 
     <!-- Rending Utility Arm -->
 
-    <HediffDef ParentName="ATR_AddedBodyPartIndustrialBase">
-        <defName>ATR_RendingArm</defName>
+    <HediffDef ParentName="BF_AddedBodyPartIndustrialBase">
+        <defName>BF_RendingArm</defName>
         <label>Rending arm</label>
 	    <description>A mechanical arm designed to rend down organic or inorganic mass into component parts. An array of specialized internal sensors, sorters, and processors provide this arm with powerful disassembly capacities. The design permits free range of movement and no outstanding penalties, but is uncanny and disturbing to observe. The arm is capable of breaking down living tissue just as well as dead tissue, and can make short work of buildings. Android troops of notoriously brutal commanders will often be found equipped with these to handle shocking executions and rapidly eliminating issues with corpses.\n\nThe rending process thoroughly destroys pathogens and contaminants, make it an ideal attachment for efficiency and cleanliness obsessed butchers and chefs.</description>
 		<stages>
@@ -398,11 +398,11 @@
                 </tools>
             </li>
         </comps>
-        <spawnThingOnRemoved>ATR_RendingArm</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_RendingArm</spawnThingOnRemoved>
     </HediffDef>
 
-    <ThingDef ParentName="ATR_BodyPartIndustrialBase">
-        <defName>ATR_RendingArm</defName>
+    <ThingDef ParentName="BF_BodyPartIndustrialBase">
+        <defName>BF_RendingArm</defName>
         <label>Rending arm</label>
 	    <description>A mechanical arm designed to rend down organic or inorganic mass into component parts. An array of specialized internal sensors, sorters, and processors provide this arm with powerful disassembly capacities. The design permits free range of movement and no outstanding penalties, but is uncanny and disturbing to observe. The arm is capable of breaking down living tissue just as well as dead tissue, and can make short work of buildings. Android troops of notoriously brutal commanders will often be found equipped with these to handle shocking executions and rapidly eliminating issues with corpses.\n\nThe rending process thoroughly destroys pathogens and contaminants, make it an ideal attachment for efficiency and cleanliness obsessed butchers and chefs.</description>
         <costList>
@@ -411,12 +411,12 @@
             <ComponentIndustrial>8</ComponentIndustrial>
         </costList>
         <recipeMaker>
-	    	<researchPrerequisite>ATR_InterchangeableParts</researchPrerequisite>
+	    	<researchPrerequisite>BF_InterchangeableParts</researchPrerequisite>
         </recipeMaker>
     </ThingDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalIndustrial">
-		<defName>ATR_Install_RendingArm</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalIndustrial">
+		<defName>BF_Install_RendingArm</defName>
 		<label>Install rending arm</label>
 		<description>Installs a rending arm.</description>
 		<jobString>Installing rending arm.</jobString>
@@ -424,7 +424,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_RendingArm</li>
+						<li>BF_RendingArm</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -432,19 +432,19 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_RendingArm</li>
+				<li>BF_RendingArm</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalArm</li>
+			<li>BF_MechanicalArm</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_RendingArm</addsHediff>
+		<addsHediff>BF_RendingArm</addsHediff>
 	</RecipeDef>
 
     <!-- Voice Synthesizers share a single ThingDef, with different HediffDefs and RecipeDefs -->
 
-    <ThingDef ParentName="ATR_BodyPartIndustrialBase">
-        <defName>ATR_SpecializedVoiceSynthesizer</defName>
+    <ThingDef ParentName="BF_BodyPartIndustrialBase">
+        <defName>BF_SpecializedVoiceSynthesizer</defName>
         <label>Specialized voice synthesizer</label>
         <description>An unprogrammed specialized voice synthesizer replacement for mechanical units that can be given specialized roles upon installation into a unit to enhance certain qualities from social impact to coercive abilities.</description>
         <costList>
@@ -459,11 +459,11 @@
 
     <!-- Auto-modulator Voice Synthesizer -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_AutomodulatedVoiceSynthesizer</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_AutomodulatedVoiceSynthesizer</defName>
         <label>Automodulated Voice Synthesizer</label>
         <description>A voice synthesizer replacement utilizing a large built-in language modelling algorithm that can rapidly modulate the unit's voice output to perfectly reflect their desired tone, intonation, and connotation in a wide array of languages and even dialects of those languages. While organics do occasionally find dynamically changing voices to be unnerving, this device ensures that the android's voice is sonorous, perfectly crisp, and with the exact sound desired to maximize positive outcomes in social interactions, leading others to have higher opinions of the unit.</description>
-        <descriptionHyperlinks><ThingDef>ATR_SpecializedVoiceSynthesizer</ThingDef></descriptionHyperlinks>
+        <descriptionHyperlinks><ThingDef>BF_SpecializedVoiceSynthesizer</ThingDef></descriptionHyperlinks>
 		<stages>
 			<li>
 				<statOffsets>
@@ -471,11 +471,11 @@
 				</statOffsets>
 			</li>
 		</stages>
-        <spawnThingOnRemoved>ATR_SpecializedVoiceSynthesizer</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_SpecializedVoiceSynthesizer</spawnThingOnRemoved>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalIndustrial">
-		<defName>ATR_Install_AutomodulatedVoiceSynthesizer</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalIndustrial">
+		<defName>BF_Install_AutomodulatedVoiceSynthesizer</defName>
 		<label>install automodulated voice synthesizer</label>
 		<description>Installs an automodulated voice synthesizer.</description>
 		<jobString>Installing automodulated voice synthesizer.</jobString>
@@ -483,7 +483,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_SpecializedVoiceSynthesizer</li>
+						<li>BF_SpecializedVoiceSynthesizer</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -491,22 +491,22 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_SpecializedVoiceSynthesizer</li>
+				<li>BF_SpecializedVoiceSynthesizer</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_VoiceSynthesizer</li>
+			<li>BF_VoiceSynthesizer</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_AutomodulatedVoiceSynthesizer</addsHediff>
+		<addsHediff>BF_AutomodulatedVoiceSynthesizer</addsHediff>
 	</RecipeDef>
 
     <!-- Coercive Voice Synthesizer -->
 
-    <HediffDef ParentName="ATR_AddedATR_BodyPartSpacerBase">
-        <defName>ATR_CoerciveVoiceSynthesizer</defName>
+    <HediffDef ParentName="BF_AddedBF_BodyPartSpacerBase">
+        <defName>BF_CoerciveVoiceSynthesizer</defName>
         <label>Coercive Voice Synthesizer</label>
         <description>A voice synthesizer replacement programmed to maximize coercive capabilities by greatly increasing volume and intensity. Specialized to operate only in various menacing tones and manipulative modes, others find units equipped with this to be terrifying and threatening and generally more conducive to obeying the will of the unit. The module has a single "normal" mode for instances where threatening is unnecessary, but others still find it mildly offputting.</description>
-        <descriptionHyperlinks><ThingDef>ATR_SpecializedVoiceSynthesizer</ThingDef></descriptionHyperlinks>
+        <descriptionHyperlinks><ThingDef>BF_SpecializedVoiceSynthesizer</ThingDef></descriptionHyperlinks>
 		<stages>
 			<li>
 				<statOffsets>
@@ -519,11 +519,11 @@
 				</statOffsets>
 			</li>
 		</stages>
-        <spawnThingOnRemoved>ATR_SpecializedVoiceSynthesizer</spawnThingOnRemoved>
+        <spawnThingOnRemoved>BF_SpecializedVoiceSynthesizer</spawnThingOnRemoved>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_SurgeryMechanicalIndustrial">
-		<defName>ATR_Install_CoerciveVoiceSynthesizer</defName>
+    <RecipeDef ParentName="BF_SurgeryMechanicalIndustrial">
+		<defName>BF_Install_CoerciveVoiceSynthesizer</defName>
 		<label>install coercive voice synthesizer</label>
 		<description>Installs a coercive voice synthesizer.</description>
 		<jobString>Installing coercive voice synthesizer.</jobString>
@@ -531,7 +531,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_SpecializedVoiceSynthesizer</li>
+						<li>BF_SpecializedVoiceSynthesizer</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -539,19 +539,19 @@
 		</ingredients>
 		<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_SpecializedVoiceSynthesizer</li>
+				<li>BF_SpecializedVoiceSynthesizer</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_VoiceSynthesizer</li>
+			<li>BF_VoiceSynthesizer</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_CoerciveVoiceSynthesizer</addsHediff>
+		<addsHediff>BF_CoerciveVoiceSynthesizer</addsHediff>
 	</RecipeDef>
 
     <!-- Makeshift Leg -->
 
-    <HediffDef ParentName="ATR_AddedBodyPartIndustrialBase">
-        <defName>ATR_MakeshiftMechLeg</defName>
+    <HediffDef ParentName="BF_AddedBodyPartIndustrialBase">
+        <defName>BF_MakeshiftMechLeg</defName>
         <label>Makeshift mechanical leg</label>
 	    <description>An installed makeshift leg, with only minimal functionality. While it functions admirably given its ad-hoc nature and its lack of distinct feet or toes, it is still significantly inferior to a properly designed and manufactured leg.</description>
         <addedPartProps>
@@ -560,8 +560,8 @@
         </addedPartProps>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_Install_MakeshiftReplacementLeg</defName>
+    <RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_Install_MakeshiftReplacementLeg</defName>
 		<label>Install makeshift mechanical leg</label>
 		<description>Installs a makeshift mechanical leg.</description>
 		<jobString>Installing makeshift mechanical leg.</jobString>
@@ -570,10 +570,10 @@
             <Crafting>2</Crafting>
         </skillRequirements>
         <recipeUsers>
-            <li>ATR_Tier1Android</li>
-            <li>ATR_Tier2Android</li>
-            <li>ATR_Tier3Android</li>
-            <li>ATR_Tier4Android</li>
+            <li>BF_Tier1Android</li>
+            <li>BF_Tier2Android</li>
+            <li>BF_Tier3Android</li>
+            <li>BF_Tier4Android</li>
         </recipeUsers>
 		<surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
 		<ingredients>
@@ -601,15 +601,15 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalLeg</li>
+			<li>BF_MechanicalLeg</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_MakeshiftMechLeg</addsHediff>
+		<addsHediff>BF_MakeshiftMechLeg</addsHediff>
 	</RecipeDef>
 
     <!-- Makeshift Arm -->
 
-    <HediffDef ParentName="ATR_AddedBodyPartIndustrialBase">
-        <defName>ATR_MakeshiftMechArm</defName>
+    <HediffDef ParentName="BF_AddedBodyPartIndustrialBase">
+        <defName>BF_MakeshiftMechArm</defName>
         <label>Makeshift mechanical arm</label>
 	    <description>An installed makeshift arm, with only minimal functionality. While it functions admirably given its ad-hoc nature and its lack of distinct hands or fingers, it is still significantly inferior to a properly designed and manufactured arm.</description>
 	    <comps>
@@ -632,8 +632,8 @@
         </addedPartProps>
     </HediffDef>
 
-    <RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_Install_MakeshiftReplacementArm</defName>
+    <RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_Install_MakeshiftReplacementArm</defName>
 		<label>Install makeshift mechanical arm</label>
 		<description>Installs a makeshift mechanical arm.</description>
 		<jobString>Installing makeshift mechanical arm.</jobString>
@@ -642,10 +642,10 @@
             <Crafting>2</Crafting>
         </skillRequirements>
         <recipeUsers>
-            <li>ATR_Tier1Android</li>
-            <li>ATR_Tier2Android</li>
-            <li>ATR_Tier3Android</li>
-            <li>ATR_Tier4Android</li>
+            <li>BF_Tier1Android</li>
+            <li>BF_Tier2Android</li>
+            <li>BF_Tier3Android</li>
+            <li>BF_Tier4Android</li>
         </recipeUsers>
 		<surgerySuccessChanceFactor>2</surgerySuccessChanceFactor>
 		<ingredients>
@@ -673,9 +673,9 @@
 			</thingDefs>
 		</fixedIngredientFilter>
 		<appliedOnFixedBodyParts>
-			<li>ATR_MechanicalArm</li>
+			<li>BF_MechanicalArm</li>
 		</appliedOnFixedBodyParts>
-		<addsHediff>ATR_MakeshiftMechArm</addsHediff>
+		<addsHediff>BF_MakeshiftMechArm</addsHediff>
 	</RecipeDef>
 
 </Defs>

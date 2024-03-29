@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="MakeableDrugPillBase">
-		<defName>ATR_MechAntifreeze</defName>
+		<defName>BF_MechAntifreeze</defName>
 		<label>Mechanite antifreeze</label>
 		<description>Synthetic chemical compound designed to reduce chassis susceptibility to adverse temperature - positive and negative. Not safe for organic consumption.</description>
 		<graphicData>
@@ -23,18 +23,18 @@
 			<drugCategory>Medical</drugCategory>
 			<useEatingSpeedStat>false</useEatingSpeedStat>
 			<outcomeDoers>
-				<li Class="ATReforged.IngestionOutcomeDoer_MechOrganicDifferentEffects">
-					<organicEffect>ATR_Toxicated</organicEffect>
+				<li Class="BotFactory.IngestionOutcomeDoer_MechOrganicDifferentEffects">
+					<organicEffect>BF_Toxicated</organicEffect>
                     <organicSeverity>1</organicSeverity>
-					<mechanicalEffect>ATR_MechAntifreeze</mechanicalEffect>
+					<mechanicalEffect>BF_MechAntifreeze</mechanicalEffect>
 					<mechanicalSeverity>1</mechanicalSeverity>
 				</li>   
 			</outcomeDoers>
 		</ingestible>
 		<recipeMaker>
-			<researchPrerequisite>ATR_MechanicalStimulators</researchPrerequisite>
+			<researchPrerequisite>BF_MechanicalStimulators</researchPrerequisite>
 			<recipeUsers>
-				<li>ATR_MechPartWorkbench</li>
+				<li>BF_MechPartWorkbench</li>
 			</recipeUsers>
 		</recipeMaker>
 		<costList>
@@ -48,7 +48,7 @@
 	</ThingDef>
 
 	<HediffDef>
-		<defName>ATR_Toxicated</defName>
+		<defName>BF_Toxicated</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Toxicated</label>
 		<description>Toxic synthetic compounds within the bloodstream, causing severe health defects.</description>
@@ -152,7 +152,7 @@
 	<!--HediffMechanical-->
 
 	<HediffDef>
-		<defName>ATR_MechAntifreeze</defName>
+		<defName>BF_MechAntifreeze</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Mechanite antifreeze</label>
 		<description>Synthetic chemical compound designed to reduce chassis susceptibility to adverse temperature - positive and negative. Not safe for organic consumption.</description>

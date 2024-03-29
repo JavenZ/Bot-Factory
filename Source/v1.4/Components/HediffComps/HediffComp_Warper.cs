@@ -1,6 +1,6 @@
 ﻿using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class HediffComp_Warper : HediffComp
     {
@@ -8,9 +8,9 @@ namespace ATReforged
         public override void CompPostPostAdd(DamageInfo? dinfo)
         {
             base.CompPostPostAdd(dinfo);
-            if (Pawn.RaceProps.intelligence == Intelligence.Humanlike && !Utils.IsConsideredMechanical(Pawn) && Pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_FractalPillOrganic) == null)
+            if (Pawn.RaceProps.intelligence == Intelligence.Humanlike && !Utils.IsConsideredMechanical(Pawn) && Pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_FractalPillOrganic) == null)
             {
-                Hediff fractal = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_FractalPillOrganic, Pawn);
+                Hediff fractal = HediffMaker.MakeHediff(BF_HediffDefOf.BF_FractalPillOrganic, Pawn);
                 fractal.Severity = 0.25f;
                 Pawn.health.AddHediff(fractal);
             }

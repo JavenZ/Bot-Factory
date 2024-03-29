@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class ThoughtWorker_AssistedByMinds : ThoughtWorker
     {

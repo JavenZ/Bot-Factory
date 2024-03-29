@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Replicate HediffGiver_Hypothermia but do not apply frostbite effects.
     public class HediffGiver_HypothermiaNoFrostbite : HediffGiver_Hypothermia

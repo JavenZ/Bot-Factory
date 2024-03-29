@@ -2,8 +2,8 @@
 <Defs>
   
     <ThoughtDef>
-        <defName>ATR_MaintenanceMood</defName>
-        <workerClass>ATReforged.ThoughtWorker_MaintenanceMood</workerClass>
+        <defName>BF_MaintenanceMood</defName>
+        <workerClass>BotFactory.ThoughtWorker_MaintenanceMood</workerClass>
         <stages>
             <li>
                 <label>abysmal maintenance</label>

@@ -4,7 +4,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Dialog_RestrictToPawnType : Window
     {
@@ -40,7 +40,7 @@ namespace ATReforged
             Text.Font = GameFont.Medium;
             Rect TitleRect = new Rect(inRect);
             TitleRect.height = Text.LineHeight * 2f;
-            Widgets.Label(TitleRect, "ATR_RestrictedPawnTypes".Translate());
+            Widgets.Label(TitleRect, "BF_RestrictedPawnTypes".Translate());
             Text.Font = GameFont.Small;
             inRect.yMin = TitleRect.yMax + 4f;
             Rect exemplarRect = inRect;
@@ -82,7 +82,7 @@ namespace ATReforged
                 maxOneColumn = true
             };
             listingStandard.Begin(rect);
-            if (listingStandard.RadioButton("ATR_PawnTypeNone".Translate(), (PawnType.None | pawnTypes) == PawnType.None, tooltip: "ATR_PawnTypeNoneTooltip".Translate(), tooltipDelay: 0.25f))
+            if (listingStandard.RadioButton("BF_PawnTypeNone".Translate(), (PawnType.None | pawnTypes) == PawnType.None, tooltip: "BF_PawnTypeNoneTooltip".Translate(), tooltipDelay: 0.25f))
             {
                 for (int j = compRestricts.Count - 1; j >= 0; j--)
                 {
@@ -91,7 +91,7 @@ namespace ATReforged
             }
             for (int i = 1; i < 8; i++)
             {
-                if (listingStandard.RadioButton($"ATR_PawnType{(PawnType)i}".Translate(), ((PawnType)i & pawnTypes) == (PawnType)i, tooltip: $"ATR_PawnType{(PawnType)i}Tooltip".Translate(), tooltipDelay: 0.25f))
+                if (listingStandard.RadioButton($"BF_PawnType{(PawnType)i}".Translate(), ((PawnType)i & pawnTypes) == (PawnType)i, tooltip: $"BF_PawnType{(PawnType)i}Tooltip".Translate(), tooltipDelay: 0.25f))
                 {
                     for (int j = compRestricts.Count - 1; j >= 0; j--)
                     {

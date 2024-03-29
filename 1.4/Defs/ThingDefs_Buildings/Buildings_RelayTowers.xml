@@ -31,7 +31,7 @@
         </statBases>
         <rotatable>false</rotatable>
         <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
-        <designationCategory>ATR_AndroidTiersDesignation</designationCategory>
+        <designationCategory>BF_AndroidTiersDesignation</designationCategory>
         <constructEffect>ConstructMetal</constructEffect>
         <designationHotKey>Misc4</designationHotKey>
         <comps>
@@ -41,7 +41,7 @@
     </ThingDef>
   
     <ThingDef ParentName="SkyMindTowerBase">
-        <defName>ATR_SkyMindRelay</defName>
+        <defName>BF_SkyMindRelay</defName>
         <label>SkyMind Relay Tower</label>
         <description>This tower acts as a relay for SkyMind-connected devices to communicate and operate. Towers like these are necessary for surrogate or SkyMind operations - this tower has capacity for three continuous device connections.</description>
         <graphicData>
@@ -62,17 +62,17 @@
                 <shortCircuitInRain>false</shortCircuitInRain>
                 <basePowerConsumption>750</basePowerConsumption>
             </li>
-            <li Class="ATReforged.CompProperties_SkyMindTower">
+            <li Class="BotFactory.CompProperties_SkyMindTower">
                 <SkyMindSlotsProvided>3</SkyMindSlotsProvided>
             </li>
         </comps>
         <researchPrerequisites>
-            <li>ATR_StandardizedCommunications</li>
+            <li>BF_StandardizedCommunications</li>
         </researchPrerequisites>
     </ThingDef>
   
     <ThingDef ParentName="SkyMindTowerBase">
-        <defName>ATR_SkyMindNetwork</defName>
+        <defName>BF_SkyMindNetwork</defName>
         <label>SkyMind Network Tower</label>
         <thingClass>Building</thingClass>
         <description>This tower acts as a powerful network host for SkyMind-connected devices to communicate and operate. Towers like these are necessary for surrogate or SkyMind operations - this tower has capacity for fifteen continuous device connections.</description>
@@ -95,12 +95,12 @@
                 <shortCircuitInRain>false</shortCircuitInRain>
                 <basePowerConsumption>1800</basePowerConsumption>
             </li>
-            <li Class="ATReforged.CompProperties_SkyMindTower">
+            <li Class="BotFactory.CompProperties_SkyMindTower">
                 <SkyMindSlotsProvided>15</SkyMindSlotsProvided>
             </li>
         </comps>
         <researchPrerequisites>
-            <li>ATR_CommunicationOptimization</li>
+            <li>BF_CommunicationOptimization</li>
         </researchPrerequisites>
     </ThingDef>
 

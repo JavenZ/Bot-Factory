@@ -2,7 +2,7 @@
 using RimWorld;
 using HarmonyLib;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class InteractionWorker_RomanceAttempt_Patch
     {

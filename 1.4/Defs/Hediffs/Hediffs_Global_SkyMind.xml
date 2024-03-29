@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <HediffDef Name="ATR_SkyMindHediffBase" Abstract="True">
+    <HediffDef Name="BF_SkyMindHediffBase" Abstract="True">
         <hediffClass>HediffWithComps</hediffClass>
         <defaultLabelColor>(0.8, 0.8, 0.35)</defaultLabelColor>
         <initialSeverity>0.5</initialSeverity>
         <isBad>false</isBad>
     </HediffDef>
 
-    <HediffDef ParentName="ATR_SkyMindHediffBase">
-        <defName>ATR_SplitConsciousness</defName>
-		<hediffClass>ATReforged.Hediff_SplitConsciousness</hediffClass>
+    <HediffDef ParentName="BF_SkyMindHediffBase">
+        <defName>BF_SplitConsciousness</defName>
+		<hediffClass>BotFactory.Hediff_SplitConsciousness</hediffClass>
         <label>Split consciousness</label>
         <description>The consciousness controlling this body is split, as it also controls other bodies. This effectively reduces the consciousness's ability to execute fine control over this body. More bodies means a steeper penalty.</description>
         <labelNoun>Split consciousness</labelNoun>
@@ -90,16 +90,16 @@
             </li>
         </stages>
         <comps>
-            <li Class="ATReforged.HediffCompProperties_TetheredMoteSustainer">
-                <moteDef>ATR_SurrogateAttachedMote</moteDef>
+            <li Class="BotFactory.HediffCompProperties_TetheredMoteSustainer">
+                <moteDef>BF_SurrogateAttachedMote</moteDef>
                 <scale>0.8</scale>
             </li>
         </comps>
     </HediffDef>
 
-    <HediffDef ParentName="ATR_SkyMindHediffBase">
-        <defName>ATR_ForeignConsciousness</defName>
-		<hediffClass>ATReforged.Hediff_ForeignConsciousness</hediffClass>
+    <HediffDef ParentName="BF_SkyMindHediffBase">
+        <defName>BF_ForeignConsciousness</defName>
+		<hediffClass>BotFactory.Hediff_ForeignConsciousness</hediffClass>
         <label>Foreign consciousness</label>
         <description>The consciousness controlling this body belongs to another faction. The controller will disconnect upon it being downed, and will likely trigger a core self-destruct.</description>
         <labelNoun>a foreign consciousness</labelNoun>
@@ -112,15 +112,15 @@
             </li>
         </stages>
         <comps>
-            <li Class="ATReforged.HediffCompProperties_TetheredMoteSustainer">
-                <moteDef>ATR_SurrogateAttachedMote</moteDef>
+            <li Class="BotFactory.HediffCompProperties_TetheredMoteSustainer">
+                <moteDef>BF_SurrogateAttachedMote</moteDef>
                 <scale>0.8</scale>
             </li>
         </comps>
     </HediffDef>
 
-    <HediffDef ParentName="ATR_SkyMindHediffBase">
-        <defName>ATR_MindOperation</defName>
+    <HediffDef ParentName="BF_SkyMindHediffBase">
+        <defName>BF_MindOperation</defName>
         <label>SkyMind operation in progress</label>
         <description>This unit is currently undergoing a SkyMind operation. In order to maintain the connection and integrity, the consciousness is not currently in control of this body.</description>
         <labelNoun>SkyMind operation</labelNoun>
@@ -136,15 +136,15 @@
             </li>
         </stages>
         <comps>
-            <li Class="ATReforged.HediffCompProperties_TetheredMoteSustainer">
-                <moteDef>ATR_MindOperationAttachedMote</moteDef>
+            <li Class="BotFactory.HediffCompProperties_TetheredMoteSustainer">
+                <moteDef>BF_MindOperationAttachedMote</moteDef>
                 <scale>0.8</scale>
             </li>
         </comps>
     </HediffDef>
 
-    <HediffDef ParentName="ATR_SkyMindHediffBase">
-        <defName>ATR_NoController</defName>
+    <HediffDef ParentName="BF_SkyMindHediffBase">
+        <defName>BF_NoController</defName>
         <label>No controller connected</label>
         <description>This surrogate has no controller and is therefore incapable of autonomous action.</description>
         <labelNoun>No host connected</labelNoun>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <ThingDef ParentName="ATR_MechanicalAnimalThingBase">
-        <defName>ATR_MicroScyther</defName>
+    <ThingDef ParentName="BF_MechanicalAnimalThingBase">
+        <defName>BF_MicroScyther</defName>
         <label>Micro Scyther</label>
         <description>A small flying drone with two side-mounted plasteel blades. While not particularly dangerous alone, these drones are rarely ever seen alone. Swarms can shred targets to pieces swiftly.\n\nThese drones have barebones IFF sensors, and will attack any non-microscyther.</description>
 		<statBases>
@@ -30,7 +30,7 @@
                 </capacities>
                 <power>6</power>
                 <cooldownTime>1</cooldownTime>
-                <linkedBodyPartsGroup>ATR_MechanicalLeftWing</linkedBodyPartsGroup>
+                <linkedBodyPartsGroup>BF_MechanicalLeftWing</linkedBodyPartsGroup>
             </li>
             <li>
                 <label>right wing</label>
@@ -39,12 +39,12 @@
                 </capacities>
                 <power>6</power>
                 <cooldownTime>1</cooldownTime>
-                <linkedBodyPartsGroup>ATR_MechanicalRightWing</linkedBodyPartsGroup>
+                <linkedBodyPartsGroup>BF_MechanicalRightWing</linkedBodyPartsGroup>
             </li>
         </tools>
         <race>
             <intelligence>ToolUser</intelligence>
-			<body>ATR_MechAirborne</body>
+			<body>BF_MechAirborne</body>
             <baseBodySize>0.2</baseBodySize>
 			<baseHealthScale>0.4</baseHealthScale>
 			<foodType>None</foodType>
@@ -71,10 +71,10 @@
 		</butcherProducts>
     </ThingDef>
 
-    <PawnKindDef ParentName="ATR_MechanicalAnimalKindBase">
-        <defName>ATR_MicroScyther</defName>
+    <PawnKindDef ParentName="BF_MechanicalAnimalKindBase">
+        <defName>BF_MicroScyther</defName>
         <label>Microscyther</label>
-        <race>ATR_MicroScyther</race>
+        <race>BF_MicroScyther</race>
         <combatPower>10</combatPower>
         <canArriveManhunter>false</canArriveManhunter>
         <ecoSystemWeight>9999</ecoSystemWeight>

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class HediffCompProperties_SkyMindEffecter : HediffCompProperties
     {

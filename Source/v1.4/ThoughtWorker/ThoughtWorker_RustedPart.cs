@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class ThoughtWorker_RustedPart : ThoughtWorker
     {
@@ -14,7 +14,7 @@ namespace ATReforged
 
             for (int i = p.health.hediffSet.hediffs.Count - 1; i >= 0; i--)
             {
-                if (p.health.hediffSet.hediffs[i].def == ATR_HediffDefOf.ATR_RustedPart)
+                if (p.health.hediffSet.hediffs[i].def == BF_HediffDefOf.BF_RustedPart)
                     return true;
             }
             return ThoughtState.Inactive;

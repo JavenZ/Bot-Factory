@@ -2,7 +2,7 @@
 <Defs>
 
 	<TraderKindDef>
-		<defName>ATR_Orbital_Mechanized</defName>
+		<defName>BF_Orbital_Mechanized</defName>
 		<label>Mechanized Trader</label>
 		<orbital>true</orbital>
 		<stockGenerators>
@@ -29,27 +29,27 @@
                 <countRange>100~400</countRange>
             </li>
 			<li Class="StockGenerator_SingleDef">
-                <thingDef>ATR_PartPack</thingDef>
+                <thingDef>BF_PartPack</thingDef>
                 <countRange>8~40</countRange>
 			</li>
 			<li Class="StockGenerator_SingleDef">
-                <thingDef>ATR_RepairStimSimple</thingDef>
+                <thingDef>BF_RepairStimSimple</thingDef>
                 <countRange>20~80</countRange>
 			</li>
 			<li Class="StockGenerator_SingleDef">
-				<thingDef>ATR_RepairStimIntermediate</thingDef>
+				<thingDef>BF_RepairStimIntermediate</thingDef>
 				<countRange>5~20</countRange>
 			</li>
 			<li Class="StockGenerator_SingleDef">
-				<thingDef>ATR_RepairStimAdvanced</thingDef>
+				<thingDef>BF_RepairStimAdvanced</thingDef>
 				<countRange>5~30</countRange>
 			</li>
             <li Class="StockGenerator_SingleDef">
-              <thingDef>ATR_ChemCapsule</thingDef>
+              <thingDef>BF_ChemCapsule</thingDef>
               <countRange>100~600</countRange>
             </li>
 			<li Class="StockGenerator_SingleDef">
-				<thingDef>ATR_MicroscytherShell</thingDef>
+				<thingDef>BF_MicroscytherShell</thingDef>
 				<countRange>-5~10</countRange>
 			</li>
 
@@ -79,13 +79,13 @@
             </li>
 
             <!-- Drones -->
-            <li Class="ATReforged.StockGenerator_Drones">
+            <li Class="BotFactory.StockGenerator_Drones">
                 <countRange>2~4</countRange>
                 <droneKinds> <!-- Include all tiers as the Generator automatically selects ones designated drones -->
-                    <li>ATR_T1Colonist</li>
-                    <li>ATR_T2Colonist</li>
-                    <li>ATR_T3Colonist</li>
-                    <li>ATR_T4Colonist</li>
+                    <li>BF_T1Colonist</li>
+                    <li>BF_T2Colonist</li>
+                    <li>BF_T3Colonist</li>
+                    <li>BF_T4Colonist</li>
                 </droneKinds>
             </li>
 
@@ -93,10 +93,10 @@
 			<li Class="StockGenerator_Animals">
 				<checkTemperature>false</checkTemperature>
 				<tradeTagsSell>
-					<li>ATR_MechanicalAnimal</li>
+					<li>BF_MechanicalAnimal</li>
 				</tradeTagsSell>
                 <tradeTagsBuy>
-                  <li>ATR_MechanicalAnimal</li>
+                  <li>BF_MechanicalAnimal</li>
                 </tradeTagsBuy>
 				<kindCountRange>1~2</kindCountRange>
 				<countRange>2~5</countRange>

@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="MakeableDrugPillBase">
-		<defName>ATR_MechSwarm</defName>
+		<defName>BF_MechSwarm</defName>
 		<label>Mechanite swarm</label>
 		<description>A small pill containing a veritable legion of mechanites. These mechanites greatly enhance the hosts ability to control the chassis, for two days, as natural mechanite production can not sustain the surge.</description>
 		<graphicData>
@@ -23,18 +23,18 @@
 			<drugCategory>Medical</drugCategory>
 			<useEatingSpeedStat>false</useEatingSpeedStat>
 			<outcomeDoers>
-				<li Class="ATReforged.IngestionOutcomeDoer_MechOrganicDifferentEffects">
-					<organicEffect>ATR_Toxicated</organicEffect>
+				<li Class="BotFactory.IngestionOutcomeDoer_MechOrganicDifferentEffects">
+					<organicEffect>BF_Toxicated</organicEffect>
                     <organicSeverity>1</organicSeverity>
-					<mechanicalEffect>ATR_MechaniteSurge</mechanicalEffect>
+					<mechanicalEffect>BF_MechaniteSurge</mechanicalEffect>
 					<mechanicalSeverity>1</mechanicalSeverity>
 				</li>
 			</outcomeDoers>
 		</ingestible>
 		<recipeMaker>
-			<researchPrerequisite>ATR_MechanicalStimulators</researchPrerequisite>
+			<researchPrerequisite>BF_MechanicalStimulators</researchPrerequisite>
 			<recipeUsers>
-				<li>ATR_MechPartWorkbench</li>
+				<li>BF_MechPartWorkbench</li>
 			</recipeUsers>
 		</recipeMaker>
 		<costList>
@@ -49,7 +49,7 @@
 	</ThingDef>
 
 	<HediffDef>
-		<defName>ATR_MechaniteSurge</defName>
+		<defName>BF_MechaniteSurge</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Mechanite surge</label>
 		<description>An extra boost of mechanites flowing through coolant tubing. The overpopulation of mechanites can't be sustained by the mechanite storage, and will return to normal levels before long.\n\nIn the mean time however, overall efficiency will be improved and the extra mechanites will greatly reduce coolant loss. The initial infusion of mechanites can replace lost coolant outright.</description>
@@ -62,8 +62,8 @@
 			<li Class="HediffCompProperties_SeverityPerDay">
 				<severityPerDay>-0.5</severityPerDay>
 			</li>
-			<li Class="ATReforged.HediffCompProperties_RemoveHediffOnApply">
-				<hediffToRemove>ATR_CoolantLoss</hediffToRemove>
+			<li Class="BotFactory.HediffCompProperties_RemoveHediffOnApply">
+				<hediffToRemove>BF_CoolantLoss</hediffToRemove>
 			</li>
 		</comps>
 		<stages>

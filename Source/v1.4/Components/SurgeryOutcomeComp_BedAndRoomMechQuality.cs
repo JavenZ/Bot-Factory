@@ -2,14 +2,14 @@
 using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
-    // Override AffectQuality to use ATR_MechanicalSurgerySuccessChanceFactor instead of SurgerySuccessChanceFactor
+    // Override AffectQuality to use BF_MechanicalSurgerySuccessChanceFactor instead of SurgerySuccessChanceFactor
     public class SurgeryOutcomeComp_BedAndRoomMechQuality : SurgeryOutcomeComp_BedAndRoomQuality
     {
         public override void AffectQuality(RecipeDef recipe, Pawn surgeon, Pawn patient, List<Thing> ingredients, BodyPartRecord part, Bill bill, ref float quality)
         {
-            quality *= patient.CurrentBed().GetStatValue(ATR_StatDefOf.ATR_MechanicalSurgerySuccessChanceFactor);
+            quality *= patient.CurrentBed().GetStatValue(BF_StatDefOf.BF_MechanicalSurgerySuccessChanceFactor);
         }
     }
 }

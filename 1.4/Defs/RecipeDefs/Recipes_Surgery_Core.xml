@@ -2,29 +2,29 @@
 <Defs>
 
 	<!-- Base Class for all mechanical surgeries that applies to appropriate mechanicals -->
-    <RecipeDef Name="ATR_surgeryMechanical" Abstract="True">
+    <RecipeDef Name="BF_surgeryMechanical" Abstract="True">
         <effectWorking>Repair</effectWorking>
         <soundWorking>Recipe_Machining</soundWorking>
-        <workSpeedStat>ATR_MechanicalOperationSpeed</workSpeedStat>
+        <workSpeedStat>BF_MechanicalOperationSpeed</workSpeedStat>
         <workSkill>Crafting</workSkill>
         <workSkillLearnFactor>16</workSkillLearnFactor>
         <anesthetize>false</anesthetize>
 		<recipeUsers>
-			<li>ATR_Tier1Android</li>
-			<li>ATR_Tier2Android</li>
-			<li>ATR_Tier3Android</li>
-			<li>ATR_Tier4Android</li>
-            <li>ATR_DroneChemUnit</li>
-            <li>ATR_DroneMineralUnit</li>
-            <li>ATR_DroneNutritionUnit</li>
-            <li>ATR_DroneTORT</li>
-            <li>ATR_DroneWatchdog</li>
+			<li>BF_Tier1Android</li>
+			<li>BF_Tier2Android</li>
+			<li>BF_Tier3Android</li>
+			<li>BF_Tier4Android</li>
+            <li>BF_DroneChemUnit</li>
+            <li>BF_DroneMineralUnit</li>
+            <li>BF_DroneNutritionUnit</li>
+            <li>BF_DroneTORT</li>
+            <li>BF_DroneWatchdog</li>
 		</recipeUsers>
     </RecipeDef>
 
 	<!-- Surgery to shutdown any incapacitated mechanical unit -->
-    <RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_ShutdownMechanical</defName>
+    <RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_ShutdownMechanical</defName>
 		<label>Shut down central core</label>
 		<description>Shuts down a mechanical unit by disconnecting core hardware. This does not permanently destroy the unit's memory.</description>
 		<workerClass>Recipe_ExecuteByCut</workerClass>
@@ -37,11 +37,11 @@
 	</RecipeDef>
 
 	<!-- Surgery to remove body parts from mechanical units -->
-	<RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_RemoveBodyPartAndroid</defName>
+	<RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_RemoveBodyPartAndroid</defName>
 		<label>Remove part</label>
 		<description>Removes body part.</description>
-		<workerClass>ATReforged.Recipe_RemoveMechanicalPart</workerClass>
+		<workerClass>BotFactory.Recipe_RemoveMechanicalPart</workerClass>
 		<jobString>Removing body part.</jobString>
 		<workAmount>2000</workAmount>
     	<isViolation>true</isViolation>
@@ -61,7 +61,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_PartPack</li>
+						<li>BF_PartPack</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -72,17 +72,17 @@
 				<li>Medicine</li>
 			</categories>
 			<thingDefs>
-				<li>ATR_PartPack</li>
+				<li>BF_PartPack</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 	</RecipeDef>
 
 	<!-- Surgery to restore body parts in mechanical units -->
-	<RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_RestoreBodyPartAndroid</defName>
+	<RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_RestoreBodyPartAndroid</defName>
 		<label>Restore part</label>
 		<description>Restores a particular body part.</description>
-		<workerClass>ATReforged.Recipe_RestoreMechanicalPart</workerClass>
+		<workerClass>BotFactory.Recipe_RestoreMechanicalPart</workerClass>
 		<jobString>Restoring body part.</jobString>
 		<workAmount>1400</workAmount>
 		<skillRequirements>
@@ -92,7 +92,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_PartPack</li>
+						<li>BF_PartPack</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -100,17 +100,17 @@
     	</ingredients>
     	<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_PartPack</li>
+				<li>BF_PartPack</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 	</RecipeDef>
 
 	<!-- Surgery to repaint mechanical units -->
-	<RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_RepaintMechanical</defName>
+	<RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_RepaintMechanical</defName>
 		<label>Repaint</label>
 		<description>Changes the paint color of a mechanical unit.</description>
-		<workerClass>ATReforged.Recipe_PaintMechanicalUnit</workerClass>
+		<workerClass>BotFactory.Recipe_PaintMechanicalUnit</workerClass>
 		<jobString>Painting mechanical unit.</jobString>
 		<workAmount>400</workAmount>
 	  	<ingredients>
@@ -131,11 +131,11 @@
 	</RecipeDef>
 
 	<!-- Surgery to increase the maintenance level of a unit to a certain extent. -->
-	<RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_DoEmergencyMaintenance</defName>
+	<RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_DoEmergencyMaintenance</defName>
 		<label>Do makeshift maintenance</label>
 		<description>Use parts to repair severe maintenance flaws. Since maintenance is primarily an internal activity, this can only bring it to 40%.</description>
-		<workerClass>ATReforged.Recipe_DoEmergencyMaintenance</workerClass>
+		<workerClass>BotFactory.Recipe_DoEmergencyMaintenance</workerClass>
 		<jobString>Restoring body part.</jobString>
 		<workAmount>800</workAmount>
 		<skillRequirements>
@@ -145,7 +145,7 @@
 			<li>
 				<filter>
 					<thingDefs>
-						<li>ATR_PartPack</li>
+						<li>BF_PartPack</li>
 					</thingDefs>
 				</filter>
 				<count>1</count>
@@ -153,17 +153,17 @@
     	</ingredients>
     	<fixedIngredientFilter>
 			<thingDefs>
-				<li>ATR_PartPack</li>
+				<li>BF_PartPack</li>
 			</thingDefs>
 		</fixedIngredientFilter>
 	</RecipeDef>
 
 	<!-- Surgery to reprogram drones to serve the colony -->
-    <RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_ReprogramDrone</defName>
+    <RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_ReprogramDrone</defName>
 		<label>reprogram drone</label>
 		<description>A straightforward but delicate operation, reprogramming drones to suit the colony's purposes is an excellent way to strengthen capabilities. However, the previous owners may have installed safeguards against such operations, so there is a high risk of death should it fail.</description>
-		<workerClass>ATReforged.Recipe_ReprogramDrone</workerClass>
+		<workerClass>BotFactory.Recipe_ReprogramDrone</workerClass>
 		<jobString>Reprogramming drone.</jobString>
 		<workAmount>5000</workAmount>
 		<skillRequirements>
@@ -187,13 +187,13 @@
 				<li>Medicine</li>
 			</categories>
 		</fixedIngredientFilter>
-		<researchPrerequisite>ATR_T1Androids</researchPrerequisite>
-		<addsHediff>ATR_LongReboot</addsHediff>
+		<researchPrerequisite>BF_T1Androids</researchPrerequisite>
+		<addsHediff>BF_LongReboot</addsHediff>
 	</RecipeDef>
 
 	<!-- Reboot, akin to anesthetic but requiring no medicine -->
-    <RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_RebootUnit</defName>
+    <RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_RebootUnit</defName>
 		<label>Reboot unit</label>
 		<description>An exceedingly straightforward operation to restart the unit, without any side effects or consequences.</description>
 		<workerClass>Recipe_AddHediff</workerClass>
@@ -219,13 +219,13 @@
 			</categories>
 		</fixedIngredientFilter>
 		<surgerySuccessChanceFactor>4</surgerySuccessChanceFactor>
-		<researchPrerequisite>ATR_MechanicalInsight</researchPrerequisite>
-		<addsHediff>ATR_LongReboot</addsHediff>
+		<researchPrerequisite>BF_MechanicalInsight</researchPrerequisite>
+		<addsHediff>BF_LongReboot</addsHediff>
 	</RecipeDef>
 
 	<!-- Overclocking -->
-    <RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_ApplyOverclocking</defName>
+    <RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_ApplyOverclocking</defName>
 		<label>Apply overclocking</label>
 		<description>A simple hardware restructuring to a mechanical unit to lower hardware safety measures to allow for greater performance and risks.</description>
 		<workerClass>Recipe_AddHediff</workerClass>
@@ -251,12 +251,12 @@
 			</categories>
 		</fixedIngredientFilter>
 		<surgerySuccessChanceFactor>4</surgerySuccessChanceFactor>
-		<researchPrerequisite>ATR_MechanicalInsight</researchPrerequisite>
-		<addsHediff>ATR_MechanicalOverclocking</addsHediff>
+		<researchPrerequisite>BF_MechanicalInsight</researchPrerequisite>
+		<addsHediff>BF_MechanicalOverclocking</addsHediff>
 	</RecipeDef>
 
-    <RecipeDef ParentName="ATR_surgeryMechanical">
-		<defName>ATR_ResetOverclocking</defName>
+    <RecipeDef ParentName="BF_surgeryMechanical">
+		<defName>BF_ResetOverclocking</defName>
 		<label>Resetting overclocking</label>
 		<description>A simple hardware restructuring to a mechanical unit to reset hardware safety measures to standard settings.</description>
         <workerClass>Recipe_RemoveHediff</workerClass>
@@ -282,8 +282,8 @@
 			</categories>
 		</fixedIngredientFilter>
 		<surgerySuccessChanceFactor>4</surgerySuccessChanceFactor>
-		<researchPrerequisite>ATR_MechanicalInsight</researchPrerequisite>
-        <removesHediff>ATR_MechanicalOverclocking</removesHediff>
+		<researchPrerequisite>BF_MechanicalInsight</researchPrerequisite>
+        <removesHediff>BF_MechanicalOverclocking</removesHediff>
 	</RecipeDef>
 
 </Defs>

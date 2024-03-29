@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="BedWithQualityBase">
-		<defName>ATR_MechanicBed</defName>
+		<defName>BF_MechanicBed</defName>
 		<label>Mechanic bed</label>
 		<description>A hospital bed analogue for mechanics to handle operations on mechanical units. Units can charge while using this bed, and a number of built-in features grant mechanics advantages in completing operations.</description>
 		<graphicData>
@@ -11,17 +11,17 @@
 			<shaderType>CutoutComplex</shaderType>
 			<drawSize>(1,2)</drawSize>
 		</graphicData>
-		<thingClass>ATReforged.Building_ChargingBed</thingClass>
+		<thingClass>BotFactory.Building_ChargingBed</thingClass>
 		<tickerType>Rare</tickerType>
-		<designationCategory>ATR_AndroidTiersDesignation</designationCategory>
+		<designationCategory>BF_AndroidTiersDesignation</designationCategory>
 		<comps>
             <li>
-                <compClass>ATReforged.CompPawnCharger</compClass>
+                <compClass>BotFactory.CompPawnCharger</compClass>
             </li>
             <li Class="CompProperties_Flickable"/>
 			<li Class="CompProperties_AffectedByFacilities">
 				<linkableFacilities>
-					<li>ATR_MechanicCabinet</li>
+					<li>BF_MechanicCabinet</li>
 				</linkableFacilities>
 			</li>
 			<li Class="CompProperties_Power">
@@ -39,8 +39,8 @@
 			<BedRestEffectiveness>1.02</BedRestEffectiveness>
 			<Comfort>0.70</Comfort>
 			<ImmunityGainSpeedFactor>1.04</ImmunityGainSpeedFactor>
-			<ATR_MechanicalTendQualityOffset>0.10</ATR_MechanicalTendQualityOffset>
-			<ATR_MechanicalSurgerySuccessChanceFactor>1.1</ATR_MechanicalSurgerySuccessChanceFactor>
+			<BF_MechanicalTendQualityOffset>0.10</BF_MechanicalTendQualityOffset>
+			<BF_MechanicalSurgerySuccessChanceFactor>1.1</BF_MechanicalSurgerySuccessChanceFactor>
 			<SurgerySuccessChanceFactor>1.02</SurgerySuccessChanceFactor>
 		</statBases>
 		<size>(1,2)</size>
@@ -63,7 +63,7 @@
 		<leaveResourcesWhenKilled>True</leaveResourcesWhenKilled>
 		<staticSunShadowHeight>0.17</staticSunShadowHeight>
 		<researchPrerequisites>
-			<li>ATR_MechanicalStandardization</li>
+			<li>BF_MechanicalStandardization</li>
 		</researchPrerequisites>
 		<constructionSkillPrerequisite>10</constructionSkillPrerequisite>
 		<techLevel>Spacer</techLevel>
@@ -71,11 +71,11 @@
 	</ThingDef>
 
     <ThingDef ParentName="FurnitureWithQualityBase">
-        <defName>ATR_MechanicCabinet</defName>
+        <defName>BF_MechanicCabinet</defName>
         <label>Mechanic cabinet</label>
         <description>A small cabinet that can be used in conjunction with mechanical-compatible beds. It contains a number of useful tools for further enhancing mechanic operations.</description>
         <surfaceType>Item</surfaceType>
-        <designationCategory>ATR_AndroidTiersDesignation</designationCategory>
+        <designationCategory>BF_AndroidTiersDesignation</designationCategory>
         <rotatable>false</rotatable>
         <graphicData>
             <texPath>Things/Buildings/MechanicCabinet</texPath>
@@ -102,12 +102,12 @@
             <li>PlaceWorker_ShowFacilitiesConnections</li>
         </placeWorkers>
         <researchPrerequisites>
-            <li>ATR_MechanicalStandardization</li>
+            <li>BF_MechanicalStandardization</li>
         </researchPrerequisites>
         <comps>
             <li Class="CompProperties_Facility">
                 <statOffsets>
-                    <ATR_MechanicalSurgerySuccessChanceFactor>0.08</ATR_MechanicalSurgerySuccessChanceFactor>
+                    <BF_MechanicalSurgerySuccessChanceFactor>0.08</BF_MechanicalSurgerySuccessChanceFactor>
                 </statOffsets>
                 <maxSimultaneous>2</maxSimultaneous>
                 <mustBePlacedAdjacent>true</mustBePlacedAdjacent>

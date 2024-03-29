@@ -3,64 +3,64 @@
 
     <!-- This Rulepackdef is what finds the txt files to be used in the later rulepacks -->
     <RulePackDef>
-        <defName>ATR_NameRules</defName>
+        <defName>BF_NameRules</defName>
         <rulePack>
             <rulesFiles>
-                <li>ATR_Male->ATR_Names/AndroidMaleNames</li>
-                <li>ATR_Female->ATR_Names/AndroidFemaleNames</li>
-                <li>ATR_None->ATR_Names/AndroidNoneNames</li>
-                <li>ATR_Drone->ATR_Names/DroneNoneNames</li>
-                <li>ATR_IDs->ATR_Names/ATR_IDs</li>
+                <li>BF_Male->BF_Names/AndroidMaleNames</li>
+                <li>BF_Female->BF_Names/AndroidFemaleNames</li>
+                <li>BF_None->BF_Names/AndroidNoneNames</li>
+                <li>BF_Drone->BF_Names/DroneNoneNames</li>
+                <li>BF_IDs->BF_Names/BF_IDs</li>
             </rulesFiles>
         </rulePack>
     </RulePackDef>
 
     <!-- This is the item that goes into the racedef's namegenerator
-        Example - <nameGenerator>ATR_AndroidMaleNames</nameGenerator> -->
+        Example - <nameGenerator>BF_AndroidMaleNames</nameGenerator> -->
     <RulePackDef>
-        <defName>ATR_AndroidMaleNames</defName>
+        <defName>BF_AndroidMaleNames</defName>
         <include>
-            <li>ATR_NameRules</li>
+            <li>BF_NameRules</li>
         </include>
         <rulePack>
             <rulesStrings>
-                <li>r_name(p=12)->[ATR_Male] [ATR_IDs]</li>
+                <li>r_name(p=12)->[BF_Male] [BF_IDs]</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
 
     <RulePackDef>
-        <defName>ATR_AndroidFemaleNames</defName>
+        <defName>BF_AndroidFemaleNames</defName>
         <include>
-            <li>ATR_NameRules</li>
+            <li>BF_NameRules</li>
         </include>
         <rulePack>
             <rulesStrings>
-                <li>r_name(p=12)->[ATR_Female] [ATR_IDs]</li>
+                <li>r_name(p=12)->[BF_Female] [BF_IDs]</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
 
     <RulePackDef>
-        <defName>ATR_AndroidNoneNames</defName>
+        <defName>BF_AndroidNoneNames</defName>
         <include>
-            <li>ATR_NameRules</li>
+            <li>BF_NameRules</li>
         </include>
         <rulePack>
             <rulesStrings>
-                <li>r_name(p=12)->[ATR_None] [ATR_IDs]</li>
+                <li>r_name(p=12)->[BF_None] [BF_IDs]</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>
 
     <RulePackDef>
-        <defName>ATR_DroneNoneNames</defName>
+        <defName>BF_DroneNoneNames</defName>
         <include>
-            <li>ATR_NameRules</li>
+            <li>BF_NameRules</li>
         </include>
         <rulePack>
             <rulesStrings>
-                <li>r_name(p=12)->[ATR_Drone] [ATR_IDs]</li>
+                <li>r_name(p=12)->[BF_Drone] [BF_IDs]</li>
             </rulesStrings>
         </rulePack>
     </RulePackDef>

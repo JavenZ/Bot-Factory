@@ -2,7 +2,7 @@
 using Verse;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Recipe_InstallOrganicSkyMindInterface : Recipe_InstallImplant
     {
@@ -48,12 +48,12 @@ namespace ATReforged
             if (recipe.addsHediff.CompProps<HediffCompProperties_SkyMindEffecter>()?.isReceiver == true)
             {
                 Utils.Duplicate(Utils.GetBlank(), pawn, isTethered: false);
-                pawn.health.AddHediff(ATR_HediffDefOf.ATR_NoController);
+                pawn.health.AddHediff(BF_HediffDefOf.BF_NoController);
 
                 // If this is the pawn's first surrogate, send a letter with information about surrogates.
                 if (!Utils.gameComp.hasMadeSurrogate)
                 {
-                    Find.LetterStack.ReceiveLetter("ATR_FirstSurrogateCreated".Translate(), "ATR_FirstSurrogateCreatedDesc".Translate(), LetterDefOf.NeutralEvent);
+                    Find.LetterStack.ReceiveLetter("BF_FirstSurrogateCreated".Translate(), "BF_FirstSurrogateCreatedDesc".Translate(), LetterDefOf.NeutralEvent);
                     Utils.gameComp.hasMadeSurrogate = true;
                 }
             }

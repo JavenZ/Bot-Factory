@@ -3,7 +3,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Incidents_Hacking : IncidentWorker
     {
@@ -12,7 +12,7 @@ namespace ATReforged
         private string letterText;
         protected override bool CanFireNowSub(IncidentParms parms)
         {
-            return ATReforged_Settings.enemyHacksOccur && !Utils.IsSolarFlarePresent() && HasIncidentToFire();
+            return BotFactory_Settings.enemyHacksOccur && !Utils.IsSolarFlarePresent() && HasIncidentToFire();
         }
 
         protected override bool TryExecuteWorker(IncidentParms parms)
@@ -63,10 +63,10 @@ namespace ATReforged
         public bool TryExecuteGridVirus(IncidentParms parms)
         {
             // Generate attack strength and defense strength
-            float attackStrength = parms.points * ATReforged_Settings.enemyHackAttackStrengthModifier;
+            float attackStrength = parms.points * BotFactory_Settings.enemyHackAttackStrengthModifier;
             float defenseStrength = Utils.gameComp.GetPoints(ServerType.SecurityServer);
 
-            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 1, "ATR_IncidentGridVirusDefeated", "ATR_IncidentGridVirusAllyIntercept"))
+            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 1, "BF_IncidentGridVirusDefeated", "BF_IncidentGridVirusAllyIntercept"))
                 return true; // Function handles everything if it returns true.
 
             // Enemy attack succeeds
@@ -86,21 +86,21 @@ namespace ATReforged
 
             // Generate message for the hack and adding extra information depending on the attack type.
             letter = LetterDefOf.ThreatSmall;
-            letterText = "ATR_IncidentGenericAttackDesc".Translate(attackStrength, targetDeviceCount) + "\n\n";
+            letterText = "BF_IncidentGenericAttackDesc".Translate(attackStrength, targetDeviceCount) + "\n\n";
 
             switch (attackType)
             {
                 case 1: // Grid-sleeper message
-                    letterLabel = "ATR_IncidentGridsleeperAttack".Translate();
-                    letterText += "ATR_IncidentGridsleeperAttackDesc".Translate();
+                    letterLabel = "BF_IncidentGridsleeperAttack".Translate();
+                    letterText += "BF_IncidentGridsleeperAttackDesc".Translate();
                     break;
                 case 2: // Grid-locker message
-                    letterLabel = "ATR_IncidentGridlockerAttack".Translate();
-                    letterText += "ATR_IncidentGridlockerAttackDesc".Translate();
+                    letterLabel = "BF_IncidentGridlockerAttack".Translate();
+                    letterText += "BF_IncidentGridlockerAttackDesc".Translate();
                     break;
                 case 3: // Grid-breaker message
-                    letterLabel = "ATR_IncidentGridbreakerAttack".Translate();
-                    letterText += "ATR_IncidentGridbreakerAttackDesc".Translate();
+                    letterLabel = "BF_IncidentGridbreakerAttack".Translate();
+                    letterText += "BF_IncidentGridbreakerAttackDesc".Translate();
                     break;
             }
 
@@ -129,7 +129,7 @@ namespace ATReforged
                 {
                     Utils.gameComp.PushVirusedThing(victim, -1);
                     cryptolockedThings.Add(victim);
-                    fee += (int)(victim.def.BaseMarketValue * ATReforged_Settings.percentageOfValueUsedForRansoms);
+                    fee += (int)(victim.def.BaseMarketValue * BotFactory_Settings.percentageOfValueUsedForRansoms);
                 }
 
                 // Grid-breaker forcing explosion/breakdown of victim
@@ -151,9 +151,9 @@ namespace ATReforged
 
             if (attackType == 2)
             { // If the attack was a grid-locker, create a ransom demand for removing the effect and send it.
-                ChoiceLetter_RansomDemand ransom = (ChoiceLetter_RansomDemand)LetterMaker.MakeLetter(DefDatabase<LetterDef>.GetNamed("ATR_RansomChoiceLetter"));
-                ransom.title = "ATR_CryptolockerNeedRansom".Translate();
-                ransom.Text = "ATR_CryptolockerNeedRansomDesc".Translate(victims.Count, fee.ToString());
+                ChoiceLetter_RansomDemand ransom = (ChoiceLetter_RansomDemand)LetterMaker.MakeLetter(DefDatabase<LetterDef>.GetNamed("BF_RansomChoiceLetter"));
+                ransom.title = "BF_CryptolockerNeedRansom".Translate();
+                ransom.Text = "BF_CryptolockerNeedRansomDesc".Translate(victims.Count, fee.ToString());
                 ransom.radioMode = true;
                 ransom.fee = fee;
                 ransom.cryptolockedThings = cryptolockedThings;
@@ -179,7 +179,7 @@ namespace ATReforged
             float defenseStrength = Utils.gameComp.GetPoints(ServerType.SecurityServer);
 
             // Handle point loss, attack success checking, and ally intervention.
-            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 1, "ATR_IncidentDDOSDefeated", "ATR_IncidentDDOSAllyIntercept"))
+            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 1, "BF_IncidentDDOSDefeated", "BF_IncidentDDOSAllyIntercept"))
                 return true; // Function handles everything if it returns true.
 
             // Enemy attack succeeds
@@ -192,24 +192,24 @@ namespace ATReforged
 
             // Initialize hack letter. Message starts with generic and then will append an additional string.
             letter = LetterDefOf.ThreatSmall;
-            letterLabel = "ATR_IncidentDDOSAttack".Translate();
-            letterText = "ATR_IncidentGenericAttackDesc".Translate(attackStrength, targetPawnCount) + "\n\n";
+            letterLabel = "BF_IncidentDDOSAttack".Translate();
+            letterText = "BF_IncidentGenericAttackDesc".Translate(attackStrength, targetPawnCount) + "\n\n";
 
             // DDOS attacks only affect individual units if the attack strength is at least 1.5x the defense strength.
             if (attackStrength >= defenseStrength * 1.5)
             {
-                letterText += "ATR_IncidentDDOSOverwhelmingAttackDesc".Translate();
+                letterText += "BF_IncidentDDOSOverwhelmingAttackDesc".Translate();
                 HashSet<Pawn> victims = new HashSet<Pawn>();
 
                 // All pawns get the recovery hediff. Everyone is a victim of DDOS attacks.
                 foreach (Pawn user in Utils.gameComp.GetSkyMindDevices().Where(thing => thing is Pawn).Cast<Pawn>())
                 {
-                    user.health.AddHediff(ATR_HediffDefOf.ATR_RecoveringFromDDOS, user.health.hediffSet.GetBrain());
+                    user.health.AddHediff(BF_HediffDefOf.BF_RecoveringFromDDOS, user.health.hediffSet.GetBrain());
                     victims.Add(user);
                 }
                 foreach (Pawn surrogate in Utils.gameComp.GetSkyMindDevices().Where(thing => thing is Pawn pawn && Utils.IsSurrogate(pawn)).Cast<Pawn>())
                 {
-                    surrogate.health.AddHediff(ATR_HediffDefOf.ATR_RecoveringFromDDOS, surrogate.health.hediffSet.GetBrain());
+                    surrogate.health.AddHediff(BF_HediffDefOf.BF_RecoveringFromDDOS, surrogate.health.hediffSet.GetBrain());
                     victims.Add(surrogate);
                 }
                 // Apply a SkyMind mood debuff to all victims of the DDOS attack. Everyone is a victim of DDOS attacks.
@@ -217,7 +217,7 @@ namespace ATReforged
             }
             else
             {
-                letterText += "ATR_IncidentDDOSNormalAttackDesc".Translate();
+                letterText += "BF_IncidentDDOSNormalAttackDesc".Translate();
                 // Apply a minor mood debuff to all witnesses of the DDOS attack. Anyone can be a victim of a sufficiently strong DDOS attack.
                 Utils.ApplySkyMindAttack();
             }
@@ -234,12 +234,12 @@ namespace ATReforged
         public bool TryExecuteTroll(IncidentParms parms)
         {
             // Generate attack strength and defense strength
-            float attackStrength = parms.points * ATReforged_Settings.enemyHackAttackStrengthModifier;
+            float attackStrength = parms.points * BotFactory_Settings.enemyHackAttackStrengthModifier;
             float defenseStrength = Utils.gameComp.GetPoints(ServerType.SecurityServer);
 
 
             // Handle point loss, attack success checking, and ally intervention.
-            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 1, "ATR_IncidentTrollDefeated", "ATR_IncidentTrollAllyIntercept"))
+            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 1, "BF_IncidentTrollDefeated", "BF_IncidentTrollAllyIntercept"))
                 return true; // Function handles everything if it returns true.
 
             // Enemy attack succeeds
@@ -260,13 +260,13 @@ namespace ATReforged
             }
 
             // Apply the Trolled mood debuff to this victim and the witnessed breach debuff to all other pawns.
-            Utils.ApplySkyMindAttack((IEnumerable<Pawn>) victim, ATR_ThoughtDefOf.ATR_TrolledViaSkyMind);
+            Utils.ApplySkyMindAttack((IEnumerable<Pawn>) victim, BF_ThoughtDefOf.BF_TrolledViaSkyMind);
 
             // Create hack letter. Message starts with generic and then will append an additional string.
             letter = LetterDefOf.ThreatSmall;
-            letterLabel = "ATR_IncidentTrollAttack".Translate();
-            letterText = "ATR_IncidentGenericAttackDesc".Translate(attackStrength, 1) + "\n\n";
-            letterText += "ATR_IncidentTrollAttackDesc".Translate(victim.LabelShortCap, totalSkillPointsLost);
+            letterLabel = "BF_IncidentTrollAttack".Translate();
+            letterText = "BF_IncidentGenericAttackDesc".Translate(attackStrength, 1) + "\n\n";
+            letterText += "BF_IncidentTrollAttackDesc".Translate(victim.LabelShortCap, totalSkillPointsLost);
             SendLetter(letter, letterLabel, letterText, new LookTargets(victim));
 
             return true;
@@ -290,12 +290,12 @@ namespace ATReforged
         public bool TryExecuteDiplohack(IncidentParms parms)
         {
             // Generate attack strength and defense strength
-            float attackStrength = parms.points * ATReforged_Settings.enemyHackAttackStrengthModifier;
+            float attackStrength = parms.points * BotFactory_Settings.enemyHackAttackStrengthModifier;
             float defenseStrength = Utils.gameComp.GetPoints(ServerType.SecurityServer);
 
 
             // Handle point loss, attack success checking, and ally intervention.
-            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 1, "ATR_IncidentDiplohackDefeated", "ATR_IncidentDiplohackAllyIntercept"))
+            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 1, "BF_IncidentDiplohackDefeated", "BF_IncidentDiplohackAllyIntercept"))
                 return true; // Function handles everything if it returns true.
 
             // Enemy attack succeeds
@@ -312,8 +312,8 @@ namespace ATReforged
 
             // Create hack letter.
             letter = LetterDefOf.ThreatSmall;
-            letterLabel = "ATR_IncidentDiplohackAttack".Translate();
-            letterText = "ATR_IncidentDiplohackAttackDesc".Translate(victim.Name);
+            letterLabel = "BF_IncidentDiplohackAttack".Translate();
+            letterText = "BF_IncidentDiplohackAttackDesc".Translate(victim.Name);
             SendLetter(letter, letterLabel, letterText);
 
             return true;
@@ -327,11 +327,11 @@ namespace ATReforged
         public bool TryExecuteProvokerhack(IncidentParms parms)
         {
             // Generate attack strength and defense strength
-            float attackStrength = parms.points * ATReforged_Settings.enemyHackAttackStrengthModifier;
+            float attackStrength = parms.points * BotFactory_Settings.enemyHackAttackStrengthModifier;
             float defenseStrength = Utils.gameComp.GetPoints(ServerType.SecurityServer);
 
             // Handle point loss, attack success checking, and ally intervention.
-            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 1, "ATR_IncidentProvokerhackDefeated", "ATR_IncidentProvokerhackAllyIntercept"))
+            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 1, "BF_IncidentProvokerhackDefeated", "BF_IncidentProvokerhackAllyIntercept"))
                 return true; // Function handles everything if it returns true.
 
             // Enemy attack succeeds
@@ -349,8 +349,8 @@ namespace ATReforged
 
             // Create hack letter.
             letter = LetterDefOf.ThreatSmall;
-            letterLabel = "ATR_IncidentProvokerhackAttack".Translate();
-            letterText = "ATR_IncidentProvokerhackAttackDesc".Translate();
+            letterLabel = "BF_IncidentProvokerhackAttack".Translate();
+            letterText = "BF_IncidentProvokerhackAttackDesc".Translate();
             SendLetter(letter, letterLabel, letterText);
             return true;
         }
@@ -367,7 +367,7 @@ namespace ATReforged
             float defenseStrength = Utils.gameComp.GetPoints(ServerType.SecurityServer);
 
             // Handle point loss, attack success checking, and ally intervention.
-            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 0.25f, "ATR_IncidentCounterhackDefeated", "ATR_IncidentCounterhackAllyIntercept"))
+            if (HandleDefenseSuccessful(defenseStrength, attackStrength, 0.25f, "BF_IncidentCounterhackDefeated", "BF_IncidentCounterhackAllyIntercept"))
                 return true; // Function handles everything if it returns true.
 
             // Enemy attack succeeds
@@ -380,8 +380,8 @@ namespace ATReforged
 
             // Create hack letter.
             letter = LetterDefOf.ThreatSmall;
-            letterLabel = "ATR_IncidentCounterhackAttack".Translate();
-            letterText = "ATR_IncidentCounterhackAttackDesc".Translate(parms.points);
+            letterLabel = "BF_IncidentCounterhackAttack".Translate();
+            letterText = "BF_IncidentCounterhackAttackDesc".Translate(parms.points);
             SendLetter(letter, letterLabel, letterText);
             return true;
         }
@@ -437,17 +437,17 @@ namespace ATReforged
 
         private float GenerateAttackStrength(float baseStrength, float lowerBoundModifier, float upperBoundModifier)
         { // Generates the attack strength as the baseStrength times a random percentage value between the lower and upper bound modifiers. IE. 100, 1, 4 == 100 * (100% ~ 400%).
-            return baseStrength * Rand.Range(lowerBoundModifier, upperBoundModifier) * ATReforged_Settings.enemyHackAttackStrengthModifier;
+            return baseStrength * Rand.Range(lowerBoundModifier, upperBoundModifier) * BotFactory_Settings.enemyHackAttackStrengthModifier;
         }
 
-        private bool HandleDefenseSuccessful(float defenseStrength, float attackStrength, float damageModifier, string interceptTitle = "ATR_IncidentGenericAllyIntercept", string label = null, string text = null)
+        private bool HandleDefenseSuccessful(float defenseStrength, float attackStrength, float damageModifier, string interceptTitle = "BF_IncidentGenericAllyIntercept", string label = null, string text = null)
         { // Check if the defense was successful. If it was, send an appropriate letter. If not, inform the caller of the failed defense.
             bool defenseSuccessful = false;
 
             if (defenseStrength >= attackStrength)
             { // Defense was successful. No damage is done, subtract strength that was used to defend. 
                 letter = LetterDefOf.NeutralEvent;
-                SendLetter(letter, label != null ? label.Translate() :"ATR_IncidentGenericDefense".Translate(), text != null ? text.Translate(attackStrength) : "ATR_IncidentGenericDefenseDesc".Translate(attackStrength));
+                SendLetter(letter, label != null ? label.Translate() :"BF_IncidentGenericDefense".Translate(), text != null ? text.Translate(attackStrength) : "BF_IncidentGenericDefenseDesc".Translate(attackStrength));
                 defenseSuccessful = true;
             }
 
@@ -467,16 +467,16 @@ namespace ATReforged
 
             foreach (Faction faction in alliedValidFactions)
             { // Allied factions each have a percentage chance (settings) of catching the attack and being in a position to prevent it. 
-                if (Rand.Chance(ATReforged_Settings.chanceAlliesInterceptHack))
+                if (Rand.Chance(BotFactory_Settings.chanceAlliesInterceptHack))
                 {
                     // Add 25% of the attack strength to the security points. Overflows are accounted for automatically.
-                    float gainedStrength = (attackStrength * ATReforged_Settings.pointsGainedOnInterceptPercentage);
+                    float gainedStrength = (attackStrength * BotFactory_Settings.pointsGainedOnInterceptPercentage);
                     Utils.gameComp.ChangeServerPoints(gainedStrength, ServerType.SecurityServer);
 
                     // Generate the message and terminate the function.
                     LetterDef letter = LetterDefOf.PositiveEvent;
                     string title = interceptTitle.Translate();
-                    string msg = "ATR_IncidentGenericAllyInterceptDesc".Translate(faction.Name, attackStrength, gainedStrength);
+                    string msg = "BF_IncidentGenericAllyInterceptDesc".Translate(faction.Name, attackStrength, gainedStrength);
                     SendLetter(letter, letterLabel, letterText);
                     return true;
                 }

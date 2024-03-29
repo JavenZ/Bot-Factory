@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompPawnCharger : ThingComp
     {
@@ -27,8 +27,8 @@ namespace ATReforged
         {
             base.PostExposeData();
 
-            Scribe_Collections.Look(ref users, "ATR_chargingCompUsers", LookMode.Reference);
-            Scribe_Values.Look(ref cachedConsumption, "ATR_chargingCompCachedConsumption");
+            Scribe_Collections.Look(ref users, "BF_chargingCompUsers", LookMode.Reference);
+            Scribe_Values.Look(ref cachedConsumption, "BF_chargingCompCachedConsumption");
         }
 
         public override void CompTick()
@@ -51,7 +51,7 @@ namespace ATReforged
 
         public override string CompInspectStringExtra()
         {
-            return "ATR_CurrentChargerPowerConsumption".Translate(cachedConsumption.ToString("#####0"));
+            return "BF_CurrentChargerPowerConsumption".Translate(cachedConsumption.ToString("#####0"));
         }
 
         private void UpdatePowerConsumption()
@@ -90,7 +90,7 @@ namespace ATReforged
                 cachedConsumption = 0;
                 foreach (Pawn user in users)
                 {
-                    cachedConsumption += user.BodySize * ATReforged_Settings.wattsConsumedPerBodySize;
+                    cachedConsumption += user.BodySize * BotFactory_Settings.wattsConsumedPerBodySize;
                 }
             }
             UpdatePowerConsumption();

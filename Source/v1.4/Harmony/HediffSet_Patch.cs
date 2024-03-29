@@ -3,7 +3,7 @@ using HarmonyLib;
 using System.Collections.Generic;
 using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class HediffSet_Patch
     {

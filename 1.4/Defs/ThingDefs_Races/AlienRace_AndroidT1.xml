@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<AlienRace.ThingDef_AlienRace ParentName="ATR_BaseMechanicalPawn">
-		<defName>ATR_Tier1Android</defName>
+	<AlienRace.ThingDef_AlienRace ParentName="BF_BaseMechanicalPawn">
+		<defName>BF_Tier1Android</defName>
 		<label>T1 Android</label>
 		<description>Tier one androids are simply humanlike-machines, designed to mimic the general image and minimal capabilities of humanity. Lacking true sapience, many view them like very intelligent and responsive animals. Their existence is to serve, and they do so uncomplainingly.\n\nDue to minimal investment and design, tier one androids suffer from maintenance and efficiency flaws, leaving them relatively obsoleted by later, more durable, iterations - except for jobs where minimal specifications and resources is explicitly required or desired.</description>
 		<alienRace>
@@ -28,14 +28,14 @@
             <generalSettings>
                 <alienPartGenerator>
 					<headTypes>
-                        <li>ATR_Tier1_Male</li>
-                        <li>ATR_Tier1_Female</li>
-                        <li>ATR_Tier1_None</li>
+                        <li>BF_Tier1_Male</li>
+                        <li>BF_Tier1_Female</li>
+                        <li>BF_Tier1_None</li>
                     </headTypes>
                 </alienPartGenerator>
             </generalSettings>
 		</alienRace>
-        <uiIconPath>Things/Pawns/Humanlikes/Tier1/ATR_TierOneExemplar</uiIconPath>
+        <uiIconPath>Things/Pawns/Humanlikes/Tier1/BF_TierOneExemplar</uiIconPath>
 		<statBases>
 			<MarketValue>1000</MarketValue>
 			<MoveSpeed>3.60</MoveSpeed>
@@ -47,7 +47,7 @@
 			<SocialImpact>0.1</SocialImpact>
 			<ArmorRating_Blunt>0.05</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.15</ArmorRating_Sharp>
-            <ATR_MaintenanceRetention>0.75</ATR_MaintenanceRetention>
+            <BF_MaintenanceRetention>0.75</BF_MaintenanceRetention>
 			<Mass>32.5</Mass>
 		</statBases>
 		<tools>
@@ -98,13 +98,13 @@
 			</li>
 		</tools>
 		<race>
-			<body>ATR_AndroidBody</body>
+			<body>BF_AndroidBody</body>
 			<baseHealthScale>0.8</baseHealthScale>
 			<baseHungerRate>1.2</baseHungerRate>
 			<baseBodySize>0.5</baseBodySize>
 		</race>
 		<modExtensions>
-			<li Class="ATReforged.ATR_MechTweaker">
+			<li Class="BotFactory.BF_MechTweaker">
                 <droneSkillLevel>8</droneSkillLevel>
 			</li>
 		</modExtensions>

@@ -2,7 +2,7 @@
 using RimWorld;
 using System.Collections.Generic;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Incidents_PersonalityShift : IncidentWorker
     {
@@ -38,10 +38,10 @@ namespace ATReforged
             {
                 return false;
             }
-            ChoiceLetter_PersonalityShiftRequest choiceLetter = (ChoiceLetter_PersonalityShiftRequest)LetterMaker.MakeLetter(ATR_LetterDefOf.ATR_PersonalityShiftRequestLetter);
+            ChoiceLetter_PersonalityShiftRequest choiceLetter = (ChoiceLetter_PersonalityShiftRequest)LetterMaker.MakeLetter(BF_LetterDefOf.BF_PersonalityShiftRequestLetter);
             choiceLetter.subject = pawn;
-            choiceLetter.Label = "ATR_PersonalityShiftFreewilled".Translate();
-            choiceLetter.Text = "ATR_PersonalityShiftFreewilledDesc".Translate(pawn);
+            choiceLetter.Label = "BF_PersonalityShiftFreewilled".Translate();
+            choiceLetter.Text = "BF_PersonalityShiftFreewilledDesc".Translate(pawn);
             choiceLetter.lookTargets = pawn;
             Find.LetterStack.ReceiveLetter(choiceLetter);
             return true;

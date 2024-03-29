@@ -2,7 +2,7 @@
 using Verse;
 using Verse.AI;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Attack anything that isn't the same def as this. IE. Don't attack other pawns of the same def but anything else is fair game.
     public class MentalState_Exterminator : MentalState

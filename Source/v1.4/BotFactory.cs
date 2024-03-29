@@ -15,7 +15,7 @@ namespace BotFactory
         public BotFactory(ModContentPack content) : base(content)
         {
             ModSingleton = this;
-            new Harmony("ATReforged").PatchAll(Assembly.GetExecutingAssembly());
+            new Harmony("BotFactory").PatchAll(Assembly.GetExecutingAssembly());
         }
         
         // Handles the localization for the mod's name in the list of mods in the mod settings page.
@@ -37,24 +37,24 @@ namespace BotFactory
     {
         static BotFactory_PostInit()
         {
-            //ATReforged.settings = ATReforged.ModSingleton.GetSettings<ATReforged_Settings>();
-            //ATReforged.settings.StartupChecks();
+            //BotFactory.settings = BotFactory.ModSingleton.GetSettings<BotFactory_Settings>();
+            //BotFactory.settings.StartupChecks();
 
             // Patch android factions based on the appropriate settings.
-            //DefDatabase<FactionDef>.GetNamedSilentFail("ATR_AndroidUnion").autoFlee = ATReforged_Settings.androidFactionsNeverFlee;
-            //DefDatabase<FactionDef>.GetNamedSilentFail("ATR_MechanicalMarauders").autoFlee = ATReforged_Settings.androidFactionsNeverFlee;
+            //DefDatabase<FactionDef>.GetNamedSilentFail("BF_AndroidUnion").autoFlee = BotFactory_Settings.androidFactionsNeverFlee;
+            //DefDatabase<FactionDef>.GetNamedSilentFail("BF_MechanicalMarauders").autoFlee = BotFactory_Settings.androidFactionsNeverFlee;
 
             // Acquire Defs for mechanical butchering so that mechanical (non-mechanoid) units are placed in the correct categories.
             RecipeDef androidDisassembly = DefDatabase<RecipeDef>.GetNamed("ButcherCorpseMechanoid");
             RecipeDef androidSmashing = DefDatabase<RecipeDef>.GetNamed("SmashCorpseMechanoid");
             RecipeDef butcherFlesh = DefDatabase<RecipeDef>.GetNamed("ButcherCorpseFlesh");
 
-            CompProperties_Facility bedsideChargerLinkables = ATR_ThingDefOf.ATR_BedsideChargerFacility.GetCompProperties<CompProperties_Facility>();
+            CompProperties_Facility bedsideChargerLinkables = BF_ThingDefOf.BF_BedsideChargerFacility.GetCompProperties<CompProperties_Facility>();
 
             // Some patches can't be run with the other harmony patches as Defs aren't loaded yet. So we patch them here.
             if (HealthCardUtility_Patch.DrawOverviewTab_Patch.Prepare())
             {
-                new Harmony("ATReforged").CreateClassProcessor(typeof(HealthCardUtility_Patch.DrawOverviewTab_Patch)).Patch();
+                new Harmony("BotFactory").CreateClassProcessor(typeof(HealthCardUtility_Patch.DrawOverviewTab_Patch)).Patch();
             }
 
             // Must dynamically modify some ThingDefs based on certain qualifications.
@@ -102,7 +102,7 @@ namespace BotFactory
                             }
                         }
 
-                        if (thingDef.GetModExtension<ATR_MechTweaker>()?.needsMaintenance == true && ATReforged_Settings.maintenanceNeedExists)
+                        if (thingDef.GetModExtension<BF_MechTweaker>()?.needsMaintenance == true && BotFactory_Settings.maintenanceNeedExists)
                         {
                             CompProperties cp = new CompProperties
                             {
@@ -197,7 +197,7 @@ namespace BotFactory
                     CompProperties_AffectedByFacilities linkable = thingDef.GetCompProperties<CompProperties_AffectedByFacilities>();
                     if (linkable != null && !typeof(Building_ChargingBed).IsAssignableFrom(thingDef.thingClass))
                     {
-                        linkable.linkableFacilities.Add(ATR_ThingDefOf.ATR_BedsideChargerFacility);
+                        linkable.linkableFacilities.Add(BF_ThingDefOf.BF_BedsideChargerFacility);
                         bedsideChargerLinkables.linkableBuildings.Add(thingDef);
                     }
                 }

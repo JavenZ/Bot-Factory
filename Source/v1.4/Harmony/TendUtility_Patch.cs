@@ -4,7 +4,7 @@ using RimWorld;
 using System;
 using UnityEngine;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class TendUtility_Patch
 
@@ -25,7 +25,7 @@ namespace ATReforged
                 float tendQuality;
                 if (doctor != null)
                 {
-                    tendQuality = doctor.GetStatValue(ATR_StatDefOf.ATR_MechanicalTendQuality, true);
+                    tendQuality = doctor.GetStatValue(BF_StatDefOf.BF_MechanicalTendQuality, true);
                 }
                 else
                 {
@@ -35,7 +35,7 @@ namespace ATReforged
                 Building_Bed building_Bed = patient?.CurrentBed();
                 if (building_Bed != null)
                 {
-                    tendQuality += building_Bed.GetStatValue(ATR_StatDefOf.ATR_MechanicalTendQualityOffset, true);
+                    tendQuality += building_Bed.GetStatValue(BF_StatDefOf.BF_MechanicalTendQualityOffset, true);
                 }
                 if (doctor == patient && doctor != null)
                 {

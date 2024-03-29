@@ -2,41 +2,41 @@
 <Defs>
 
     <JobDef>
-		<defName>ATR_RechargeBattery</defName>
-		<driverClass>ATReforged.JobDriver_RechargeBattery</driverClass>
+		<defName>BF_RechargeBattery</defName>
+		<driverClass>BotFactory.JobDriver_RechargeBattery</driverClass>
 		<reportString>Recharging battery.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
     <JobDef>
-        <defName>ATR_ResurrectMechanical</defName>
-        <driverClass>ATReforged.JobDriver_ResurrectMechanical</driverClass>
+        <defName>BF_ResurrectMechanical</defName>
+        <driverClass>BotFactory.JobDriver_ResurrectMechanical</driverClass>
         <reportString>repairing TargetA.</reportString>
     </JobDef>
 
     <JobDef>
-        <defName>ATR_TendMechanical</defName>
-        <driverClass>ATReforged.JobDriver_TendMechanical</driverClass>
+        <defName>BF_TendMechanical</defName>
+        <driverClass>BotFactory.JobDriver_TendMechanical</driverClass>
         <reportString>tending to TargetA.</reportString>
         <casualInterruptible>false</casualInterruptible>
     </JobDef>
 
     <JobDef>
-        <defName>ATR_GenerateInsight</defName>
-        <driverClass>ATReforged.JobDriver_GenerateInsight</driverClass>
+        <defName>BF_GenerateInsight</defName>
+        <driverClass>BotFactory.JobDriver_GenerateInsight</driverClass>
         <reportString>generating SkyMind insight.</reportString>
         <allowOpportunisticPrefix>true</allowOpportunisticPrefix>
     </JobDef>
 
     <JobDef>
-        <defName>ATR_DoMaintenanceUrgent</defName>
-        <driverClass>ATReforged.JobDriver_DoMaintenanceUrgent</driverClass>
+        <defName>BF_DoMaintenanceUrgent</defName>
+        <driverClass>BotFactory.JobDriver_DoMaintenanceUrgent</driverClass>
         <reportString>doing self maintenance.</reportString>
     </JobDef>
 
     <JobDef>
-        <defName>ATR_DoMaintenanceIdle</defName>
-        <driverClass>ATReforged.JobDriver_DoMaintenanceIdle</driverClass>
+        <defName>BF_DoMaintenanceIdle</defName>
+        <driverClass>BotFactory.JobDriver_DoMaintenanceIdle</driverClass>
         <reportString>doing self maintenance.</reportString>
     </JobDef>
     

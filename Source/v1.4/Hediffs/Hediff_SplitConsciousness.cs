@@ -3,7 +3,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     // This Hediff class appears only on SkyMind connected pawns, and acts as a penalty for a physical pawn attempting to control too many surrogates at once.
     public class Hediff_SplitConsciousness : HediffWithComps
@@ -37,16 +37,16 @@ namespace ATReforged
         {
             if (cachedSurrogateSoftCap > 100 || pawn.IsHashIntervalTick(3000))
             {
-                cachedSurrogateSoftCap = ATReforged_Settings.safeSurrogateConnectivityCountBeforePenalty;
+                cachedSurrogateSoftCap = BotFactory_Settings.safeSurrogateConnectivityCountBeforePenalty;
                 // Surrogates check their controller for a surrogate limit bonus to add to the soft cap.
                 if (Utils.IsSurrogate(pawn))
                 {
-                    cachedSurrogateSoftCap += (int)pawn.GetComp<CompSkyMindLink>().GetSurrogates().First().GetStatValue(ATR_StatDefOf.ATR_SurrogateLimitBonus);
+                    cachedSurrogateSoftCap += (int)pawn.GetComp<CompSkyMindLink>().GetSurrogates().First().GetStatValue(BF_StatDefOf.BF_SurrogateLimitBonus);
                 }
                 // Controllers check their own surrogate limit bonus to add to the soft cap.
                 else
                 {
-                    cachedSurrogateSoftCap += (int)pawn.GetStatValue(ATR_StatDefOf.ATR_SurrogateLimitBonus);
+                    cachedSurrogateSoftCap += (int)pawn.GetStatValue(BF_StatDefOf.BF_SurrogateLimitBonus);
                 }
             }
 

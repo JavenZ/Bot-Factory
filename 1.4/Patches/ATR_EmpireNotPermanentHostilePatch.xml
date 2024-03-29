@@ -8,7 +8,7 @@
         <match Class="PatchOperationAdd">
             <xpath>/Defs/FactionDef[defName = "Empire"]/permanentEnemyToEveryoneExcept</xpath>
             <value>
-                <li>ATR_PlayerAndroidFaction</li>
+                <li>BF_PlayerAndroidFaction</li>
             </value>
         </match>
     </Operation>

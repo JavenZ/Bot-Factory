@@ -5,7 +5,7 @@ using Verse;
 using Verse.Sound;
 using AlienRace;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Dialog_Repaint : Window
     {

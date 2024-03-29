@@ -2,8 +2,8 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>ATR_ChronicAnnoyance</defName>
-        <workerClass>ATReforged.ThoughtWorker_ChronicAnnoyance</workerClass>
+        <defName>BF_ChronicAnnoyance</defName>
+        <workerClass>BotFactory.ThoughtWorker_ChronicAnnoyance</workerClass>
         <stages>
             <li>
                 <label>defective part</label>
@@ -30,8 +30,8 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ATR_RustedPart</defName>
-        <workerClass>ATReforged.ThoughtWorker_RustedPart</workerClass>
+        <defName>BF_RustedPart</defName>
+        <workerClass>BotFactory.ThoughtWorker_RustedPart</workerClass>
         <stages>
             <li>
                 <label>rusted part</label>
@@ -43,9 +43,9 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ATR_OverclockedThought</defName>
+        <defName>BF_OverclockedThought</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
-		<hediff>ATR_MechanicalOverclocking</hediff>
+		<hediff>BF_MechanicalOverclocking</hediff>
         <stages>
             <li>
                 <label>overclocked</label>

@@ -2,9 +2,9 @@
 <LanguageData>
 
 	<!-- AutoFlickering -->
-	<ATR_FlickEnable>PowerOn via SkyMind</ATR_FlickEnable>
-	<ATR_FlickDisable>PowerOff via SkyMind</ATR_FlickDisable>
-	<ATR_AutoDoorOpenMoteText>Opening via SkyMind</ATR_AutoDoorOpenMoteText>
-	<ATR_AutoDoorCloseMoteText>Closing via SkyMind</ATR_AutoDoorCloseMoteText>
+	<BF_FlickEnable>PowerOn via SkyMind</BF_FlickEnable>
+	<BF_FlickDisable>PowerOff via SkyMind</BF_FlickDisable>
+	<BF_AutoDoorOpenMoteText>Opening via SkyMind</BF_AutoDoorOpenMoteText>
+	<BF_AutoDoorCloseMoteText>Closing via SkyMind</BF_AutoDoorCloseMoteText>
 
 </LanguageData>

@@ -3,7 +3,7 @@ using HarmonyLib;
 using RimWorld;
 using System.Linq;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class Pawn_InteractionsTracker_Patch
     {

@@ -3,7 +3,7 @@ using Verse.AI;
 using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class JobDriver_GenerateInsight : JobDriver
     {

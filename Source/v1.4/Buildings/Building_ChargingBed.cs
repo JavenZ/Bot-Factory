@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Building_ChargingBed : Building_Bed
     {
@@ -25,19 +25,19 @@ namespace ATReforged
             // Check if the pawn is allowed to use its battery by settings.
             if (!Utils.CanUseBattery(pawn) || pawn.needs.food == null)
             { 
-                return new FloatMenuOption("ATR_NeedToAllowCharge".Translate(pawn), null);
+                return new FloatMenuOption("BF_NeedToAllowCharge".Translate(pawn), null);
             }
 
             // Check if the building has all of its unowned interaction spots used or if the pawn owns a slot in this bed.
             if (!AnyUnoccupiedSleepingSlot && pawn.ownership.OwnedBed != this)
             {
-                return new FloatMenuOption("ATR_NoAvailableChargingSpots".Translate(), null);
+                return new FloatMenuOption("BF_NoAvailableChargingSpots".Translate(), null);
             }
 
             // Check if the pawn is too big for the bed.
             if (def.building.bed_maxBodySize < pawn.BodySize)
             {
-                return new FloatMenuOption("ATR_MassiveNotAllowed".Translate(), null);
+                return new FloatMenuOption("BF_MassiveNotAllowed".Translate(), null);
             }
 
             // All checks passed, this pawn may be forced to charge. Return null.
@@ -60,10 +60,10 @@ namespace ATReforged
             // Yield an option to force the pawn to charge from the charging bed.
             else
             {
-                yield return new FloatMenuOption("ATR_ForceCharge".Translate(), delegate ()
+                yield return new FloatMenuOption("BF_ForceCharge".Translate(), delegate ()
                 {
                     myPawn.ownership.ClaimBedIfNonMedical(this);
-                    Job job = new Job(ATR_JobDefOf.ATR_RechargeBattery, new LocalTargetInfo(this));
+                    Job job = new Job(BF_JobDefOf.BF_RechargeBattery, new LocalTargetInfo(this));
                     if (Medical)
                     {
                         job.restUntilHealed = true;

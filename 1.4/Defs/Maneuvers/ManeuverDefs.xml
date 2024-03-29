@@ -2,11 +2,11 @@
 <Defs>
 
     <ManeuverDef>
-        <defName>ATR_FractalLance</defName>
-        <requiredCapacity>ATR_FractalLance</requiredCapacity>
+        <defName>BF_FractalLance</defName>
+        <requiredCapacity>BF_FractalLance</requiredCapacity>
         <verb>
             <verbClass>Verb_MeleeAttackDamage</verbClass>
-            <meleeDamageDef>ATR_FractalLance</meleeDamageDef>
+            <meleeDamageDef>BF_FractalLance</meleeDamageDef>
         </verb>
         <logEntryDef>MeleeAttack</logEntryDef>
         <combatLogRulesHit>Maneuver_Bite_MeleeHit</combatLogRulesHit>

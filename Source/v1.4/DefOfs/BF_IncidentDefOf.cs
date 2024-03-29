@@ -1,15 +1,15 @@
 ﻿using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     [DefOf]
-    public static class ATR_IncidentDefOf
+    public static class BF_IncidentDefOf
     {
-        static ATR_IncidentDefOf()
+        static BF_IncidentDefOf()
         {
-            DefOfHelper.EnsureInitializedInCtor(typeof(ATR_IncidentDefOf));
+            DefOfHelper.EnsureInitializedInCtor(typeof(BF_IncidentDefOf));
         }
-        public static IncidentDef ATR_HackingIncident;
+        public static IncidentDef BF_HackingIncident;
 
         public static IncidentDef ResourcePodCrash;
 

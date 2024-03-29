@@ -4,7 +4,7 @@ using System.Linq;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompSkyMindCore : ThingComp
     {
@@ -79,8 +79,8 @@ namespace ATReforged
             yield return new Command_Action
             {
                 icon = Tex.processInfo,
-                defaultLabel = "ATR_CloudPawnInfo".Translate(),
-                defaultDesc = "ATR_CloudPawnInfoDesc".Translate(),
+                defaultLabel = "BF_CloudPawnInfo".Translate(),
+                defaultDesc = "BF_CloudPawnInfoDesc".Translate(),
                 action = delegate ()
                 {
                     List<FloatMenuOption> opts = new List<FloatMenuOption>();
@@ -96,7 +96,7 @@ namespace ATReforged
                         if (opts.Count == 0)
                             return;
 
-                        Find.WindowStack.Add(new FloatMenu(opts, "ATR_ViableSources".Translate()));
+                        Find.WindowStack.Add(new FloatMenu(opts, "BF_ViableSources".Translate()));
                     }
                 }
             };
@@ -105,22 +105,22 @@ namespace ATReforged
             yield return new Command_Action
             {
                 icon = Tex.processRemove,
-                defaultLabel = "ATR_RemoveCloudPawn".Translate(),
-                defaultDesc = "ATR_RemoveCloudPawnDesc".Translate(),
+                defaultLabel = "BF_RemoveCloudPawn".Translate(),
+                defaultDesc = "BF_RemoveCloudPawnDesc".Translate(),
                 action = delegate ()
                 {
                     List<FloatMenuOption> opts = new List<FloatMenuOption>();
 
-                    foreach (Pawn pawn in Utils.gameComp.GetCloudPawns().Where(pawn => pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_MindOperation) == null && !pawn.GetComp<CompSkyMindLink>().HasSurrogate()))
+                    foreach (Pawn pawn in Utils.gameComp.GetCloudPawns().Where(pawn => pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_MindOperation) == null && !pawn.GetComp<CompSkyMindLink>().HasSurrogate()))
                     {
                         opts.Add(new FloatMenuOption(pawn.LabelShortCap, delegate
                         {
-                            Find.WindowStack.Add(new Dialog_MessageBox("ATR_RemoveCloudPawnConfirm".Translate(pawn.LabelShortCap), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "ATR_RemoveCloudPawn".Translate(), buttonAAction: delegate
+                            Find.WindowStack.Add(new Dialog_MessageBox("BF_RemoveCloudPawnConfirm".Translate(pawn.LabelShortCap), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "BF_RemoveCloudPawn".Translate(), buttonAAction: delegate
                             {
                                 Utils.gameComp.PopCloudPawn(pawn);
                                 pawn.Kill(null);
 
-                                Messages.Message("ATR_RemoveCloudPawnSuccess".Translate(pawn.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
+                                Messages.Message("BF_RemoveCloudPawnSuccess".Translate(pawn.LabelShortCap), parent, MessageTypeDefOf.PositiveEvent);
 
                             }));
                         }));
@@ -129,7 +129,7 @@ namespace ATReforged
                         if (opts.Count == 0)
                             return;
 
-                        Find.WindowStack.Add(new FloatMenu(opts, "ATR_ViableSources".Translate()));
+                        Find.WindowStack.Add(new FloatMenu(opts, "BF_ViableSources".Translate()));
                     }
                 }
             };
@@ -138,23 +138,23 @@ namespace ATReforged
             yield return new Command_Action
             {
                 icon = Tex.processReplicate,
-                defaultLabel = "ATR_ReplicateCloudPawn".Translate(),
-                defaultDesc = "ATR_ReplicateCloudPawnDesc".Translate(),
+                defaultLabel = "BF_ReplicateCloudPawn".Translate(),
+                defaultDesc = "BF_ReplicateCloudPawnDesc".Translate(),
                 action = delegate ()
                 {
                     if (Utils.gameComp.GetCloudPawns().Count() > Utils.gameComp.GetSkyMindCloudCapacity())
                     {
-                        Messages.Message("ATR_ProcessReplicateFailed".Translate(), parent, MessageTypeDefOf.NegativeEvent);
+                        Messages.Message("BF_ProcessReplicateFailed".Translate(), parent, MessageTypeDefOf.NegativeEvent);
                     }
                     else
                     {
                         List<FloatMenuOption> opts = new List<FloatMenuOption>();
 
-                        foreach (Pawn pawn in Utils.gameComp.GetCloudPawns().Where(pawn => pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_MindOperation) == null && !pawn.GetComp<CompSkyMindLink>().HasSurrogate()))
+                        foreach (Pawn pawn in Utils.gameComp.GetCloudPawns().Where(pawn => pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_MindOperation) == null && !pawn.GetComp<CompSkyMindLink>().HasSurrogate()))
                         {
                             opts.Add(new FloatMenuOption(pawn.LabelShortCap, delegate
                             {
-                                Find.WindowStack.Add(new Dialog_MessageBox("ATR_ReplicateCloudPawnDesc".Translate() + "\n" + "ATR_SkyMindDisconnectionRisk".Translate(), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "ATR_ReplicateCloudPawn".Translate(), buttonAAction: delegate
+                                Find.WindowStack.Add(new Dialog_MessageBox("BF_ReplicateCloudPawnDesc".Translate() + "\n" + "BF_SkyMindDisconnectionRisk".Translate(), "Confirm".Translate(), buttonBText: "Cancel".Translate(), title: "BF_ReplicateCloudPawn".Translate(), buttonAAction: delegate
                                 {
                                     pawn.GetComp<CompSkyMindLink>().InitiateConnection(6);
                                 }));
@@ -163,7 +163,7 @@ namespace ATReforged
 
                             if (opts.Count == 0)
                                 return;
-                            Find.WindowStack.Add(new FloatMenu(opts, "ATR_ViableSources".Translate()));
+                            Find.WindowStack.Add(new FloatMenu(opts, "BF_ViableSources".Translate()));
                         }
                     }
                 }
@@ -173,8 +173,8 @@ namespace ATReforged
             yield return new Command_Action
             {
                 icon = Tex.processSkillUp,
-                defaultLabel = "ATR_Skills".Translate(),
-                defaultDesc = "ATR_SkillsDesc".Translate(),
+                defaultLabel = "BF_Skills".Translate(),
+                defaultDesc = "BF_SkillsDesc".Translate(),
                 action = delegate ()
                 {
                     List<FloatMenuOption> cloudPawnOpts = new List<FloatMenuOption>();
@@ -190,12 +190,12 @@ namespace ATReforged
                     if (cloudPawnOpts.Count == 0)
                         return;
 
-                    Find.WindowStack.Add(new FloatMenu(cloudPawnOpts, "ATR_ViableSources".Translate()));
+                    Find.WindowStack.Add(new FloatMenu(cloudPawnOpts, "BF_ViableSources".Translate()));
                 }
             };
 
             // No need to check surrogate conditions if settings forbid using them.
-            if (!ATReforged_Settings.surrogatesAllowed)
+            if (!BotFactory_Settings.surrogatesAllowed)
             {
                 yield break;
             }
@@ -204,12 +204,12 @@ namespace ATReforged
             yield return new Command_Action
             {
                 icon = Tex.ConnectIcon,
-                defaultLabel = "ATR_ControlSurrogate".Translate(),
-                defaultDesc = "ATR_ControlSurrogateDesc".Translate(),
+                defaultLabel = "BF_ControlSurrogate".Translate(),
+                defaultDesc = "BF_ControlSurrogateDesc".Translate(),
                 action = delegate ()
                 {
                     List<FloatMenuOption> cloudPawnOpts = new List<FloatMenuOption>();
-                    foreach (Pawn cloudPawn in Utils.gameComp.GetCloudPawns().Where(pawn => pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_MindOperation) == null))
+                    foreach (Pawn cloudPawn in Utils.gameComp.GetCloudPawns().Where(pawn => pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_MindOperation) == null))
                     {
                         cloudPawnOpts.Add(new FloatMenuOption(cloudPawn.LabelShortCap, delegate
                         {
@@ -247,7 +247,7 @@ namespace ATReforged
                     if (cloudPawnOpts.Count == 0)
                         return;
 
-                    Find.WindowStack.Add(new FloatMenu(cloudPawnOpts, "ATR_ViableSources".Translate()));
+                    Find.WindowStack.Add(new FloatMenu(cloudPawnOpts, "BF_ViableSources".Translate()));
                 }
             };
 
@@ -257,8 +257,8 @@ namespace ATReforged
                 yield return new Command_Action
                 {
                     icon = Tex.DisconnectIcon,
-                    defaultLabel = "ATR_DisconnectCloudPawn".Translate(),
-                    defaultDesc = "ATR_DisconnectCloudPawnDesc".Translate(),
+                    defaultLabel = "BF_DisconnectCloudPawn".Translate(),
+                    defaultDesc = "BF_DisconnectCloudPawnDesc".Translate(),
                     action = delegate ()
                     {
                         List<FloatMenuOption> opts = new List<FloatMenuOption>();
@@ -273,7 +273,7 @@ namespace ATReforged
 
                             if (opts.Count == 0)
                                 return;
-                            Find.WindowStack.Add(new FloatMenu(opts, "ATR_ViableSources".Translate()));
+                            Find.WindowStack.Add(new FloatMenu(opts, "BF_ViableSources".Translate()));
                         }
                     }
                 };
@@ -286,12 +286,12 @@ namespace ATReforged
                 yield return new Command_Action
                 {
                     icon = Tex.RecoveryIcon,
-                    defaultLabel = "ATR_ControlCaravanSurrogate".Translate(),
-                    defaultDesc = "ATR_ControlCaravanSurrogateDesc".Translate(),
+                    defaultLabel = "BF_ControlCaravanSurrogate".Translate(),
+                    defaultDesc = "BF_ControlCaravanSurrogateDesc".Translate(),
                     action = delegate ()
                     {
                         List<FloatMenuOption> cloudPawnOpts = new List<FloatMenuOption>();
-                        foreach (Pawn cloudPawn in Utils.gameComp.GetCloudPawns().Where(pawn => pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_MindOperation) == null && !pawn.GetComp<CompSkyMindLink>().HasSurrogate()))
+                        foreach (Pawn cloudPawn in Utils.gameComp.GetCloudPawns().Where(pawn => pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_MindOperation) == null && !pawn.GetComp<CompSkyMindLink>().HasSurrogate()))
                         {
                             cloudPawnOpts.Add(new FloatMenuOption(cloudPawn.LabelShortCap, delegate
                             {
@@ -301,7 +301,7 @@ namespace ATReforged
                                     targetOpts.Add(new FloatMenuOption(surrogate.LabelShortCap, delegate
                                     {
                                         if (!Utils.gameComp.AttemptSkyMindConnection(surrogate))
-                                            Messages.Message("ATR_SkyMindConnectionFailed".Translate(), parent, MessageTypeDefOf.NegativeEvent);
+                                            Messages.Message("BF_SkyMindConnectionFailed".Translate(), parent, MessageTypeDefOf.NegativeEvent);
                                         else
                                             cloudPawn.GetComp<CompSkyMindLink>().ConnectSurrogate(surrogate);
                                     }));
@@ -311,7 +311,7 @@ namespace ATReforged
                                 if (targetOpts.Count == 0)
                                     return;
 
-                                Find.WindowStack.Add(new FloatMenu(targetOpts, "ATR_ViableTargets".Translate()));
+                                Find.WindowStack.Add(new FloatMenu(targetOpts, "BF_ViableTargets".Translate()));
                             }));
                         }
                         cloudPawnOpts.SortBy((x) => x.Label);
@@ -319,7 +319,7 @@ namespace ATReforged
                         if (cloudPawnOpts.Count == 0)
                             return;
 
-                        Find.WindowStack.Add(new FloatMenu(cloudPawnOpts, "ATR_ViableSources".Translate()));
+                        Find.WindowStack.Add(new FloatMenu(cloudPawnOpts, "BF_ViableSources".Translate()));
                     }
                 };
             }
@@ -339,11 +339,11 @@ namespace ATReforged
                 {
                     if (cloudPawns.Contains(linkedPair.Key))
                     {
-                        ret.AppendLine("ATR_SkyMindCoreOperationInProgress".Translate(linkedPair.Key, (linkedPair.Value - Find.TickManager.TicksGame).ToStringTicksToPeriodVerbose()));
+                        ret.AppendLine("BF_SkyMindCoreOperationInProgress".Translate(linkedPair.Key, (linkedPair.Value - Find.TickManager.TicksGame).ToStringTicksToPeriodVerbose()));
                     }
                 }
             }
-            ret.Append("ATR_CloudIntelligenceSummary".Translate(Utils.gameComp.GetCloudPawns().Count(), Utils.gameComp.GetSkyMindCloudCapacity()));
+            ret.Append("BF_CloudIntelligenceSummary".Translate(Utils.gameComp.GetCloudPawns().Count(), Utils.gameComp.GetSkyMindCloudCapacity()));
 
             return ret.Append(base.CompInspectStringExtra()).ToString();
         }

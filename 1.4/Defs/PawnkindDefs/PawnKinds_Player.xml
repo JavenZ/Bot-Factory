@@ -1,63 +1,63 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <PawnKindDef Name="ATR_BaseNewbootPlayerPawnKind" ParentName="BasePlayerPawnKind" Abstract="True">
+    <PawnKindDef Name="BF_BaseNewbootPlayerPawnKind" ParentName="BasePlayerPawnKind" Abstract="True">
         <label>Android colonist</label>
 		<backstoryFiltersOverride>
             <li>
                 <categories>
-                    <li>ATR_NewbootAndroids</li>
+                    <li>BF_NewbootAndroids</li>
                 </categories>
             </li>
 		</backstoryFiltersOverride>
 		<maxGenerationAge>1</maxGenerationAge>
-		<defaultFactionType>ATR_PlayerAndroidFaction</defaultFactionType>
+		<defaultFactionType>BF_PlayerAndroidFaction</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
 		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
 		<initialResistanceRange>13~21</initialResistanceRange>
     </PawnKindDef>
 
-	<PawnKindDef ParentName="ATR_BaseNewbootPlayerPawnKind">
-		<defName>ATR_T1Colonist</defName>
+	<PawnKindDef ParentName="BF_BaseNewbootPlayerPawnKind">
+		<defName>BF_T1Colonist</defName>
 		<label>T1 Newboot Colonist</label>
-		<race>ATR_Tier1Android</race>
+		<race>BF_Tier1Android</race>
         <combatPower>20</combatPower>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="ATR_BaseNewbootPlayerPawnKind">
-		<defName>ATR_T2Colonist</defName>
+	<PawnKindDef ParentName="BF_BaseNewbootPlayerPawnKind">
+		<defName>BF_T2Colonist</defName>
 		<label>T2 Newboot Colonist</label>
-		<race>ATR_Tier2Android</race>
+		<race>BF_Tier2Android</race>
         <combatPower>40</combatPower>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="ATR_BaseNewbootPlayerPawnKind">
-		<defName>ATR_T3Colonist</defName>
+	<PawnKindDef ParentName="BF_BaseNewbootPlayerPawnKind">
+		<defName>BF_T3Colonist</defName>
 		<label>T3 Newboot Colonist</label>
-		<race>ATR_Tier3Android</race>
+		<race>BF_Tier3Android</race>
         <combatPower>60</combatPower>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="ATR_BaseNewbootPlayerPawnKind">
-		<defName>ATR_T4Colonist</defName>
+	<PawnKindDef ParentName="BF_BaseNewbootPlayerPawnKind">
+		<defName>BF_T4Colonist</defName>
 		<label>T4 Newboot Colonist</label>
-		<race>ATR_Tier4Android</race>
+		<race>BF_Tier4Android</race>
         <combatPower>75</combatPower>
 	</PawnKindDef>
 
 	<!--Androids With Real Backstories-->
 
-    <PawnKindDef Name="ATR_BaseMechPlayerPawnKind" ParentName="BasePlayerPawnKind" Abstract="True">
+    <PawnKindDef Name="BF_BaseMechPlayerPawnKind" ParentName="BasePlayerPawnKind" Abstract="True">
         <label>Android colonist</label>
 		<minGenerationAge>20</minGenerationAge>
-		<defaultFactionType>ATR_PlayerAndroidFaction</defaultFactionType>
+		<defaultFactionType>BF_PlayerAndroidFaction</defaultFactionType>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
 		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
         <initialResistanceRange>13~21</initialResistanceRange>
 		<backstoryFiltersOverride>
 		  <li>
 			<categories>
-			  <li>ATR_GeneralAndroids</li>
+			  <li>BF_GeneralAndroids</li>
 			</categories>
 		  </li>
 		</backstoryFiltersOverride>
@@ -66,38 +66,38 @@
         </apparelTags>
     </PawnKindDef>
 
-	<PawnKindDef ParentName="ATR_BaseMechPlayerPawnKind">
-		<defName>ATR_T1Refugee</defName>
+	<PawnKindDef ParentName="BF_BaseMechPlayerPawnKind">
+		<defName>BF_T1Refugee</defName>
 		<label>T1 Android Colonist</label>
-		<race>ATR_Tier1Android</race>
+		<race>BF_Tier1Android</race>
         <combatPower>20</combatPower>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="ATR_BaseMechPlayerPawnKind">
-		<defName>ATR_T2Refugee</defName>
+	<PawnKindDef ParentName="BF_BaseMechPlayerPawnKind">
+		<defName>BF_T2Refugee</defName>
 		<label>T2 Android Colonist</label>
-		<race>ATR_Tier2Android</race>
+		<race>BF_Tier2Android</race>
         <combatPower>40</combatPower>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="ATR_BaseMechPlayerPawnKind">
-		<defName>ATR_T3Refugee</defName>
+	<PawnKindDef ParentName="BF_BaseMechPlayerPawnKind">
+		<defName>BF_T3Refugee</defName>
 		<label>T3 Android Colonist</label>
-		<race>ATR_Tier3Android</race>
+		<race>BF_Tier3Android</race>
         <combatPower>60</combatPower>
 	</PawnKindDef>
 
-	<PawnKindDef ParentName="ATR_BaseMechPlayerPawnKind">
-		<defName>ATR_T4Refugee</defName>
+	<PawnKindDef ParentName="BF_BaseMechPlayerPawnKind">
+		<defName>BF_T4Refugee</defName>
 		<label>T4 Android Colonist</label>
-		<race>ATR_Tier4Android</race>
+		<race>BF_Tier4Android</race>
         <combatPower>75</combatPower>
 	</PawnKindDef>
 
     <!-- Special PawnKinds -->
 
     <PawnKindDef ParentName="BasePlayerPawnKind">
-        <defName>ATR_FractalWitness</defName>
+        <defName>BF_FractalWitness</defName>
         <label>Fractal Witness</label>
 		<chemicalAddictionChance>0.00</chemicalAddictionChance>
 		<backstoryCryptosleepCommonality>0</backstoryCryptosleepCommonality>
@@ -106,7 +106,7 @@
 		<backstoryFiltersOverride>
             <li>
                 <categories>
-                    <li>ATR_FractalWitness</li>
+                    <li>BF_FractalWitness</li>
                 </categories>
             </li>
 		</backstoryFiltersOverride>

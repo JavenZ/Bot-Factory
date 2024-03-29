@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class MedicalCareUtility_Patch
     {

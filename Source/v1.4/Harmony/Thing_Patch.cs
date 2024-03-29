@@ -2,7 +2,7 @@
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class Thing_Patch
     {
@@ -18,9 +18,9 @@ namespace ATReforged
                     return;
 
                 // If charging efficiency differences are enabled, the unit can charge, and is a player pawn (to avoid issues with foreign pawns not bringing enough food), then modify it.
-                if (ATReforged_Settings.chargeCapableMeansDifferentBioEfficiency && Utils.CanUseBattery(ingester) && ingester.Faction == Faction.OfPlayer)
+                if (BotFactory_Settings.chargeCapableMeansDifferentBioEfficiency && Utils.CanUseBattery(ingester) && ingester.Faction == Faction.OfPlayer)
                 {
-                    nutritionIngested *= ATReforged_Settings.chargeCapableBioEfficiency;
+                    nutritionIngested *= BotFactory_Settings.chargeCapableBioEfficiency;
                 }
             }
         }

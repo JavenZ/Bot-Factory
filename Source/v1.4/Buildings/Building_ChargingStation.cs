@@ -3,7 +3,7 @@ using RimWorld;
 using Verse;
 using Verse.AI;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Building_ChargingStation : Building
     {
@@ -32,19 +32,19 @@ namespace ATReforged
             // Check if the pawn is allowed to use its battery by settings.
             if (!Utils.CanUseBattery(pawn) || pawn.needs?.food == null)
             { 
-                return new FloatMenuOption("ATR_NeedToAllowCharge".Translate(pawn), null);
+                return new FloatMenuOption("BF_NeedToAllowCharge".Translate(pawn), null);
             }
 
             // Check if the building has all of its interaction spots used.
             if (GetOpenRechargeSpot(pawn) == IntVec3.Invalid)
             {
-                return new FloatMenuOption("ATR_NoAvailableChargingSpots".Translate(), null);
+                return new FloatMenuOption("BF_NoAvailableChargingSpots".Translate(), null);
             }
 
             // Massive mechanical units may not use charging stations.
             if (Utils.IsConsideredMassive(pawn))
             {
-                return new FloatMenuOption("ATR_MassiveNotAllowed".Translate(), null);
+                return new FloatMenuOption("BF_MassiveNotAllowed".Translate(), null);
             }
 
             // All checks passed, this pawn may be forced to charge. Return null.
@@ -62,8 +62,8 @@ namespace ATReforged
             }
             else
             {
-                yield return new FloatMenuOption("ATR_ForceCharge".Translate(), delegate () {
-                    Job job = new Job(ATR_JobDefOf.ATR_RechargeBattery, new LocalTargetInfo(GetOpenRechargeSpot(pawn)), new LocalTargetInfo(this));
+                yield return new FloatMenuOption("BF_ForceCharge".Translate(), delegate () {
+                    Job job = new Job(BF_JobDefOf.BF_RechargeBattery, new LocalTargetInfo(GetOpenRechargeSpot(pawn)), new LocalTargetInfo(this));
                     pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                 });
             }
@@ -96,7 +96,7 @@ namespace ATReforged
             }
             else
             {
-                 yield return new FloatMenuOption("ATR_ForceCharge".Translate(), delegate() 
+                 yield return new FloatMenuOption("BF_ForceCharge".Translate(), delegate() 
                  {
                      // Attempt to assign all pawns that can reach to the station a spot. If a pawn takes the last slot, then abort the process. Left-over pawns won't charge.
                      foreach (Pawn pawn in pawnsCanReach) {
@@ -105,7 +105,7 @@ namespace ATReforged
                          if (chargingSpot == IntVec3.Invalid)
                              break;
 
-                         Job job = new Job(ATR_JobDefOf.ATR_RechargeBattery, new LocalTargetInfo(chargingSpot), new LocalTargetInfo(this));
+                         Job job = new Job(BF_JobDefOf.BF_RechargeBattery, new LocalTargetInfo(chargingSpot), new LocalTargetInfo(this));
                          pawn.jobs.TryTakeOrderedJob(job, JobTag.Misc);
                      }
                  });

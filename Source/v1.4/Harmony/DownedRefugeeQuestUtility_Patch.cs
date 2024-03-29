@@ -2,7 +2,7 @@
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class DownedRefugeeQuestUtility_Patch
     {
@@ -32,7 +32,7 @@ namespace ATReforged
 
                 if (Utils.IsConsideredMechanical(__result))
                 {
-                    __result.health.AddHediff(ATR_HediffDefOf.ATR_LongReboot);
+                    __result.health.AddHediff(BF_HediffDefOf.BF_LongReboot);
                 }
             }
         }

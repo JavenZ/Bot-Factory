@@ -2,73 +2,73 @@
 <Defs>
 
     <ResearchProjectDef>
-        <defName>ATR_MechanicalStandardization</defName>
+        <defName>BF_MechanicalStandardization</defName>
         <label>Mechanical standardization</label>
-        <tab>ATR_MechResearch</tab>
+        <tab>BF_MechResearch</tab>
         <description>In order to reach a state of consistent manufactured quality and scaling quantity, a standard of production and maintenance must be established. Androids come in a vast number of styles and designs - standardizing the colony's parts will be critical for success in mechanical fields.</description>
         <baseCost>1600</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
             <li>MicroelectronicsBasics</li>
-            <li>ATR_UtilityBiomimetics</li>
-			<li>ATR_T1Androids</li>
+            <li>BF_UtilityBiomimetics</li>
+			<li>BF_T1Androids</li>
         </prerequisites>
         <researchViewX>2</researchViewX>
         <researchViewY>2.5</researchViewY>
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>ATR_MassCharging</defName>
+        <defName>BF_MassCharging</defName>
         <label>Charging station</label>
-        <tab>ATR_MechResearch</tab>
+        <tab>BF_MechResearch</tab>
         <description>In order to maximize charging and space efficiency for industrial applications, an effective way to charge a number of mechanical units simultaneously must be developed. A small charging port that can charge 8 at a time could prove essential to expansion.</description>
         <baseCost>500</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
-            <li>ATR_MechanicalStandardization</li>
+            <li>BF_MechanicalStandardization</li>
         </prerequisites>
         <researchViewX>3</researchViewX>
         <researchViewY>0</researchViewY>
     </ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>ATR_InterchangeableParts</defName>
+		<defName>BF_InterchangeableParts</defName>
 		<label>Interchangeable parts</label>
-		<tab>ATR_MechResearch</tab>
+		<tab>BF_MechResearch</tab>
 		<description>The standardization of designs, components, and assembly techniques allows for the standardization of parts, and thus, interchangeability. Dedicating resources to designing easily replaceable, upgradeable parts will open up new avenues for specialization and efficiency gains.</description>
 		<baseCost>800</baseCost>
 		<techLevel>Industrial</techLevel>
 		<prerequisites>
-            <li>ATR_MechanicalStandardization</li>
+            <li>BF_MechanicalStandardization</li>
         </prerequisites>
 		<researchViewX>3</researchViewX>
 		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>ATR_MilitaryBiomimetics</defName>
+		<defName>BF_MilitaryBiomimetics</defName>
 		<label>Military biomimetics</label>
-		<tab>ATR_MechResearch</tab>
+		<tab>BF_MechResearch</tab>
 		<description>Iterating upon utility biomimetics, this research delves into military applications. Significantly more complicated than copying mere domesticated farm animals, militarization can lead to miniature swarm drones, mechanical hounds, or more experimental adaptations.</description>
 		<baseCost>1400</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites>
-            <li>ATR_UtilityBiomimetics</li>
-            <li>ATR_MechanicalStandardization</li>
+            <li>BF_UtilityBiomimetics</li>
+            <li>BF_MechanicalStandardization</li>
         </prerequisites>
 		<researchViewX>3</researchViewX>
 		<researchViewY>3.2</researchViewY>
 	</ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>ATR_StandardizedCommunications</defName>
+        <defName>BF_StandardizedCommunications</defName>
         <label>Standardized communications</label>
-        <tab>ATR_MechResearch</tab>
+        <tab>BF_MechResearch</tab>
         <description>Standardizing communication and digital presence technologies will allow a baseline for a network of connected mechanical units and devices. The advent of a theoretical cloud environment connecting those consciousnesses and devices could allow for great opportunities for insights into shared experience, security, or remote attacks on hostile entitites. It all begins with infrastructure.</description>
         <baseCost>1200</baseCost>
         <techLevel>Industrial</techLevel>
         <prerequisites>
-            <li>ATR_MechanicalStandardization</li>
+            <li>BF_MechanicalStandardization</li>
         </prerequisites>
         <researchViewX>3</researchViewX>
         <researchViewY>4</researchViewY>
@@ -80,26 +80,26 @@
     </ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>ATR_MechanicalStimulators</defName>
+		<defName>BF_MechanicalStimulators</defName>
 		<label>Mechanical stimulants</label>
-		<tab>ATR_MechResearch</tab>
+		<tab>BF_MechResearch</tab>
 		<description>While mechanical units are largely unconcerned by the passage of time and therefore unconcerned about the efficiency of its use, there are times when efficiency at a particular moment is critical. Consumable short-term stimulants could prove useful in these moments.</description>
 		<baseCost>800</baseCost>
 		<techLevel>Spacer</techLevel>
-		<prerequisites><li>ATR_InterchangeableParts</li></prerequisites>
+		<prerequisites><li>BF_InterchangeableParts</li></prerequisites>
 		<researchViewX>4</researchViewX>
 		<researchViewY>0</researchViewY>
 	</ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>ATR_AdvancedMechParts</defName>
+        <defName>BF_AdvancedMechParts</defName>
         <label>Advanced mechanical parts</label>
-        <tab>ATR_MechResearch</tab>
+        <tab>BF_MechResearch</tab>
         <description>With the acquisition of properly fabrication and a strong standardization scheme, advancements in the quality of mechanical parts is now within reach. These parts will function significantly better than factory standard equivalents while remaining within reasonable cost estimates.</description>
         <baseCost>1600</baseCost>
         <techLevel>Spacer</techLevel>
         <prerequisites>
-			<li>ATR_InterchangeableParts</li>
+			<li>BF_InterchangeableParts</li>
             <li>Fabrication</li>
         </prerequisites>
 		<researchViewX>4</researchViewX>
@@ -107,38 +107,38 @@
     </ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>ATR_MechanicalFrameworks</defName>
+        <defName>BF_MechanicalFrameworks</defName>
         <label>Basic framework replacements</label>
-        <tab>ATR_MechResearch</tab>
+        <tab>BF_MechResearch</tab>
         <description>The framework of a mechanical unit is its most visible feature, as it quite literally holds the entire chassis together. Basic modifications could result in significant gains in a wide range of particular tasks - but does require committing to one particular modification at a time.</description>
         <baseCost>800</baseCost>
         <techLevel>Industrial</techLevel>
-		<prerequisites><li>ATR_InterchangeableParts</li></prerequisites>
+		<prerequisites><li>BF_InterchangeableParts</li></prerequisites>
 		<researchViewX>5</researchViewX>
 		<researchViewY>0</researchViewY>
     </ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>ATR_MechaniteAssistedRecovery</defName>
+		<defName>BF_MechaniteAssistedRecovery</defName>
 		<label>Mechanite assisted recovery</label>
-		<tab>ATR_MechResearch</tab>
+		<tab>BF_MechResearch</tab>
 		<description>Components and replacement parts alone can almost perfectly imitate original parts and repair most damage. The inclusion of mechanites will allow for the eradication of words like "almost" and "most" as even in the hands of mediocre mechanics, mechanites will greatly improve repair and operation outcomes.</description>
 		<baseCost>800</baseCost>
 		<techLevel>Spacer</techLevel>
-		<prerequisites><li>ATR_InterchangeableParts</li></prerequisites>
+		<prerequisites><li>BF_InterchangeableParts</li></prerequisites>
 		<researchViewX>5</researchViewX>
 		<researchViewY>1</researchViewY>
 	</ResearchProjectDef>
 
 	<ResearchProjectDef>
-		<defName>ATR_T2Androids</defName>
+		<defName>BF_T2Androids</defName>
 		<label>T2 androids</label>
-		<tab>ATR_MechResearch</tab>
+		<tab>BF_MechResearch</tab>
 		<description>Tier two androids are marked by the lowest specifications required for full sapience. The most common android produced, it is widely seen as a new species distinct from humanity. With this, the colony will step across the threshold of mechanical autonomy - are we prepared for what comes next?</description>
 		<baseCost>2000</baseCost>
 		<techLevel>Spacer</techLevel>
 		<prerequisites>
-            <li>ATR_MechanicalStandardization</li>
+            <li>BF_MechanicalStandardization</li>
             <li>Fabrication</li>
         </prerequisites>
 		<researchViewX>5</researchViewX>
@@ -149,14 +149,14 @@
 	</ResearchProjectDef>
 
     <ResearchProjectDef>
-        <defName>ATR_RemoteControlProtocols</defName>
+        <defName>BF_RemoteControlProtocols</defName>
         <label>Remote control protocols</label>
-        <tab>ATR_MechResearch</tab>
+        <tab>BF_MechResearch</tab>
         <description>With standardized communication methods across hosts, it is theoretically possible to develop a framework for remotely controlling so-called surrogate bodies. Technical limitations prevent organic involvement in this service due to a lack of efficiency and universal organic applications, but this could prove revolutionary for mechanical units.</description>
         <baseCost>2000</baseCost>
         <techLevel>Spacer</techLevel>
         <prerequisites>
-            <li>ATR_StandardizedCommunications</li>
+            <li>BF_StandardizedCommunications</li>
         </prerequisites>
         <researchViewX>5</researchViewX>
         <researchViewY>5</researchViewY>

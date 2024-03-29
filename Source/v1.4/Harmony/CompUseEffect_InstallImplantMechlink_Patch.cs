@@ -3,7 +3,7 @@ using Verse;
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class CompUseEffect_InstallImplantMechlink_Patch
     {
@@ -23,7 +23,7 @@ namespace ATReforged
                 if (Utils.IsSurrogate(p))
                 {
                     __result = false;
-                    failReason = "ATR_NoSurrogateMechanitors".Translate();
+                    failReason = "BF_NoSurrogateMechanitors".Translate();
                     return;
                 }
             }

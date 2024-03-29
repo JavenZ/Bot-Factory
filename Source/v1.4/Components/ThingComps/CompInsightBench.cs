@@ -2,7 +2,7 @@
 using RimWorld;
 using System.Collections.Generic;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompInsightBench : ThingComp
     {
@@ -18,7 +18,7 @@ namespace ATReforged
         {
             base.PostExposeData();
 
-            Scribe_Values.Look(ref serverMode, "ATR_serverMode", ServerType.SkillServer);
+            Scribe_Values.Look(ref serverMode, "BF_serverMode", ServerType.SkillServer);
         }
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
@@ -42,8 +42,8 @@ namespace ATReforged
                     yield return new Command_Action
                     { // In Skill Mode, can switch to Security
                         icon = Tex.SkillIcon,
-                        defaultLabel = "ATR_SkillMode".Translate(),
-                        defaultDesc = "ATR_SkillModeDesc".Translate(),
+                        defaultLabel = "BF_SkillMode".Translate(),
+                        defaultDesc = "BF_SkillModeDesc".Translate(),
                         action = delegate ()
                         {
                             serverMode = ServerType.SecurityServer;
@@ -54,8 +54,8 @@ namespace ATReforged
                     yield return new Command_Action
                     { // In Security Mode, can switch to Hacking
                         icon = Tex.SecurityIcon,
-                        defaultLabel = "ATR_SecurityMode".Translate(),
-                        defaultDesc = "ATR_SecurityModeDesc".Translate(),
+                        defaultLabel = "BF_SecurityMode".Translate(),
+                        defaultDesc = "BF_SecurityModeDesc".Translate(),
                         action = delegate ()
                         {
                             serverMode = ServerType.HackingServer;
@@ -66,8 +66,8 @@ namespace ATReforged
                     yield return new Command_Action
                     { // In Hacking Mode, can switch to Skill
                         icon = Tex.HackingIcon,
-                        defaultLabel = "ATR_HackingMode".Translate(),
-                        defaultDesc = "ATR_HackingModeDesc".Translate(),
+                        defaultLabel = "BF_HackingMode".Translate(),
+                        defaultDesc = "BF_HackingModeDesc".Translate(),
                         action = delegate ()
                         {
                             serverMode = ServerType.SkillServer;
@@ -75,13 +75,13 @@ namespace ATReforged
                     };
 
                     // Servers in hacking mode allow access to the hacking menu for deploying a hack.
-                    if (ATReforged_Settings.playerCanHack)
+                    if (BotFactory_Settings.playerCanHack)
                     {
                         yield return new Command_Action
                         {
                             icon = Tex.HackingWindowIcon,
-                            defaultLabel = "ATR_HackingWindow".Translate(),
-                            defaultDesc = "ATR_HackingWindowDesc".Translate(),
+                            defaultLabel = "BF_HackingWindow".Translate(),
+                            defaultDesc = "BF_HackingWindowDesc".Translate(),
                             action = delegate ()
                             {
                                 Find.WindowStack.Add(new Dialog_HackingWindow());
@@ -93,8 +93,8 @@ namespace ATReforged
                     yield return new Command_Action
                     { // In an illegal Mode, can switch to Skill
                         icon = Tex.SkillIcon,
-                        defaultLabel = "ATR_SwitchToSkillMode".Translate(),
-                        defaultDesc = "ATR_SwitchToSkillModeDesc".Translate(),
+                        defaultLabel = "BF_SwitchToSkillMode".Translate(),
+                        defaultDesc = "BF_SwitchToSkillModeDesc".Translate(),
                         action = delegate ()
                         {
                             serverMode = ServerType.SkillServer;

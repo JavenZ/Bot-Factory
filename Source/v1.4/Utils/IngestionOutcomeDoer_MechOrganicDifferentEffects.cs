@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     class IngestionOutcomeDoer_MechOrganicDifferentEffects : IngestionOutcomeDoer
     {

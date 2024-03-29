@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
 
-	<AlienRace.ThingDef_AlienRace ParentName="ATR_BaseMechanicalPawn">
-		<defName>ATR_Tier2Android</defName>
+	<AlienRace.ThingDef_AlienRace ParentName="BF_BaseMechanicalPawn">
+		<defName>BF_Tier2Android</defName>
 		<label>T2 Android</label>
 		<description>The most common tier of androids, tier two androids are classified as the lowest specifications required for fully autonomous sapience. When fully clothed or when viewed from afar, they are easily mistaken for shorter, scrawnier humans. Indeed, tier two intelligences are often the most humanlike and most likely to seek integration into human society.</description>
 		<alienRace>
@@ -28,14 +28,14 @@
             <generalSettings>
                 <alienPartGenerator>
 					<headTypes>
-                        <li>ATR_Tier2_Male</li>
-                        <li>ATR_Tier2_Female</li>
-                        <li>ATR_Tier2_None</li>
+                        <li>BF_Tier2_Male</li>
+                        <li>BF_Tier2_Female</li>
+                        <li>BF_Tier2_None</li>
                     </headTypes>
                 </alienPartGenerator>
             </generalSettings>
 		</alienRace>
-        <uiIconPath>Things/Pawns/Humanlikes/Tier2/ATR_TierTwoExemplar</uiIconPath>
+        <uiIconPath>Things/Pawns/Humanlikes/Tier2/BF_TierTwoExemplar</uiIconPath>
 		<statBases>
 			<MarketValue>1600</MarketValue>
 			<MoveSpeed>4.10</MoveSpeed>
@@ -46,7 +46,7 @@
 			<GlobalLearningFactor>0.8</GlobalLearningFactor>
 			<ArmorRating_Blunt>0.10</ArmorRating_Blunt>
 			<ArmorRating_Sharp>0.25</ArmorRating_Sharp>
-            <ATR_MaintenanceRetention>1</ATR_MaintenanceRetention>
+            <BF_MaintenanceRetention>1</BF_MaintenanceRetention>
 			<Mass>62.5</Mass>
 		</statBases>
 		<tools>
@@ -97,11 +97,11 @@
 			</li>
 		</tools>
 		<race>
-			<body>ATR_AndroidBody</body>
+			<body>BF_AndroidBody</body>
 			<baseBodySize>0.8</baseBodySize>
 		</race>
 		<modExtensions>
-			<li Class="ATReforged.ATR_MechTweaker">
+			<li Class="BotFactory.BF_MechTweaker">
                 <droneSkillLevel>10</droneSkillLevel>
 			</li>
 		</modExtensions>

@@ -3,7 +3,7 @@ using HarmonyLib;
 using RimWorld;
 using System.Collections.Generic;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class ThingSetMaker_RefugeePod_Patch
     {
@@ -36,7 +36,7 @@ namespace ATReforged
 
                         if (Utils.IsConsideredMechanical(pawn))
                         {
-                            pawn.health.AddHediff(ATR_HediffDefOf.ATR_LongReboot);
+                            pawn.health.AddHediff(BF_HediffDefOf.BF_LongReboot);
                         }
                     }
                 }

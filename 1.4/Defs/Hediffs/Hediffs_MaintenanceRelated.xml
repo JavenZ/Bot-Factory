@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <HediffDef Name="ATR_ChronicDefectiveBase" Abstract="True">
+    <HediffDef Name="BF_ChronicDefectiveBase" Abstract="True">
         <hediffClass>HediffWithComps</hediffClass>
         <chronic>true</chronic>
         <description>_</description>
@@ -9,8 +9,8 @@
         <initialSeverity>0.001</initialSeverity>
     </HediffDef>
     
-    <HediffDef ParentName="ATR_ChronicDefectiveBase">
-        <defName>ATR_PartDecay</defName>
+    <HediffDef ParentName="BF_ChronicDefectiveBase">
+        <defName>BF_PartDecay</defName>
         <label>decaying part</label>
         <labelNoun>a decaying part</labelNoun>
         <description>This part of this unit has suffered significant decay and is performing suboptimally. Repairs are needed to alleviate this.</description>
@@ -35,8 +35,8 @@
         </stages>
     </HediffDef>
     
-    <HediffDef ParentName="ATR_ChronicDefectiveBase">
-        <defName>ATR_RustedPart</defName>
+    <HediffDef ParentName="BF_ChronicDefectiveBase">
+        <defName>BF_RustedPart</defName>
         <label>rusted part</label>
         <labelNoun>a rusted part</labelNoun>
         <description>This part has rusted. While it is not performing any noticeably worse, it is very displeasing to see, hear, and use. Repairs are needed to alleviate this.</description>
@@ -54,8 +54,8 @@
         </stages>
     </HediffDef>
     
-    <HediffDef ParentName="ATR_ChronicDefectiveBase">
-        <defName>ATR_PowerLoss</defName>
+    <HediffDef ParentName="BF_ChronicDefectiveBase">
+        <defName>BF_PowerLoss</defName>
         <label>part blackout</label>
         <labelNoun>a part blackout</labelNoun>
         <description>This part has suffered a near total power loss. While the part is still somewhat manipulatable by adjacent parts, it is severely impairing functionality and increasing power usage. Repairs can alleviate this, but it will pass on its own as mechanites repair the system.</description>
@@ -75,8 +75,8 @@
         </stages>
     </HediffDef>
   
-    <HediffDef ParentName="ATR_ChronicDefectiveBase">
-        <defName>ATR_DamagedCore</defName>
+    <HediffDef ParentName="BF_ChronicDefectiveBase">
+        <defName>BF_DamagedCore</defName>
         <label>core damage</label>
         <description>The memory core of this unit has suffered internal physical damage and is not operating at an appropriate level. This may result in additional transitory memory corruptions and impair functionality until repaired.</description>
         <defaultLabelColor>(0.8, 0.8, 0.5)</defaultLabelColor>
@@ -112,8 +112,8 @@
         </stages>
     </HediffDef>
  
-    <HediffDef ParentName="ATR_ChronicDefectiveBase">
-        <defName>ATR_FailingCoolantValves</defName>
+    <HediffDef ParentName="BF_ChronicDefectiveBase">
+        <defName>BF_FailingCoolantValves</defName>
         <label>failing coolant valves</label>
         <description>The internal coolant valves of this unit are degrading. Over time, the chassis will lose the ability to circulate coolant, leading to severe impediments to repairs and cooling efficiency until repaired.</description>
         <hediffClass>HediffWithComps</hediffClass>
@@ -192,8 +192,8 @@
         </stages>
     </HediffDef>
   
-    <HediffDef ParentName="ATR_ChronicDefectiveBase">
-        <defName>ATR_RogueMechanites</defName>
+    <HediffDef ParentName="BF_ChronicDefectiveBase">
+        <defName>BF_RogueMechanites</defName>
         <label>rogue mechanites</label>
         <description>The internal mechanite storage has suffered a critical failure, and the mechanites are decohering and preventing coolant flow. As they accumulate in critical regions and damage coolant lines, they may cause a lethal hardware failure unless emergency repairs occur.</description>
         <hediffClass>Hediff_HeartAttack</hediffClass>
@@ -246,7 +246,7 @@
         </stages>
     </HediffDef>
 
-    <HediffDef Name="ATR_MaintenanceEffectsBase" Abstract="True">
+    <HediffDef Name="BF_MaintenanceEffectsBase" Abstract="True">
         <hediffClass>HediffWithComps</hediffClass>
         <isBad>false</isBad>
         <description>_</description>
@@ -254,14 +254,14 @@
         <initialSeverity>0.001</initialSeverity>
     </HediffDef>
 
-    <HediffDef ParentName="ATR_MaintenanceEffectsBase">
-        <defName>ATR_MaintenanceCritical</defName>
+    <HediffDef ParentName="BF_MaintenanceEffectsBase">
+        <defName>BF_MaintenanceCritical</defName>
         <label>critical integrity</label>
         <labelNoun>critical vulnerability</labelNoun>
         <description>This unit is suffering from critically poor maintenance and may suffer spontaneous major breakdowns or many small scale failures. The lack of maintenance is also reducing overall efficiency and the chassis' ability to repair itself.</description>
         <initialSeverity>1</initialSeverity>
         <comps>
-            <li Class="ATReforged.HediffCompProperties_MaintenanceStageEffect">
+            <li Class="BotFactory.HediffCompProperties_MaintenanceStageEffect">
                 <activeMaintenanceStage>Critical</activeMaintenanceStage>
             </li>
         </comps>
@@ -285,14 +285,14 @@
         </stages>
     </HediffDef>
 
-    <HediffDef ParentName="ATR_MaintenanceEffectsBase">
-        <defName>ATR_MaintenancePoor</defName>
+    <HediffDef ParentName="BF_MaintenanceEffectsBase">
+        <defName>BF_MaintenancePoor</defName>
         <label>poor integrity</label>
         <labelNoun>minor vulnerability</labelNoun>
         <description>This unit is suffering from poor maintenance and may suffer spontaneous small scale failures if left unattended for too long. The lack of maintenance is slightly reducing the chassis' ability to repair itself.</description>
         <initialSeverity>1</initialSeverity>
         <comps>
-            <li Class="ATReforged.HediffCompProperties_MaintenanceStageEffect">
+            <li Class="BotFactory.HediffCompProperties_MaintenanceStageEffect">
                 <activeMaintenanceStage>Poor</activeMaintenanceStage>
             </li>
         </comps>
@@ -306,14 +306,14 @@
         </stages>
     </HediffDef>
 
-    <HediffDef ParentName="ATR_MaintenanceEffectsBase">
-        <defName>ATR_MaintenanceSatisfactory</defName>
+    <HediffDef ParentName="BF_MaintenanceEffectsBase">
+        <defName>BF_MaintenanceSatisfactory</defName>
         <label>high integrity</label>
         <labelNoun>heightened stability</labelNoun>
         <description>This unit is benefitting from proper maintenance and is immune to spontaneous part failure. The well-maintained chassis is impressive, slightly more capable of handling damage, and slightly more power efficient.</description>
         <initialSeverity>1</initialSeverity>
         <comps>
-            <li Class="ATReforged.HediffCompProperties_MaintenanceStageEffect">
+            <li Class="BotFactory.HediffCompProperties_MaintenanceStageEffect">
                 <activeMaintenanceStage>Satisfactory</activeMaintenanceStage>
             </li>
         </comps>

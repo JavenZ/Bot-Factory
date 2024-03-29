@@ -4,7 +4,7 @@ using AlienRace;
 using RimWorld;
 using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     // NOTE: This is for harmony patches on Humanoid Alien Race's Assembly, not Core!
     // Piggyback off HAR's code to make sure androids do not end up with blacklisted traits.
@@ -18,7 +18,7 @@ namespace ATReforged
             public static bool Prefix(TraitDef trait, Pawn pawn, int degree, ref bool __result)
             {
                 // Drones that do not have dronesCanHaveTraits enabled can not have traits.
-                if (Utils.IsConsideredMechanicalDrone(pawn) && pawn.def.GetModExtension<ATR_MechTweaker>()?.dronesCanHaveTraits != true)
+                if (Utils.IsConsideredMechanicalDrone(pawn) && pawn.def.GetModExtension<BF_MechTweaker>()?.dronesCanHaveTraits != true)
                 {
                     __result = false;
                     return false;
@@ -32,7 +32,7 @@ namespace ATReforged
                 }
 
                 // If the pawn is an android and this trait is blacklisted, it can not have it.
-                if (Utils.IsConsideredMechanicalAndroid(pawn) && ATReforged_Settings.blacklistedMechanicalTraits.Contains(trait.defName))
+                if (Utils.IsConsideredMechanicalAndroid(pawn) && BotFactory_Settings.blacklistedMechanicalTraits.Contains(trait.defName))
                 {
                     __result = false;
                     return false;

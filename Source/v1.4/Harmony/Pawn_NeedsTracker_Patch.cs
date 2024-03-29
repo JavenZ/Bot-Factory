@@ -2,7 +2,7 @@
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class Pawn_NeedsTracker_Patch
     {
@@ -23,19 +23,19 @@ namespace ATReforged
                         __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn);
                         break;
                     case "Joy":
-                        __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn) && ATReforged_Settings.androidsHaveJoyNeed;
+                        __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn) && BotFactory_Settings.androidsHaveJoyNeed;
                         return;
                     case "Beauty":
-                        __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn) && ATReforged_Settings.androidsHaveBeautyNeed;
+                        __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn) && BotFactory_Settings.androidsHaveBeautyNeed;
                         return;
                     case "Outdoors":
-                        __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn) && ATReforged_Settings.androidsHaveOutdoorsNeed;
+                        __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn) && BotFactory_Settings.androidsHaveOutdoorsNeed;
                         return;
                     case "Indoors":
-                        __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn) && ATReforged_Settings.androidsHaveOutdoorsNeed;
+                        __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn) && BotFactory_Settings.androidsHaveOutdoorsNeed;
                         return;
                     case "Comfort":
-                        __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn) && ATReforged_Settings.androidsHaveComfortNeed;
+                        __result = !Utils.IsConsideredMechanicalDrone(___pawn) && !Utils.HasSpecialStatus(___pawn) && BotFactory_Settings.androidsHaveComfortNeed;
                         return;
                     case "Hygiene":
                     case "Bladder":

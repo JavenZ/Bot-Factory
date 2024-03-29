@@ -2,13 +2,13 @@
 <Defs>
 
     <HediffDef ParentName="InjuryBase">
-        <defName>ATR_FractalLance</defName>
+        <defName>BF_FractalLance</defName>
         <label>fractal warping</label>
         <labelNoun>an agonizing wound warped by fractal energy</labelNoun>
         <description>A wound being continually warped and twisted by fractal energy.</description>
 		<comps>
             <li>
-                <compClass>ATReforged.HediffComp_Warper</compClass>
+                <compClass>BotFactory.HediffComp_Warper</compClass>
             </li>
             <li Class="HediffCompProperties_TendDuration">
                 <labelTendedWell>stabilized</labelTendedWell>

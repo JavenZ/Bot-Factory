@@ -2,7 +2,7 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>ATR_ConnectedSkyMindAttacked</defName>
+        <defName>BF_ConnectedSkyMindAttacked</defName>
         <durationDays>20</durationDays>
         <stackLimit>3</stackLimit>
         <stackedEffectMultiplier>0.9</stackedEffectMultiplier>
@@ -16,7 +16,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ATR_AttackedViaSkyMind</defName>
+        <defName>BF_AttackedViaSkyMind</defName>
         <durationDays>20</durationDays>
         <stackLimit>3</stackLimit>
         <stackedEffectMultiplier>1.1</stackedEffectMultiplier>
@@ -30,7 +30,7 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ATR_TrolledViaSkyMind</defName>
+        <defName>BF_TrolledViaSkyMind</defName>
         <durationDays>20</durationDays>
         <stackLimit>3</stackLimit>
         <stackedEffectMultiplier>0.9</stackedEffectMultiplier>

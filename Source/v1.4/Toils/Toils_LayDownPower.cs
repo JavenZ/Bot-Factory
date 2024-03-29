@@ -2,7 +2,7 @@
 using Verse.AI;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public static class Toils_LayDownPower
     {
@@ -10,9 +10,9 @@ namespace ATReforged
 
         private const int TicksBetweenFlecks = 200;
 
-        private static readonly FleckDef fullChargeFleck = DefDatabase<FleckDef>.GetNamed("ATR_FullChargeFleck");
-        private static readonly FleckDef halfChargeFleck = DefDatabase<FleckDef>.GetNamed("ATR_HalfChargeFleck");
-        private static readonly FleckDef emptyChargeFleck = DefDatabase<FleckDef>.GetNamed("ATR_EmptyChargeFleck");
+        private static readonly FleckDef fullChargeFleck = DefDatabase<FleckDef>.GetNamed("BF_FullChargeFleck");
+        private static readonly FleckDef halfChargeFleck = DefDatabase<FleckDef>.GetNamed("BF_HalfChargeFleck");
+        private static readonly FleckDef emptyChargeFleck = DefDatabase<FleckDef>.GetNamed("BF_EmptyChargeFleck");
 
         public static Toil LayDown(TargetIndex chargingBuilding, bool hasBed, bool lookForOtherJobs = true, bool canSleep = true)
         {
@@ -159,7 +159,7 @@ namespace ATReforged
                     {
                         chargeEffectiveness = !station.def.statBases.StatListContains(StatDefOf.BedRestEffectiveness) ? StatDefOf.BedRestEffectiveness.valueIfMissing : station.GetStatValue(StatDefOf.BedRestEffectiveness);
                     }
-                    foodNeed.CurLevelPercentage += 0.00028f * ATReforged_Settings.batteryChargeRate * chargeEffectiveness;
+                    foodNeed.CurLevelPercentage += 0.00028f * BotFactory_Settings.batteryChargeRate * chargeEffectiveness;
                 }
 
                 // If the apply bed thought timer is up, set applyBedThoughtsOnLeave to true so that it will apply when done with the job.

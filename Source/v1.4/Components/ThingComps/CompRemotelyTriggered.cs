@@ -2,7 +2,7 @@
 using RimWorld;
 using System.Collections.Generic;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompRemotelyTriggered : ThingComp
     {
@@ -15,8 +15,8 @@ namespace ATReforged
             yield return new Command_Action
             {
                 icon = Tex.HackingIcon,
-                defaultLabel = "ATR_DetonateIEDRemotely".Translate(),
-                defaultDesc = "ATR_DetonateIEDRemotelyDesc".Translate(),
+                defaultLabel = "BF_DetonateIEDRemotely".Translate(),
+                defaultDesc = "BF_DetonateIEDRemotelyDesc".Translate(),
                 action = delegate ()
                 {
                     // Building_Trap takes a pawn as an argument, but Building_TrapExplosive does not use it, so passing null should be fine.

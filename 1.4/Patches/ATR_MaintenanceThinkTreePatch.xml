@@ -6,7 +6,7 @@
         <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalColonist"]/subNodes/li[@Class="ThinkNode_Tagger"]/subNodes/li[@Class="JobGiver_WanderColony"]</xpath>
         <order>Prepend</order>
         <value>
-            <li Class="ATReforged.JobGiver_DoMaintenanceIdle"/>
+            <li Class="BotFactory.JobGiver_DoMaintenanceIdle"/>
         </value>
     </Operation>
 
@@ -15,7 +15,7 @@
         <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalPrisoner"]/subNodes/li[@Class="ThinkNode_Tagger"]/subNodes/li[@Class="JobGiver_WanderCurrentRoom"]</xpath>
         <order>Prepend</order>
         <value>
-            <li Class="ATReforged.JobGiver_DoMaintenanceIdle"/>
+            <li Class="BotFactory.JobGiver_DoMaintenanceIdle"/>
         </value>
     </Operation>
 
@@ -24,7 +24,7 @@
         <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalColonist"]/subNodes/li[@Class="ThinkNode_Tagger"]/subNodes/li[@Class="JobGiver_WanderColony"]</xpath>
         <order>Prepend</order>
         <value>
-            <li Class="ATReforged.JobGiver_DoMaintenanceIdle"/>
+            <li Class="BotFactory.JobGiver_DoMaintenanceIdle"/>
         </value>
     </Operation>
 
@@ -33,7 +33,7 @@
         <xpath>Defs/ThinkTreeDef[defName="Humanlike"]/thinkRoot/subNodes/li[@Class="ThinkNode_ConditionalMustKeepLyingDown"]/subNodes/li[@Class="JobGiver_KeepLyingDown"]</xpath>
         <order>Prepend</order>
         <value>
-            <li Class="ATReforged.JobGiver_DoMaintenanceIdle"/>
+            <li Class="BotFactory.JobGiver_DoMaintenanceIdle"/>
         </value>
     </Operation>
 
@@ -42,7 +42,7 @@
         <xpath>Defs/ThinkTreeDef[defName="MainColonistBehaviorCore"]/thinkRoot/subNodes/li/subNodes/li[@Class="JobGiver_Work"]</xpath>
         <order>Prepend</order>
         <value>
-            <li Class="ATReforged.JobGiver_DoMaintenanceUrgent"/>
+            <li Class="BotFactory.JobGiver_DoMaintenanceUrgent"/>
         </value>
     </Operation>
 

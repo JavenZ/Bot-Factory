@@ -3,7 +3,7 @@ using HarmonyLib;
 using RimWorld;
 using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Drones can not participate in rituals.
     internal class RitualRoleAssignments_Patch
@@ -24,7 +24,7 @@ namespace ATReforged
                 // Drones are not allowed to hold any roles in rituals.
                 if (Utils.IsConsideredMechanicalDrone(p))
                 {
-                    __result = "ATR_DronesCannotParticipateInRituals".Translate();
+                    __result = "BF_DronesCannotParticipateInRituals".Translate();
                 }
             }
         }

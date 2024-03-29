@@ -3,7 +3,7 @@ using System.Text;
 using Verse;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Alert_NeedMechanic : Alert
     {
@@ -22,7 +22,7 @@ namespace ATReforged
                     bool hasMechanic = false;
                     foreach (Pawn colonist in map.mapPawns.FreeColonists)
                     {
-                        if ((colonist.Spawned || colonist.BrieflyDespawned()) && !colonist.Downed && colonist.workSettings != null && colonist.workSettings.WorkIsActive(ATR_WorkTypeDefOf.ATR_Mechanic))
+                        if ((colonist.Spawned || colonist.BrieflyDespawned()) && !colonist.Downed && colonist.workSettings != null && colonist.workSettings.WorkIsActive(BF_WorkTypeDefOf.BF_Mechanic))
                         {
                             hasMechanic = true;
                             break;
@@ -49,7 +49,7 @@ namespace ATReforged
 
         public Alert_NeedMechanic()
         {
-            defaultLabel = "ATR_NeedMechanic".Translate();
+            defaultLabel = "BF_NeedMechanic".Translate();
             defaultPriority = AlertPriority.High;
         }
 
@@ -61,7 +61,7 @@ namespace ATReforged
                 stringBuilder.AppendLine("  - " + patient.NameShortColored.Resolve());
             }
 
-            return "ATR_NeedMechanicDesc".Translate(stringBuilder.ToString());
+            return "BF_NeedMechanicDesc".Translate(stringBuilder.ToString());
         }
 
         public override AlertReport GetReport()

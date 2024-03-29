@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class ChoiceLetter_PersonalityShift : ChoiceLetter_GrowthMoment
     {
@@ -81,11 +81,11 @@ namespace ATReforged
 
         virtual protected void CacheLetterText()
         {
-            text = "ATR_PersonalityShift".Translate(pawn);
+            text = "BF_PersonalityShift".Translate(pawn);
             mouseoverText = text;
             if (traitChoiceCount > 0 || passionGainsCount > 0)
             {
-                mouseoverText += "\n\n" + "ATR_PersonalityShiftChooseHowPawnWillChange".Translate(pawn);
+                mouseoverText += "\n\n" + "BF_PersonalityShiftChooseHowPawnWillChange".Translate(pawn);
             }
         }
 
@@ -103,8 +103,8 @@ namespace ATReforged
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref isReplacingTrait, "ATR_isReplacingTrait", false);
-            Scribe_Values.Look(ref isReplacingPassions, "ATR_isReplacingPassions", false);
+            Scribe_Values.Look(ref isReplacingTrait, "BF_isReplacingTrait", false);
+            Scribe_Values.Look(ref isReplacingPassions, "BF_isReplacingPassions", false);
         }
     }
 }

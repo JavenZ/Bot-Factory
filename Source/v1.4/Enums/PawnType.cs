@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     [Flags]
     public enum PawnType

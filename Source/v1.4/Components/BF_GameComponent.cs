@@ -4,12 +4,12 @@ using RimWorld;
 using Verse;
 using UnityEngine;
 
-namespace ATReforged
+namespace BotFactory
 {
-    public class ATR_GameComponent : GameComponent
+    public class BF_GameComponent : GameComponent
     {
 
-        public ATR_GameComponent(Game game)
+        public BF_GameComponent(Game game)
         {
             Utils.gameComp = this;
             AllocateIfNull();
@@ -31,32 +31,32 @@ namespace ATReforged
         {
             base.ExposeData();
 
-            Scribe_Values.Look(ref skillPointCapacity, "ATR_skillPointCapacity", 0);
-            Scribe_Values.Look(ref skillPoints, "ATR_skillPoints", 0);
-            Scribe_Values.Look(ref securityPointCapacity, "ATR_securityPointCapacity", 0);
-            Scribe_Values.Look(ref securityPoints, "ATR_securityPoints", 0);
-            Scribe_Values.Look(ref hackingPointCapacity, "ATR_hackingPointCapacity", 0);
-            Scribe_Values.Look(ref hackingPoints, "ATR_hackingPoints", 0);
-            Scribe_Values.Look(ref SkyMindNetworkCapacity, "ATR_SkyMindNetworkCapacity", 0);
-            Scribe_Values.Look(ref SkyMindCloudCapacity, "ATR_SkyMindCloudCapacity", 0);
-            Scribe_Values.Look(ref hackCostTimePenalty, "ATR_hackCostTimePenalty", 0);
-            Scribe_Values.Look(ref cachedSkillGeneration, "ATR_cachedSkillGeneration", 0);
-            Scribe_Values.Look(ref cachedSecurityGeneration, "ATR_cachedSecurityGeneration", 0);
-            Scribe_Values.Look(ref cachedHackingGeneration, "ATR_cachedHackingGeneration", 0);
-            Scribe_Values.Look(ref hasBuiltAndroid, "ATR_hasBuiltAndroid", false);
-            Scribe_Values.Look(ref hasBuiltDrone, "ATR_hasBuiltDrone", false);
-            Scribe_Values.Look(ref hasImprisonedDrone, "ATR_hasImprisonedDrone", false);
-            Scribe_Values.Look(ref hasMadeSurrogate, "ATR_hasMadeSurrogate", false);
+            Scribe_Values.Look(ref skillPointCapacity, "BF_skillPointCapacity", 0);
+            Scribe_Values.Look(ref skillPoints, "BF_skillPoints", 0);
+            Scribe_Values.Look(ref securityPointCapacity, "BF_securityPointCapacity", 0);
+            Scribe_Values.Look(ref securityPoints, "BF_securityPoints", 0);
+            Scribe_Values.Look(ref hackingPointCapacity, "BF_hackingPointCapacity", 0);
+            Scribe_Values.Look(ref hackingPoints, "BF_hackingPoints", 0);
+            Scribe_Values.Look(ref SkyMindNetworkCapacity, "BF_SkyMindNetworkCapacity", 0);
+            Scribe_Values.Look(ref SkyMindCloudCapacity, "BF_SkyMindCloudCapacity", 0);
+            Scribe_Values.Look(ref hackCostTimePenalty, "BF_hackCostTimePenalty", 0);
+            Scribe_Values.Look(ref cachedSkillGeneration, "BF_cachedSkillGeneration", 0);
+            Scribe_Values.Look(ref cachedSecurityGeneration, "BF_cachedSecurityGeneration", 0);
+            Scribe_Values.Look(ref cachedHackingGeneration, "BF_cachedHackingGeneration", 0);
+            Scribe_Values.Look(ref hasBuiltAndroid, "BF_hasBuiltAndroid", false);
+            Scribe_Values.Look(ref hasBuiltDrone, "BF_hasBuiltDrone", false);
+            Scribe_Values.Look(ref hasImprisonedDrone, "BF_hasImprisonedDrone", false);
+            Scribe_Values.Look(ref hasMadeSurrogate, "BF_hasMadeSurrogate", false);
 
-            Scribe_Deep.Look(ref blankPawn, "ATR_blankPawn");
+            Scribe_Deep.Look(ref blankPawn, "BF_blankPawn");
 
-            Scribe_Collections.Look(ref skillServers, "ATR_skillServers", LookMode.Reference);
-            Scribe_Collections.Look(ref securityServers, "ATR_securityServers", LookMode.Reference);
-            Scribe_Collections.Look(ref hackingServers, "ATR_hackingServers", LookMode.Reference);
-            Scribe_Collections.Look(ref networkedDevices, "ATR_networkedDevices", LookMode.Reference);
-            Scribe_Collections.Look(ref cloudPawns, "ATR_cloudPawns", LookMode.Deep);
-            Scribe_Collections.Look(ref virusedDevices, "ATR_virusedDevices", LookMode.Reference, LookMode.Value, ref thingKeyCopy, ref thingValueCopy);
-            Scribe_Collections.Look(ref networkLinkedPawns, "ATR_networkLinkedPawns", LookMode.Reference, LookMode.Value, ref pawnKeyCopy, ref pawnValueCopy);
+            Scribe_Collections.Look(ref skillServers, "BF_skillServers", LookMode.Reference);
+            Scribe_Collections.Look(ref securityServers, "BF_securityServers", LookMode.Reference);
+            Scribe_Collections.Look(ref hackingServers, "BF_hackingServers", LookMode.Reference);
+            Scribe_Collections.Look(ref networkedDevices, "BF_networkedDevices", LookMode.Reference);
+            Scribe_Collections.Look(ref cloudPawns, "BF_cloudPawns", LookMode.Deep);
+            Scribe_Collections.Look(ref virusedDevices, "BF_virusedDevices", LookMode.Reference, LookMode.Value, ref thingKeyCopy, ref thingValueCopy);
+            Scribe_Collections.Look(ref networkLinkedPawns, "BF_networkLinkedPawns", LookMode.Reference, LookMode.Value, ref pawnKeyCopy, ref pawnValueCopy);
 
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
             {
@@ -112,7 +112,7 @@ namespace ATReforged
                 GenerateRightlessFactions();
             }
 
-            if (!ATReforged_Settings.factionsWillDeclareRightsWars)
+            if (!BotFactory_Settings.factionsWillDeclareRightsWars)
             {
                 // If settings indicate that rights wars are disabled after loading the game, ensure that factions are not permanent enemies because of rights after loading a save.
                 if (postLoad)
@@ -137,7 +137,7 @@ namespace ATReforged
                 // Drone check (only for mechanical)
                 if (Utils.IsConsideredMechanicalDrone(pawn))
                 {
-                    if (!ATReforged_Settings.dronesTriggerRightsWars)
+                    if (!BotFactory_Settings.dronesTriggerRightsWars)
                     {
                         continue;
                     }
@@ -147,7 +147,7 @@ namespace ATReforged
                 // Prisoner check (can be either mechanical or organic)
                 else if (pawn.IsPrisonerOfColony)
                 {
-                    if (!ATReforged_Settings.prisonersTriggerRightsWars)
+                    if (!BotFactory_Settings.prisonersTriggerRightsWars)
                     {
                         continue;
                     }
@@ -164,7 +164,7 @@ namespace ATReforged
                 // Slave check (can be either mechanical androids or organic, only available with Ideology DLC)
                 else if (ModsConfig.IdeologyActive && pawn.IsSlaveOfColony)
                 {
-                    if (!ATReforged_Settings.slavesTriggerRightsWars)
+                    if (!BotFactory_Settings.slavesTriggerRightsWars)
                     {
                         continue;
                     }
@@ -181,7 +181,7 @@ namespace ATReforged
                 // Surrogate check (can be mechanical androids or organic)
                 else if (Utils.IsSurrogate(pawn))
                 {
-                    if (!ATReforged_Settings.surrogatesTriggerRightsWars)
+                    if (!BotFactory_Settings.surrogatesTriggerRightsWars)
                     {
                         continue;
                     }
@@ -227,11 +227,11 @@ namespace ATReforged
                     // If the faction had an opinion higher than -100, send a notification about the rights war to the player.
                     if (faction.GoodwillWith(Faction.OfPlayer) > -100)
                     {
-                        Find.LetterStack.ReceiveLetter("ATR_DeclarationOfWarRights".Translate(), "ATR_DeclarationOfWarRightsDesc".Translate(faction.NameColored, "ATR_PawnTypeMechanical".Translate().ToLower(), faction.leader?.NameFullColored ?? faction.NameColored), LetterDefOf.NegativeEvent);
+                        Find.LetterStack.ReceiveLetter("BF_DeclarationOfWarRights".Translate(), "BF_DeclarationOfWarRightsDesc".Translate(faction.NameColored, "BF_PawnTypeMechanical".Translate().ToLower(), faction.leader?.NameFullColored ?? faction.NameColored), LetterDefOf.NegativeEvent);
                     }
 
                     // Ensure the opinion is -100, and set the faction to permanent enemy.
-                    faction.TryAffectGoodwillWith(Faction.OfPlayer, -500, reason: ATR_HistoryEventDefOf.ATR_PossessesMechanicalColonist);
+                    faction.TryAffectGoodwillWith(Faction.OfPlayer, -500, reason: BF_HistoryEventDefOf.BF_PossessesMechanicalColonist);
                     faction.def.permanentEnemy = true;
                 }
             }
@@ -246,7 +246,7 @@ namespace ATReforged
                     }
 
                     faction.def.permanentEnemy = false;
-                    Find.LetterStack.ReceiveLetter("ATR_CessationOfConflict".Translate(), "ATR_CessationOfConflictDesc".Translate(faction.NameColored, "ATR_PawnTypeMechanical".Translate().ToLower()), LetterDefOf.PositiveEvent);
+                    Find.LetterStack.ReceiveLetter("BF_CessationOfConflict".Translate(), "BF_CessationOfConflictDesc".Translate(faction.NameColored, "BF_PawnTypeMechanical".Translate().ToLower()), LetterDefOf.PositiveEvent);
                 }
             }
 
@@ -263,11 +263,11 @@ namespace ATReforged
                     // If the faction had an opinion higher than -100, send a notification about the rights war to the player.
                     if (faction.GoodwillWith(Faction.OfPlayer) > -100)
                     {
-                        Find.LetterStack.ReceiveLetter("ATR_DeclarationOfWarRights".Translate(), "ATR_DeclarationOfWarRightsDesc".Translate(faction.NameColored, "ATR_PawnTypeOrganic".Translate().ToLower(), faction.leader?.NameFullColored ?? faction.NameColored), LetterDefOf.NegativeEvent);
+                        Find.LetterStack.ReceiveLetter("BF_DeclarationOfWarRights".Translate(), "BF_DeclarationOfWarRightsDesc".Translate(faction.NameColored, "BF_PawnTypeOrganic".Translate().ToLower(), faction.leader?.NameFullColored ?? faction.NameColored), LetterDefOf.NegativeEvent);
                     }
 
                     // Ensure the opinion is -100, and set the faction to permanent enemy.
-                    faction.TryAffectGoodwillWith(Faction.OfPlayer, -500, reason: ATR_HistoryEventDefOf.ATR_PossessesOrganicColonist);
+                    faction.TryAffectGoodwillWith(Faction.OfPlayer, -500, reason: BF_HistoryEventDefOf.BF_PossessesOrganicColonist);
                     faction.def.permanentEnemy = true;
                 }
             }
@@ -282,7 +282,7 @@ namespace ATReforged
                     }
 
                     faction.def.permanentEnemy = false;
-                    Find.LetterStack.ReceiveLetter("ATR_CessationOfConflict".Translate(), "ATR_CessationOfConflictDesc".Translate(faction.NameColored, "ATR_PawnTypeOrganic".Translate().ToLower()), LetterDefOf.PositiveEvent);
+                    Find.LetterStack.ReceiveLetter("BF_CessationOfConflict".Translate(), "BF_CessationOfConflictDesc".Translate(faction.NameColored, "BF_PawnTypeOrganic".Translate().ToLower()), LetterDefOf.PositiveEvent);
                 }
             }
         }
@@ -294,11 +294,11 @@ namespace ATReforged
             antiOrganicRightsFactions = new List<Faction>();
             foreach (Faction faction in Find.FactionManager.AllFactionsListForReading)
             {
-                if (ATReforged_Settings.antiMechanicalRightsFaction.Contains(faction.def.defName) && !faction.defeated)
+                if (BotFactory_Settings.antiMechanicalRightsFaction.Contains(faction.def.defName) && !faction.defeated)
                 {
                     antiMechanicalRightsFactions.Add(faction);
                 }
-                if (ATReforged_Settings.antiOrganicRightsFaction.Contains(faction.def.defName) && !faction.defeated)
+                if (BotFactory_Settings.antiOrganicRightsFaction.Contains(faction.def.defName) && !faction.defeated)
                 {
                     antiOrganicRightsFactions.Add(faction);
                 }
@@ -437,7 +437,7 @@ namespace ATReforged
                     }
                     break;
                 default:
-                    Log.Error("[ATR] ATR_GC.ResetServers: Attempted illegal server type reset. No changes made. This may generate errors.");
+                    Log.Error("[ATR] BF_GC.ResetServers: Attempted illegal server type reset. No changes made. This may generate errors.");
                     return;
             }
         }
@@ -637,7 +637,7 @@ namespace ATReforged
                     }
                     break;
                 default:
-                    Log.Error("[ATR] ATR_GC.RemoveServer was given an invalid serverType. All servers recached.");
+                    Log.Error("[ATR] BF_GC.RemoveServer was given an invalid serverType. All servers recached.");
                     ResetServers();
                     return;
             }

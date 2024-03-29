@@ -2,7 +2,7 @@
 using RimWorld;
 using System.Collections.Generic;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class ChoiceLetter_PersonalityShiftRequest : ChoiceLetter
     {
@@ -23,19 +23,19 @@ namespace ATReforged
                 DiaOption optionReject = new DiaOption("RejectLetter".Translate());
                 diaOption.action = delegate
                 {
-                    ChoiceLetter_PersonalityShift choiceLetter = (ChoiceLetter_PersonalityShift)LetterMaker.MakeLetter(ATR_LetterDefOf.ATR_PersonalityShiftLetter);
+                    ChoiceLetter_PersonalityShift choiceLetter = (ChoiceLetter_PersonalityShift)LetterMaker.MakeLetter(BF_LetterDefOf.BF_PersonalityShiftLetter);
                     choiceLetter.ConfigureChoiceLetter(subject, 3, 3, true, true);
-                    choiceLetter.Label = "ATR_PersonalityShiftRequest".Translate(subject);
+                    choiceLetter.Label = "BF_PersonalityShiftRequest".Translate(subject);
                     choiceLetter.StartTimeout(2500);
                     Find.LetterStack.ReceiveLetter(choiceLetter);
                     Find.LetterStack.RemoveLetter(this);
-                    subject.needs.mood?.thoughts?.memories?.TryGainMemoryFast(ATR_ThoughtDefOf.ATR_PersonalityShiftAllowed);
+                    subject.needs.mood?.thoughts?.memories?.TryGainMemoryFast(BF_ThoughtDefOf.BF_PersonalityShiftAllowed);
                 };
                 diaOption.resolveTree = true;
                 optionReject.action = delegate
                 {
                     Find.LetterStack.RemoveLetter(this);
-                    subject.needs.mood?.thoughts?.memories?.TryGainMemoryFast(ATR_ThoughtDefOf.ATR_PersonalityShiftDenied);
+                    subject.needs.mood?.thoughts?.memories?.TryGainMemoryFast(BF_ThoughtDefOf.BF_PersonalityShiftDenied);
                 };
                 optionReject.resolveTree = true;
                 yield return diaOption;
@@ -51,7 +51,7 @@ namespace ATReforged
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_References.Look(ref subject, "ATR_shiftSubject");
+            Scribe_References.Look(ref subject, "BF_shiftSubject");
         }
     }
 }

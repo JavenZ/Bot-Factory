@@ -2,8 +2,8 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>ATR_AssistingMindBoost</defName>
-        <workerClass>ATReforged.ThoughtWorker_AssistedByMinds</workerClass>
+        <defName>BF_AssistingMindBoost</defName>
+        <workerClass>BotFactory.ThoughtWorker_AssistedByMinds</workerClass>
         <stages>
             <li>
                 <label>SkyMind Assistants</label>
@@ -26,7 +26,7 @@
 
     <!-- Sapient Assistant thought, reserved for future sub mod.
     <ThoughtDef>
-        <defName>ATR_SapientAssistant</defName>
+        <defName>BF_SapientAssistant</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
         <hediff></hediff>
         <validWhileDespawned>true</validWhileDespawned>
@@ -66,9 +66,9 @@
     -->
 
     <ThoughtDef>
-        <defName>ATR_MentalAssistant</defName>
+        <defName>BF_MentalAssistant</defName>
         <workerClass>ThoughtWorker_Hediff</workerClass>
-        <hediff>ATR_MentalAssistant</hediff>
+        <hediff>BF_MentalAssistant</hediff>
         <validWhileDespawned>true</validWhileDespawned>
         <stages>
             <li>
@@ -80,9 +80,9 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ATR_Thought_Situational_PaintedColor_Favorite</defName>
+        <defName>BF_Thought_Situational_PaintedColor_Favorite</defName>
         <thoughtClass>Thought_Situational</thoughtClass>
-        <workerClass>ATReforged.ThoughtWorker_PaintedColor_Favorite</workerClass>
+        <workerClass>BotFactory.ThoughtWorker_PaintedColor_Favorite</workerClass>
         <validWhileDespawned>true</validWhileDespawned>
         <stages>
             <li>

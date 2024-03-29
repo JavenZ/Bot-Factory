@@ -1,6 +1,6 @@
 ﻿using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class WorkGiver_TendOtherMech : WorkGiver_MechTend
     {

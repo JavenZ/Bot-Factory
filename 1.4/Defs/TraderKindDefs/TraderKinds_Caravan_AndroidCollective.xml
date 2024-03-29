@@ -2,7 +2,7 @@
 <Defs>
 
     <TraderKindDef>
-        <defName>ATR_Caravan_AndroidCollective_BulkGoods</defName>
+        <defName>BF_Caravan_AndroidCollective_BulkGoods</defName>
         <label>bulk goods trader</label>
         <commonality>1</commonality>
         <stockGenerators>
@@ -81,10 +81,10 @@
             <li Class="StockGenerator_Animals">
                 <maxWildness>0.50</maxWildness>
                 <tradeTagsSell>
-                    <li>ATR_MechanicalAnimal</li>
+                    <li>BF_MechanicalAnimal</li>
                 </tradeTagsSell>
                 <tradeTagsBuy>
-                    <li>ATR_MechanicalAnimal</li>
+                    <li>BF_MechanicalAnimal</li>
                 </tradeTagsBuy>
                 <kindCountRange>
                     <min>0</min>
@@ -143,14 +143,14 @@
                 </countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
-                <thingDef>ATR_RepairStimIntermediate</thingDef>
+                <thingDef>BF_RepairStimIntermediate</thingDef>
                 <countRange>
                 <min>10</min>
                 <max>20</max>
                 </countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
-                <thingDef>ATR_PartPack</thingDef>
+                <thingDef>BF_PartPack</thingDef>
                 <countRange>
                     <min>5</min>
                     <max>15</max>
@@ -185,14 +185,14 @@
                 </countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
-                <thingDef>ATR_RepairStimIntermediate</thingDef>
+                <thingDef>BF_RepairStimIntermediate</thingDef>
                 <countRange>
                     <min>10</min>
                     <max>20</max>
                 </countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
-                <thingDef>ATR_PartPack</thingDef>
+                <thingDef>BF_PartPack</thingDef>
                 <countRange>
                     <min>5</min>
                     <max>15</max>
@@ -221,7 +221,7 @@
                 </totalPriceRange>
             </li>
             <li Class="StockGenerator_Category">
-                <categoryDef>ATR_BodyPartsMechanical</categoryDef>
+                <categoryDef>BF_BodyPartsMechanical</categoryDef>
                 <thingDefCountRange>
                     <min>3</min>
                     <max>6</max>
@@ -233,10 +233,10 @@
             </li>
             <li Class="StockGenerator_Animals">
                 <tradeTagsSell>
-                    <li>ATR_MechanicalAnimal</li>
+                    <li>BF_MechanicalAnimal</li>
                 </tradeTagsSell>
                 <tradeTagsBuy>
-                    <li>ATR_MechanicalAnimal</li>
+                    <li>BF_MechanicalAnimal</li>
                 </tradeTagsBuy>
                 <kindCountRange>
                     <min>1</min>
@@ -296,7 +296,7 @@
                 </countRange>
             </li>
             <li Class="StockGenerator_SingleDef">
-                <thingDef>ATR_RepairStimAdvanced</thingDef>
+                <thingDef>BF_RepairStimAdvanced</thingDef>
                 <countRange>
                     <min>2</min>
                     <max>8</max>
@@ -362,10 +362,10 @@
             </li>
             <li Class="StockGenerator_Animals">
                 <tradeTagsSell>
-                    <li>ATR_MechanicalAnimal</li>
+                    <li>BF_MechanicalAnimal</li>
                 </tradeTagsSell>
                 <tradeTagsBuy>
-                    <li>ATR_MechanicalAnimal</li>
+                    <li>BF_MechanicalAnimal</li>
                 </tradeTagsBuy>
                 <kindCountRange>
                     <min>1</min>

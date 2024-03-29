@@ -2,7 +2,7 @@
 using Verse;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     // This comp adds a gizmo to its parent allowing it to be restrictable to certain pawn types (drones, androids, organics, combinations). Certain harmony patches can check against this.
     public class CompPawnTypeRestrictable : ThingComp
@@ -19,7 +19,7 @@ namespace ATReforged
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref assignedToType, "ATR_assignedToType", PawnType.All);
+            Scribe_Values.Look(ref assignedToType, "BF_assignedToType", PawnType.All);
         }
 
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
@@ -27,8 +27,8 @@ namespace ATReforged
             yield return new Command_Action
             {
                 icon = Tex.RestrictionGizmoIcon,
-                defaultLabel = "ATR_RestrictPawnType".Translate(),
-                defaultDesc = "ATR_RestrictPawnTypeDescription".Translate(),
+                defaultLabel = "BF_RestrictPawnType".Translate(),
+                defaultDesc = "BF_RestrictPawnTypeDescription".Translate(),
                 action = delegate ()
                 {
                     Find.WindowStack.Add(new Dialog_RestrictToPawnType());
@@ -68,7 +68,7 @@ namespace ATReforged
         {
             if (parent is Building_Bed)
             {
-                if (ATReforged_Settings.bedRestrictionDefaultsToAll)
+                if (BotFactory_Settings.bedRestrictionDefaultsToAll)
                 {
                     assignedToType = PawnType.All;
                 }

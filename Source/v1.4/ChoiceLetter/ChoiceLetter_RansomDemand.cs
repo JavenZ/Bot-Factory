@@ -2,7 +2,7 @@
 using Verse;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class ChoiceLetter_RansomDemand : ChoiceLetter
     {
@@ -42,7 +42,7 @@ namespace ATReforged
 
                             // Remove all cryptolocker viruses from the virused list and send a letter.
                             Utils.RemoveViruses(cryptolockedThings);
-                            Messages.Message("ATR_GridlockerCleared".Translate(), MessageTypeDefOf.PositiveEvent);
+                            Messages.Message("BF_GridlockerCleared".Translate(), MessageTypeDefOf.PositiveEvent);
                             Find.LetterStack.RemoveLetter(this);
                         },
                         resolveTree = true
@@ -70,9 +70,9 @@ namespace ATReforged
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Collections.Look(ref cryptolockedThings, "ATR_cryptolockedThings", LookMode.Value);
-            Scribe_Values.Look(ref fee, "ATR_cryptoFee", 0, false);
-            Scribe_Values.Look(ref deviceType, "ATR_deviceType", false, false);
+            Scribe_Collections.Look(ref cryptolockedThings, "BF_cryptolockedThings", LookMode.Value);
+            Scribe_Values.Look(ref fee, "BF_cryptoFee", 0, false);
+            Scribe_Values.Look(ref deviceType, "BF_deviceType", false, false);
         }
     }
 }

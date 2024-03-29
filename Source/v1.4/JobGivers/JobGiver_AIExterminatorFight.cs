@@ -2,7 +2,7 @@
 using Verse;
 using Verse.AI;
 
-namespace ATReforged
+namespace BotFactory
 {
     // The exterminator mental state drives pawns afflicted with it to fight enemies no matter how far away they are, and with no regards to safety or logic.
     public class JobGiver_AIExterminatorFight : JobGiver_AIFightEnemies

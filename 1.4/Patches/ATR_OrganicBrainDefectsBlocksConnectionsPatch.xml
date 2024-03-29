@@ -5,7 +5,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>Defs/HediffDef[defName = "Dementia" or defName = "Alzheimers"]/comps</xpath>
         <value>
-            <li Class="ATReforged.HediffCompProperties_SkyMindEffecter">
+            <li Class="BotFactory.HediffCompProperties_SkyMindEffecter">
                 <blocksConnection>true</blocksConnection>
             </li>
         </value>

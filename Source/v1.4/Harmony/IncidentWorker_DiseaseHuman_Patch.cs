@@ -4,7 +4,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class IncidentWorker_DiseaseHuman_Patch
     {

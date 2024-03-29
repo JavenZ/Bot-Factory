@@ -2,7 +2,7 @@
 using System.Text;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompSuperComputer : ThingComp
     {
@@ -27,13 +27,13 @@ namespace ATReforged
         public override IEnumerable<Gizmo> CompGetGizmosExtra()
         {
             // Servers in hacking mode allow access to the hacking menu for deploying a hack. Supercomputers always enable hacking mode, so they always have the gizmo to open the menu.
-            if (ATReforged_Settings.playerCanHack)
+            if (BotFactory_Settings.playerCanHack)
             {
                 yield return new Command_Action
                 {
                     icon = Tex.HackingWindowIcon,
-                    defaultLabel = "ATR_HackingWindow".Translate(),
-                    defaultDesc = "ATR_HackingWindowDesc".Translate(),
+                    defaultLabel = "BF_HackingWindow".Translate(),
+                    defaultDesc = "BF_HackingWindowDesc".Translate(),
                     action = delegate ()
                     {
                         Find.WindowStack.Add(new Dialog_HackingWindow());
@@ -46,15 +46,15 @@ namespace ATReforged
         {
             StringBuilder ret = new StringBuilder();
 
-            ret.AppendLine("ATR_SkillServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.SkillServer), Utils.gameComp.GetPointCapacity(ServerType.SkillServer)))
-               .AppendLine("ATR_SecurityServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.SecurityServer), Utils.gameComp.GetPointCapacity(ServerType.SecurityServer)))
-               .AppendLine("ATR_HackingServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.HackingServer), Utils.gameComp.GetPointCapacity(ServerType.HackingServer)))
-               .AppendLine("ATR_SkillProducedPoints".Translate(Props.passivePointGeneration))
-               .AppendLine("ATR_SecurityProducedPoints".Translate(Props.passivePointGeneration))
-               .AppendLine("ATR_HackingProducedPoints".Translate(Props.passivePointGeneration))
-               .AppendLine("ATR_SkillSlotsAdded".Translate(Props.pointStorage))
-               .AppendLine("ATR_SecuritySlotsAdded".Translate(Props.pointStorage))
-               .Append("ATR_HackingSlotsAdded".Translate(Props.pointStorage));
+            ret.AppendLine("BF_SkillServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.SkillServer), Utils.gameComp.GetPointCapacity(ServerType.SkillServer)))
+               .AppendLine("BF_SecurityServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.SecurityServer), Utils.gameComp.GetPointCapacity(ServerType.SecurityServer)))
+               .AppendLine("BF_HackingServersSynthesis".Translate(Utils.gameComp.GetPoints(ServerType.HackingServer), Utils.gameComp.GetPointCapacity(ServerType.HackingServer)))
+               .AppendLine("BF_SkillProducedPoints".Translate(Props.passivePointGeneration))
+               .AppendLine("BF_SecurityProducedPoints".Translate(Props.passivePointGeneration))
+               .AppendLine("BF_HackingProducedPoints".Translate(Props.passivePointGeneration))
+               .AppendLine("BF_SkillSlotsAdded".Translate(Props.pointStorage))
+               .AppendLine("BF_SecuritySlotsAdded".Translate(Props.pointStorage))
+               .Append("BF_HackingSlotsAdded".Translate(Props.pointStorage));
             return ret.Append(base.CompInspectStringExtra()).ToString();
         }
 

@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="DrugBase">
-		<defName>ATR_FractalPill</defName>
+		<defName>BF_FractalPill</defName>
 		<label>Fractal pill</label>
 		<description>Like all things related to archotechs, it is impossible to know what exactly this is. The only remnants of those warped by fractal power, these small pill-like objects can imbue a new host with that same fractal power. Rumor has it that archotechs whisper in the ears of those warped by it, offering a glimpse of true power. \n\nIn organics, this leads to warping of the mind and flesh - some believe it is enlightenment, others nightmares incarnate. It violently expunges diseases and mutates the very essence of its host. The vast majority of the time this will eventually lead to becoming a horrific monster, but madmen rant about the possibility for "the chosen" to "ascend to blessed fragmentation" instead.\n\nIn mechanicals, fractal warping has a much more tame effect. It integrates with the chassis and provides numerous beneficial effects ranging from enhanced cognition to ridiculous temperature tolerance. It does, however, occasionally warp internal storage and force reboots to defragment memory.</description>
 		<graphicData>
@@ -28,10 +28,10 @@
 			<ingestReportString>Consuming {0}.</ingestReportString>
 			<useEatingSpeedStat>false</useEatingSpeedStat>
 			<outcomeDoers>
-				<li Class="ATReforged.IngestionOutcomeDoer_MechOrganicDifferentEffects">
-					<organicEffect>ATR_FractalPillOrganic</organicEffect>
+				<li Class="BotFactory.IngestionOutcomeDoer_MechOrganicDifferentEffects">
+					<organicEffect>BF_FractalPillOrganic</organicEffect>
                     <organicSeverity>0.25</organicSeverity>
-					<mechanicalEffect>ATR_FractalPillMechanical</mechanicalEffect>
+					<mechanicalEffect>BF_FractalPillMechanical</mechanicalEffect>
 					<mechanicalSeverity>0.25</mechanicalSeverity>
 				</li> 	
 			</outcomeDoers>
@@ -44,8 +44,8 @@
 	</ThingDef>
 
 	<HediffDef>
-		<defName>ATR_FractalPillOrganic</defName>
-		<hediffClass>ATReforged.Hediff_Fractal</hediffClass>
+		<defName>BF_FractalPillOrganic</defName>
+		<hediffClass>BotFactory.Hediff_Fractal</hediffClass>
 		<label>Fractal Warping</label>
 		<description>Fractal warping of the body. As flesh toughens and takes on metallic qualities and the mind rots and yet also grows, a uniquely enlightening and agonizing perspective takes hold. This is the archotech's work, but for what inscrutable purpose was this warping manifested?</description>
 		<comps>
@@ -260,7 +260,7 @@
 	<!-- HediffMechanical -->
 
 	<HediffDef>
-		<defName>ATR_FractalPillMechanical</defName>
+		<defName>BF_FractalPillMechanical</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Fractal Integration</label>
 		<description>Fractal integration into the whole chassis. While the warping that occurs is harmless to the unit, the effects are decidedly double-edged. Indeed, an inflated ego and power consumption increase are the primary effects - although affected units inexplicably take less damage from the same blows, and have a stronger grasp on reality's true nature.\n\nPerhaps archotechs did not design fractal warping with machines in mind, and find its application to them uninteresting? Or, perhaps, fractal warping is a curse upon all things, not just organics?</description>

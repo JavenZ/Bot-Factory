@@ -7,7 +7,7 @@ using System.Reflection.Emit;
 using System.Reflection;
 using System.Linq;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class Corpse_Patch
     {

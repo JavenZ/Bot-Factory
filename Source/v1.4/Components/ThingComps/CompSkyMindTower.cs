@@ -2,7 +2,7 @@
 using RimWorld;
 using System.Text;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompSkyMindTower : ThingComp
     {
@@ -59,7 +59,7 @@ namespace ATReforged
             if (parent.Map == null)
                 return base.CompInspectStringExtra();
 
-            ret.Append("ATR_SkyMindNetworkSummary".Translate(Utils.gameComp.GetSkyMindDevices().Count, Utils.gameComp.GetSkyMindNetworkSlots()));
+            ret.Append("BF_SkyMindNetworkSummary".Translate(Utils.gameComp.GetSkyMindDevices().Count, Utils.gameComp.GetSkyMindNetworkSlots()));
 
             return ret.Append(base.CompInspectStringExtra()).ToString();
         }

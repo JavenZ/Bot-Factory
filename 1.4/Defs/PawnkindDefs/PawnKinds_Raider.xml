@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Defs>
 
-    <PawnKindDef Name="ATR_AndroidRaiderBase" Abstract="True">
-        <defaultFactionType>ATR_MechanicalMarauders</defaultFactionType>
+    <PawnKindDef Name="BF_AndroidRaiderBase" Abstract="True">
+        <defaultFactionType>BF_MechanicalMarauders</defaultFactionType>
         <itemQuality>Normal</itemQuality>
         <backstoryFiltersOverride>
             <li>
                 <categories>
-                    <li>ATR_ViolentAndroids</li>
+                    <li>BF_ViolentAndroids</li>
                 </categories>
             </li>
         </backstoryFiltersOverride>
@@ -18,11 +18,11 @@
         </techHediffsTags>
     </PawnKindDef>
  
-    <PawnKindDef ParentName="ATR_AndroidRaiderBase">
-        <defName>ATR_RaiderSlaveT1</defName>
+    <PawnKindDef ParentName="BF_AndroidRaiderBase">
+        <defName>BF_RaiderSlaveT1</defName>
         <label>T1 Android Slave</label>
         <labelPlural>Enslaved android</labelPlural>
-        <race>ATR_Tier1Android</race>
+        <race>BF_Tier1Android</race>
         <invNutrition>3.85</invNutrition>
         <combatPower>40</combatPower>
         <minGenerationAge>20</minGenerationAge>	
@@ -57,7 +57,7 @@
             <skipChance>0.9</skipChance>
             <subOptionsChooseOne>
                 <li>
-                    <thingDef>ATR_RepairStimSimple</thingDef>
+                    <thingDef>BF_RepairStimSimple</thingDef>
                     <countRange>1</countRange>
                 </li>
             </subOptionsChooseOne>
@@ -66,11 +66,11 @@
         <initialResistanceRange>7~12</initialResistanceRange>
     </PawnKindDef>
 
-    <PawnKindDef ParentName="ATR_AndroidRaiderBase">
-        <defName>ATR_RaiderSoldierT1</defName>
+    <PawnKindDef ParentName="BF_AndroidRaiderBase">
+        <defName>BF_RaiderSoldierT1</defName>
         <label>T1 Android Raider</label>
         <labelPlural>Raider androids</labelPlural>
-        <race>ATR_Tier1Android</race>
+        <race>BF_Tier1Android</race>
         <combatPower>70</combatPower>
         <invNutrition>3.85</invNutrition>
         <minGenerationAge>20</minGenerationAge>
@@ -94,7 +94,7 @@
             <skipChance>0.95</skipChance>
             <subOptionsChooseOne>
                 <li>
-                    <thingDef>ATR_RepairStimIntermediate</thingDef>
+                    <thingDef>BF_RepairStimIntermediate</thingDef>
                     <countRange>1</countRange>
                 </li>
             </subOptionsChooseOne>
@@ -103,11 +103,11 @@
         <initialResistanceRange>17~26</initialResistanceRange>
     </PawnKindDef>
 
-    <PawnKindDef ParentName="ATR_AndroidRaiderBase">
-        <defName>ATR_RaiderSoldierT2</defName>
+    <PawnKindDef ParentName="BF_AndroidRaiderBase">
+        <defName>BF_RaiderSoldierT2</defName>
         <label>T2 Android Raider</label>
         <labelPlural>Raider androids</labelPlural>
-        <race>ATR_Tier2Android</race>
+        <race>BF_Tier2Android</race>
         <invNutrition>3.2</invNutrition>
         <combatPower>110</combatPower>
         <minGenerationAge>20</minGenerationAge>
@@ -129,7 +129,7 @@
             <skipChance>0.9</skipChance>
             <subOptionsChooseOne>
                 <li>
-                <thingDef>ATR_RepairStimIntermediate</thingDef>
+                <thingDef>BF_RepairStimIntermediate</thingDef>
                 <countRange>1</countRange>
                 </li>
             </subOptionsChooseOne>
@@ -140,18 +140,18 @@
         <initialResistanceRange>7~12</initialResistanceRange>
     </PawnKindDef>
 
-    <PawnKindDef ParentName="ATR_AndroidRaiderBase">
-        <defName>ATR_RaiderSoldierT3</defName>
+    <PawnKindDef ParentName="BF_AndroidRaiderBase">
+        <defName>BF_RaiderSoldierT3</defName>
         <label>T3 Android Raider</label>
         <labelPlural>Raider androids</labelPlural>
         <backstoryFiltersOverride>
         <li>
             <categories>
-            <li>ATR_ViolentAndroids</li>
+            <li>BF_ViolentAndroids</li>
             </categories>
         </li>
         </backstoryFiltersOverride>
-        <race>ATR_Tier3Android</race>
+        <race>BF_Tier3Android</race>
         <invNutrition>2.55</invNutrition>
         <combatPower>150</combatPower>
         <minGenerationAge>20</minGenerationAge>
@@ -175,7 +175,7 @@
             <skipChance>0.9</skipChance>
             <subOptionsChooseOne>
                 <li>
-                <thingDef>ATR_RepairStimIntermediate</thingDef>
+                <thingDef>BF_RepairStimIntermediate</thingDef>
                 <countRange>1</countRange>
                 </li>
             </subOptionsChooseOne>
@@ -193,11 +193,11 @@
         </skills>
     </PawnKindDef>
     
-    <PawnKindDef ParentName="ATR_AndroidRaiderBase">
-        <defName>ATR_RaiderSoldierT4</defName>
+    <PawnKindDef ParentName="BF_AndroidRaiderBase">
+        <defName>BF_RaiderSoldierT4</defName>
         <label>T4 Android Raider</label>
         <labelPlural>Raider androids</labelPlural>
-        <race>ATR_Tier4Android</race>
+        <race>BF_Tier4Android</race>
         <invNutrition>2.55</invNutrition>
         <combatPower>220</combatPower>
         <minGenerationAge>20</minGenerationAge>
@@ -230,7 +230,7 @@
             <skipChance>0.9</skipChance>
             <subOptionsChooseOne>
                 <li>
-                    <thingDef>ATR_RepairStimIntermediate</thingDef>
+                    <thingDef>BF_RepairStimIntermediate</thingDef>
                     <countRange>1</countRange>
                 </li>
             </subOptionsChooseOne>

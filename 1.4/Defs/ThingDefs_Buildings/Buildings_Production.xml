@@ -2,7 +2,7 @@
 <Defs>
   
     <ThingDef ParentName="BenchBase">
-        <defName>ATR_MechanicalAssemblyPod</defName>
+        <defName>BF_MechanicalAssemblyPod</defName>
         <label>Mechanical assembly casket</label>
         <thingClass>Building_WorkTable</thingClass>
         <description>A casket designed to shape itself to form the chassis and assemble all necessary parts for androids and mechanical animals.</description>
@@ -32,7 +32,7 @@
         <Cleanliness>-2</Cleanliness>
         </statBases>
         <size>(1,2)</size>
-        <designationCategory>ATR_AndroidTiersDesignation</designationCategory>
+        <designationCategory>BF_AndroidTiersDesignation</designationCategory>
         <passability>PassThroughOnly</passability>
         <pathCost>100</pathCost>
         <hasInteractionCell>True</hasInteractionCell>
@@ -63,7 +63,7 @@
         <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
         </building>
         <constructEffect>ConstructMetal</constructEffect>
-        <researchPrerequisites><li>ATR_MechanicalInsight</li></researchPrerequisites>
+        <researchPrerequisites><li>BF_MechanicalInsight</li></researchPrerequisites>
         <designationHotKey>Misc7</designationHotKey>
             <placeWorkers>
                 <li>PlaceWorker_ShowFacilitiesConnections</li>
@@ -71,7 +71,7 @@
     </ThingDef>
   
     <ThingDef ParentName="BenchBase">
-        <defName>ATR_MechPartWorkbench</defName>
+        <defName>BF_MechPartWorkbench</defName>
         <label>Mechanical parts workbench</label>
         <thingClass>Building_WorkTable</thingClass>
         <description>A workbench that holds all equipment needed to make a variety of android replacement parts.</description>
@@ -100,7 +100,7 @@
             <Cleanliness>-2</Cleanliness>
         </statBases>
         <size>(3,1)</size>
-        <designationCategory>ATR_AndroidTiersDesignation</designationCategory>
+        <designationCategory>BF_AndroidTiersDesignation</designationCategory>
         <passability>PassThroughOnly</passability>
         <pathCost>100</pathCost>
         <hasInteractionCell>True</hasInteractionCell>
@@ -131,7 +131,7 @@
             <spawnedConceptLearnOpportunity>BillsTab</spawnedConceptLearnOpportunity>
         </building>
         <constructEffect>ConstructMetal</constructEffect>
-        <researchPrerequisites><li>ATR_MechanicalStandardization</li></researchPrerequisites>
+        <researchPrerequisites><li>BF_MechanicalStandardization</li></researchPrerequisites>
         <designationHotKey>Misc7</designationHotKey>
         <placeWorkers>
             <li>PlaceWorker_ShowFacilitiesConnections</li>

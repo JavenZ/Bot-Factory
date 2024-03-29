@@ -6,7 +6,7 @@ using UnityEngine;
 using Verse;
 using Verse.Sound;
 
-namespace ATReforged
+namespace BotFactory
 {
     /*
      *  Settings Extensions and Pawn Selectors courtesy of Simple Sidearms by PeteTimesSix. Without his work, this would have been exceedingly difficult to build!
@@ -21,7 +21,7 @@ namespace ATReforged
 
         public static void PawnSelector(this Listing_Standard instance, IEnumerable<ThingDef> pawnOptions, HashSet<string> selectedPawns, string selectedLabel, string unselectedLabel, Action onChange = null)
         {
-            IEnumerable<ThingDef> unselectedPawns = pawnOptions.Where(w => !ATReforged_Settings.isConsideredMechanical.Contains(w.defName));
+            IEnumerable<ThingDef> unselectedPawns = pawnOptions.Where(w => !BotFactory_Settings.isConsideredMechanical.Contains(w.defName));
             TextAnchor anchorSave = Text.Anchor;
             Color colorSave = GUI.color;
             GUI.color = Color.white;
@@ -65,8 +65,8 @@ namespace ATReforged
                 if (interacted)
                 {
                     selectedPawns.Remove(orderedSelectedPawns[i].defName);
-                    ATReforged_Settings.isConsideredMechanical.Remove(orderedSelectedPawns[i].defName);
-                    ATReforged_Settings.canUseBattery.Remove(orderedSelectedPawns[i].defName);
+                    BotFactory_Settings.isConsideredMechanical.Remove(orderedSelectedPawns[i].defName);
+                    BotFactory_Settings.canUseBattery.Remove(orderedSelectedPawns[i].defName);
                     onChange?.Invoke();
                 }
             }
@@ -79,7 +79,7 @@ namespace ATReforged
                 if (interacted)
                 {
                     selectedPawns.Add(orderedUnselectedPawns[i].defName);
-                    ATReforged_Settings.isConsideredMechanical.Add(orderedUnselectedPawns[i].defName);
+                    BotFactory_Settings.isConsideredMechanical.Add(orderedUnselectedPawns[i].defName);
                     AddChargeCapable(orderedUnselectedPawns[i]);
                     onChange?.Invoke();
                 }
@@ -150,7 +150,7 @@ namespace ATReforged
         {
             if (pawn.race.intelligence > Intelligence.Animal || pawn.race.trainability != TrainabilityDefOf.None)
             {
-                ATReforged_Settings.canUseBattery.Add(pawn.defName);
+                BotFactory_Settings.canUseBattery.Add(pawn.defName);
             }
         }
 

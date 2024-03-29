@@ -2,7 +2,7 @@
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Mechanical Drones are not valid targets for attempted Ideological conversions.
     internal class CompAbilityEffect_Convert_Patch

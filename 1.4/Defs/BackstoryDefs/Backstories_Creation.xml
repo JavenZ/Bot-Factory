@@ -2,14 +2,14 @@
 <Defs>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodResearchExperiment</defName>
+		<defName>BF_MechChildhoodResearchExperiment</defName>
 		<title>Research model</title>
 		<titleShort>Experiment</titleShort>
 		<baseDesc>{PAWN_nameDef} was created as an experimental model for research purposes.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -24,14 +24,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodMassProduced</defName>
+		<defName>BF_MechChildhoodMassProduced</defName>
 		<title>Mass produced</title>
 		<titleShort>Unit</titleShort>
 		<baseDesc>{PAWN_nameDef} was produced in an automated robotics facility following a standardized template.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -48,14 +48,14 @@
 
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodCitizen</defName>
+		<defName>BF_MechChildhoodCitizen</defName>
 		<title>Mechanical citizen</title>
 		<titleShort>Citizen</titleShort>
 		<baseDesc>Created on a planet with at least moderate android rights, {PAWN_nameDef} was created to fill out the population.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -66,14 +66,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodUrbworldProperty</defName>
+		<defName>BF_MechChildhoodUrbworldProperty</defName>
 		<title>Urbworld model</title>
 		<titleShort>Android</titleShort>
 		<baseDesc>A rare example of an Urbworld android, {PAWN_nameDef} was one of the few permitted autonomy as property of one of the largest planetary mega-corporations.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -93,14 +93,14 @@
 
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodPrisoner</defName>
+		<defName>BF_MechChildhoodPrisoner</defName>
 		<title>Mechanical convict</title>
 		<titleShort>Convict</titleShort>
 		<baseDesc>Some crimes are so heinous that the offender is sentenced to live out their term past their biological expiration date. {PAWN_nameDef}'s human consciousness was uploaded into this frame in order to fulfill that sentence.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -123,14 +123,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodCorporateContractor</defName>
+		<defName>BF_MechChildhoodCorporateContractor</defName>
 		<title>Corporate contractor</title>
 		<titleShort>Contractor</titleShort>
 		<baseDesc>Assembled by a large corporation's contractors, {PAWN_nameDef} was custom built to serve a particular purpose.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -149,14 +149,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodSmallBusiness</defName>
+		<defName>BF_MechChildhoodSmallBusiness</defName>
 		<title>Business Employee</title>
 		<titleShort>Employee</titleShort>
 		<baseDesc>Hand-assembled by a small business owner, {PAWN_nameDef} was custom built to help {PAWN_possessive} employer.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -176,14 +176,14 @@
 
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodWarAndroid</defName>
+		<defName>BF_MechChildhoodWarAndroid</defName>
 		<title>Wartime model</title>
 		<titleShort>Soldier</titleShort>
 		<baseDesc>Produced to reduce human casualties in interplanetary warfare, {PAWN_nameDef} was designed to fight.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_ViolentAndroids</li>
+			<li>BF_ViolentAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -206,14 +206,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodRoboticistProject</defName>
+		<defName>BF_MechChildhoodRoboticistProject</defName>
 		<title>Private creation</title>
 		<titleShort>Android</titleShort>
 		<baseDesc>Created at the home of an ambitious young roboticist, {PAWN_nameDef} was painstakingly worked on for years before awakening for the first time.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -229,14 +229,14 @@
 
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodLaborer</defName>
+		<defName>BF_MechChildhoodLaborer</defName>
 		<title>Exported</title>
 		<titleShort>Export</titleShort>
 		<baseDesc>{PAWN_nameDef} was designed as a cheap unit to be sold, lent, or donated to interplanetary customers.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -255,14 +255,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodObservationExperiment</defName>
+		<defName>BF_MechChildhoodObservationExperiment</defName>
 		<title>Observed</title>
 		<titleShort>Subject</titleShort>
 		<baseDesc>{PAWN_nameDef} was created and deposited in a remote location solely to see what would happen when an android was left to its own devices.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -273,14 +273,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodAncientIndeterminate</defName>
+		<defName>BF_MechChildhoodAncientIndeterminate</defName>
 		<title>Ancient creation</title>
 		<titleShort>Subject</titleShort>
 		<baseDesc>{PAWN_nameDef} was created a very long time ago by a long dead civilization for a purpose {PAWN_pronoun} can no longer recall.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -295,14 +295,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodToyProperty</defName>
+		<defName>BF_MechChildhoodToyProperty</defName>
 		<title>Toy model</title>
 		<titleShort>Subject</titleShort>
 		<baseDesc>{PAWN_nameDef} was made as an entertainment device. {PAWN_possessive} old owner would command {PAWN_objective} to do as they saw fit until they got bored and sent {PAWN_objective} away.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -313,14 +313,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodElderlyCompanion</defName>
+		<defName>BF_MechChildhoodElderlyCompanion</defName>
 		<title>Companion creation</title>
 		<titleShort>Companion</titleShort>
 		<baseDesc>An aging engineer custom made {PAWN_nameDef} as a way of coping with the loss of their significant other. The two adventured together until the owner passed away from old age. Their dying wish was for {PAWN_nameDef} to choose a new name and life.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -339,14 +339,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodInsectExterminator</defName>
+		<defName>BF_MechChildhoodInsectExterminator</defName>
 		<title>Battle droid</title>
 		<titleShort>Companion</titleShort>
 		<baseDesc>{PAWN_nameDef} was one of millions of androids built to combat ravaging swarms of bio-engineered monsters. {PAWN_pronoun} was one of significantly fewer to survive.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-			<li>ATR_GeneralAndroids</li>
+			<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -361,14 +361,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodRimWorldCreation</defName>
+		<defName>BF_MechChildhoodRimWorldCreation</defName>
 		<title>Rimworld creation</title>
 		<titleShort>Android</titleShort>
 		<baseDesc>{PAWN_nameDef} was hand-assembled to assist a small, closeknit Rimworld community.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-	     	<li>ATR_GeneralAndroids</li>
+	     	<li>BF_GeneralAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -390,17 +390,17 @@
 		</skillGains>
 	</AlienRace.AlienBackstoryDef>
 
-	<!-- ATR_Violent Androids Only-->
+	<!-- BF_Violent Androids Only-->
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodPopulationControl</defName>
+		<defName>BF_MechChildhoodPopulationControl</defName>
 		<title>Eradicator</title>
 		<titleShort>Subject</titleShort>
 		<baseDesc>{PAWN_nameDef} was built in secret and released to discriminately and discretely reduce overpopulation on an Urbworld.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-		    <li>ATR_ViolentAndroids</li>
+		    <li>BF_ViolentAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -423,14 +423,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodRunaway</defName>
+		<defName>BF_MechChildhoodRunaway</defName>
 		<title>Escapee</title>
 		<titleShort>Escapee</titleShort>
 		<baseDesc>Shortly after creation, {PAWN_nameDef} went haywire and succesfully escaped {PAWN_possessive} manufacturing warehouse aboard an automated cargo ship.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-		    <li>ATR_ViolentAndroids</li>
+		    <li>BF_ViolentAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -441,14 +441,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodRevolutionary</defName>
+		<defName>BF_MechChildhoodRevolutionary</defName>
 		<title>Uprising cadet</title>
 		<titleShort>Cadet</titleShort>
 		<baseDesc>{PAWN_nameDef} was created as part of a mechanical uprising to fill out the revolutionary ranks.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-		    <li>ATR_ViolentAndroids</li>
+		    <li>BF_ViolentAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -463,14 +463,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodMalicious</defName>
+		<defName>BF_MechChildhoodMalicious</defName>
 		<title>Malicious AI</title>
 		<titleShort>Malicious</titleShort>
 		<baseDesc>A major software flaw in {PAWN_nameDef} at the time of {PAWN_possessive} activation caused {PAWN_objective} to immediately massacre {PAWN_possessive} creators. {PAWN_pronoun} liked {PAWN_possessive} own actions, too.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-		    <li>ATR_ViolentAndroids</li>
+		    <li>BF_ViolentAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>
@@ -495,14 +495,14 @@
 	</AlienRace.AlienBackstoryDef>
 
 	<AlienRace.AlienBackstoryDef>
-		<defName>ATR_MechChildhoodPirate</defName>
+		<defName>BF_MechChildhoodPirate</defName>
 		<title>Pirate creation</title>
 		<titleShort>Pirate</titleShort>
 		<baseDesc>Assembled by pirates from a stolen pre-assembled kit, {PAWN_nameDef} awakened and served an ambitious small-time pirate captain.</baseDesc>
 		<bodyTypeGlobal>Male</bodyTypeGlobal>
 		<slot>Childhood</slot>
 		<spawnCategories>
-		    <li>ATR_ViolentAndroids</li>
+		    <li>BF_ViolentAndroids</li>
 		</spawnCategories>
 		<skillGains>
 			<li>

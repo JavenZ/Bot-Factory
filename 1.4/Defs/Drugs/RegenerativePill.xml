@@ -2,7 +2,7 @@
 <Defs>
 
 	<ThingDef ParentName="MakeableDrugPillBase">
-		<defName>ATR_RegenerativePill</defName>
+		<defName>BF_RegenerativePill</defName>
 		<label>Regenerative pill</label>
 		<description>A rare case of a mechanical-designed pill (mostly) safe for organic consumption, regenerative pills use specially programmed mechanites that traverse the host's body seeking to repair and fortify damaged parts for faster recovery. \n\nOrganics will find the experience quite unpleasant, but do still fully benefit from the pill's effects.</description>
 		<graphicData>
@@ -22,18 +22,18 @@
 			<drugCategory>Medical</drugCategory>
 			<useEatingSpeedStat>false</useEatingSpeedStat>
 			<outcomeDoers>
-				<li Class="ATReforged.IngestionOutcomeDoer_MechOrganicDifferentEffects">
-					<organicEffect>ATR_RegenOrganic</organicEffect>
+				<li Class="BotFactory.IngestionOutcomeDoer_MechOrganicDifferentEffects">
+					<organicEffect>BF_RegenOrganic</organicEffect>
                     <organicSeverity>1</organicSeverity>
-					<mechanicalEffect>ATR_RegenMechanical</mechanicalEffect>
+					<mechanicalEffect>BF_RegenMechanical</mechanicalEffect>
 					<mechanicalSeverity>1</mechanicalSeverity>
 				</li>      
 			</outcomeDoers>
 		</ingestible>
 		<recipeMaker>
-			<researchPrerequisite>ATR_MechanicalStimulators</researchPrerequisite>
+			<researchPrerequisite>BF_MechanicalStimulators</researchPrerequisite>
 			<recipeUsers>
-				<li>ATR_MechPartWorkbench</li>
+				<li>BF_MechPartWorkbench</li>
 			</recipeUsers>
 		</recipeMaker>
 		<costList>
@@ -48,7 +48,7 @@
 	</ThingDef>
 
 	<HediffDef>
-		<defName>ATR_RegenOrganic</defName>
+		<defName>BF_RegenOrganic</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Organic regeneration</label>
 		<description>Specialized mechanites are repairing and fortifying damaged parts of the body.</description>
@@ -121,9 +121,9 @@
 	</HediffDef>
 
 	<ThoughtDef>
-		<defName>ATR_RegenOrganic_Thought</defName>
+		<defName>BF_RegenOrganic_Thought</defName>
 		<workerClass>ThoughtWorker_Hediff</workerClass>
-		<hediff>ATR_RegenOrganic</hediff>
+		<hediff>BF_RegenOrganic</hediff>
 		<validWhileDespawned>true</validWhileDespawned>
 		<stages>
 			<li>
@@ -158,7 +158,7 @@
 	<!--HediffMechanical-->
 
 	<HediffDef>
-		<defName>ATR_RegenMechanical</defName>
+		<defName>BF_RegenMechanical</defName>
 		<hediffClass>HediffWithComps</hediffClass>
 		<label>Mechanical regeneration</label>
 		<description>Specially designed mechanites are repairing and fortifying damaged regions of the chassis.</description>

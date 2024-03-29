@@ -2,7 +2,7 @@
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Drones and surrogates don't forget skills.
     [HarmonyPatch(typeof(SkillRecord), "Interval")]

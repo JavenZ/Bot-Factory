@@ -1,4 +1,4 @@
-﻿namespace ATReforged
+﻿namespace BotFactory
 {
     public enum ServerType
     {

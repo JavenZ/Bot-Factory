@@ -3,7 +3,7 @@ using System.Linq;
 using Verse;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Recipe_RestoreMechanicalPart : Recipe_SurgeryAndroids
     {

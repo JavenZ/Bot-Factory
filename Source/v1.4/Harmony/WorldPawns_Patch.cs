@@ -3,7 +3,7 @@ using HarmonyLib;
 using RimWorld.Planet;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Non-player pawns being passed to the world can never be connected to the SkyMind network (they may have just been kidnapped, sold, or lost).
     [HarmonyPatch(typeof(WorldPawns), "PassToWorld")]

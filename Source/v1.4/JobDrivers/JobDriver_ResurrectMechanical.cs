@@ -6,7 +6,7 @@ using Verse;
 using Verse.AI;
 using Verse.Sound;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class JobDriver_ResurrectMechanical : JobDriver_Resurrect
     {
@@ -48,14 +48,14 @@ namespace ATReforged
             if (Utils.IsConsideredMechanical(innerPawn))
             {
                 // Drone Resurrection Kits may only resurrect drone units (simple-minded) or animal units.
-                if (Item.def.defName == "ATR_DroneResurrectorKit" && Utils.IsConsideredMechanicalAndroid(innerPawn))
+                if (Item.def.defName == "BF_DroneResurrectorKit" && Utils.IsConsideredMechanicalAndroid(innerPawn))
                 {
-                    Messages.Message("ATR_ResurrectionFailedDroneOnly".Translate(innerPawn).CapitalizeFirst(), innerPawn, MessageTypeDefOf.RejectInput, true);
+                    Messages.Message("BF_ResurrectionFailedDroneOnly".Translate(innerPawn).CapitalizeFirst(), innerPawn, MessageTypeDefOf.RejectInput, true);
                     return;
                 }
 
                 // Apply the long reboot (24 hours) to the pawn. This will ensure hostile units can be safely captured, and that friendly units can't be reactivated mid-combat.
-                Hediff rebootHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_LongReboot, innerPawn);
+                Hediff rebootHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_LongReboot, innerPawn);
                 innerPawn.health.AddHediff(rebootHediff);
 
                 bool shouldbeBlank = false;
@@ -70,7 +70,7 @@ namespace ATReforged
                             targetComp.isForeign = false;
                     }
                     // If the android is missing their consciousness source, they should be blank upon revival.
-                    else if (innerPawn.def.GetModExtension<ATR_MechTweaker>()?.needsCoreAsAndroid == true && innerPawn.health.hediffSet.GetBrain() == null)
+                    else if (innerPawn.def.GetModExtension<BF_MechTweaker>()?.needsCoreAsAndroid == true && innerPawn.health.hediffSet.GetBrain() == null)
                     {
                         shouldbeBlank = true;
                     }
@@ -84,13 +84,13 @@ namespace ATReforged
                 if (shouldbeBlank)
                 {
                     Utils.Duplicate(Utils.GetBlank(), innerPawn, false, false);
-                    innerPawn.health.AddHediff(ATR_HediffDefOf.ATR_IsolatedCore, innerPawn.health.hediffSet.GetBrain());
-                    Hediff target = innerPawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_AutonomousCore);
+                    innerPawn.health.AddHediff(BF_HediffDefOf.BF_IsolatedCore, innerPawn.health.hediffSet.GetBrain());
+                    Hediff target = innerPawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_AutonomousCore);
                     if (target != null)
                     {
                         innerPawn.health.RemoveHediff(target);
                     }
-                    target = innerPawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_ReceiverCore);
+                    target = innerPawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_ReceiverCore);
                     if (target != null)
                     {
                         innerPawn.health.RemoveHediff(target);
@@ -101,11 +101,11 @@ namespace ATReforged
                 }
 
                 // Notify successful resurrection and destroy the used kit.
-                Messages.Message("ATR_ResurrectionSuccessful".Translate(innerPawn).CapitalizeFirst(), innerPawn, MessageTypeDefOf.PositiveEvent, true);
+                Messages.Message("BF_ResurrectionSuccessful".Translate(innerPawn).CapitalizeFirst(), innerPawn, MessageTypeDefOf.PositiveEvent, true);
                 Item.SplitOff(1).Destroy(DestroyMode.Vanish);
             }
             else
-                Messages.Message("ATR_ResurrectionFailedInvalidPawn".Translate(innerPawn).CapitalizeFirst(), innerPawn, MessageTypeDefOf.RejectInput, true);
+                Messages.Message("BF_ResurrectionFailedInvalidPawn".Translate(innerPawn).CapitalizeFirst(), innerPawn, MessageTypeDefOf.RejectInput, true);
         }
     }
 }

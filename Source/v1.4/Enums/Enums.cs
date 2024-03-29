@@ -1,4 +1,4 @@
-﻿namespace ATReforged
+﻿namespace BotFactory
 {
     public static class SettingsEnums
     {

@@ -2,7 +2,7 @@
 <Defs>
 
     <ThingDef ParentName="MakeableShellBase">
-        <defName>ATR_MicroscytherShell</defName>
+        <defName>BF_MicroscytherShell</defName>
         <label>Swarm shell</label>
         <description>An artillery shell containing several pre-programmed microscythers that will be unleashed and assault all nearby targets upon impact.</description>
         <graphicData>
@@ -21,7 +21,7 @@
                 <explosiveDamageType>Smoke</explosiveDamageType>
                 <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
                 <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
-                <postExplosionSpawnThingDef>ATR_MicroScytherGenerator</postExplosionSpawnThingDef>
+                <postExplosionSpawnThingDef>BF_MicroScytherGenerator</postExplosionSpawnThingDef>
                 <postExplosionSpawnChance>1</postExplosionSpawnChance>
                 <postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
                 <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>
@@ -32,16 +32,16 @@
                 </wickTicks>
             </li>
         </comps>
-        <projectileWhenLoaded>ATR_MicroscytherShell_round</projectileWhenLoaded>
+        <projectileWhenLoaded>BF_MicroscytherShell_round</projectileWhenLoaded>
         <recipeMaker>
-            <researchPrerequisite>ATR_MilitaryBiomimetics</researchPrerequisite>
+            <researchPrerequisite>BF_MilitaryBiomimetics</researchPrerequisite>
             <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
             <effectWorking>Repair</effectWorking>
             <soundWorking>Recipe_Machining</soundWorking>
             <workAmount>800</workAmount>
             <workSkill>Crafting</workSkill>
             <recipeUsers>
-                <li>ATR_MechanicalAssemblyPod</li>
+                <li>BF_MechanicalAssemblyPod</li>
             </recipeUsers>
         </recipeMaker>
         <costList>
@@ -51,7 +51,7 @@
     </ThingDef>
 
     <ThingDef ParentName="BaseBullet">
-        <defName>ATR_MicroscytherShell_round</defName>
+        <defName>BF_MicroscytherShell_round</defName>
         <label>Swarm shell</label>
         <graphicData>
             <texPath>Things/Projectile/ShellEMP</texPath>
@@ -68,7 +68,7 @@
             <soundExplode>Explosion_EMP</soundExplode>
             <soundImpactAnticipate>MortarRound_PreImpact</soundImpactAnticipate>
             <soundAmbient>MortarRound_Ambient</soundAmbient>
-            <postExplosionSpawnThingDef>ATR_MicroScytherGenerator</postExplosionSpawnThingDef>
+            <postExplosionSpawnThingDef>BF_MicroScytherGenerator</postExplosionSpawnThingDef>
             <postExplosionSpawnChance>1</postExplosionSpawnChance>
             <postExplosionSpawnThingCount>1</postExplosionSpawnThingCount>
             <applyDamageToExplosionCellsNeighbors>true</applyDamageToExplosionCellsNeighbors>

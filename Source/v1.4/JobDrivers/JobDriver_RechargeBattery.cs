@@ -3,7 +3,7 @@ using System.Diagnostics;
 using Verse.AI;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class JobDriver_RechargeBattery : JobDriver
     {

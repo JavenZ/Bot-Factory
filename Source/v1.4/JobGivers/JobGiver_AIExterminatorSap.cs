@@ -2,7 +2,7 @@
 using Verse;
 using Verse.AI;
 
-namespace ATReforged
+namespace BotFactory
 {
     // The exterminator mental state drives pawns afflicted with it to hunt relentlessly for targets, even through doors, across the map.
     public class JobGiver_AIExterminatorSap : ThinkNode_JobGiver

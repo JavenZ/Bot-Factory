@@ -2,9 +2,9 @@
 <Defs>
 
     <ThoughtDef>
-        <defName>ATR_FeelingsTowardOrganics</defName>
+        <defName>BF_FeelingsTowardOrganics</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>ATReforged.ThoughtWorker_FeelingsTowardOrganics</workerClass>
+        <workerClass>BotFactory.ThoughtWorker_FeelingsTowardOrganics</workerClass>
         <validWhileDespawned>true</validWhileDespawned>
         <stages>
             <li>
@@ -27,9 +27,9 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ATR_AutomodulatedVoiceSynthesizer</defName>
+        <defName>BF_AutomodulatedVoiceSynthesizer</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>ATReforged.ThoughtWorker_ModulatedVoiceSynthesizer</workerClass>
+        <workerClass>BotFactory.ThoughtWorker_ModulatedVoiceSynthesizer</workerClass>
         <validWhileDespawned>true</validWhileDespawned>
         <stages>
             <li>
@@ -40,9 +40,9 @@
     </ThoughtDef>
 
     <ThoughtDef>
-        <defName>ATR_CoerciveVoiceSynthesizer</defName>
+        <defName>BF_CoerciveVoiceSynthesizer</defName>
         <thoughtClass>Thought_SituationalSocial</thoughtClass>
-        <workerClass>ATReforged.ThoughtWorker_CoerciveVoiceSynthesizer</workerClass>
+        <workerClass>BotFactory.ThoughtWorker_CoerciveVoiceSynthesizer</workerClass>
         <validWhileDespawned>true</validWhileDespawned>
         <stages>
             <li>

@@ -3,7 +3,7 @@ using System.Linq;
 using Verse;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Recipe_RemoveMechanicalPart : Recipe_SurgeryAndroids
     {
@@ -48,7 +48,7 @@ namespace ATReforged
                 if (part == pawn.health.hediffSet.GetBrain())
                 {
                     removingInterface = true;
-                    isAutonomousIntelligence = pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_AutonomousCore) != null;
+                    isAutonomousIntelligence = pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_AutonomousCore) != null;
                 }
 
                 // Check if the surgery failed. If it did, exit early.
@@ -102,12 +102,12 @@ namespace ATReforged
                             pawn.playerSettings.medCare = MedicalCareCategory.Best;
 
                         // Send a message about the removed intelligence
-                        Messages.Message("ATR_InterfaceRemoved".Translate(), MessageTypeDefOf.NegativeEvent);
+                        Messages.Message("BF_InterfaceRemoved".Translate(), MessageTypeDefOf.NegativeEvent);
                     }
 
                     // Clean up and apply the appropriate hediff. Apply Isolated core before no host is applied to ensure the pawn doesn't become capable of moving for a tick.
-                    pawn.health.AddHediff(ATR_HediffDefOf.ATR_IsolatedCore, pawn.health.hediffSet.GetBrain());
-                    Hediff targetHediff = pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_NoController);
+                    pawn.health.AddHediff(BF_HediffDefOf.BF_IsolatedCore, pawn.health.hediffSet.GetBrain());
+                    Hediff targetHediff = pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_NoController);
                     if (targetHediff != null)
                         pawn.health.RemoveHediff(targetHediff);
                 }

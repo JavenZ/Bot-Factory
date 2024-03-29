@@ -2,7 +2,7 @@
 using Verse.AI;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Generate Insight work giver governs a pawn trying to generate skill, security, or hacking points at a research bench, as part of the Research work type.
     public class WorkGiver_GenerateInsight : WorkGiver_Scanner
@@ -57,7 +57,7 @@ namespace ATReforged
 
         public override Job JobOnThing(Pawn pawn, Thing t, bool forced = false)
         {
-            return JobMaker.MakeJob(ATR_JobDefOf.ATR_GenerateInsight, t);
+            return JobMaker.MakeJob(BF_JobDefOf.BF_GenerateInsight, t);
         }
     }
 }

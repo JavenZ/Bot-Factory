@@ -2,7 +2,7 @@
 <Defs>
 
     <ThingCategoryDef>
-        <defName>ATR_BodyPartsMechanical</defName>
+        <defName>BF_BodyPartsMechanical</defName>
         <label>Mechanical</label>
         <parent>BodyParts</parent>
     </ThingCategoryDef>

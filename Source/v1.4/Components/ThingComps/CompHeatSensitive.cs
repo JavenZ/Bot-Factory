@@ -3,7 +3,7 @@ using Verse;
 using RimWorld;
 using UnityEngine;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompHeatSensitive : ThingComp
     {
@@ -18,8 +18,8 @@ namespace ATReforged
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref heatLevel, "ATR_heatLevel", 0, false);
-            Scribe_Values.Look(ref checksSinceCritical, "ATR_checksSinceCritical", 0, false);
+            Scribe_Values.Look(ref heatLevel, "BF_heatLevel", 0, false);
+            Scribe_Values.Look(ref checksSinceCritical, "BF_checksSinceCritical", 0, false);
         }
 
         public override void PostDraw()
@@ -113,7 +113,7 @@ namespace ATReforged
                 if (lastTickSentCriticalHeat + 8000 < Find.TickManager.TicksGame)
                 {
                     lastTickSentCriticalHeat = Find.TickManager.TicksGame;
-                    Messages.Message("ATR_AlertServerHeatCriticalDesc".Translate(), new LookTargets(parent), MessageTypeDefOf.NegativeEvent, false);
+                    Messages.Message("BF_AlertServerHeatCriticalDesc".Translate(), new LookTargets(parent), MessageTypeDefOf.NegativeEvent, false);
                 }
 
                 switch (tickerType)
@@ -152,7 +152,7 @@ namespace ATReforged
                 checksSinceCritical = 0;
 
                 MakeExplosion();
-                Find.LetterStack.ReceiveLetter("ATR_ServerMeltdown".Translate(), "ATR_ServerMeltdownDesc".Translate(), LetterDefOf.NegativeEvent, new TargetInfo(parent.Position, parent.Map, false), null, null);
+                Find.LetterStack.ReceiveLetter("BF_ServerMeltdown".Translate(), "BF_ServerMeltdownDesc".Translate(), LetterDefOf.NegativeEvent, new TargetInfo(parent.Position, parent.Map, false), null, null);
             }
         }
 
@@ -174,13 +174,13 @@ namespace ATReforged
                 return "";
 
             if (heatLevel == 3)
-                return "ATR_CompHotSensitiveCriticalText".Translate();
+                return "BF_CompHotSensitiveCriticalText".Translate();
             else if (heatLevel == 2)
-                return "ATR_CompHotSensitiveDangerText".Translate();
+                return "BF_CompHotSensitiveDangerText".Translate();
             else if (heatLevel == 1)
-                return "ATR_CompHotSensitiveWarningText".Translate();
+                return "BF_CompHotSensitiveWarningText".Translate();
             else
-                return "ATR_CompHotSensitiveSafeText".Translate();
+                return "BF_CompHotSensitiveSafeText".Translate();
         }
 
         private bool active;

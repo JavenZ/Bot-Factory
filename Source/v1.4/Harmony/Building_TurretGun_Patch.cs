@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Allow manual control of SkyMind connected turrets.
     [HarmonyPatch(typeof(Building_TurretGun), "get_CanSetForcedTarget")]

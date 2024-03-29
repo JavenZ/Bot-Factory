@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection.Emit;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class RestUtility_Patch
     {

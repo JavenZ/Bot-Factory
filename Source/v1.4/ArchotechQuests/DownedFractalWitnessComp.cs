@@ -1,7 +1,7 @@
 ﻿using Verse;
 using RimWorld.Planet;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class DownedFractalWitnessComp : DownedRefugeeComp
     {

@@ -3,15 +3,15 @@ using RimWorld;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class CompSkyMind : ThingComp
     {
         public override void PostExposeData()
         {
             base.PostExposeData();
-            Scribe_Values.Look(ref integrityBreach, "ATR_integrityBreach", -1);
-            Scribe_Values.Look(ref connected, "ATR_connected", false);
+            Scribe_Values.Look(ref integrityBreach, "BF_integrityBreach", -1);
+            Scribe_Values.Look(ref connected, "BF_connected", false);
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -67,8 +67,8 @@ namespace ATReforged
             yield return new Command_Toggle
             { 
                 icon = Tex.ConnectSkyMindIcon,
-                defaultLabel = "ATR_ConnectSkyMind".Translate(),
-                defaultDesc = "ATR_ConnectSkyMindDesc".Translate(),
+                defaultLabel = "BF_ConnectSkyMind".Translate(),
+                defaultDesc = "BF_ConnectSkyMindDesc".Translate(),
                 isActive = () => connected,
                 toggleAction = delegate ()
                 {
@@ -77,9 +77,9 @@ namespace ATReforged
                         if (!Utils.gameComp.AttemptSkyMindConnection(parent))
                         { // If trying to connect but it is unable to, inform the player. 
                             if (Utils.gameComp.GetSkyMindNetworkSlots() == 0)
-                                Messages.Message("ATR_SkyMindConnectionFailedNoNetwork".Translate(), parent, MessageTypeDefOf.NegativeEvent);
+                                Messages.Message("BF_SkyMindConnectionFailedNoNetwork".Translate(), parent, MessageTypeDefOf.NegativeEvent);
                             else
-                                Messages.Message("ATR_SkyMindConnectionFailed".Translate(), parent, MessageTypeDefOf.NegativeEvent);
+                                Messages.Message("BF_SkyMindConnectionFailed".Translate(), parent, MessageTypeDefOf.NegativeEvent);
                             return;
                         }
                     }
@@ -124,10 +124,10 @@ namespace ATReforged
                     // Release hacked pawn. Remove Mind Operation hediff and reboot.
                     if (parent is Pawn pawn)
                     { 
-                        Hediff hediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_LongReboot, pawn, null);
+                        Hediff hediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_LongReboot, pawn, null);
                         hediff.Severity = 0.75f;
                         pawn.health.AddHediff(hediff, null, null);
-                        hediff = pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_MindOperation);
+                        hediff = pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_MindOperation);
                         if (hediff != null)
                         {
                             pawn.health.RemoveHediff(hediff);
@@ -160,7 +160,7 @@ namespace ATReforged
                     // Breached pawn (surrogates). Hacking effect is that it is put offline via a forced Mind Operation hediff.
                     else if (parent is Pawn pawn)
                     {
-                        pawn.health.AddHediff(HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_MindOperation, pawn));
+                        pawn.health.AddHediff(HediffMaker.MakeHediff(BF_HediffDefOf.BF_MindOperation, pawn));
                     }
                 }
             }
@@ -205,16 +205,16 @@ namespace ATReforged
             // Add a special line for devices hacked into a shut-down state.
             if ((integrityBreach == 1 || integrityBreach == 3) && Utils.gameComp.GetAllVirusedDevices().ContainsKey(parent))
             {
-                ret.Append("ATR_HackedWithTimer".Translate((Utils.gameComp.GetVirusedDevice(parent) - Find.TickManager.TicksGame).ToStringTicksToPeriodVerbose()));
+                ret.Append("BF_HackedWithTimer".Translate((Utils.gameComp.GetVirusedDevice(parent) - Find.TickManager.TicksGame).ToStringTicksToPeriodVerbose()));
             }
             // Add a special line for cryptolocked devices.
             else if (integrityBreach == 2)
             {
-                ret.Append("ATR_CryptoLocked".Translate());
+                ret.Append("BF_CryptoLocked".Translate());
             }
             else if (connected)
             {
-                ret.Append("ATR_SkyMindDetected".Translate());
+                ret.Append("BF_SkyMindDetected".Translate());
             }
 
             return ret.Append(base.CompInspectStringExtra()).ToString();

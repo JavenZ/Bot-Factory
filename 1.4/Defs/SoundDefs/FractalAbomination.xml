@@ -2,14 +2,14 @@
 <Defs>
 
     <SoundDef>
-      <defName>ATR_FractalCall</defName>
+      <defName>BF_FractalCall</defName>
       <context>MapOnly</context>
       <eventNames />
       <subSounds>
         <li>
           <grains>
             <li Class="AudioGrain_Clip">
-              <clipPath>Fractal/ATR_FractalCall</clipPath>
+              <clipPath>Fractal/BF_FractalCall</clipPath>
             </li>
           </grains>
           <volumeRange>
@@ -29,14 +29,14 @@
     </SoundDef>
 
     <SoundDef>
-      <defName>ATR_FractalDeath</defName>
+      <defName>BF_FractalDeath</defName>
       <context>MapOnly</context>
       <eventNames />
       <subSounds>
         <li>
           <grains>
             <li Class="AudioGrain_Clip">
-              <clipPath>Fractal/ATR_FractalDeath</clipPath>
+              <clipPath>Fractal/BF_FractalDeath</clipPath>
             </li>
           </grains>
           <volumeRange>
@@ -56,14 +56,14 @@
     </SoundDef>
 
     <SoundDef>
-      <defName>ATR_FractalPain</defName>
+      <defName>BF_FractalPain</defName>
       <context>MapOnly</context>
       <eventNames />
       <subSounds>
         <li>
           <grains>
             <li Class="AudioGrain_Clip">
-              <clipPath>Fractal/ATR_FractalPain</clipPath>
+              <clipPath>Fractal/BF_FractalPain</clipPath>
             </li>
           </grains>
           <volumeRange>

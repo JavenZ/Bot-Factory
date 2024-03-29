@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     // This HediffComp will destroy any instances of a given HediffDef when the Hediff it is attached to is applied.
     public class HediffComp_RemoveHediffOnApply : HediffComp

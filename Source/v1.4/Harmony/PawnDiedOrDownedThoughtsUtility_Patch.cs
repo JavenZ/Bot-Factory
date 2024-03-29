@@ -3,7 +3,7 @@ using HarmonyLib;
 using RimWorld;
 using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class PawnDiedOrDownedThoughtsUtility_Patch
     {

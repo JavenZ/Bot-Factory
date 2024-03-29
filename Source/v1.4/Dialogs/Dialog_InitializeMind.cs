@@ -4,7 +4,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Dialog_InitializeMind : Dialog_MessageBox
     {
@@ -31,10 +31,10 @@ namespace ATReforged
         }
 
         // Dialog options for initializing the mind of a mechanical unit that just had its autonomous core initialized.
-        public Dialog_InitializeMind(Pawn newIntelligence) : base("ATR_InitializeMindDesc".Translate(), "ATR_SkyMindInitialization".Translate(), null, "ATR_AutomaticInitialization".Translate(), null, "ATR_InitializeMindTitle".Translate(), false)
+        public Dialog_InitializeMind(Pawn newIntelligence) : base("BF_InitializeMindDesc".Translate(), "BF_SkyMindInitialization".Translate(), null, "BF_AutomaticInitialization".Translate(), null, "BF_InitializeMindTitle".Translate(), false)
         {
             // If there is any idle intelligence in the SkyMind, then the new intelligence may download it. This is a standard download action.
-            IEnumerable<Pawn> cloudPawns = Utils.gameComp.GetCloudPawns().Where(pawn => pawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_MindOperation) == null && !pawn.GetComp<CompSkyMindLink>().HasSurrogate());
+            IEnumerable<Pawn> cloudPawns = Utils.gameComp.GetCloudPawns().Where(pawn => pawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_MindOperation) == null && !pawn.GetComp<CompSkyMindLink>().HasSurrogate());
             IEnumerable<Thing> networkedPawns = Utils.gameComp.networkedDevices.Where(thing => thing is Pawn pawn && pawn.GetComp<CompSkyMindLink>()?.HasSurrogate() == false);
             if (cloudPawns.Count() + networkedPawns.Count() > 0 && Utils.gameComp.networkedDevices.Count < Utils.gameComp.GetSkyMindNetworkSlots())
             {
@@ -49,7 +49,7 @@ namespace ATReforged
                             Utils.gameComp.AttemptSkyMindConnection(newIntelligence);
                             newIntelligence.GetComp<CompSkyMindLink>().InitiateConnection(4, pawn);
                             // Remove the short reboot Hediff now so there aren't two restarting hediffs but it isn't removed before the long reboot is added.
-                            Hediff target = newIntelligence.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_ShortReboot);
+                            Hediff target = newIntelligence.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_ShortReboot);
                             if (target != null)
                             {
                                 newIntelligence.health.RemoveHediff(target);
@@ -64,7 +64,7 @@ namespace ATReforged
                             Utils.gameComp.AttemptSkyMindConnection(newIntelligence);
                             newIntelligence.GetComp<CompSkyMindLink>().InitiateConnection(4, pawn);
                             // Remove the short reboot Hediff now so there aren't two restarting hediffs but it isn't removed before the long reboot is added.
-                            Hediff target = newIntelligence.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_ShortReboot);
+                            Hediff target = newIntelligence.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_ShortReboot);
                             if (target != null)
                             {
                                 newIntelligence.health.RemoveHediff(target);
@@ -84,13 +84,13 @@ namespace ATReforged
             {
                 PawnGenerationRequest request = new PawnGenerationRequest(newIntelligence.kindDef, Faction.OfPlayer, forceGenerateNewPawn: true, canGeneratePawnRelations: false, allowAddictions: false, fixedBiologicalAge: 30, forceNoIdeo: true, colonistRelationChanceFactor: 0, forceBaselinerChance: 1f);
                 Pawn newPawn = PawnGenerator.GeneratePawn(request);
-                newPawn.story.Childhood = ATR_BackstoryDefOf.ATR_NewbootChildhood;
+                newPawn.story.Childhood = BF_BackstoryDefOf.BF_NewbootChildhood;
                 Utils.Duplicate(newPawn, newIntelligence, false, false);
-                Hediff rebootHediff = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_LongReboot, newIntelligence, null);
+                Hediff rebootHediff = HediffMaker.MakeHediff(BF_HediffDefOf.BF_LongReboot, newIntelligence, null);
                 rebootHediff.Severity = 1;
                 newIntelligence.health.AddHediff(rebootHediff);
                 // Remove the short reboot Hediff now so there aren't two restarting hediffs but it isn't removed before the long reboot is added.
-                Hediff target = newIntelligence.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_ShortReboot);
+                Hediff target = newIntelligence.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_ShortReboot);
                 if (target != null)
                 {
                     newIntelligence.health.RemoveHediff(target);
@@ -99,9 +99,9 @@ namespace ATReforged
                 // Allow the player to pick a few passions and a trait for the new android, akin to child growth moments in Biotech.
                 if (ModLister.BiotechInstalled)
                 {
-                    ChoiceLetter_PersonalityShift choiceLetter = (ChoiceLetter_PersonalityShift)LetterMaker.MakeLetter(ATR_LetterDefOf.ATR_PersonalityShiftLetter);
+                    ChoiceLetter_PersonalityShift choiceLetter = (ChoiceLetter_PersonalityShift)LetterMaker.MakeLetter(BF_LetterDefOf.BF_PersonalityShiftLetter);
                     choiceLetter.ConfigureChoiceLetter(newIntelligence, 3, 3, false, false);
-                    choiceLetter.Label = "ATR_PersonalityShiftNewboot".Translate();
+                    choiceLetter.Label = "BF_PersonalityShiftNewboot".Translate();
                     choiceLetter.StartTimeout(120000);
                     Find.LetterStack.ReceiveLetter(choiceLetter);
                 }
@@ -140,7 +140,7 @@ namespace ATReforged
                 }
                 else
                 {
-                    Messages.Message("ATR_NoAvailableTarget".Translate(), MessageTypeDefOf.NeutralEvent);
+                    Messages.Message("BF_NoAvailableTarget".Translate(), MessageTypeDefOf.NeutralEvent);
                 }
             }
 

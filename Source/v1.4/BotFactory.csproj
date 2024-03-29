@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BotFactory</RootNamespace>
-    <AssemblyName>Bot Factory</AssemblyName>
+    <AssemblyName>BotFactory</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
@@ -178,6 +178,8 @@
     <Compile Include="Alerts\Alert_NeedMechanic.cs" />
     <Compile Include="Alerts\Alert_LowSecurity.cs" />
     <Compile Include="ArchotechQuests\SitePartWorker_WitnessArrival.cs" />
+    <Compile Include="BotFactory.cs" />
+    <Compile Include="BotFactory_Settings.cs" />
     <Compile Include="Buildings\Building_ChargingBed.cs" />
     <Compile Include="ChoiceLetter\ChoiceLetter_PersonalityShiftRequest.cs" />
     <Compile Include="ChoiceLetter\ChoiceLetter_PersonalityShift.cs" />
@@ -199,16 +201,16 @@
     <Compile Include="Components\CompTargetEffect_ResurrectMechanical.cs" />
     <Compile Include="Components\SurgeryOutcomeComp_BedAndRoomMechQuality.cs" />
     <Compile Include="Components\SurgeryOutcomeComp_SurgeonSuccessChance.cs" />
-    <Compile Include="DefOfs\ATR_HistoryEventDefOf.cs" />
-    <Compile Include="DefOfs\ATR_BodyPartDefOf.cs" />
-    <Compile Include="DefOfs\ATR_BackstoryDefOf.cs" />
-    <Compile Include="DefOfs\ATR_IncidentDefOf.cs" />
-    <Compile Include="DefOfs\ATR_ThoughtDefOf.cs" />
-    <Compile Include="DefOfs\ATR_MentalStateDefOf.cs" />
-    <Compile Include="DefOfs\ATR_QuestScriptDefOf.cs" />
-    <Compile Include="DefOfs\ATR_LetterDefOf.cs" />
-    <Compile Include="DefOfs\ATR_RulePackDefOf.cs" />
-    <Compile Include="DefOfs\ATR_WorkTypeDefOf.cs" />
+    <Compile Include="DefOfs\BF_HistoryEventDefOf.cs" />
+    <Compile Include="DefOfs\BF_BodyPartDefOf.cs" />
+    <Compile Include="DefOfs\BF_BackstoryDefOf.cs" />
+    <Compile Include="DefOfs\BF_IncidentDefOf.cs" />
+    <Compile Include="DefOfs\BF_ThoughtDefOf.cs" />
+    <Compile Include="DefOfs\BF_MentalStateDefOf.cs" />
+    <Compile Include="DefOfs\BF_QuestScriptDefOf.cs" />
+    <Compile Include="DefOfs\BF_LetterDefOf.cs" />
+    <Compile Include="DefOfs\BF_RulePackDefOf.cs" />
+    <Compile Include="DefOfs\BF_WorkTypeDefOf.cs" />
     <Compile Include="Dialogs\Dialog_PersonalityShiftChoices.cs" />
     <Compile Include="Dialogs\Dialog_RestrictToPawnType.cs" />
     <Compile Include="Dialogs\Dialog_Repaint.cs" />
@@ -306,10 +308,10 @@
     <Compile Include="Components\ThingComps\CompSkyMindLink.cs" />
     <Compile Include="Components\ThingComps\CompProperties_GenericSpawner.cs" />
     <Compile Include="Components\ThingComps\CompSpawnerGeneric.cs" />
-    <Compile Include="DefOfs\ATR_JobDefOf.cs" />
-    <Compile Include="DefOfs\ATR_StatDefOf.cs" />
-    <Compile Include="DefOfs\ATR_ThingDefOf.cs" />
-    <Compile Include="DefOfs\ATR_TraitDefOf.cs" />
+    <Compile Include="DefOfs\BF_JobDefOf.cs" />
+    <Compile Include="DefOfs\BF_StatDefOf.cs" />
+    <Compile Include="DefOfs\BF_ThingDefOf.cs" />
+    <Compile Include="DefOfs\BF_TraitDefOf.cs" />
     <Compile Include="Dialogs\Dialog_HackingWindow.cs" />
     <Compile Include="Dialogs\Dialog_SkillUp.cs" />
     <Compile Include="Harmony\Alert_ColonistLeftUnburied_Patch.cs" />
@@ -341,7 +343,7 @@
     <Compile Include="Recipes\Recipe_RemoveOrganicSkyMindInterface.cs" />
     <Compile Include="ArchotechQuests\DownedFractalWitnessComp.cs" />
     <Compile Include="ArchotechQuests\GenStep_DownedFractalWitness.cs" />
-    <Compile Include="DefOfs\ATR_HediffDefOf.cs" />
+    <Compile Include="DefOfs\BF_HediffDefOf.cs" />
     <Compile Include="Recipes\Recipe_PaintMechanicalUnit.cs" />
     <Compile Include="StockGenerators\StockGenerator_Drones.cs" />
     <Compile Include="ThoughtWorker\ThoughtWorker_CoerciveVoiceSynthesizer.cs" />
@@ -367,7 +369,7 @@
     <Compile Include="Recipes\Recipe_InstallAndroidPart.cs" />
     <Compile Include="Recipes\Recipe_ReprogramDrone.cs" />
     <Compile Include="Recipes\Recipe_SurgeryAndroids.cs" />
-    <Compile Include="DefOfs\ATR_PawnKindDefOf.cs" />
+    <Compile Include="DefOfs\BF_PawnKindDefOf.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Components\ThingComps\CompSpawnerMicroscyther.cs" />
     <Compile Include="ThoughtWorker\ThoughtWorker_AssistingMinds.cs" />
@@ -375,7 +377,7 @@
     <Compile Include="Toils\Toils_LayDownPower.cs" />
     <Compile Include="Enums\Enums.cs" />
     <Compile Include="Utils\FilteredGetters.cs" />
-    <Compile Include="Components\ATR_GameComponent.cs" />
+    <Compile Include="Components\BF_GameComponent.cs" />
     <Compile Include="Utils\Tex.cs" />
     <Compile Include="Utils\Utils.cs" />
     <Compile Include="JobGivers\WorkGiver_GenerateInsight.cs" />

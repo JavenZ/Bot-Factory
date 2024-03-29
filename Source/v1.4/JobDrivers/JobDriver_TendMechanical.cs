@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Verse;
 using Verse.AI;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Create an alternate version of the TendPatient job to use the appropriate Mechanical stats instead of medical stats.
     public class JobDriver_TendMechanical : JobDriver_TendPatient
@@ -64,7 +64,7 @@ namespace ATReforged
             }
 
             yield return gotoToil;
-            int ticks = (int)(1f / pawn.GetStatValue(ATR_StatDefOf.ATR_MechanicalTendSpeed) * 600f);
+            int ticks = (int)(1f / pawn.GetStatValue(BF_StatDefOf.BF_MechanicalTendSpeed) * 600f);
             Toil waitToil;
             if (!job.draftedTend)
             {

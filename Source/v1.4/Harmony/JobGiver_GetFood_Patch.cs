@@ -4,7 +4,7 @@ using Verse.AI;
 using HarmonyLib;
 using RimWorld;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class JobGiver_GetFood_Patch
     {
@@ -30,7 +30,7 @@ namespace ATReforged
                         if (bed != null)
                         {
                             pawn.ownership.ClaimBedIfNonMedical(bed);
-                            __result = new Job(ATR_JobDefOf.ATR_RechargeBattery, new LocalTargetInfo(bed));
+                            __result = new Job(BF_JobDefOf.BF_RechargeBattery, new LocalTargetInfo(bed));
                             return;
                         }
 
@@ -40,7 +40,7 @@ namespace ATReforged
                             Building_ChargingStation station = (Building_ChargingStation)GenClosest.ClosestThingReachable(pawn.PositionHeld, pawn.MapHeld, ThingRequest.ForGroup(ThingRequestGroup.BuildingArtificial), PathEndMode.Touch, TraverseParms.For(pawn), validator: building => building is Building_ChargingStation chargeStation && building.Position.InAllowedArea(pawn) && building.TryGetComp<CompPowerTrader>()?.PowerOn == true && chargeStation.GetOpenRechargeSpot(pawn) != IntVec3.Invalid);
                             if (station != null)
                             {
-                                __result = new Job(ATR_JobDefOf.ATR_RechargeBattery, new LocalTargetInfo(station.GetOpenRechargeSpot(pawn)), new LocalTargetInfo(station));
+                                __result = new Job(BF_JobDefOf.BF_RechargeBattery, new LocalTargetInfo(station.GetOpenRechargeSpot(pawn)), new LocalTargetInfo(station));
                                 return;
                             }
                         }
@@ -49,7 +49,7 @@ namespace ATReforged
                 }
                 catch (Exception ex)
                 {
-                    Log.Warning("[ATR] ATReforged.JobGiver_GetFood_Patch Encountered an error while attempting to check pawn" + pawn + " for charging. Default vanilla behavior will proceed." + ex.Message + " " + ex.StackTrace);
+                    Log.Warning("[ATR] BotFactory.JobGiver_GetFood_Patch Encountered an error while attempting to check pawn" + pawn + " for charging. Default vanilla behavior will proceed." + ex.Message + " " + ex.StackTrace);
                 }
             }
         }

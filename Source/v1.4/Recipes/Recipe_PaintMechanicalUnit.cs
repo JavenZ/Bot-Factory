@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Recipe_PaintMechanicalUnit : Recipe_SurgeryAndroids
     {

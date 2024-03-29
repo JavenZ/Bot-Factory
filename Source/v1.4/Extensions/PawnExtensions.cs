@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     // Mod extension for races to control some features. These attributes are only used for humanlikes, there is no reason to provide any to non-humanlikes.
-    public class ATR_MechTweaker : DefModExtension
+    public class BF_MechTweaker : DefModExtension
     {
         // Bool for whether this race may be assigned as an android and drone, respectively. Disabling both would effectively mean this pawn is blacklisted from being mechanical.
         // However, disabling both will throw a config error, as having the extension will result in some other changes elsewhere, for details like corpses rotting and what category they reside in.
@@ -41,7 +41,7 @@ namespace ATReforged
 
             if (!canBeAndroid && !canBeDrone)
             {
-                yield return "[ATR] A race was given the ATR_MechTweaker DefModExtension but had both canBeAndroid and canBeDrone set to false! This means it can not be mechanical. This extension should be removed from the race.";
+                yield return "[ATR] A race was given the BF_MechTweaker DefModExtension but had both canBeAndroid and canBeDrone set to false! This means it can not be mechanical. This extension should be removed from the race.";
             }
         }
     }

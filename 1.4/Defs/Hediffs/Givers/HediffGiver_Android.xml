@@ -2,16 +2,16 @@
 <Defs>
 
 	<HediffGiverSetDef>
-        <defName>ATR_MechanicalStandard</defName>
+        <defName>BF_MechanicalStandard</defName>
 	    <hediffGivers>
 			<li Class="HediffGiver_Bleeding">
-				<hediff>ATR_CoolantLoss</hediff>
+				<hediff>BF_CoolantLoss</hediff>
 			</li>
-			<li Class="ATReforged.HediffGiver_HypothermiaNoFrostbite">
-				<hediff>ATR_MechanicalHypothermia</hediff>
+			<li Class="BotFactory.HediffGiver_HypothermiaNoFrostbite">
+				<hediff>BF_MechanicalHypothermia</hediff>
 			</li>
 			<li Class="HediffGiver_Heat">
-				<hediff>ATR_Overheating</hediff>
+				<hediff>BF_Overheating</hediff>
 			</li>
 
             <!-- "Age" hediffs are handled by the CompMaintenanceNeed -->

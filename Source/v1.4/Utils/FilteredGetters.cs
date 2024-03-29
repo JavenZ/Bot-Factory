@@ -2,7 +2,7 @@
 using System.Linq;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class FilteredGetters
     {

@@ -2,7 +2,7 @@
 using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Recipe_ReprogramDrone : Recipe_SurgeryAndroids
     {
@@ -32,17 +32,17 @@ namespace ATReforged
                         pawn
                     });
                     pawn.SetFaction(Faction.OfPlayer, null);
-                    Find.LetterStack.ReceiveLetter("ATR_ReprogramSuccess".Translate(), "ATR_ReprogramSuccessDesc".Translate(pawn.Name.ToStringShort), LetterDefOf.PositiveEvent, pawn, null);
+                    Find.LetterStack.ReceiveLetter("BF_ReprogramSuccess".Translate(), "BF_ReprogramSuccessDesc".Translate(pawn.Name.ToStringShort), LetterDefOf.PositiveEvent, pawn, null);
                     return;
                 }
                 // Handle fail state, with a 20% chance for especially bad effects occurring.
                 if (Rand.Chance(0.2f))
                 {
-                    Hediff corruption = HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_MemoryCorruption, pawn, part);
+                    Hediff corruption = HediffMaker.MakeHediff(BF_HediffDefOf.BF_MemoryCorruption, pawn, part);
                     corruption.Severity = Rand.Range(0.15f, 0.95f);
                     pawn.health.AddHediff(corruption, part, null);
                 }
-                Find.LetterStack.ReceiveLetter("ATR_ReprogramFailed".Translate(), "ATR_ReprogramFailedDesc".Translate(pawn.Name.ToStringShort), LetterDefOf.NegativeEvent, pawn);
+                Find.LetterStack.ReceiveLetter("BF_ReprogramFailed".Translate(), "BF_ReprogramFailedDesc".Translate(pawn.Name.ToStringShort), LetterDefOf.NegativeEvent, pawn);
             }
         }
     }

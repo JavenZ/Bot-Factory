@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class Hediff_Fractal : HediffWithComps
     {
@@ -16,7 +16,7 @@ namespace ATReforged
         {
             base.ExposeData();
 
-            Scribe_Values.Look(ref nextMutationTick, "ATR_nextMutationTick", 0);
+            Scribe_Values.Look(ref nextMutationTick, "BF_nextMutationTick", 0);
         }
 
         private void ChangeState()
@@ -59,7 +59,7 @@ namespace ATReforged
 
         public override bool TryMergeWith(Hediff other)
         {
-            if (other.def == ATR_HediffDefOf.ATR_FractalPillOrganic)
+            if (other.def == BF_HediffDefOf.BF_FractalPillOrganic)
             {
                 ChangeState();
                 return true;
@@ -84,18 +84,18 @@ namespace ATReforged
 
         public void DoMutation(Pawn pawn)
         {
-            string label = "ATR_FractalCorruption".Translate();
+            string label = "BF_FractalCorruption".Translate();
             label = label.AdjustedFor(pawn);
-            string text = "ATR_FractalCorruptionDesc".Translate(pawn.Name.ToStringShort);
+            string text = "BF_FractalCorruptionDesc".Translate(pawn.Name.ToStringShort);
             Find.LetterStack.ReceiveLetter(label, text, LetterDefOf.NegativeEvent, pawn);
 
-            PawnGenerationRequest request = new PawnGenerationRequest(ATR_PawnKindDefOf.ATR_FractalAbomination, Faction.OfAncientsHostile, PawnGenerationContext.NonPlayer, fixedGender: Gender.None);
+            PawnGenerationRequest request = new PawnGenerationRequest(BF_PawnKindDefOf.BF_FractalAbomination, Faction.OfAncientsHostile, PawnGenerationContext.NonPlayer, fixedGender: Gender.None);
             Pawn abomination = PawnGenerator.GeneratePawn(request);
             FilthMaker.TryMakeFilth(pawn.Position, pawn.Map, ThingDefOf.Filth_AmnioticFluid, pawn.LabelIndefinite(), 10);
             FilthMaker.TryMakeFilth(pawn.Position, pawn.Map, ThingDefOf.Filth_Blood, pawn.LabelIndefinite(), 10);
 
             GenSpawn.Spawn(abomination, pawn.Position, pawn.Map);
-            abomination.mindState.mentalStateHandler.TryStartMentalState(ATR_MentalStateDefOf.ATR_MentalState_Exterminator, transitionSilently: true);
+            abomination.mindState.mentalStateHandler.TryStartMentalState(BF_MentalStateDefOf.BF_MentalState_Exterminator, transitionSilently: true);
 
             pawn.Destroy();
         }

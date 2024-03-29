@@ -4,7 +4,7 @@ using RimWorld;
 using System.Collections.Generic;
 using System;
 
-namespace ATReforged
+namespace BotFactory
 {
     public class PawnGroupMakerUtility_Patch
     {
@@ -18,10 +18,10 @@ namespace ATReforged
                 // Generated mechanical pawns in proper groups will always receive the Stasis Hediff to reduce their power consumption significantly.
                 foreach (Pawn member in __result)
                 {
-                    Hediff stasisHediff = member.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_StasisPill);
+                    Hediff stasisHediff = member.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_StasisPill);
                     if (Utils.IsConsideredMechanical(member) && stasisHediff == null)
                     {
-                        member.health.AddHediff(HediffMaker.MakeHediff(ATR_HediffDefOf.ATR_StasisPill, member));
+                        member.health.AddHediff(HediffMaker.MakeHediff(BF_HediffDefOf.BF_StasisPill, member));
                     }
                     else if (stasisHediff != null)
                     {
@@ -30,7 +30,7 @@ namespace ATReforged
                 }
 
                 // If settings disable this faction from using surrogates (or all surrogates are banned entirely), then there is no work to do here. Allow default generation to proceed.
-                if (!ATReforged_Settings.surrogatesAllowed || !ATReforged_Settings.otherFactionsAllowedSurrogates || parms.faction == null)
+                if (!BotFactory_Settings.surrogatesAllowed || !BotFactory_Settings.otherFactionsAllowedSurrogates || parms.faction == null)
                 {
                     return;
                 }
@@ -55,13 +55,13 @@ namespace ATReforged
                     }
 
                     // Skip groups that are too small
-                    if (surrogateCandidates.Count <= ATReforged_Settings.minGroupSizeForSurrogates)
+                    if (surrogateCandidates.Count <= BotFactory_Settings.minGroupSizeForSurrogates)
                     {
                         return;
                     }
 
                     // Determine how many surrogates are taking the place of candidates
-                    int surCount = (int)(surrogateCandidates.Count * Rand.Range(ATReforged_Settings.minSurrogatePercentagePerLegalGroup, ATReforged_Settings.maxSurrogatePercentagePerLegalGroup));
+                    int surCount = (int)(surrogateCandidates.Count * Rand.Range(BotFactory_Settings.minSurrogatePercentagePerLegalGroup, BotFactory_Settings.maxSurrogatePercentagePerLegalGroup));
 
                     IEnumerable<Pawn> selectedPawns = surrogateCandidates.TakeRandom(surCount);
 
@@ -69,28 +69,28 @@ namespace ATReforged
                     foreach (Pawn selectedPawn in selectedPawns)
                     {
                         // Ensure the pawn has some sort of SkyMind enabling implant if they can not use the SkyMind network inherently.
-                        ATR_MechTweaker androidExtension = selectedPawn.def.GetModExtension<ATR_MechTweaker>();
+                        BF_MechTweaker androidExtension = selectedPawn.def.GetModExtension<BF_MechTweaker>();
                         if (androidExtension?.canInherentlyUseSkyMind ?? false)
                         {
                             // Androids use receiver cores as their receivers.
                             if (androidExtension.needsCoreAsAndroid && Utils.IsConsideredMechanicalAndroid(selectedPawn))
                             {
-                                Hediff target = selectedPawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_AutonomousCore);
+                                Hediff target = selectedPawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_AutonomousCore);
                                 if (target != null)
                                 {
                                     selectedPawn.health.RemoveHediff(target);
                                 }
-                                target = selectedPawn.health.hediffSet.GetFirstHediffOfDef(ATR_HediffDefOf.ATR_IsolatedCore);
+                                target = selectedPawn.health.hediffSet.GetFirstHediffOfDef(BF_HediffDefOf.BF_IsolatedCore);
                                 if (target != null)
                                 {
                                     selectedPawn.health.RemoveHediff(target);
                                 }
-                                selectedPawn.health.AddHediff(ATR_HediffDefOf.ATR_ReceiverCore, selectedPawn.health.hediffSet.GetBrain());
+                                selectedPawn.health.AddHediff(BF_HediffDefOf.BF_ReceiverCore, selectedPawn.health.hediffSet.GetBrain());
                             }
                             // Organics that do not specify a receiver implant use the SkyMind receiver.
                             else if (!Utils.IsConsideredMechanical(selectedPawn))
                             {
-                                selectedPawn.health.AddHediff(ATR_HediffDefOf.ATR_SkyMindReceiver, selectedPawn.health.hediffSet.GetBrain());
+                                selectedPawn.health.AddHediff(BF_HediffDefOf.BF_SkyMindReceiver, selectedPawn.health.hediffSet.GetBrain());
                             }
                         }
 

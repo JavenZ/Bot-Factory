@@ -1,7 +1,7 @@
 ﻿using Verse;
 using HarmonyLib;
 
-namespace ATReforged
+namespace BotFactory
 {
     internal class HediffUtility_Patch
     {
