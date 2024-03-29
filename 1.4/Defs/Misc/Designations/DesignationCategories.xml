@@ -2,9 +2,9 @@
 <Defs>
 
     <DesignationCategoryDef>
-        <defName>BF_AndroidTiersDesignation</defName>
-        <label>Android Tiers</label>
-        <description>Android Tiers Buildings</description>
+        <defName>BF_BotFactoryDesignation</defName>
+        <label>Bot Factory</label>
+        <description>Bot Factory Buildings</description>
         <order>499</order>
         <specialDesignatorClasses>
             <li>Designator_Cancel</li>
