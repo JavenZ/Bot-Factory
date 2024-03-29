@@ -181,6 +181,8 @@
     <Compile Include="BotFactory.cs" />
     <Compile Include="BotFactory_Settings.cs" />
     <Compile Include="Buildings\Building_ChargingBed.cs" />
+    <Compile Include="MainTabWindow\*.cs" />
+    <Compile Include="PawnColumnWorkers\*.cs" />
     <Compile Include="ChoiceLetter\ChoiceLetter_PersonalityShiftRequest.cs" />
     <Compile Include="ChoiceLetter\ChoiceLetter_PersonalityShift.cs" />
     <Compile Include="Components\HediffComps\HediffCompProperties_RemoveHediffOnApply.cs" />

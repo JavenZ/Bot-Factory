@@ -37,12 +37,12 @@ namespace BotFactory
     {
         static BotFactory_PostInit()
         {
-            //BotFactory.settings = BotFactory.ModSingleton.GetSettings<BotFactory_Settings>();
-            //BotFactory.settings.StartupChecks();
+            BotFactory.settings = BotFactory.ModSingleton.GetSettings<BotFactory_Settings>();
+            BotFactory.settings.StartupChecks();
 
             // Patch android factions based on the appropriate settings.
-            //DefDatabase<FactionDef>.GetNamedSilentFail("BF_AndroidUnion").autoFlee = BotFactory_Settings.androidFactionsNeverFlee;
-            //DefDatabase<FactionDef>.GetNamedSilentFail("BF_MechanicalMarauders").autoFlee = BotFactory_Settings.androidFactionsNeverFlee;
+            DefDatabase<FactionDef>.GetNamedSilentFail("BF_AndroidUnion").autoFlee = BotFactory_Settings.androidFactionsNeverFlee;
+            DefDatabase<FactionDef>.GetNamedSilentFail("BF_MechanicalMarauders").autoFlee = BotFactory_Settings.androidFactionsNeverFlee;
 
             // Acquire Defs for mechanical butchering so that mechanical (non-mechanoid) units are placed in the correct categories.
             RecipeDef androidDisassembly = DefDatabase<RecipeDef>.GetNamed("ButcherCorpseMechanoid");
